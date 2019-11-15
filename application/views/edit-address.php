@@ -131,7 +131,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    <section class="frmsec">
                    		<div class="account-form">
                             <h5>Address</h5>
-                            <table width="100%" class="table table-striped">
+                            <table class="table table-striped">
 							    <thead>
 							        <tr>
 							            <th>Billing address</th>

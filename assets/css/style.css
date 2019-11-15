@@ -1912,3 +1912,12 @@ ul.nav.flex-column.detail_ul li.active:after {
 .detail a:hover, a:focus, a {
     color: #fff;
 }
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #000000 !important;
+}
+table{
+    width: 100%;
+    margin-bottom: 1rem;
+    color:#707070 !important;
+}
