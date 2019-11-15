@@ -223,7 +223,7 @@
                                 <tfoot>
                                     <tr>
                                         <td colspan="5" class="text-center">
-                                            <a class="add-to-cart btn-default btn-sm" href="#">proceed to checkout</a>
+                                            <a class="add-to-cart btn-default btn-sm" href="<?= base_url('checkout')?>">proceed to checkout</a>
                                         </td>
                                     </tr>
                                 </tfoot>
