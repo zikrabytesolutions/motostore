@@ -109,42 +109,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <table id="myTable" class="display">
 							    <thead>
 							        <tr>
-							            <th>Name</th>
-							            <th>Email</th>
-							            <th>Address</th>
-							            <th>phone</th>
+							            <th>Order</th>
+							            <th>Date</th>
+							            <th>Status</th>
+							            <th>Total</th>
+							            <th>Action</th>
 							        </tr>
 							    </thead>
 							    <tbody>
 							        <tr>
-							            <td>aaa</td>
-							            <td>aaa@gmail.com</td>
-							            <td>Bangalore</td>
-							            <td>9933399339</td>
+							            <td>#42658</td>
+							            <td>15/11/2019</td>
+							            <td>Pending Payment</td>
+							            <td>Rs.19,999.00 for 1 item</td>
+							            <td>
+							            	<a class="btn-default bg-red tblbtn" href="#">Pay</a>
+							            	<a class="btn-default bg-red tblbtn" href="#">View</a>
+							        		<a class="btn-default bg-red tblbtn" href="#">Cancel</a>
+							        	</td>
 							        </tr>
 							        <tr>
-							            <td>aaa</td>
-							            <td>aaa@gmail.com</td>
-							            <td>Bangalore</td>
-							            <td>9933399339</td>
-							        </tr>
-							        <tr>
-							            <td>aaa</td>
-							            <td>aaa@gmail.com</td>
-							            <td>Bangalore</td>
-							            <td>9933399339</td>
-							        </tr>
-							        <tr>
-							            <td>aaa</td>
-							            <td>aaa@gmail.com</td>
-							            <td>Bangalore</td>
-							            <td>9933399339</td>
-							        </tr>
-							        <tr>
-							            <td>aaa</td>
-							            <td>aaa@gmail.com</td>
-							            <td>Bangalore</td>
-							            <td>9933399339</td>
+							            <td>#42658</td>
+							            <td>15/11/2019</td>
+							            <td>Cancelled</td>
+							            <td>Rs.19,999.00 for 1 item</td>
+							            <td>
+							            	<a class="btn-default bg-red tblbtn" href="#">Pay</a>
+							            	<a class="btn-default bg-red tblbtn" href="#">View</a>
+							        		<a class="btn-default bg-red tblbtn" href="#">Cancel</a>
+							            </td>
 							        </tr>
 							    </tbody>
 							</table>

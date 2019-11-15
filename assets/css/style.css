@@ -483,12 +483,12 @@ body .product-grid .product-item .item-info .item-price {
 }
 
 header .nav-link {
-    color: #fff;
-    text-transform: uppercase;
-    position: relative;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0px 20px;
+   color: #fff;
+   text-transform: uppercase;
+   position: relative;
+   font-size: 14px;
+   font-weight: bold;
+   margin: 0px 5px;
 }
 
 .nav-link::before {
@@ -1904,4 +1904,11 @@ ul.nav.flex-column.detail_ul li.active:after {
     color: red;
     top: 0;
 
+}
+.tblbtn {
+    padding: 2px 14px;
+    border-radius: 10px;
+}
+.detail a:hover, a:focus, a {
+    color: #fff;
 }

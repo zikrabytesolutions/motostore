@@ -8,10 +8,10 @@
 			<a class="nav-link" href="dashboard">Dashboard</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#">Orders</a>
+			<a class="nav-link" href="order">Orders</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#">Address</a>
+			<a class="nav-link" href="editaddress">Address</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="accountdetails">Account Details</a>
