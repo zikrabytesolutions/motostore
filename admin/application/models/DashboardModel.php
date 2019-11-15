@@ -11,6 +11,11 @@ class DashboardModel extends CI_Model
        return $this->db->where(['stockstatus'=>0])->from("product_details")->count_all_results();
     }
 
+    function alluser()
+    {
+        return $this->db->from("users")->count_all_results();
+    }
+
     
 }
 

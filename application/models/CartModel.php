@@ -35,6 +35,43 @@ class CartModel extends CI_Model{
         $query= $this->db->get();
         return $query->result();
     }
+
+    function insertcartiteam($data)
+    {
+      return $this->db->insert('product_cart_iteam',$data);
+    }
+
+    function deletecartiteam($rowid)
+    {
+        $data = array(
+            'rowid'   => $rowid,
+            'qty'     => 0
+            );
+            
+           return  $this->cart->update($data);
+    }
+
+    function insertcart($cart)
+    {
+       
+        $this->db->select('*');
+        $this->db->from('product_cart');
+        $this->db->where('userid',$cart['userid']);
+        $query= $this->db->get();
+        $av= $query->row_array();
+        $iteam= $av['iteam'] + $cart['iteam'];   $total= $av['grandtotal'] + $cart['grandtotal']; $now= $cart['created'];
+        $data= Array('iteam'=>$iteam,'grandtotal'=>$total,'created'=>$now);
+        if($av)
+        {
+            $this->db->where('userid',$cart['userid'])->update('product_cart', $data);
+        }
+        else
+        {
+            return $this->db->insert('product_cart',$cart);
+        }
+       
+    }
+    
 }
 
 

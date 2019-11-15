@@ -176,6 +176,10 @@
             <li>
                 <a href="<?= base_url('stock')?>"> <span class="nav-label">Stock </span> </a>
             </li>
+
+            <li>
+                <a href="<?= base_url('user')?>"> <span class="nav-label">User </span> </a>
+            </li>
             
             <li class="active">
                 <a href="#"><span class="nav-label">Product Setting</span><span class="fa arrow"></span> </a>

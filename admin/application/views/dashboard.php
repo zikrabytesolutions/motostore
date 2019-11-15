@@ -54,6 +54,61 @@
         </div>
 
         <div class="row">
+<div class="col-lg-3">
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                    <h1 class="m-xs"><b><?= $alluser?></b></h1>
+                    <h3 class="font-extra-bold no-margins text-success">
+                            All User
+                        </h3>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                    <h1 class="m-xs"><b><?= $stock?></b></h1>
+                    <h3 class="font-extra-bold no-margins text-success">
+                            Out Of Stock
+                        </h3>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                    <h1 class="m-xs"><b>0</b></h1>
+                    <h3 class="font-extra-bold no-margins text-success">
+                            Month's Order
+                        </h3>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                    <h1 class="m-xs"><b>0</b></h1>
+                    <h3 class="font-extra-bold no-margins text-success">
+                            Today Order
+                        </h3>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
         <div class="col-lg-12">
         <div class="hpanel hblue">
             <div class="panel-heading hbuilt">
