@@ -13,10 +13,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/owl.carousel.min.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/owl.theme.default.min.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/animate.css')?>">
+
 	<!--fontello-->
 	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">	
 	<link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css')?>" />
 	<!--styles -->
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css')?>">
 	
@@ -91,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</header>
 		<!-- header end -->
 
-	<!-- Account details section start -->
+	<!-- details section start -->
 
 	 <div class="container-fluid products-body">
             <div class="row mt-50 mb-35 mr-2 ml-2">
@@ -101,53 +105,56 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <main class="col-md-9">
                    <section class="frmsec">
                    		<div class="account-form">
-                            <form id="accountForm" action="#" method="post" data-url="">
-                                <h5>Account Details</h5>
-
-                                <div class="form-row">
-                                    <div class="form-group col-sm-6">
-                                        <label for="firstname">First name *</label>
-                                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name">
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                        <label for="lastname">Last name *</label>
-                                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name">
-                                    </div>
-                                </div>
-                                <div class="form-row align-items-end">
-                                    <div class="form-group col-sm-12">
-                                        <label for="streetaddress">Display name *</label>
-                                        <input type="text" class="form-control" id="displayname" name="streetaddress" placeholder="Display name">
-                                    </div>
-                                </div>
-                                <p>This will be how your name will be displayed in the account section and in reviews</p>
-                                <div class="form-group">
-                                    <label for="email">Email address *</label>
-                                    <input type="email" class="form-control" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" placeholder="Email Address">
-                                </div>
-                                <h6>Password Change</h6>
-                                <div class="form-group">
-                                    <label for="pwd">Current password (leave blank to leave unchanged)</label>
-                                    <input type="text" class="form-control" id="pwd" name="pwd">
-                                </div>
-                                <div class="form-group">
-                                    <label for="cpwd">New password (leave blank to leave unchanged)</label>
-                                    <input type="text" class="form-control" id="cpwd" name="cpwd">
-                                </div>
-                                <div class="form-group">
-                                    <label for="npwd">Confirm new password</label>
-                                    <input type="text" class="form-control" id="npwd" name="npwd">
-                                </div>
-                                <input type="submit" class="btn-default bg-red my-4" value="Save Changes">
-                      
-                            </form>
+                            <h5>Details</h5>
+                            <table id="myTable" class="display">
+							    <thead>
+							        <tr>
+							            <th>Name</th>
+							            <th>Email</th>
+							            <th>Address</th>
+							            <th>phone</th>
+							        </tr>
+							    </thead>
+							    <tbody>
+							        <tr>
+							            <td>aaa</td>
+							            <td>aaa@gmail.com</td>
+							            <td>Bangalore</td>
+							            <td>9933399339</td>
+							        </tr>
+							        <tr>
+							            <td>aaa</td>
+							            <td>aaa@gmail.com</td>
+							            <td>Bangalore</td>
+							            <td>9933399339</td>
+							        </tr>
+							        <tr>
+							            <td>aaa</td>
+							            <td>aaa@gmail.com</td>
+							            <td>Bangalore</td>
+							            <td>9933399339</td>
+							        </tr>
+							        <tr>
+							            <td>aaa</td>
+							            <td>aaa@gmail.com</td>
+							            <td>Bangalore</td>
+							            <td>9933399339</td>
+							        </tr>
+							        <tr>
+							            <td>aaa</td>
+							            <td>aaa@gmail.com</td>
+							            <td>Bangalore</td>
+							            <td>9933399339</td>
+							        </tr>
+							    </tbody>
+							</table>
                         </div>
                    </section>
                 </main>
             </div>
         </div>
 
-	<!-- Account details section end -->
+	<!-- details section end -->
 
 
 <!-- footer start -->
@@ -227,9 +234,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js')?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>	
 	<script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
+	<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/custom.js')?>"></script>
+
+
+
 	<script type="text/javascript">
-		
+		$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
 	</script>
 </body>
 </html>

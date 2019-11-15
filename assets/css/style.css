@@ -1777,6 +1777,51 @@ hr.menu-border{
     margin: 0px !important;
 }
 
+.detail .title-border:before{
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255,0,0,1) 20%, rgba(221,221,221,1) 72%);
+}
+.detail .pro-img{
+    width: 50px;
+    border-radius: 25px;
+}
+ .detail .nav.flex-column .nav-link:hover::before{
+     width: 0%;
+    bottom: 0px;
+    }
+.detail .account-form{
+    padding: 22px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.4);
+}
+input[type="submit" i] {
+border:none;
+}
+ul.nav.flex-column.detail_ul li{
+    position: relative;
+    display: inherit;
+    /*box-shadow: 0 2px 3px 2px rgba(0,0,0,.08);*/
+    margin: 0px 0px 10px 0px;
+    border-bottom: 1px solid #dadada;
+}
+ul.nav.flex-column.detail_ul li a{
+    color: #707070;
+}
+ul.nav.flex-column.detail_ul li:hover a,
+ul.nav.flex-column.detail_ul li.active a{
+    color: red;
+}
 
+ul.nav.flex-column.detail_ul li:hover :after,
+ul.nav.flex-column.detail_ul li.active:after {
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: red;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    color: red;
+    top: 0;
 
-/*drftgyh*/
+}
