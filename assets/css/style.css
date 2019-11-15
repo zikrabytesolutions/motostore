@@ -111,10 +111,10 @@ margin: 20px 0px !important;
 .product-sec{
     padding: 80px 0px;
 }
-.p-item{                         
+.p-item{
         background-color: #fff;
-        border: 1px solid #eee;  
-        padding: 10px;                             
+        border: 1px solid #eee;
+        padding: 10px;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 .item-img{
@@ -291,15 +291,95 @@ border-radius: 25px;
     border-radius: 20px;
     padding: 2px 20px;
 }
-.news-sec .form-control::placeholder { 
+.news-sec .form-control::placeholder {
   color: white;
-  opacity: 1; 
+  opacity: 1;
 }
 
 
 /*rahul*/
 
-/*homepage slider*/
+
+
+/*homepage*/
+
+body .product-grid.flex-container {
+    flex-wrap: wrap;
+}
+
+body .product-grid .product-item {
+    position: relative;
+    padding: 10px;
+}
+
+body .product-grid .product-item:hover .item-info {
+    background-color: #34a2bb;
+    color: #fff;
+}
+
+body .product-grid .product-item a {
+    height: 370px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    color: #464846;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+body .product-grid .product-item:nth-child(7n + 2) a, body .product-grid .product-item:nth-child(7n + 6) a {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body .product-grid .product-item .item-info {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
+    opacity: 0.85;
+    padding: 8px 0 5px 0;
+}
+body .product-grid .product-item .item-info .item-name {
+    padding: 0 16px;
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.9;
+}
+
+body .product-grid .product-item .item-info .item-price {
+    display: block;
+    width: 100%;
+    padding: 0 16px;
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
 
 .carousel-indicators li {
     color: #fff;
@@ -307,7 +387,7 @@ border-radius: 25px;
   height: 10px;
   border-radius: 100%;
   text-indent: 0;
-  background: none; 
+  background: none;
 }
 
 .icon-slider-arrow {
@@ -323,7 +403,7 @@ border-radius: 25px;
 .p_left {
     position: relative;
     z-index: 20;
-    background-color: #fff;  
+    background-color: #fff;
 }
 
 .product-sec {
@@ -358,7 +438,7 @@ border-radius: 25px;
 }
 
 .header-megamenu {
-    line-height: 2; 
+    line-height: 2;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -399,7 +479,7 @@ border-radius: 25px;
 }
 
 .customMenuDrpdwn .submenu-item li {
-    border-top: 1.5px solid #ccc;    
+    border-top: 1.5px solid #ccc;
 }
 
 header .nav-link {
@@ -466,7 +546,7 @@ header .nav-link {
     display: flex;
     align-items: center;
     background-color: red;
-    height: 150px;    
+    height: 150px;
 }
 
 .inner_news-left {
@@ -518,7 +598,7 @@ header {
     box-shadow: 0 2px 8px 0.5px rgba(0, 0, 0, 0.22);
     margin-top: -64px;
     background: #fff;
-    border-radius: 3px;    
+    border-radius: 3px;
 }
 
 .profile-body .profile-details .user-img {
@@ -526,7 +606,7 @@ header {
     background-image: url(../images/profile/user.png);
     background-size: cover;
     height: 80px;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .profile-body .profile-details h3 {
@@ -587,7 +667,7 @@ header {
   opacity: 0;
   transition: all 0.3s ease;
 }
- 
+
 .item-view img.active {
   opacity: 1;
 }
@@ -612,7 +692,7 @@ header {
 .product-overview .product-overview-list i {
     color: #FF0202;
     font-size: 14px;
-    margin-right: 5px;    
+    margin-right: 5px;
 }
 
 /*size-choose*/
@@ -621,7 +701,7 @@ header {
     border-radius: 50%;
     border: 2px solid #fff;
     background-color: #eee;
-    color: #000; 
+    color: #000;
 }
 
 .size-choose div label {
@@ -654,11 +734,11 @@ header {
 .color-choose div {
     display: inline-block;
 }
- 
+
 .color-choose input[type="radio"], .size-choose input[type="radio"] {
   display: none;
 }
- 
+
 .color-choose input[type="radio"] + label span {
   display: inline-block;
   width: 40px;
@@ -668,13 +748,13 @@ header {
   cursor: pointer;
   border-radius: 50%;
 }
- 
+
 .color-choose input[type="radio"] + label span {
   border: 2px solid #FFFFFF;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
   border-radius: 50%;
 }
- 
+
 .color-choose input[type="radio"]#red + label span {
   background-color: #C91524;
 }
@@ -684,7 +764,7 @@ header {
 .color-choose input[type="radio"]#black + label span {
   background-color: #323232;
 }
- 
+
 .color-choose input[type="radio"]:checked + label span {
   background-image: url(../images/item/check-icn.svg);
   background-repeat: no-repeat;
@@ -706,7 +786,7 @@ header {
 
 .product-quantity-subtract, .product-quantity-add {
     cursor: pointer;
-} 
+}
 
 #product-quantity-input {
     width: 25px;
@@ -748,7 +828,7 @@ header {
 .title-border {
     padding-bottom: 15px;
     position: relative;
-    margin-bottom: 25px;    
+    margin-bottom: 25px;
 }
 
 .title-border:before {
@@ -992,7 +1072,7 @@ header {
 }
 
 .blog .blog-nav ul {
-    margin: 0; 
+    margin: 0;
     justify-content: space-evenly;
 }
 
@@ -1004,12 +1084,12 @@ header {
 
 .blog .blog-nav li:nth-child(1) {
     color: red;
-} 
+}
 
 .blog-item {
     margin-bottom: 35px;
     box-shadow: 0 2px 8px 0.5px rgba(0, 0, 0, 0.22);
-    border-radius: 4px;    
+    border-radius: 4px;
 }
 
 .blog-item:hover {
@@ -1019,12 +1099,12 @@ header {
 
 .blog-content {
     padding: 0 25px 20px;
-    border: 1px solid #eee;    
+    border: 1px solid #eee;
 }
 
 .blog-img {
     overflow: hidden;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .blog-img img {
@@ -1045,7 +1125,7 @@ header {
 
 .user_details span, .blog-date span {
     font-size: 14px;
-    font-weight: 600;    
+    font-weight: 600;
 }
 
 .blog-text p {
@@ -1099,7 +1179,7 @@ header {
 
 /*CHECKBOX and RADIO*/
 input[type=checkbox], input[type=radio] {
-    display:none; 
+    display:none;
 }
 
 input[type=checkbox] + div {
@@ -1109,9 +1189,9 @@ input[type=checkbox] + div {
     border:2px solid #000;
     text-align:center;
     line-height:16px;
-    margin-right:6px;   
+    margin-right:6px;
     border-radius:3px;
-    cursor:pointer; 
+    cursor:pointer;
 }
 
 input[type=radio] + div {
@@ -1122,8 +1202,8 @@ input[type=radio] + div {
     border-radius: 50%;
     text-align:center;
     line-height:16px;
-    margin-right:6px;   
-    cursor:pointer; 
+    margin-right:6px;
+    cursor:pointer;
 }
 
 
@@ -1250,7 +1330,7 @@ select {
     margin-left: -16px;
 }
 
-.filter-price {    
+.filter-price {
     max-width: 300px;
 }
 
@@ -1315,7 +1395,7 @@ width: 15px;
 }
 
 
-/*single products*/ 
+/*single products*/
 
 /*.products_container:after {
   content: '';
@@ -1329,7 +1409,7 @@ width: 15px;
 /*.products_container .product-layout.product-grid {
     flex: auto;
     margin: 0 12px 1rem;
-    min-width: 300px;    
+    min-width: 300px;
 }*/
 
 .products_container .size-choose div, .products_container .qty-choose div, .products_container .color-choose input[type="radio"] + label span {
@@ -1558,7 +1638,7 @@ width: 15px;
     margin: 0;
     font-size: 0.8rem;
     font-weight: 500;
-    color: #000;    
+    color: #000;
 }
 
 .checkout #shipToDiffAdd, .checkout #addPw {
@@ -1569,7 +1649,7 @@ width: 15px;
     font-size: 14px;
     padding: 22px;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 2px solid #ff0202;
 }
 
 .checkout .orderDetails th {
@@ -1612,7 +1692,7 @@ width: 15px;
     color: #fff;
 }
 .cat-sec{
-    padding: 40px 0px; 
+    padding: 40px 0px;
 }
 .category-carousel img{
     border-radius: 8px;
@@ -1662,7 +1742,7 @@ width: 15px;
 .place img{
     border-radius: 8px;
     width: 100%;
-     
+
 }
 .place .img-col{
     margin-bottom: 20px;
@@ -1756,7 +1836,7 @@ h6.pb-title.txt-h-up {
 .img-col img{
     border-radius: 8px;
     width: 100%;
-     
+
 }
 .event-sec,
 .ride-place-sec{

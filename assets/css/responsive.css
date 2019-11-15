@@ -21,6 +21,39 @@ display: none;
 
 /*rahul*/
 
+/*home*/
+
+
+
+@media (min-width: 1024px) {
+
+    .product-item:nth-child(n) {
+        width: 33.33%;
+    }
+
+    .product-item:nth-child(7n + 2), .product-item:nth-child(7n + 6) {
+        width: 66.66%;
+    }
+}
+
+@media (max-width: 1023px) {
+
+    .product-item:nth-child(n) {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .product-item:nth-child(n) {
+        width: 100%;
+    }
+}
+
+
+
+/**/
+
 @media (min-width: 900px) {
     .customMenuDrpdwn {
         width: 250%;
