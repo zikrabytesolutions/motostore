@@ -219,7 +219,7 @@
                                                            $pid=  strtr(base64_encode($pid), '+/', '-_');
                                                            
                                                          ?>
-                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $plist->product?>"><?= $stringCut = substr($plist->product, 0, 29); ?>..</a>
+                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $plist->product?>"><?= $stringCut = substr($plist->product, 0, 29); ?>..
                                                     </h6>
                                                 </div>
                                                 <div class="item-img">
@@ -264,11 +264,12 @@
                                                         <p class="txt-p-up" style="font-size:18px"> &#x20A8;:</p> <h4 class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></h4>
                                                     </div>
                                                 </div>
+                                                </a>
                                             </div>
 
                                         </div>
                                 <?php endforeach; else: ?>
-                                    <div class="product-layout product-grid col-md-12">
+                                    <div class="product-layout  col-xl-12">
                                     <div class="p-item">
                                                 <div class="item-title">
                                          <div class="notfound"><img src="//img1a.flixcart.com/www/linchpin/fk-cp-zion/img/error-no-search-results_e83b58.png">
@@ -288,17 +289,19 @@
     </div>
 
     <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
-    <script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
-    <script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js') ?>"></script>
-    <script type="text/javascript" src="<?= base_url('assets/js/custom.js') ?>"></script>
+
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- slick -->
     <script type="text/javascript" src="<?= base_url('assets/slick/slick.min.js') ?>"></script>
     <!-- slick -->
-    <script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>
+    <script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>	
+	<script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
     <!-- price range slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js') ?>"></script>
 
     <script>
         var min = "<?= $min; ?>";
@@ -329,6 +332,8 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
 });
 </script>
+
+<script type="text/javascript" src="<?= base_url('assets/js/custom.js') ?>"></script>
 </body>
 
 </html>

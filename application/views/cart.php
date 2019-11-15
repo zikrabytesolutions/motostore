@@ -91,7 +91,6 @@
                     </ul>
                 </div>
             </nav>
-
         </header>
         <div class="container cart-body">
             <h5 class="title-border">Shopping Cart</h5>
@@ -99,11 +98,7 @@
                 <main class="col-md-8 mb-3">
                     <section class="cart-wrapper">
                         <div class="cart-table">
-
                             <div class="template_cart">
-                               
-                                
-                           
                                 <table class="table table-bordered cart_items">
                                 <?php if($proinfo):?>
                                     <thead>
@@ -114,7 +109,7 @@
                                             <th class="column_remove">Remove</th>
                                         </tr>
                                     </thead>
-<?php endif;?>
+                                     <?php endif;?>
                                     <tbody>
 
                                     <?php if($proinfo): foreach($proinfo as $ds): ?>
@@ -164,12 +159,12 @@
                                                 <div class="product-qty">
                                                     <div class="qty-choose flex-container">
                                                         <?php if($ds['qty']==1):?>
-                                                       <a class="product-quantity-add" href="<?= base_url('cart/mincart/'.$ds['rowid'].'/'.$ds['qty'])?>" style="pointer-events: none;
+                                                       <a class="product-quantity-subtract" href="<?= base_url('cart/mincart/'.$ds['rowid'].'/'.$ds['qty'])?>" style="pointer-events: none;
                                                                cursor: default;">
                                                             <i class="fa fa-minus" aria-hidden="true"></i>
                                                         </a>
                                                     <?php else: ?>
-                                                    <a class="product-quantity-add" href="<?= base_url('cart/mincart/'.$ds['rowid'].'/'.$ds['qty'])?>">
+                                                    <a class="product-quantity-subtract" href="<?= base_url('cart/mincart/'.$ds['rowid'].'/'.$ds['qty'])?>">
                                                             <i class="fa fa-minus" aria-hidden="true"></i>
                                                         </a>
                                                     <?php endif?>
@@ -191,11 +186,7 @@
                                        <?php endforeach; endif;?>
                                        <?php endforeach; else:?>
                                        <h3><i class="icon-cart"></i>Your Cart is Empty</h3>
-
                                            <?php endif;?>
-                                       
-                                                                              
-
                                     </tbody>
 
                                     <tfoot>
@@ -262,16 +253,21 @@
     </div>
     <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
 
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js') ?>"></script>
-<script type="text/javascript" src="<?= base_url('assets/js/custom.js') ?>"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 <!-- slick -->
 <script type="text/javascript" src="<?= base_url('assets/slick/slick.min.js') ?>"></script>
 <!-- slick -->
 <script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>
+<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>	
+    <script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
+
+    <script type="text/javascript" src="<?= base_url('assets/js/custom.js') ?>"></script>
 
 </body>
 

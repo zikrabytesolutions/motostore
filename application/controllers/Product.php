@@ -168,6 +168,15 @@ class Product extends CI_Controller
         return $this->productModel->productattributevaluend($proid,$attid);
     }
 
+    function findreletedproduct($proid)
+    {
+        $proid= base64_decode(strtr($proid, '-_', '+/'));
+        $proid= base64_decode(strtr($proid, '-_', '+/'));
+        $proid= base64_decode(strtr($proid, '-_', '+/'));
+
+        return $this->productModel->reletedproduct($proid);
+
+    }
     
     
 }

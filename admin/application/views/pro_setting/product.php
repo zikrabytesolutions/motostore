@@ -63,6 +63,40 @@
                              <input type="text" id="product" class="form-control" name="product" placeholder="Full Product Name">
                            </div>
 
+                           <div class="row">
+                               <div class="col-md-4">
+                                    <div class="form-group">
+                                     <label>Product Code</label>
+                                     <input type="text" id="productcode" class="form-control" name="productcode" placeholder="Product Code">
+                                    </div>
+                               </div>
+
+                               <div class="col-md-4">
+                                    <div class="form-group">
+                                     <label>Product Type</label>
+                                     
+                                     <select class="form-control" name="producttype" id="producttype">
+                                           <option value="1"> Off Road </option>
+                                           <option value="2"> On Road </option>
+                                           <option value="3"> Both </option>
+                                           <option value="4"> No Matter </option>
+                                        </select>
+                                    </div>
+                               </div>
+                               <div class="col-md-4">
+                                    <div class="form-group">
+                                     <label>Gender</label>
+                                        <select class="form-control" name="gender" id="gender">
+                                           <option value="Male"> Male </option>
+                                           <option value="Female"> Female </option>
+                                           <option value="Both"> Both </option>
+                                           <option value="nomatter"> No Matter </option>
+                                        </select>
+                                    </div>
+                               </div>
+                            </div>
+
+
                            <div class="form-group">
                            <label>Short Description</label>
                                <textarea name="description" id="description" rows="4" class="form-control"></textarea>
@@ -93,26 +127,18 @@
                              </select>
                          </div>
 
-                         <div class="col-md-12"><br>
-                         <div class="form-group">
-                           <select name="protype" id="protype" class="form-control">
-                               <option value="1">Simple Product</option>
-                               <option value="2">Variable Product</option>
-                           </select>
-                         </div>
-                        </div>
+                         <br>
                         <div class="hr-line-dashed"></div>
 
 <!-- ==================================================add Product============================== -->
 <div class="col-md-12" >
-   
+<br>
       <div class="panel-body">
         <div class="hpanel">
 
 <div class="tabs-left">
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#tab-4" aria-expanded="true"> Infomation</a></li>
-    <li id="rowsimple"><a data-toggle="tab" href="#tab-5" aria-expanded="true"> Simple</a></li>
     <li class=""><a data-toggle="tab" href="#tab-6" aria-expanded="true"> Attribute</a></li>
     <li class="" id="rowvariant"><a data-toggle="tab" href="#tab-7" aria-expanded="false">Variation</a></li>
 </ul>
@@ -131,78 +157,7 @@
               including versions of Lorem Ipsum.
     </div>
 </div>
-
-
-<div id="tab-5" class="tab-pane" style="padding:0px;">
-        <div class="panel-body">
-        <div class="row">
-            <div class="form-group col-md-4">
-                <label>Product Quantity</label>
-                <input type="number"  id="productquantity" class="form-control" name="productquantity" >
-            </div>
-
-            <div class="form-group col-md-3">
-                <label>Status</label>
-                <select name="stockstatus" id="stockstatus" class="form-control">
-                    <option value="1">In Stock</option>
-                    <option value="0">Out Of Stock</option>
-                </select>
-            </div>
-
-            <div class="form-group col-md-4">
-            <label>Quantity Visible</label>
-            <select name="visible" id="visible" class="form-control">
-                    <option value="1">Yes</option>
-                    <option value="1">NO</option>
-                </select>
-            </div>
-
-            </div>
-
-            <div class="row">
-
-            <div class="col-md-4">
-            <label>Regular Price</label>
-                <input type="number"  id="price" class="form-control" name="price" >
-            </div>
-
-            <div class="col-md-4">
-            <label>Offer Price</label>
-                <input type="number"  id="periceoffer" class="form-control change" name="periceoffer" >
-            </div>
-
-
-            <div class="col-md-4">
-            <label>Offer %</label>
-                <input type="text"  id="offerper" class="form-control" name="offerper" >
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color:blue"> <u>Schedule </u></a>
-            </div>
-
-            <!-- ----shedule----- -->
-            <div class="col-md-12">
-                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="row">
-                        <!-- <div class="col-md-4 col-md-offset-4"> -->
-                        <div class="col-md-6">
-                        <label>Date From</label>
-                            <input type="date"  id="offerstart" class="form-control" name="offerstart" >
-                        </div>
-
-                        <div class="col-md-6">
-                        <label>Date To</label>
-                            <input type="date"  id="offerend" class="form-control" name="offerend" >
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- -----------end shedule------- -->
-            </div> 
-        </div>
-    </div>
-
-
-    <div id="tab-6" class="tab-pane">
+<div id="tab-6" class="tab-pane">
         <div class="panel-body">
          <div class="row">
              
@@ -264,7 +219,7 @@
         <!-- ===============================end product===================================== -->
                 
             </div>
-            <div class="panel-footer">
+            <div class="panel-footer" id="savedat">
                 This is standard panel footer
             </div>
         </div>
@@ -326,7 +281,7 @@
     </div>
 </div>
 </form>
-<div id="savedat"/> 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 <script src="<?= base_url('assets/vendor/select2-3.5.2/select2.min.js')?>"></script>	
 <script src="<?= base_url('assets/vendor/toastr/build/toastr.min.js')?>"></script>		
@@ -344,21 +299,7 @@
   }
 </script>
 
-<script>
- $(function() {
-    $('#rowvariant').hide(); 
-    $('#protype').change(function(){
-        if($('#protype').val() == '2') {
-            $('#rowvariant').show();
-            $('#rowsimple').hide(); 
-        } else {
-            $('#rowvariant').hide(); 
-            $('#rowsimple').show();
-            $("#testtextfield").attr("enable");
-        } 
-    });
-});
-</script>
+
 
 <script>
 $(document).ready(function(){

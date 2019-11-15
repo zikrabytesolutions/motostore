@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'http://localhost/moto/admin/';
-$config['base_url'] = 'http://192.168.0.132/moto/admin/';
+$config['base_url'] = 'http://192.168.0.132/motostore/admin/';
 
 /*
 |--------------------------------------------------------------------------
@@ -159,7 +159,7 @@ $config['composer_autoload'] = FALSE;
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
 */
-$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+$config['permitted_uri_chars'] = '';
 
 /*
 |--------------------------------------------------------------------------

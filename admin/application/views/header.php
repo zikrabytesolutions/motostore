@@ -13,10 +13,12 @@
     <!--<link rel="shortcut icon" type="image/ico" href="favicon.ico" />-->
 
         <!-- Vendor styles -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/fontawesome/css/font-awesome.css')?>" />
+        <link rel="stylesheet" href="<?= base_url('assets/vendor/fontawesome/css/font-awesome.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/vendor/metisMenu/dist/metisMenu.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/vendor/animate.css/animate.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/vendor/bootstrap/dist/css/bootstrap.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/summernote/dist/summernote.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/summernote/dist/summernote-bs3.css')?>" />
 
     <!-- App styles -->
     <link rel="stylesheet" href="<?= base_url('assets/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')?>" />
@@ -157,7 +159,7 @@
                         <li><a href="profile.html">Profile</a></li>
                         <li><a href="analytics.html">Analytics</a></li>
                         <li class="divider"></li>
-                        <li><a href="login.html">Logout</a></li>
+                        <li><a href="<?= base_url('login/logout')?>">Logout</a></li>
                     </ul>
                 </div>
 
@@ -171,11 +173,15 @@
             <li>
                 <a href="<?= base_url('dashboard')?>"> <span class="nav-label">Dashboard</span> </a>
             </li>
+            <li>
+                <a href="<?= base_url('stock')?>"> <span class="nav-label">Stock </span> </a>
+            </li>
             
             <li class="active">
                 <a href="#"><span class="nav-label">Product Setting</span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
                     <li class="active"><a href="<?= base_url('product')?>"> Product</a></li>
+                    <li class="active"><a href="<?= base_url('product/lists')?>"> Product List</a></li>
                     <li><a href="<?= base_url('brand')?>">Brand</a></li>
                     <li><a href="<?= base_url('category')?>">Category</a></li>
                     <li><a href="<?= base_url('subcategory')?>">Sub Category</a></li>
