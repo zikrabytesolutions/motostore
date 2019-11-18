@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 
-	<div class="detail">
+	<div class="accdetail">
 		<!-- header start -->
 		<header>
 			<nav class="navbar navbar-expand-md">

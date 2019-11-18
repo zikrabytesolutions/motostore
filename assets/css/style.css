@@ -1337,8 +1337,8 @@ select {
 
 /*uislider*/
 
-.noUi-handle-lower {
-    margin-left: -16px;
+.ui-slider-horizontal .ui-slider-handle:nth-child(2) {
+    margin-left: -20px !important;
 }
 
 .filter-price {
@@ -1350,12 +1350,12 @@ select {
 }
 
 
-.noUi-background {
+.ui-slider-horizontal {
     background-color: #ccc !important;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1) !important;
 }
 
-.noUi-horizontal {
+.ui-slider-horizontal {
     height: 5px !important;
 }
 
@@ -1366,16 +1366,16 @@ select {
     border-radius: 0;
 }
 
-.noUi-horizontal .noUi-handle, .noUi-vertical .noUi-handle {
-width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    box-shadow: none;
-    background-color: red;
-    border: none;
-    left: -5px;
-    top: -6px;
-    transition: width .2s cubic-bezier(0.215, 0.610, 0.355, 1.000), height .2s cubic-bezier(0.215, 0.610, 0.355, 1.000), left .2s cubic-bezier(0.215, 0.610, 0.355, 1.000), top .2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+.ui-slider-horizontal .ui-slider-handle {
+    outline: none;
+    top:-0.5em !important;
+width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    box-shadow: none !important;
+    background-color: red !important;
+    border: none !important;
+    transition: width .2s cubic-bezier(0.215, 0.610, 0.355, 1.000), height .2s cubic-bezier(0.215, 0.610, 0.355, 1.000), left .2s cubic-bezier(0.215, 0.610, 0.355, 1.000), top .2s cubic-bezier(0.215, 0.610, 0.355, 1.000) !important;
 }
 
 
@@ -1389,10 +1389,9 @@ width: 15px;
     left: -2px !important;
 }
 
-.noUi-connect {
+.ui-slider-range {
     background: red !important;
-    -webkit-transition: background 450ms;
-    transition: background 450ms;
+transition: width .2s cubic-bezier(0.215, 0.610, 0.355, 1.000), height .2s cubic-bezier(0.215, 0.610, 0.355, 1.000), left .2s cubic-bezier(0.215, 0.610, 0.355, 1.000), top .2s cubic-bezier(0.215, 0.610, 0.355, 1.000) !important;
 }
 
 .products-sidebar .filter-color .color-choose input[type="radio"] + label span {
@@ -1868,19 +1867,19 @@ hr.menu-border{
     margin: 0px !important;
 }
 
-.detail .title-border:before{
+.accdetail .title-border:before{
     width: 100%;
     background: linear-gradient(90deg, rgba(255,0,0,1) 20%, rgba(221,221,221,1) 72%);
 }
-.detail .pro-img{
+.accdetail .pro-img{
     width: 50px;
     border-radius: 25px;
 }
- .detail .nav.flex-column .nav-link:hover::before{
+ .accdetail .nav.flex-column .nav-link:hover::before{
      width: 0%;
     bottom: 0px;
     }
-.detail .account-form{
+.accdetail .account-form{
     padding: 22px;
     border-radius: 4px;
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.4);
@@ -1920,7 +1919,7 @@ ul.nav.flex-column.detail_ul li.active:after {
     padding: 2px 14px;
     border-radius: 10px;
 }
-.detail a:hover, a:focus, a {
+.accdetail a:hover, .accdetail a:focus, .accdetail a {
     color: #fff;
 }
 .table thead th {
