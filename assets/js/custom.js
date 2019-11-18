@@ -346,3 +346,8 @@ $('.checkout').find("input[type=checkbox][value=shipDiffAdd]").on('change', func
 $('.checkout').find("input[type=checkbox][value=createAcc]").on('change', function() {
 	$("#addPw").fadeToggle(200);
 });
+
+$('.search-ico').on('click', function() {
+	$(".fa-search").toggleClass('fa-close');
+	$(".search-bar").fadeToggle(200);
+});

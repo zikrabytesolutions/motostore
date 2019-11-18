@@ -450,6 +450,7 @@ body .product-grid .product-item .item-info .item-price {
 }
 
 .customMenuDrpdwn {
+    border: 2px solid red;
     padding: 10px 15px;
     right: 0;
     left: unset;
@@ -482,13 +483,23 @@ body .product-grid .product-item .item-info .item-price {
     border-top: 1.5px solid #ccc;
 }
 
-header .nav-link {
+header .nav-link, header .submenu-link  {
    color: #fff;
    text-transform: uppercase;
    position: relative;
-   font-size: 14px;
+   font-size: 0.8rem;
    font-weight: bold;
    margin: 0px 5px;
+}
+
+header .nav-link.search-ico, header .nav-link#cart-ico {
+    font-size: 1rem;
+}
+
+.search-ico::before, #navbarDropdownMenuLink::before {
+
+  content: none !important;
+
 }
 
 .nav-link::before {
@@ -1920,4 +1931,52 @@ table{
     width: 100%;
     margin-bottom: 1rem;
     color:#707070 !important;
+}
+
+.search-nav {
+    position: relative;
+}
+
+.search-bar {
+    display: none;
+    position: absolute;
+    left: -287px;
+    top: 64px;
+}
+
+.search-bar input {
+    padding: 5px 12px;
+    border-radius: 20px !important;
+    background: #fff;
+    border: 2px solid black;
+    min-width: 320px;
+}
+
+input, button {
+    outline: none;
+}
+
+.log-reg_butt {
+    padding: 10px 25px;
+}
+
+@media (min-width: 1300px){
+    .navbar-expand-custom {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .navbar-expand-custom .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-expand-custom .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+    .navbar-expand-custom .navbar-collapse {
+        display: flex!important;
+    }
+    .navbar-expand-custom .navbar-toggler {
+        display: none;
+    }
 }

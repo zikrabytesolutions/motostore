@@ -35,11 +35,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <!-- Brand -->
                     <a class="navbar-brand d-block" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/page-logo.jpg')?>"></a>
                     <ul class="nav dsk-hide">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <li class="nav-item search-nav">
+							<a class="nav-link search-ico" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <div class="search-bar">
+                                <input type="text" name="search">
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            <a class="nav-link" href="#" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                     <!-- Toggler/collapsibe Button -->
@@ -101,17 +104,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         
                     </div>
                     <ul class="nav mb-hide">
-                        <li class="nav-item">
-							<a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                            <div class="search d-none">
+                        <li class="nav-item search-nav">
+							<a class="nav-link search-ico" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <div class="search-bar">
                                 <input type="text" name="search">
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            <a class="nav-link" href="#" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-default" href="#">Login / Register</a>
+                            <a class="nav-link btn btn-default log-reg_butt" href="#">Login / Register</a>
                         </li>
                     </ul>
                 </div>
