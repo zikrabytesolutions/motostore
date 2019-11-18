@@ -95,11 +95,11 @@
 
         </header>
         <br>
-        <div class="container product-single">
+        <div class="container product-single py-5">
             <section class="product-header">
                 <?php if($productdetail): foreach($productdetail as $pd): ?>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="product-view">
                             <div id="item-nav">
                                 <div class="easyzoom">
@@ -140,7 +140,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-7">
                         <section class="product-details">
                             <h3><?= $pd->product; ?></h3>
 
@@ -151,15 +151,8 @@
                             <div class="product-overview">
                                 <p>Availability: <b><span><?php if($pd->stockstatus=='0'){echo ' <span style="color:red"> Out Of Stock';}
 							else{echo '<span style="color:green">In Stock';}?></span></b></p>
-                                <hr />
-                                <p style="text-align:justify"></p>
-                                <ul class="product-overview-list">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i>Satisfaction 100% Guaranteed</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i>Free Shipping on Orders Above $100
-                                    </li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i>14 Day Easy Return</li>
-                                </ul>
-                                <hr />
+<h5 class="title-border mt-5">Description</h5>
+<ul><li>940g +- 60g in “M” size<br></li><li>Completely redesigned central chin vent area, extensive ventilation in the nape area</li><li>Rear fin that creates a depression for increased air extraction (much more ventilated)</li><li>Updated design ensuring excellent protection and helmet balance on the head</li><li>New polystyrene channelling added for greater ventilation</li><li>Additional air vent on the lower part of the helmet to facilitate the extraction of hot air / humidity from the helmet</li><li>New soft touch interior for effective humidity release</li><li>Larger nose area to better protect the nose from branches or debris</li><li>Adjustable visor</li><li>Removable, hypo-allergenic and washable interior</li></ul>                            
 
 
                                 <?php 
@@ -187,8 +180,7 @@
 										  elseif($rsecond!='') { $second=$rsecond;}
 										  $second=  strtr(base64_encode($second), '+/', '-_');
 										?>
-                                            <a
-                                                href="<?= base_url('product/details/'.$pid.'/'.$first.'/'.$second.'/'.$pd->product)?>">
+                                            <a href="<?= base_url('product/details/'.$pid.'/'.$first.'/'.$second.'/'.$pd->product)?>">
                                                 <input data-image="red" type="radio" value="red"
                                                     <?php if($rfirst==$pval->first){echo "checked";}?>>
                                                 <label for="red"><span style="background-color:<?= $pval->codes?>;">
@@ -208,7 +200,7 @@
 							 foreach($prodetails as $prdet):
 								if(strtolower($prdet->attribute)=='size'):
 						  ?>
-                                <div class="product-size">
+                                <div class="product-size mt-4">
                                     <p><?= $prdet->attribute?> : </p>
                                     <div class="size-choose flex-container">
                                         <?php
@@ -232,6 +224,9 @@
                                                 href="<?= base_url('product/details/'.$pid.'/'.$first.'/'.$second.'/'.$pd->product)?>">
                                                 <input data-size="xs" type="radio" id="xs" name="size" value="xs"
                                                     checked>
+                                                <label for="<?= $pvals->value_name?>">
+                                                    <span></span>
+                                                </label>                                            
                                                 <p><?= $pvals->value_name?></p>
                                             </a>
                                         </div>
@@ -255,9 +250,8 @@
 				                </div>
 				            </div>
 				              </div> -->
-                                <hr />
-
-                                <div class="product-cta flex-container">
+  
+                                <div class="product-cta flex-container mt-4">
                                     <?php 
 								     $proid= strtr(base64_encode($pd->id), '+/', '-_');
 									 $proid=  strtr(base64_encode($proid), '+/', '-_');
@@ -269,40 +263,35 @@
                                         <?php echo form_open('cart/cartlist')?>
                                         <input type="hidden" name="proid" value="<?= $proid ?>">
                                         <input type="hidden" name="prodetailsid" value="<?= $pdetailsid ?>">
-                                        <button type="submit" class="btn btn-danger">
+                                        <button type="submit" class="btn btn-default bg-black">
                                             <span class="add-to-cart"><i class="icon-cart"></i>add to cart</span>
                                         </button>
                                         <?php echo form_close()?>
                                     </div>
 
-                                    <div> <button class="btn btn-success">
-                                            <span class="add-to-cart"><i class="icon-cart"></i>Buy Now</span>
+                                    <div> <button class="btn btn-success btn-default bg-red">
+                                            <span class="add-to-cart">Buy Now</span>
                                         </button>
                                     </div>
-                                    <div href="#">
+<!--                                     <div href="#">
                                         <span class="icon-like"></span>
                                     </div>
                                     <div href="">
                                         <span class="icon-share-bold"></span>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                             </div>
                         </section>
                     </div>
-                    <div class="col-md-3">
-                        <div class="img-right">
-                            <img src="<?=base_url('assets/images/item/img-right.png')?>">
-                        </div>
-                    </div>
                 </div>
                 <?php endforeach; endif;?>
             </section>
-            <section class="product-desc mt-5">
+<!--             <section class="product-desc mt-5">
                 <h4 class="title-border">Description</h4>
                 <p class="desc-content"><?= $pd->description?></p>
             </section>
-
+ -->
             <section class="product-reviews mt-5">
                 <h4 class="title-border">Reviews</h4>
                 <div class="row">

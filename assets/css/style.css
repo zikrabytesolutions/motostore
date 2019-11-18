@@ -692,8 +692,8 @@ header {
     margin-right: 5px;
 }
 
-.product-overview ul {
-    list-style-type: none;
+.product-overview li {
+    line-height: 1.6;
 }
 
 .product-overview li {
@@ -706,6 +706,16 @@ header {
     margin-right: 5px;
 }
 
+.product-details button {
+    line-height: 2;
+    border:none;
+    transition: 0.3s ease;    
+}
+
+.product-details button:hover {
+    color: #fff;
+}
+
 /*size-choose*/
 
 .size-choose div  {
@@ -716,7 +726,12 @@ header {
 }
 
 .size-choose div label {
-    margin: 0;
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
 }
 
 
@@ -726,6 +741,10 @@ header {
     padding: 0px 8px;
 }
 
+.size-choose input[type="radio"]:checked + label {
+    border: 2px solid red; 
+}
+
 .size-choose div, .qty-choose div {
     display: flex;
     height: 40px;
@@ -733,6 +752,7 @@ header {
     width: 40px;
     justify-content: center;
     margin-right: 10px;
+    position: relative;
 }
 
 .size-choose, .qty-choose {
@@ -1454,6 +1474,10 @@ transition: width .2s cubic-bezier(0.215, 0.610, 0.355, 1.000), height .2s cubic
 
 /*cart*/
 
+.cart-page .btn-default, .cart-page .btn-default:hover {
+    color: #fff;
+}
+
 .cart-page .p-prc {
     font-size: 20px;
     font-weight: 600;
@@ -1915,18 +1939,18 @@ ul.nav.flex-column.detail_ul li.active:after {
     top: 0;
 
 }
-.tblbtn {
+.accdetail .tblbtn {
     padding: 2px 14px;
     border-radius: 10px;
 }
 .accdetail a:hover, .accdetail a:focus, .accdetail a {
     color: #fff;
 }
-.table thead th {
+.accdetail .table thead th {
     vertical-align: bottom;
     border-bottom: 1px solid #000000 !important;
 }
-table{
+.accdetail table{
     width: 100%;
     margin-bottom: 1rem;
     color:#707070 !important;
