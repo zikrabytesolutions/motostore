@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/animate.css')?>">
 
 	<!--fontello-->
-	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">	
+	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">
 	<link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css')?>" />
 	<!--styles -->
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css')?>">
-	
+
 </head>
 <body>
 

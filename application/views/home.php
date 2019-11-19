@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css')?>">
 	<!--fontello-->
-	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">	
+	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">
 	<link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css')?>" />
 	<!--styles -->
 </head>
@@ -79,14 +79,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <span class="icon-slider-arrow" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>		
+</div>
 		<!-- product slider start -->
 		<section class="product-sec">
 			<div class="container">
 				<div class="product-grid flex-container">
-				<?php if($category): 
-					foreach($category as $cat): 
-										
+				<?php if($category):
+					foreach($category as $cat):
+
 						$cid= strtr(base64_encode($cat->cid), '+/', '-_');
 						$cid=  strtr(base64_encode($cid), '+/', '-_');
 						$cid=  strtr(base64_encode($cid), '+/', '-_');
@@ -102,9 +102,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 						</a>
 					</div>
-					
+
 					<?php endforeach; endif; ?>
-					
+
 				</div>
 			</div>
 
@@ -130,7 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											</div>
 											<div class="testi-desc">
 												<p class="txt-p-up">
-													Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+													Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 												</p>
 											</div>
 										</div>
@@ -149,7 +149,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											</div>
 											<div class="testi-desc">
 												<p class="txt-p-up">
-													Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+													Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 												</p>
 											</div>
 										</div>
@@ -168,7 +168,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											</div>
 											<div class="testi-desc">
 												<p class="txt-p-up">
-													Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+													Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 												</p>
 											</div>
 										</div>
@@ -210,8 +210,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
                             </div>
                         </div>
-  </div>                      
-</div>	
+  </div>
+</div>
 </section>
 <!-- News section end -->
 <?php include('footer.php')?>

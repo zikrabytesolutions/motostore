@@ -1,3 +1,4 @@
+
 <?php 
 class Order extends MY_Controller
 {
@@ -13,5 +14,6 @@ class Order extends MY_Controller
         $this->load->view('order',$data);
     }
 }
+
 
 ?>

@@ -40,12 +40,12 @@
 
                     <div class="col-md-7">
                         <div class="login-form">
-                           
+
                                 <h5>Billing details</h5>
 
                                 <div class="form-row">
                                     <div class="form-group col-sm-12">
-                                        <label for="firstname">Full Name *</label> 
+                                        <label for="firstname">Full Name *</label>
                                         <input type="text" class="form-control" id="name" name="name" value="<?php echo set_value('name'); ?>">
                                         <small style="color:red"><?php echo form_error('name'); ?></small>
                                     </div>
@@ -105,7 +105,7 @@
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="showPw">show</span>
                                             </div>
-                                            
+
                                         </div>
                                         <small style="color:red"><?php echo form_error('password'); ?></small>
                                     </div>
@@ -138,7 +138,7 @@
                                             <input type="text" class="form-control" id="city" placeholder="1234 Main St" name="dcity">
                                         </div>
                                         </div>
-                                           
+
                                         <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="city">Mobile *</label>
@@ -155,8 +155,8 @@
                                         </div>
                                     </div>
 
-                                    
-                                    
+
+
 
                                     <div class="form-group">
                                         <label for="postcode">Postcode / ZIP *</label>
@@ -168,7 +168,7 @@
                                     <label for="exampleFormControlTextarea1">Order notes (optional)</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Notes about your order, e.g. special notes for delivery." name="dnotes"></textarea>
                                 </div>
-                            
+
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -184,7 +184,7 @@
 
                                 <tbody>
                                 <?php if($proinfo): foreach($proinfo as $ds): ?>
-                                       
+
                                        <?php $result= $Ci->findcartvalue($ds['proid'],$ds['id'])?>
                                        <?php if($result): foreach($result as $rs): ?>
                                     <tr>
