@@ -750,7 +750,7 @@ header {
     border: 2px solid red;
 }
 
-.size-choose div, .qty-choose div {
+.size-choose div, .qty-choose a {
     display: flex;
     height: 40px;
     align-items: center;
