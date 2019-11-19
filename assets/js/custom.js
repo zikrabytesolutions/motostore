@@ -351,3 +351,31 @@ $('.search-ico').on('click', function() {
 	$(".fa-search").toggleClass('fa-close');
 	$(".search-bar").fadeToggle(200);
 });
+
+  
+
+var min = "<?= $min; ?>";
+var max = "<?= $max; ?>";
+$( function() {
+$("#slider-range" ).slider({
+	range: true,
+	min: 0,
+	max: 5000,
+	values: [min , max ],
+	step: 100,
+	slide: function( event, ui ) 
+	{
+		$( "#min" ).val(  ui.values[ 0 ]);
+		$( "#max" ).val( ui.values[ 1 ] );
+	   
+	}
+	
+});
+$( "#min" ).val(min);
+$( "#max" ).val(max);
+
+} );
+
+$(document).ready(function(){
+$('[data-toggle="tooltip"]').tooltip();   
+});

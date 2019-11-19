@@ -1,6 +1,6 @@
 
 <?php 
-class Order extends MY_Controller
+class Order extends CI_Controller
 {
     function __construct() 
 	{
