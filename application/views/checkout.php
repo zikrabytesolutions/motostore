@@ -30,7 +30,7 @@
     <div class="checkout">
     <?php include('header.php');?>
 
-        <section class="checkout-body">
+        <section class="checkout-body py-5">
             <div class="container">
             <?php echo form_open('payment/inititate');?>
                 <div class="row">

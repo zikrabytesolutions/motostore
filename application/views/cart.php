@@ -30,7 +30,8 @@
 <?php $Ci = &get_instance(); ?>
     <div class="cart-page">
         <?php include('header.php');?>
-        <div class="container cart-body">
+        <div class="cart-body py-5">
+        <div class="container">
             <h5 class="title-border">Shopping Cart</h5>
             <div class="row mt-50 mb-35">
                 <main class="col-md-8 mb-3">
@@ -191,6 +192,7 @@
                 </aside>
 
             </div>
+        </div>            
         </div>
     </div>
     <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
