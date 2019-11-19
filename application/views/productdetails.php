@@ -27,73 +27,7 @@
     <?php $CI = &get_instance(); ?>
     <div class="products-page">
 
-        <!-- header start -->
-        <header>
-            <div class="container">
-                <div class="row d-none d-md-block d-lg-block ">
-                    <div class="mid-logo-block">
-                        <!-- Brand -->
-                        <a class="mid-logo" href="<?= base_url('') ?>"><img class="mx-auto d-block"
-                                src="<?= base_url('assets/images/page-logo.jpg') ?>"></a>
-                    </div>
-
-                </div>
-            </div>
-            <nav class="navbar navbar-expand-md">
-                <div class="container">
-                    <!-- Brand -->
-                    <a class="navbar-brand d-block d-md-none d-lg-none" href="#"><img
-                            src="<?= base_url('assets/images/page-logo.jpg') ?>"></a>
-                    <ul class="nav dsk-hide">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                    <!-- Toggler/collapsibe Button -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-menu">
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <!-- Navbar links -->
-                    <div class="collapse navbar-collapse justify-content-center" id="navigation-menu">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Riding Gears </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Accessories </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Brands </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Blog </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Design </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <ul class="nav mb-hide">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-        </header>
+    <?php include('header.php');?>
         <br>
         <div class="container product-single">
             <section class="product-header">
@@ -140,25 +74,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-8">
                         <section class="product-details">
                             <h3><?= $pd->product; ?></h3>
-
-                            <div class="product-price">
-                                <span class="slash">&#x20A8;: <?= $pd->offer_price?></span> <span> <del>
-                                        <?= $pd->regular_price?></del> </span>
+                            <p>Product Code : <?= $pd->productcode; ?></p>
+                            <div class="product-price"><b>
+                                <span class="slash" style="font-size:20px">&#x20A8;: <?= $pd->offer_price?></span> <span> <del>
+                                        <?= $pd->regular_price?></del> </span></b>
                             </div>
                             <div class="product-overview">
                                 <p>Availability: <b><span><?php if($pd->stockstatus=='0'){echo ' <span style="color:red"> Out Of Stock';}
 							else{echo '<span style="color:green">In Stock';}?></span></b></p>
                                 <hr />
                                 <p style="text-align:justify"></p>
-                                <ul class="product-overview-list">
-                                    <li><i class="fa fa-check" aria-hidden="true"></i>Satisfaction 100% Guaranteed</li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i>Free Shipping on Orders Above $100
-                                    </li>
-                                    <li><i class="fa fa-check" aria-hidden="true"></i>14 Day Easy Return</li>
-                                </ul>
+                                <section class="product-desc mt-5">
+                                    <h4 class="title-border">Description</h4>
+                                    <p class="desc-content"><?= $pd->description?></p>
+                                </section>
                                 <hr />
 
 
@@ -279,9 +211,7 @@
                                             <span class="add-to-cart"><i class="icon-cart"></i>Buy Now</span>
                                         </button>
                                     </div>
-                                    <div href="#">
-                                        <span class="icon-like"></span>
-                                    </div>
+                                   
                                     <div href="">
                                         <span class="icon-share-bold"></span>
                                     </div>
@@ -290,18 +220,11 @@
                             </div>
                         </section>
                     </div>
-                    <div class="col-md-3">
-                        <div class="img-right">
-                            <img src="<?=base_url('assets/images/item/img-right.png')?>">
-                        </div>
-                    </div>
+                   
                 </div>
                 <?php endforeach; endif;?>
             </section>
-            <section class="product-desc mt-5">
-                <h4 class="title-border">Description</h4>
-                <p class="desc-content"><?= $pd->description?></p>
-            </section>
+           
 
             <section class="product-reviews mt-5">
                 <h4 class="title-border">Reviews</h4>
@@ -440,21 +363,5 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
 
-    <script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
-    <script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js') ?>"></script>
-
-
-    <!-- slick -->
-    <script type="text/javascript" src="<?= base_url('assets/slick/slick.min.js') ?>"></script>
-    <!-- slick -->
-    <script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>
-    <script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
-    <script type="text/javascript" src="<?= base_url('assets/js/custom.js') ?>"></script>
-
-</body>
-
-</html>
+<?php include('footer.php');?>

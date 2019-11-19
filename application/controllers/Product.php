@@ -23,7 +23,7 @@ class Product extends CI_Controller
             $max= base64_decode(strtr($max, '-_', '+/'));
             $brands= base64_decode(strtr($brands, '-_', '+/'));
             $atributes= base64_decode(strtr($atributes, '-_', '+/'));
-            $data['brand']= $this->productModel->brandlist();
+            $data['subcategory']= $this->productModel->subcategory($catid);
             $brands= json_decode($brands);
             $atributes= json_decode($atributes);
            
@@ -43,14 +43,15 @@ class Product extends CI_Controller
         }
         else
         {    $data['sbrand']=$brands;$data['min']='100'; $data['max']='4000'; $data['sattribute']=$atributes;
-            $data['brand']= $this->productModel->brandlist();
+            $data['subcategory']= $this->productModel->subcategory($catid);
             $data['productlist']= $this->productModel->getallproductreleted($catid);
             if($data)
             {
                 // echo "<pre>";
+               
                 //   print_r($data);
                 // echo "</pre>";
-                $this->load->view('product',$data);
+                 $this->load->view('product',$data);
             }
             else
             {
@@ -67,10 +68,10 @@ class Product extends CI_Controller
          $catid= $this->input->post('catid');
          $min= $this->input->post('min');
          $max= $this->input->post('max');
-         $brand= $this->productModel->brandlist();
+         $brand= $this->productModel->subcategorylist();
         foreach($brand as $brd)
         {
-            $strippeds = str_replace(' ', '', $brd->brand);
+            $strippeds = str_replace(' ', '', $brd->sub_category_name);
              $branddata=$this->input->post($strippeds);
             if($branddata>0)
             {

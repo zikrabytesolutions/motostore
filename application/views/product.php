@@ -28,70 +28,7 @@
     <div class="products-page">
 
         <!-- header start -->
-        <header>
-            <div class="container">
-                <div class="row d-none d-md-block d-lg-block ">
-                    <div class="mid-logo-block">
-                        <!-- Brand -->
-                        <a class="mid-logo" href="<?= base_url('') ?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/page-logo.jpg') ?>"></a>
-                    </div>
-
-                </div>
-            </div>
-            <nav class="navbar navbar-expand-md">
-                <div class="container">
-                    <!-- Brand -->
-                    <a class="navbar-brand d-block d-md-none d-lg-none" href="#"><img src="<?= base_url('assets/images/page-logo.jpg') ?>"></a>
-                    <ul class="nav dsk-hide">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                    <!-- Toggler/collapsibe Button -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-menu">
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <!-- Navbar links -->
-                    <div class="collapse navbar-collapse justify-content-center" id="navigation-menu">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Riding Gears </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Accessories </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Brands </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Blog </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Design </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <ul class="nav mb-hide">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-        </header>
+        <?php include('header.php');?>
         <!-- <section class="products-header">
             <h1>Riding Gears</h1>
         </section> -->
@@ -126,12 +63,12 @@
                             
                  
                             <div class="filter-manufacturer">
-                                <p class="filter-title">Manufacturer</p>
+                                <p class="filter-title">Subcategory</p>
                                 <div class="manufacturer-list">
                                     <div class="manufacturer-check">
                                         
-                                        <?php if($brand): foreach($brand as $brd):?>
-                                            <?php $stripped = str_replace(' ', '', $brd->brand);?>
+                                        <?php if($subcategory): foreach($subcategory as $brd):?>
+                                            <?php $stripped = str_replace(' ', '', $brd->sub_category_name);?>
                                             <label>
                                             <input type="checkbox" name="<?=$stripped?>" value="<?= $brd->id?>"
                                              <?php if($sbrand){
@@ -142,7 +79,7 @@
                                              }
                                              
                                              ?>><div><i class="fa fa-check"></i></div>
-                                              <?= $brd->brand?></label><br>
+                                              <?= $brd->sub_category_name?></label><br>
                                         <?php endforeach; endif?>
                                     </div>
                                     
@@ -219,7 +156,7 @@
                                                            $pid=  strtr(base64_encode($pid), '+/', '-_');
                                                            
                                                          ?>
-                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $plist->product?>"><?= $stringCut = substr($plist->product, 0, 29); ?>..
+                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $plist->product?>" target="_blank"><?= $stringCut = substr($plist->product, 0, 29); ?>..
                                                     </h6>
                                                 </div>
                                                 <div class="item-img">
@@ -327,13 +264,12 @@
 	} );
 </script>
 
+
+
+<?php include('footer.php');?>
+
 <script>
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
 });
 </script>
-
-<script type="text/javascript" src="<?= base_url('assets/js/custom.js') ?>"></script>
-</body>
-
-</html>

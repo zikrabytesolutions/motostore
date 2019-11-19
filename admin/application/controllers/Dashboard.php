@@ -9,6 +9,7 @@ class Dashboard extends MY_Controller
 
     function index()
     {
+        $data['recentorder']= $this->dashboardModel->recentorder();
         $data['productcount']= $this->dashboardModel->countproduct();
         $data['stock']= $this->dashboardModel->outofstock();
         $data['alluser']= $this->dashboardModel->alluser();

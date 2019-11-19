@@ -123,62 +123,35 @@
                 <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
+                    <th>#</th>
+                        <th>Order Id</th>
                         <th>Name</th>
                         <th>Phone</th>
-                        <th>Street Address</th>
-                        <th>City</th>
-                        <th>Country</th>
+                        <th>Iteam</th>
+                        <th>Grand</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
+                    <?php $i=0; if($recentorder): foreach($recentorder as $rst): $i++?>
                     <tr>
-                        <td>Abraham</td>
-                        <td>076 9477 4896</td>
-                        <td>294-318 Duis Ave</td>
-                        <td>Vosselaar</td>
-                        <td>Belgium</td>
+                    <td><?= $i;?></td>
+                        <td><?= $rst->orderdid?></td>
+                        <td><?= $rst->name?></td>
+                        <td><?= $rst->mobile?></td>
+                        <td><?= $rst->iteam?></td>
+                        <td><?= $rst->grand?></td>
+                        <td><span class="label label-warning">Pending</span></td>
+                        <td><a href="#" class="btn btn-primary btn-xs">  Set</a></td>
                     </tr>
-                    <tr>
-                        <td>Phelan</td>
-                        <td>0500 034548</td>
-                        <td>680-1097 Mi Rd.</td>
-                        <td>Lavoir</td>
-                        <td>Pakistan</td>
-                    </tr>
-                    <tr>
-                        <td>Raya</td>
-                        <td>(01315) 27698</td>
-                        <td>Ap #289-8161 In Avenue</td>
-                        <td>Santomenna</td>
-                        <td>Burkina Faso</td>
-                    </tr>
-                    <tr>
-                        <td>Azalia</td>
-                        <td>0500 854198</td>
-                        <td>226-4861 Augue. St.</td>
-                        <td>Newtown</td>
-                        <td>Christmas Island</td>
-                    </tr>
-                    <tr>
-                        <td>Garth</td>
-                        <td>(01662) 59083</td>
-                        <td>3219 Elit Avenue</td>
-                        <td>Ternitz</td>
-                        <td>Saint Martin</td>
-                    </tr>
-                    <tr>
-                        <td>Selma</td>
-                        <td>0877 118 6905</td>
-                        <td>P.O. Box 410, 7331 Nec, St.</td>
-                        <td>Glenrothes</td>
-                        <td>Korea, North</td>
-                    </tr>
+                    <?php endforeach; endif;?>
                     </tbody>
                 </table>
                 </div>
             </div>
             <div class="panel-footer">
-                This is standard panel footer
+            Total Recent Order :   <?= $i ?>
             </div>
         </div>
     </div>

@@ -16,14 +16,11 @@ class Home extends CI_Controller
 	
 	public function index()
 	{
-		
 		$data['category']= $this->homeModel->findallcategory();
 		
 	// echo "<pre>";
     //       print_r($data);
 	// echo "</pre>";
-		
-		
 		 $this->load->view('home',$data);
 	}
 }

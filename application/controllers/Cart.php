@@ -38,7 +38,7 @@ class Cart extends CI_Controller
     }
 
     function findcartvalue( $proid, $detailsid )
- {
+     {
 
         return $this->cartModel->showtempcartvalue( $proid, $detailsid );
     }
@@ -59,9 +59,9 @@ class Cart extends CI_Controller
     }
 
     function findattributecart( $data )
- {
+     {
         return $this->cartModel->attributefind( $data );
-    }
+     }
 
     function addcart( $rowid, $qty )
  {

@@ -34,10 +34,22 @@ class ProductModel extends CI_Model
         return $result= $query->result();  
     }
 
-    function brandlist()
+    function subcategory($catid)
+    {
+        $catid= base64_decode(strtr($catid, '-_', '+/'));
+        $catid= base64_decode(strtr($catid, '-_', '+/'));
+       
+        $this->db->select('*');
+        $this->db->from('sub_category');
+        $this->db->where('cat_id',$catid);
+        $query= $this->db->get();
+        return $result= $query->result();
+    }
+
+    function subcategorylist()
     {
         $this->db->select('*');
-        $this->db->from('brand');
+        $this->db->from('sub_category');
         $query= $this->db->get();
         return $result= $query->result();
     }
@@ -58,7 +70,7 @@ class ProductModel extends CI_Model
             {
                 if($brnd)
                 {
-                    $this->db->or_where('product.brand_id', $brnd); 
+                    $this->db->or_where('product.subcat_id', $brnd); 
                 } 
             }
             $this->db->group_end();

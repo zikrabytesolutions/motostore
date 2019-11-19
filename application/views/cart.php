@@ -29,69 +29,7 @@
 <body>
 <?php $Ci = &get_instance(); ?>
     <div class="cart-page">
-        <header>
-            <div class="container">
-                <div class="row d-none d-md-block d-lg-block ">
-                    <div class="mid-logo-block">
-                        <!-- Brand -->
-                        <a class="mid-logo" href="<?= base_url('') ?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/page-logo.jpg') ?>"></a>
-                    </div>
-
-                </div>
-            </div>
-            <nav class="navbar navbar-expand-md">
-                <div class="container">
-                    <!-- Brand -->
-                    <a class="navbar-brand d-block d-md-none d-lg-none" href="#"><img src="<?= base_url('assets/images/page-logo.jpg') ?>"></a>
-                    <ul class="nav dsk-hide">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                    <!-- Toggler/collapsibe Button -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-menu">
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <!-- Navbar links -->
-                    <div class="collapse navbar-collapse justify-content-center" id="navigation-menu">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Riding Gears </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Accessories </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Brands </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Blog </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Design </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <ul class="nav mb-hide">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        <?php include('header.php');?>
         <div class="container cart-body">
             <h5 class="title-border">Shopping Cart</h5>
             <div class="row mt-50 mb-35">
@@ -223,7 +161,11 @@
                                 <tfoot>
                                     <tr>
                                         <td colspan="5" class="text-center">
+                                           <?php if(count($this->cart->contents())>0):?>
                                             <a class="add-to-cart btn-default btn-sm" href="<?= base_url('checkout')?>">proceed to checkout</a>
+                                           <?php else : ?>
+                                            <a class="btn-default btn-sm" href="#" style="background-color: #a09c9c">proceed to checkout</a>
+                                           <?php endif?>
                                         </td>
                                     </tr>
                                 </tfoot>
@@ -268,7 +210,4 @@
     <script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
 
     <script type="text/javascript" src="<?= base_url('assets/js/custom.js') ?>"></script>
-
-</body>
-
-</html>
+    <?php include('footer.php');?>
