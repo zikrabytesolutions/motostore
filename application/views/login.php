@@ -25,11 +25,12 @@
 
 <body>
     <?php $CI = &get_instance(); ?>
-    <div class="products-page">
+    <div class="login">
 
         <!-- header start -->
         <?php include('header.php');?>
-        <div class="col-md-6 offset-md-3">
+        <div class="login-page py-5">
+        	        <div class="col-md-6 offset-md-3">
 						<h4 class="title-border clr-black">Login</h4>
 						<div class="login-form">
 							
@@ -66,4 +67,6 @@
 						</div>
 					</div>
         </div>
+
+    </div>
 		<?php include('footer.php');?>

@@ -30,7 +30,7 @@
     <div class="checkout">
     <?php include('header.php');?>
 
-        <section class="checkout-body">
+        <section class="checkout-body py-5">
             <div class="container">
             <?php echo form_open('payment/inititate');?>
                 <div class="row">
@@ -46,7 +46,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-sm-12">
                                         <label for="firstname">Full Name *</label>
-                                        <input type="text" class="form-control" id="name" name="name" value="<?php echo set_value('name'); ?>">
+                                        <input type="text" class="form-control" id="name" name="name" value="<?php echo set_value('name'); ?>" onkeypress="return ((event.charCode >=97 &amp;&amp; event.charCode <=122) || (event.charCode >=65 &amp;&amp; event.charCode <=90) || (event.charCode >=0 &amp;&amp; event.charCode <=32) )" required="">
                                         <small style="color:red"><?php echo form_error('name'); ?></small>
                                     </div>
                                     <!-- <div class="form-group col-sm-6">
@@ -54,13 +54,13 @@
                                         <input type="text" class="form-control" id="lastname" name="lastname">
                                     </div> -->
                                 </div>
-                                <p>Country *</p>
+                                <p><b>Country *</b></p>
                                 <p>India</p>
                                 <div class="form-row align-items-end">
                                 <div class="form-group col-sm-12">
                                 <div class="form-group">
                                     <label for="city">Town / City *</label>
-                                    <input type="text" class="form-control" id="city" placeholder="1234 Main St" name="city" value="<?php echo set_value('city'); ?>">
+                                    <input type="text" class="form-control" id="city" name="city" value="<?php echo set_value('city'); ?>" onkeypress="return ((event.charCode >=97 &amp;&amp; event.charCode <=122) || (event.charCode >=65 &amp;&amp; event.charCode <=90) || (event.charCode >=0 &amp;&amp; event.charCode <=32) )" required="">
                                     <small style="color:red"><?php echo form_error('city'); ?></small>
                                 </div>
                                 </div>
@@ -77,17 +77,17 @@
 
                                 <div class="form-group">
                                     <label for="postcode">Postcode / ZIP *</label>
-                                    <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode" value="<?php echo set_value('postcode'); ?>">
+                                    <input type="text" class="form-control" id="postcode" name="postcode" value="<?php echo set_value('postcode'); ?>" maxlength="6" onchange="try{setCustomValidity('')}catch(e){}" onkeypress="return ((event.charCode >=48 &amp;&amp; event.charCode <=57) || (event.charCode >=0 &amp;&amp; event.charCode <=31) )" required="">
                                     <small style="color:red"><?php echo form_error('postcode'); ?></small>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Phone Number *</label>
-                                    <input type="tel" class="form-control" id="phone" name="mobile" value="<?php echo set_value('mobile'); ?>">
+                                    <input type="tel" class="form-control" id="phone" name="mobile" value="<?php echo set_value('mobile'); ?>" maxlength="10" pattern="[6789][0-9]{9}" oninvalid="setCustomValidity('Number should start from 9/8/7/6')" onchange="try{setCustomValidity('')}catch(e){}" onkeypress="return ((event.charCode >=48 &amp;&amp; event.charCode <=57) || (event.charCode >=0 &amp;&amp; event.charCode <=31) )" required="">
                                     <small style="color:red"><?php echo form_error('mobile'); ?></small>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email address *</label>
-                                    <input type="email" class="form-control" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" value="<?php echo set_value('email'); ?>">
+                                    <input type="email" class="form-control" id="email" name="email" value="<?php echo set_value('email'); ?>" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" required="">
                                     <small style="color:red"><?php echo form_error('email'); ?></small>
                                 </div>
                                 <div class="form-group">

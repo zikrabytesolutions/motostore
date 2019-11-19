@@ -25,12 +25,13 @@
 
 <body>
     <?php $CI = &get_instance(); ?>
-    <div class="products-page">
+    <div class="register">
 
     <?php include('header.php');?>
+    <div class="register-page py-5">
         <div class="col-md-6 offset-md-3">
 						<h4 class="title-border clr-black">Create an Account</h4>
-						<div class="login-form">
+						<div class="register-form">
 							
                             <?php echo form_open('signup/register',['id'=>'motostoreRegisterForm'])?>
 								<div class="form-group row">
@@ -96,6 +97,8 @@
 								<a href="#">Already have an Account? Login instead!</a>
 							</div>
 						</div>
-					</div>
+					</div>    	
+    </div>
+
         </div>
 		<?php include('footer.php');?>
