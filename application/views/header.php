@@ -75,10 +75,24 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                           <?php if(count($this->cart->contents())>0): ?>
+                            <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"> <?= count($this->cart->contents())?></i></a>
+                           <?php else: ?>
+                            <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                           <?php endif?>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-default log-reg_butt" href="#">Login / Register</a>
+                            <?php if($this->session->userdata('motoubid')):?>
+                            <?php $id= $this->session->userdata('motoubid');
+                                  $this->db->select('name');
+                                  $this->db->from('users');
+                                  $this->db->where('id',$id);
+                                  $name= $this->db->get()->row('name');
+                            ?>
+                            <a class="nav-link btn btn-default log-reg_butt" href="<?= base_url('login')?>"><?= $name?> <i class="fa fa-user" aria-hidden="true"></i></a>
+                            <?php else:?>
+                                <a class="nav-link btn btn-default log-reg_butt" href="<?= base_url('login')?>">Login / Register</a>
+                            <?php endif?>
                         </li>
                     </ul>
                 </div>

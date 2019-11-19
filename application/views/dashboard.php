@@ -29,70 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div class="accdetail">
 		<!-- header start -->
-		<header>
-			<div class="container">
-				<div class="row d-none d-md-block d-lg-block ">
-					<div class="mid-logo-block">
-						<!-- Brand -->
-						<a class="mid-logo" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/page-logo.jpg')?>"></a>	
-					</div>
-					
-				</div>
-			</div>
-			<nav class="navbar navbar-expand-md">
-				<div class="container">
-					<!-- Brand -->
-					<a class="navbar-brand d-block d-md-none d-lg-none" href="#"><img src="<?= base_url('assets/images/page-logo.jpg')?>"></a>
-					<ul class="nav dsk-hide">
-						<li class="nav-item">
-							<a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-						</li>
-					</ul>
-					<!-- Toggler/collapsibe Button -->
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-menu">
-						<span class="navbar-toggler-icon"></span>
-						<span class="navbar-toggler-icon"></span>
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<!-- Navbar links -->
-					<div class="collapse navbar-collapse justify-content-center" id="navigation-menu">
-						<ul class="navbar-nav">
-							<li class="nav-item">
-								<a class="nav-link" href="#">Riding Gears </a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Accessories </a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Brands </a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Blog </a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Design </a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Contact </a>
-							</li>
-						</ul>
-						
-					</div>
-					<ul class="nav mb-hide">
-						<li class="nav-item">
-							<a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			
-		</header>
+		<?php include('header.php');?>
 		<!-- header end -->
 
 	<!-- details section start -->
@@ -100,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	 <div class="container-fluid products-body">
             <div class="row mt-50 mb-35 mr-2 ml-2">
                 <aside class="col-md-3">
-                    <?php include "detail_sidebar.php";?>
+                    <?php include ('detail_sidebar.php');?>
                 </aside>
                 <main class="col-md-9">
                    <section class="frmsec">

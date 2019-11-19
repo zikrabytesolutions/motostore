@@ -25,70 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div class="accdetail">
 		<!-- header start -->
-		<header>
-			<div class="container">
-				<div class="row d-none d-md-block d-lg-block ">
-					<div class="mid-logo-block">
-						<!-- Brand -->
-						<a class="mid-logo" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/page-logo.jpg')?>"></a>	
-					</div>
-					
-				</div>
-			</div>
-			<nav class="navbar navbar-expand-md">
-				<div class="container">
-					<!-- Brand -->
-					<a class="navbar-brand d-block d-md-none d-lg-none" href="#"><img src="<?= base_url('assets/images/page-logo.jpg')?>"></a>
-					<ul class="nav dsk-hide">
-						<li class="nav-item">
-							<a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-						</li>
-					</ul>
-					<!-- Toggler/collapsibe Button -->
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-menu">
-						<span class="navbar-toggler-icon"></span>
-						<span class="navbar-toggler-icon"></span>
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<!-- Navbar links -->
-					<div class="collapse navbar-collapse justify-content-center" id="navigation-menu">
-						<ul class="navbar-nav">
-							<li class="nav-item">
-								<a class="nav-link" href="#">Riding Gears </a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Accessories </a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Brands </a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Blog </a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Design </a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Contact </a>
-							</li>
-						</ul>
-						
-					</div>
-					<ul class="nav mb-hide">
-						<li class="nav-item">
-							<a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			
-		</header>
+		<?php include('header.php');?>
 		<!-- header end -->
 
 	<!-- Account details section start -->
@@ -100,35 +37,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </aside>
                 <main class="col-md-9">
                    <section class="frmsec">
+				   <?php if($profile): foreach ($profile as $pro):?>
                    		<div class="account-form">
+						   <?php echo form_open('account/updateaccount')?>
                             <form id="accountForm" action="#" method="post" data-url="">
                                 <h5>Account Details</h5>
 
                                 <div class="form-row">
-                                    <div class="form-group col-sm-6">
-                                        <label for="firstname">First name *</label>
-                                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name">
+                                    <div class="form-group col-sm-12">
+                                        <label for="firstname">Full Name *</label>
+                                        <input type="text" class="form-control" value="<?= $pro->name?>" name="name" placeholder="First name">
                                     </div>
-                                    <div class="form-group col-sm-6">
-                                        <label for="lastname">Last name *</label>
-                                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name">
-                                    </div>
+                                  <input type="hidden" name="userid" value="<?= $pro->id?>">
                                 </div>
                                 <div class="form-row align-items-end">
                                     <div class="form-group col-sm-12">
-                                        <label for="streetaddress">Display name *</label>
-                                        <input type="text" class="form-control" id="displayname" name="streetaddress" placeholder="Display name">
+                                        <label for="streetaddress">Phone *</label>
+                                        <input type="text" class="form-control" value="<?= $pro->mobile?>" name="mobile" placeholder="Display name">
                                     </div>
                                 </div>
                                 <p>This will be how your name will be displayed in the account section and in reviews</p>
                                 <div class="form-group">
                                     <label for="email">Email address *</label>
-                                    <input type="email" class="form-control" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" placeholder="Email Address">
+                                    <input type="email" class="form-control" value="<?= $pro->email?>" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" placeholder="Email Address">
                                 </div>
                                 <h6>Password Change</h6>
                                 <div class="form-group">
                                     <label for="pwd">Current password (leave blank to leave unchanged)</label>
-                                    <input type="text" class="form-control" id="pwd" name="pwd">
+                                    <input type="text" class="form-control" id="pwd" name="password">
                                 </div>
                                 <div class="form-group">
                                     <label for="cpwd">New password (leave blank to leave unchanged)</label>
@@ -142,6 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       
                             </form>
                         </div>
+				   <?php endforeach; endif;?>
                    </section>
                 </main>
             </div>

@@ -22,6 +22,7 @@ class DashboardModel extends CI_Model
         $this->db->from('product_order_iteam');
         $this->db->join('users','users.id=product_order_iteam.userid');
         $this->db->join('product_order','product_order.orderid=product_order_iteam.orderdid');
+        $this->db->order_by('product_order_iteam.id','DESC');
         $this->db->group_by('product_order_iteam.orderdid');
         $query=$this->db->get();
         return $query->result();

@@ -13,6 +13,40 @@ class UserModel extends CI_Model
        $query=$this->db->get();
        return $query->result();
     }
+
+    function profiledetails()
+    {
+        $id= $this->session->userdata('motoubid');
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('id',$id);
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+    function deliveryaddress()
+    {
+        $id= $this->session->userdata('motoubid');
+        $this->db->select('*');
+        $this->db->from('deliveryaddress');
+        $this->db->where('userid',$id);
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+    function updateaccoutn($data,$id)
+    {
+        return $this->db->where('id',$id)->UPDATE('users',$data);
+    }
+
+    function checkpassword($userid,$password)
+    {
+        $this->db->select('password');
+        $this->db->from('users');
+        $this->db->where(['id'=>$userid,'password'=>$password]);
+        return  $this->db->get()->row('name');
+       
+    }
 }
 
 ?>

@@ -61,7 +61,7 @@
 							</form>
 							<hr/>
 							<div class="text-center">
-								<a href="#">Already have an Account? Login instead!</a>
+								<a href="<?= base_url('signup')?>">Already have an Account? Login instead!</a>
 							</div>
 						</div>
 					</div>

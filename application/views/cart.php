@@ -97,19 +97,19 @@
                                                 <div class="product-qty">
                                                     <div class="qty-choose flex-container">
                                                         <?php if($ds['qty']==1):?>
-                                                       <a class="product-quantity-subtract" href="<?= base_url('cart/mincart/'.$ds['rowid'].'/'.$ds['qty'])?>" style="pointer-events: none;
+                                                       <a class="product-quantity" href="<?= base_url('cart/mincart/'.$ds['rowid'].'/'.$ds['qty'])?>" style="pointer-events: none;
                                                                cursor: default;">
                                                             <i class="fa fa-minus" aria-hidden="true"></i>
                                                         </a>
                                                     <?php else: ?>
-                                                    <a class="product-quantity-subtract" href="<?= base_url('cart/mincart/'.$ds['rowid'].'/'.$ds['qty'])?>">
+                                                    <a class="product-quantity" href="<?= base_url('cart/mincart/'.$ds['rowid'].'/'.$ds['qty'])?>">
                                                             <i class="fa fa-minus" aria-hidden="true"></i>
                                                         </a>
                                                     <?php endif?>
                                                         <div>
                                                             <input type="text" id="product-quantity-input" value="<?= $ds['qty']?>" readonly/>
                                                         </div>
-                                                        <a class="product-quantity-add" href="<?= base_url('cart/addcart/'.$ds['rowid'].'/'.$ds['qty'])?>">
+                                                        <a class="product-quantity" href="<?= base_url('cart/addcart/'.$ds['rowid'].'/'.$ds['qty'])?>">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </a>
                                                     </div>

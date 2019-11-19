@@ -11,7 +11,13 @@ class Login extends CI_Controller
 
     function index()
     {
-        $this->load->view( 'login' );
+        if($this->session->userdata('motoubid'))
+        {
+            return redirect('dashboard');
+        }else{
+            $this->load->view( 'login' );
+        }
+        
      }
 
     function auth()
@@ -96,7 +102,15 @@ class Login extends CI_Controller
 		   {
 			   return true;
 		   }
-	   }
+       }
+       
+
+       function logout()
+       {
+        $this->session->unset_userdata(motoubid);
+        $this->session->sess_destroy();
+        return redirect('home');
+       }
 }
 
 ?>

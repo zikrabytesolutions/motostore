@@ -30,7 +30,7 @@
                     <div class="panel-body text-center">
                     <h1 class="m-xs"><b>0</b></h1>
                     <h3 class="font-extra-bold no-margins text-success">
-                            Month's Order
+                            Monthly Order
                         </h3>
                     </div>
                     <div class="panel-footer">
@@ -85,7 +85,7 @@
                     <div class="panel-body text-center">
                     <h1 class="m-xs"><b>0</b></h1>
                     <h3 class="font-extra-bold no-margins text-success">
-                            Month's Order
+                    Monthly Order
                         </h3>
                     </div>
                     <div class="panel-footer">

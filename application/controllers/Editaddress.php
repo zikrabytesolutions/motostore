@@ -1,8 +1,17 @@
 <?php
-class Editaddress Extends CI_Controller{
+class Editaddress Extends MY_Controller
+{
 
-	function index(){
-		$this->load->view('edit-address');
+	function __construct() 
+	{
+		   parent::__construct();
+		   $this->load->model( 'userModel' );
+	}
+
+	function index()
+	{
+		$data['address']= $this->userModel->deliveryaddress();
+		$this->load->view('edit-address',$data);
 	}
 }
 

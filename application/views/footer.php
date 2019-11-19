@@ -38,7 +38,7 @@
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
-					<h6 class="txt-h-up">motosotre social</h6>
+					<h6 class="txt-h-up">motostore social</h6>
 					<ul class="social-block">
 						<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 						<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
