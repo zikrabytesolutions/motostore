@@ -26,23 +26,28 @@
                        <?php 
                        $this->db->select('*');
                        $this->db->from('category');
+                       $this->db->limit('6');
                        $query= $this->db->get();
                        $menucat= $query->result();
+                       if( $menucat): foreach($menucat as $menue):
+                       
+                        $this->db->select('*');
+                        $this->db->from('sub_category');
+                        $this->db->where('cat_id',$menue->id);
+                        $query= $this->db->get();
+                        $submenue= $query->result();
+                       
+                        ?>  
                         
-                       ?>    
                           <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown link <i class="fa fa-angle-down"></i></a>
+                            <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $menue->cat_name?><i class="fa fa-angle-down"></i></a>
                             <div class="dropdown-menu customMenuDrpdwn" aria-labelledby="navbarDropdownMenuLink">
                                 <div class="submenu-item">
                                     <div class="header-megamenu">Type</div>
-                                    <ul>
-                                            <li><a class="submenu-link" href="#">Our Staff</a></li>
-                                            <li><a class="submenu-link" href="#"> Services</a></li>
-                                            <li><a class="submenu-link" href="#">Full-Width Page</a></li>
-                                            <li><a class="submenu-link" href="#">Page Left Sidebar</a></li>
-                                            <li><a class="submenu-link" href="#">Page Right Sidebar</a></li>
-                                            <li><a class="submenu-link" href="#">Double Sidebars</a></li>
-                                            <li><a class="submenu-link" href="#">Faq Page</a></li>
+                                    <ul> 
+                                          <?php  if( $submenue): foreach($submenue as $sbm):?>
+                                            <li><a class="submenu-link" href="#"><?= $sbm->sub_category_name?></a></li>
+                                            <?php endforeach; endif?>
                                         </ul>
                                   
                                 </div>
@@ -58,6 +63,7 @@
                                 </div> -->
                             </div>
                           </li>
+                       <?php endforeach; endif?>
                         </ul>
                         
                     </div>

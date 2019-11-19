@@ -226,8 +226,6 @@
     </div>
 
     <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
-
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- slick -->
@@ -266,7 +264,7 @@
 
 
 
-<?php include('footer.php');?>
+
 
 <script>
 $(document).ready(function(){
