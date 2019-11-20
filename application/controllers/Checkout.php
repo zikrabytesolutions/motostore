@@ -12,16 +12,37 @@ class Checkout extends CI_Controller
 
     function index()
     {
+       if($this->session->userdata('motoubid'))
+       {
+         $id= $this->session->userdata('motoubid');
+         $iteam= $this->cartModel->carrowcpont($id);
+         if($iteam>0)
+         {
+              $data['proinfo'] = $this->cartModel->cartdata($id); //cartiteam
+              $data['cartdata'] = $this->cartModel->carttotal($id); // cart data
+              $data['delivery'] = $this->cartModel->deliveryaddress($id); // delivery address
+             $this->load->view('logincheckout',$data);
+            
+         }
+         else
+         {
+            return redirect('cart');
+         }
+         
+       }
+       else
+       {
          if(count($this->cart->contents())>0)
          {
             $data['proinfo'] = $this->cart->contents();
             $this->load->view('checkout',$data);
          }
-         else{
+         else
+         {
              return redirect('cart');
          }
-        
     }
+   }
 
 
     function findcartvalue( $proid, $detailsid )

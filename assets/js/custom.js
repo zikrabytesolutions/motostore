@@ -339,9 +339,9 @@ $('.pay-book-carousel').owlCarousel({
 			}
 		})
 
-$('.checkout').find("input[type=checkbox][value=shipDiffAdd]").on('change', function() {
-	$("#shipToDiffAdd").fadeToggle(200);
-});
+		$('.checkout').find("input[type=checkbox][name=shipDiffAdd]").on('change', function() {
+			$("#shipToDiffAdd").fadeToggle(200);
+		});
 
 $('.checkout').find("input[type=checkbox][value=createAcc]").on('change', function() {
 	$("#addPw").fadeToggle(200);

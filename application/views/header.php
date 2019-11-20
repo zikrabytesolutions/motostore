@@ -75,10 +75,10 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                           <?php if(count($this->cart->contents())>0): ?>
-                            <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"> <?= count($this->cart->contents())?></i></a>
+                           <?php if(!$this->session->userdata('motoubid')): ?>
+                            <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"> </i> <small> <?= count($this->cart->contents())?></small></a>
                            <?php else: ?>
-                            <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"> </i> <small> <?= $this->db->where(['userid'=>$this->session->userdata('motoubid')])->from("product_cart_iteam")->count_all_results();?></small></a>
                            <?php endif?>
                         </li>
                         <li class="nav-item">

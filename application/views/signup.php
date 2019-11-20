@@ -45,7 +45,7 @@
 								<div class="form-group row">
 									<label for="phone" class="col-sm-4 col-form-label">Phone Number</label>
 									<div class="col-sm-8">	
-										<input type="tel" class="form-control" id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
+										<input type="number" class="form-control" id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
                                         <small style="color:red"><?php echo form_error('mobile'); ?></small> 
                                     </div>
 								</div>	

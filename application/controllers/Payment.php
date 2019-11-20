@@ -123,6 +123,50 @@ class Payment extends CI_Controller
      {
         return $this->cartModel->attributefind( $data );
      }
+
+     function orderplace()
+     {
+        date_default_timezone_set('Asia/Kolkata');
+        $now = date("Y-m-d H:i:s");
+        $id= $this->session->userdata('motoubid');
+        $orderid= date('ymdhi').''.$id;
+        $cart_iteam=  $this->orderModel->allcartdata($id);
+        if($cart_iteam)
+        {
+             foreach($cart_iteam as $crt)
+             {
+                $dataiteam = Array('orderdid'=> $orderid, 'userid'=>$id, 'productid'=>$crt->proid, 'variationid'=>$crt->id,
+                'quantity'=>$crt->qty, 'price'=>$crt->price, 'total'=>$crt->subtotal, 'created'=>$now );
+                $generate=$this->orderModel->insertorderiteam($dataiteam);
+             }
+             if($generate)
+             {
+                 $cart=$this->orderModel->cartsummery($id);
+                 if($cart)
+                 {
+                     foreach($cart as $ct)
+                     {
+                          $cartsummery= Array('orderid'=>$orderid,'userid'=>$id,'iteam'=>$ct->iteam,'grand'=>$ct->grandtotal,'created'=>$now);
+                          $datadone=$this->orderModel->insertorderd($cartsummery);
+                     }
+                     if($datadone)
+                     {
+                         $iteamdelete=$this->orderModel->deletecartiteam($id);
+                         $cartdelete=$this->orderModel->deletecart($id);
+
+                         if( $iteamdelete && $cartdelete)
+                         {
+                               return redirect('order');
+                         }
+                         else
+                         {
+                             echo "@$#^$&%*^#%@$#%^$";
+                         }
+                     }
+                 }
+           }
+   }
+}
 }
 
 ?>

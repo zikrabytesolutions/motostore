@@ -20,7 +20,7 @@ class CartModel extends CI_Model{
         $this->db->from('product_details as pd');
         $this->db->join('product','product.id=pd.pro_id');
         $this->db->where('pd.id',$detailsid);
-        $this->db->where('product.id',$proid);
+         $this->db->where('product.id',$proid);
         $query= $this->db->get();
         return $query->result();
     }
@@ -38,7 +38,21 @@ class CartModel extends CI_Model{
 
     function insertcartiteam($data)
     {
-      return $this->db->insert('product_cart_iteam',$data);
+       $vrtid=  $data['variationid'];
+       $id= $this->session->userdata('motoubid');
+        $this->db->select('*');
+        $this->db->from('product_cart_iteam');
+        $this->db->where(['userid'=>$id,'variationid'=>$vrtid]);
+        $query= $this->db->get();
+        $avl=  $query->result();
+        if($avl)
+        {
+            return true;
+        }
+        else{
+            return $this->db->insert('product_cart_iteam',$data);
+        } 
+     
     }
 
     function deletecartiteam($rowid)
@@ -70,6 +84,77 @@ class CartModel extends CI_Model{
             return $this->db->insert('product_cart',$cart);
         }
        
+    }
+
+    function cartdata($id)
+    {
+        $this->db->select('*');
+        $this->db->from('product_cart_iteam');
+        $this->db->where('userid',$id);
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+    function carttotal($id)
+    {
+        $this->db->select('*');
+        $this->db->from('product_cart');
+        $this->db->where('userid',$id);
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+    function cart_iteam($rowid)
+    {
+        $this->db->select('*');
+        $this->db->from('product_cart_iteam');
+        $this->db->where('rowid',$rowid);
+        $query= $this->db->get();
+        return $query->row_array();
+    }
+
+    function updatecart($data,$rowid)
+    {
+       return $result= $this->db->where('rowid',$rowid)->UPDATE('product_cart_iteam',$data);
+      
+    }
+
+    function cartdetails($userid)
+    {
+        $this->db->select('*');
+        $this->db->from('product_cart');
+        $this->db->where('userid',$userid);
+        $query= $this->db->get();
+        return $query->row_array();
+    }
+
+    function updatecartfinal($update,$userid)
+    {
+       return $this->db->where('userid',$userid)->UPDATE('product_cart',$update);
+    }
+
+    function deleteiteam($rowid)
+    {
+        return $this->db->where('rowid',$rowid)->DELETE('product_cart_iteam');
+    }
+
+    function deletecart($id)
+    {
+        return $this->db->where('userid',$id)->DELETE('product_cart');
+    }
+
+    function carrowcpont($id)
+    {
+        return $this->db->where(['userid'=>$id])->from("product_cart_iteam")->count_all_results();
+    }
+
+    function deliveryaddress($id)
+    {
+        $this->db->select('*');
+        $this->db->from('deliveryaddress');
+        $this->db->where('userid',$id);
+        $query= $this->db->get();
+        return $query->result();
     }
     
 }

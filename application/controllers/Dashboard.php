@@ -1,5 +1,5 @@
 <?php
-class Dashboard Extends CI_Controller{
+class Dashboard Extends MY_Controller{
 
 	function index(){
 		$this->load->view('dashboard');

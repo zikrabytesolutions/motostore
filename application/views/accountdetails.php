@@ -44,18 +44,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <h5>Account Details</h5>
 
                                 <div class="form-row">
-                                    <div class="form-group col-sm-12">
+                                    <div class="form-group col-sm-6">
                                         <label for="firstname">Full Name *</label>
                                         <input type="text" class="form-control" value="<?= $pro->name?>" name="name" placeholder="First name">
                                     </div>
-                                  <input type="hidden" name="userid" value="<?= $pro->id?>">
-                                </div>
-                                <div class="form-row align-items-end">
-                                    <div class="form-group col-sm-12">
+								  <input type="hidden" name="userid" value="<?= $pro->id?>">
+								  
+								  <div class="form-group col-sm-6">
                                         <label for="streetaddress">Phone *</label>
                                         <input type="text" class="form-control" value="<?= $pro->mobile?>" name="mobile" placeholder="Display name">
                                     </div>
                                 </div>
+                               
+                                    
+                                
                                 <p>This will be how your name will be displayed in the account section and in reviews</p>
                                 <div class="form-group">
                                     <label for="email">Email address *</label>

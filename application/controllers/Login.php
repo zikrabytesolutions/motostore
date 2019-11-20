@@ -90,15 +90,15 @@ class Login extends CI_Controller
 		  {
 			   $data = Array( 'rowid'=>$ds['rowid'], 'userid'=>$id, 'proid'=>$ds['proid'], 'variationid'=>$ds['id'],
 			   'qty'=>$ds['qty'], 'price'=>$ds['price'], 'subtotal'=>$ds['subtotal'], 'created'=>$now );
-   
+                
 			   $insert = $this->cartModel->insertcartiteam( $data );
 			   if ( $insert )
 				{
-				   $insert = $this->cartModel->deletecartiteam( $ds['rowid'] );
+				   $inserted = $this->cartModel->deletecartiteam( $ds['rowid'] );
 			   }
 		   }
    
-		   if ( $insert )
+		   if ($inserted)
 		   {
 			   return true;
 		   }
