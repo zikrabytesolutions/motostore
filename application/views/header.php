@@ -2,7 +2,7 @@
 			<nav class="navbar navbar-expand-md">
                 <div class="container-fluid">
                     <!-- Brand -->
-                    <a class="navbar-brand d-block" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/page-logo.jpg')?>"></a>
+                    <a class="navbar-brand d-block" href="<?= base_url('home')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/page-logo.jpg')?>"></a>
                     <ul class="nav dsk-hide">
                         <li class="nav-item search-nav">
 							<a class="nav-link search-ico" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
@@ -75,10 +75,17 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                           <?php if(!$this->session->userdata('motoubid')): ?>
+                           <?php if($this->session->userdata('motoubid')): ?>
+                            <?php $cart= $this->db->where(['userid'=>$this->session->userdata('motoubid')])->from("product_cart_iteam")->count_all_results();?>
+                            <?php if($cart>0):?>
+                            <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"> </i> <small> <?= $cart?>  </small></a> 
+                            <?php else:?>
+                                <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"> </i> </a> 
+                            <?php endif?>
+                           <?php elseif(count($this->cart->contents())>0): ?>
                             <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"> </i> <small> <?= count($this->cart->contents())?></small></a>
-                           <?php else: ?>
-                            <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"> </i> <small> <?= $this->db->where(['userid'=>$this->session->userdata('motoubid')])->from("product_cart_iteam")->count_all_results();?></small></a>
+                           <?php else:?>
+                            <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"> </i> </a>
                            <?php endif?>
                         </li>
                         <li class="nav-item">

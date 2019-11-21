@@ -41,7 +41,7 @@
                         <h5 class="title-border clr-black" style="margin-bottom:-5px">Billing Address</h5>
                         <div class="p-item">
                              <h5 style="text-align:center"> <?= $bill->name;?></h5> <hr>
-                             <p>Mobile : <?= $bill->mobile?>, <?= $bill->streetaddress?>, <?= $bill->streetaddress1?>, <?= $bill->city?>, <?= $bill->postcode?></p>
+                             <p>Mobile : <?= $bill->mobile?><br> <?= $bill->streetaddress?>, <?= $bill->streetaddress1?>, <?= $bill->city?>, <?= $bill->postcode?></p>
                         </div>
                    <?php endforeach; endif;?>
 

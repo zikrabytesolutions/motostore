@@ -180,16 +180,26 @@
 
                                     <div>
                                         <?php echo form_open('cart/cartadd')?>
+                                        <input type="hidden" name="url" value="<?= $this->uri->uri_string();?>">
                                         <input type="hidden" name="proid" value="<?= $proid ?>">
                                         <input type="hidden" name="prodetailsid" value="<?= $pdetailsid ?>">
                                         <button type="submit" class="btn btn-default bg-black">
-                                            <span class="add-to-cart"><i class="icon-cart"></i>add to cart</span>
+                                          <?php if($proinfo): foreach($proinfo as $crt):?>
+                                             <?php if($crt['id']==$pd->id):?>
+                                                <span class="add-to-cart"><i class="icon-cart"></i>Go to cart</span>
+                                             <?php else:?>
+                                                <span class="add-to-cart"><i class="icon-cart"></i>Add to cart</span>
+                                             <?php endif;?>
+                                          <?php endforeach; else:?>
+                                          <i class="add-to-cart"><i class="icon-cart"></i>Add to cart</i>
+                                             <?php endif;?>
                                         </button>
                                         <?php echo form_close()?>
                                     </div>
 
                                     <div>
                                     <?php echo form_open('cart/cartlist')?>
+                                       
                                         <input type="hidden" name="proid" value="<?= $proid ?>">
                                         <input type="hidden" name="prodetailsid" value="<?= $pdetailsid ?>">
                                      <button class="btn btn-success btn-default bg-red">

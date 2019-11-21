@@ -47,6 +47,17 @@ class UserModel extends CI_Model
         return  $this->db->get()->row('name');
        
     }
+
+
+    function myorderlist($orderdid)
+    {
+        $this->db->select('product.name');
+        $this->db->from('product_order_iteam as poi');
+        $this->db->join('product','product.id=poi.productid');
+        $this->db->where('poi.orderdid',$orderdid);
+        $query= $this->db->get();
+        return $query->result();
+    }
 }
 
 ?>

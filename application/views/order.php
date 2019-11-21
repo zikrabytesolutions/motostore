@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!-- header end -->
 
 	<!-- details section start -->
-
+	<?php $ci =& get_instance();?>
 	 <div class="container-fluid products-body">
             <div class="row mt-50 mb-35 mr-2 ml-2">
                 <aside class="col-md-3">
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    <section class="frmsec">
                    		<div class="account-form">
                             <h5>Details</h5>
-                            <table id="myTable" class="display">
+							<table class="table table-striped">
 							<thead>
 							        <tr>
 							            <th>Order</th>
@@ -51,21 +51,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							            <th>Status</th>
 							            <th>Total</th>
                                         <th>iteam</th>
-							            <th>Action</th>
+							            
 							        </tr>
 							    </thead>
 							    <tbody>
-								<?php if($recentorder): foreach($recentorder as $order):?>
+								<?php $i=0; if($recentorder): foreach($recentorder as $order): $i++;?>
 							        <tr>
 							            <td>#<?= $order->orderdid?></td>
 							            <td><?= date("d/m/Y", strtotime($order->created))?></td>
 							            <td>Pending</td>
 							            <td><?= $order->grand?></td>
                                         <td><?= $order->iteam?></td>
-							            <td>
-							            	<a class="btn-default bg-red tblbtn" href="#">View</a>
-							            </td>
+							            
 							        </tr>
+
                                    <?php endforeach; endif?>
 							    </tbody>
 							</table>

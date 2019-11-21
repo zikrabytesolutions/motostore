@@ -129,7 +129,8 @@ class Payment extends CI_Controller
         date_default_timezone_set('Asia/Kolkata');
         $now = date("Y-m-d H:i:s");
         $id= $this->session->userdata('motoubid');
-        $orderid= date('ymdhi').''.$id;
+        $last= $this->paymentModel->rowcounts();
+        $orderid= date('ymdhi').''.$last;
         $cart_iteam=  $this->orderModel->allcartdata($id);
         if($cart_iteam)
         {
@@ -156,7 +157,7 @@ class Payment extends CI_Controller
 
                          if( $iteamdelete && $cartdelete)
                          {
-                               return redirect('order');
+                               echo "Thank you page";
                          }
                          else
                          {

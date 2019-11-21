@@ -128,6 +128,7 @@ class Product extends CI_Controller
          $proid= base64_decode(strtr($proid, '-_', '+/'));
          $first= base64_decode(strtr($first, '-_', '+/'));
          $second= base64_decode(strtr($second, '-_', '+/'));
+         $data['proinfo'] = $this->cart->contents();
         if($first!='catblank')
         {
             if(!$first=='')

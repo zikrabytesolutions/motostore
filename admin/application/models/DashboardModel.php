@@ -28,6 +28,28 @@ class DashboardModel extends CI_Model
         return $query->result();
     }
 
+    function categorylist()
+    {
+        $this->db->select('*');
+        $this->db->from('category');
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+    function inserttiles($data)
+    {
+        return $this->db->insert('home_tiles',$data);
+    }
+
+
+    function tileslist()
+    {
+        $this->db->select('*');
+        $this->db->from('home_tiles');
+        $query= $this->db->get();
+        return $query->result();
+    }
+
     
 }
 

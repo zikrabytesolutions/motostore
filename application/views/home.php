@@ -87,18 +87,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<?php if($category):
 					foreach($category as $cat):
 
-						$cid= strtr(base64_encode($cat->cid), '+/', '-_');
+						$cid= strtr(base64_encode($cat->catid), '+/', '-_');
 						$cid=  strtr(base64_encode($cid), '+/', '-_');
 						$cid=  strtr(base64_encode($cid), '+/', '-_');
 					?>
 					<div class="product-item">
-						<a href="<?= base_url('product/lists/'.$cid.'/'.$cat->product)?>" style="background-image:url('<?= base_url('admin/assets/productimage/'.$cat->photo) ?>');">
+						<a href="<?= base_url('product/lists/'.$cid.'/'.$cat->tiles_name)?>" style="background-image:url('<?= base_url('admin/assets/productimage/'.$cat->image) ?>');">
 							<div class="item-info">
-								<span class="item-name"><?= $stringCut = substr($cat->product, 0, 30);?>...</span>
-								<span class="item-price">
-								<?php $price= $this->db->select('regular_price,offer_price')->from('product_details')->where('pro_id',$cat->id)->get()->row_array();?>
-								price: <del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b>
-								</span>
+								<span class="item-name"><?= $stringCut = substr($cat->tiles_name, 0, 30);?>...</span>
+								
 							</div>
 						</a>
 					</div>

@@ -13,7 +13,7 @@ class Login extends CI_Controller
     {
         if($this->session->userdata('motoubid'))
         {
-            return redirect('dashboard');
+            return redirect('order');
         }else{
             $this->load->view( 'login' );
         }

@@ -18,21 +18,21 @@ class Account Extends MY_Controller
 	{
 		$data= $this->input->post();
 
-		
+		print_r($data);
 		$userid= $this->input->post('userid');
-		$password= md5($this->input->post('userid'));
+		$password= md5($this->input->post('password'));
 		$avlaible= $this->userModel->checkpassword($userid,$password);
-		if($avlaible)
-		{
+		// if($avlaible)
+		// {
 			
-			if($data['cpwd']!=$data['npwd'])
-			{
-				return redirect('account');
-			}
-		}
-		else{
-			return redirect('account');
-		}
+		// 	if($data['cpwd']!=$data['npwd'])
+		// 	{
+		// 		return redirect('account');
+		// 	}
+		// }
+		// else{
+		// 	return redirect('account');
+		// }
 		unset($data['userid']);
 		unset($data['cpwd']);
 		unset($data['npwd']);

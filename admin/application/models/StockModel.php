@@ -36,6 +36,11 @@ class StockModel extends CI_Model
     {
         return $this->db->where('id',$id)->UPDATE('product_details',['stockstatus'=>'1']);
     }
+
+    function statusupdate($status,$id)
+    {
+        return $this->db->where('id',$id)->UPDATE('product_order_iteam',['status'=>$status]);
+    }
 }
 
 ?>

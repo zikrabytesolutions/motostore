@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <main class="col-md-9">
                    <section class="frmsec">
                    		<div class="account-form">
-                            <h5>Address</h5>
+                            <h5><span style="float:right"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button></span></h5> 
                             <table class="table table-striped">
 							    <thead>
 							        <tr>
@@ -52,16 +52,80 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							        </tr>
 							    </thead>
 							    <tbody>
-								<?php if($address): foreach ($address as $ads):?>
+								<?php $i=0; if($address): foreach ($address as $ads): $i++;?>
 							        <tr>
-							            <td><?= $ads->streetaddress?>, <?= $ads->streetaddress1?>, <?= $ads->city?>, <?= $ads->postcode?></td>
+							            <td><?= $ads->name?>, <?= $ads->streetaddress?>, <?= $ads->streetaddress1?>, <?= $ads->city?>, <?= $ads->postcode?></td>
 							           
 							            <td>
-							            	<a class="btn-default bg-red tblbtn" href="#">Edit</a>
+										<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>">Edit</button>
 							            	
 							        	</td>
 							        </tr>
 							        
+<div class="modal fade" id="myModal<?= $i?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h4 class="modal-title" id="myModalLabel">Edit Address</h4>
+      </div>
+	  <?php echo form_open('checkout/updateshippingaddress');?>
+      <div class="modal-body">
+     
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-12">
+                                            <label for="firstname">Full name *</label>
+                                            <input type="text" class="form-control" id="firstname" name="name" value="<?= $ads->name?>">
+                                        </div>
+                                        <!-- <div class="form-group col-sm-6">
+                                            <label for="lastname">Last name *</label>
+                                            <input type="text" class="form-control" id="lastname" name="lastname">
+                                        </div> -->
+                                    </div>
+                                    <p>Country *</p>
+                                    <p>India</p>
+                                    <div class="form-row align-items-end">
+                                     <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="city">Town / City *</label>
+                                            <input type="text" class="form-control" id="city" placeholder="1234 Main St" name="city" value="<?= $ads->city?>">
+                                        </div>
+                                        </div>
+                                     <input type="hidden" name="ids" value="<?= $ads->id?>">
+                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="city">Mobile *</label>
+                                            <input type="text" class="form-control" id="dmobile" placeholder="Mobile" name="mobile" value="<?= $ads->mobile?>">
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="streetaddress">Street address *</label>
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder="House number and street name" value="<?= $ads->streetaddress?>">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress1" placeholder="Apartment, suite, unit etc. (optional)" value="<?= $ads->streetaddress1?>">
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="form-group">
+                                        <label for="postcode">Postcode / ZIP *</label>
+                                        <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode" value="<?= $ads->postcode?>">
+                                    </div>
+                                
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+		<a href="<?= base_url('checkout/delete/'.$ads->id)?>" class="btn btn-default" >Delete</a>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+                             </form>
+    </div>
+  </div>
+</div>
 								<?php endforeach; endif;?>
 							    </tbody>
 							</table>
@@ -154,10 +218,69 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/custom.js')?>"></script>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h4 class="modal-title" id="myModalLabel">Shipping Address</h4>
+      </div>
+      <?php echo form_open('checkout/addshippingaddressprofile');?>
+      <div class="modal-body">
+     
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-12">
+                                            <label for="firstname">Full name *</label>
+                                            <input type="text" class="form-control" id="firstname" name="name">
+                                        </div>
+                                        <!-- <div class="form-group col-sm-6">
+                                            <label for="lastname">Last name *</label>
+                                            <input type="text" class="form-control" id="lastname" name="lastname">
+                                        </div> -->
+                                    </div>
+                                    <p>Country *</p>
+                                    <p>India</p>
+                                    <div class="form-row align-items-end">
+                                     <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="city">Town / City *</label>
+                                            <input type="text" class="form-control" id="city" placeholder="1234 Main St" name="city">
+                                        </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="city">Mobile *</label>
+                                            <input type="text" class="form-control" id="dmobile" placeholder="Mobile" name="mobile">
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="streetaddress">Street address *</label>
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder="House number and street name">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress1" placeholder="Apartment, suite, unit etc. (optional)">
+                                        </div>
+                                    </div>
 
 
-	<script type="text/javascript">
-		
-	</script>
+
+
+                                    <div class="form-group">
+                                        <label for="postcode">Postcode / ZIP *</label>
+                                        <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode">
+                                    </div>
+                                
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+                             </form>
+    </div>
+  </div>
+</div>
 </body>
 </html>
