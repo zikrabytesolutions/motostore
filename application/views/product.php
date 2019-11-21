@@ -34,7 +34,7 @@
         </section> -->
         <div class="container-fluid products-body">
             <div class="row mt-50 mb-35 mr-2 ml-2">
-                <aside class="col-md-3">
+                <aside class="col-md-2 filterside">
                     <section class="products-sidebar">
                     <?php echo form_open('product/listfilter')?>
                         <div class="shop-by-filter">
@@ -127,7 +127,7 @@
                         </form>
                     </section>
                 </aside>
-                <main class="col-md-9">
+                <main class="col-md-10">
                     <section class="products_inner">
                         <div class="products_wrapper">
                             <!-- <div class="sort">
@@ -144,11 +144,15 @@
                             </div> -->
                              <div class="products_container row mt-4">
                                 <?php if ($productlist) : foreach ($productlist as $plist) : ?>
-                                    <div class="product-layout product-grid col-md-4 col-lg-3 mt-4">
+                                    <div class="product-layout product-grid col-md-3 col-lg-3 mt-4">
 
                                         <div class="p-item">
-                                              <div class="item-title">
-                                                    <h6 class="txt-h-up" class="tooltrip">
+                                              
+                                                <div class="item-img">
+                                                    <img src="<?= base_url('admin/assets/productimage/' . $plist->photo) ?>" class="img-fluid">
+                                                </div>
+                                                <div class="item-title">
+                                                <h6 class="txt-h-up" class="tooltrip">
                                                         <?php
                                                            $catidgo=  strtr(base64_encode('catblank'), '+/', '-_');
                                                            $pid= strtr(base64_encode($plist->id), '+/', '-_');
@@ -158,16 +162,14 @@
                                                          ?>
                                                     <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $plist->product?>" target="_blank"><?= $stringCut = substr($plist->product, 0, 29); ?>..
                                                     </h6>
-                                                </div>
-                                                <div class="item-img">
-                                                    <img src="<?= base_url('admin/assets/productimage/' . $plist->photo) ?>" class="img-fluid">
+
                                                 </div>
                                                 <div class="item-dtl">
                                                    
-                                                    <div class="p-right-txt">
+                                                    <div class="">
                                                         
                                                         <?php $price= $this->db->select('regular_price,offer_price')->from('product_details')->where('pro_id',$plist->id)->order_by('id','ASC')->limit('1')->get()->row_array();?>
-                                                        <p class="txt-p-up" style="font-size:18px"> &#x20A8;:</p> <h4 class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></h4>
+                                                        <p class="">Price:<span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span></p> 
                                                     </div>
                                                 </div>
                                                 </a>

@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								  
 								  <div class="form-group col-sm-6">
                                         <label for="streetaddress">Phone *</label>
-                                        <input type="text" class="form-control" value="<?= $pro->mobile?>" name="mobile" placeholder="Display name">
+                                        <input type="text" class="form-control" value="<?= $pro->mobile?>" name="mobile" placeholder="Display name" readonly>
                                     </div>
                                 </div>
                                
@@ -61,18 +61,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <p>This will be how your name will be displayed in the account section and in reviews</p>
                                 <div class="form-group">
                                     <label for="email">Email address *</label>
-                                    <input type="email" class="form-control" value="<?= $pro->email?>" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" placeholder="Email Address">
+                                    <input type="email" class="form-control" value="<?= $pro->email?>" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" placeholder="Email Address" readonly>
 								</div>
 							  
 								<div class="row">
 								<div class="form-group col-sm-6">
                                     <label for="pwd">Street Address</label>
-                                    <input type="text" class="form-control"  name="streetaddress" value="<?= $pro->streetaddress?>">
+                                    <input type="text" class="form-control"  name="streetaddress" value="<?= $pro->streetaddress?>" required>
 								</div>
 								
 								<div class="form-group col-sm-6">
                                     <label for="pwd">Street Address-2</label>
-                                    <input type="text" class="form-control"  name="streetaddress1" value="<?= $pro->streetaddress1?>">
+                                    <input type="text" class="form-control"  name="streetaddress1" value="<?= $pro->streetaddress1?>" required>
 								</div>
 								<div class="form-group col-sm-6">
                                     <label for="pwd">City Name</label>

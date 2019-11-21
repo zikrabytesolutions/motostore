@@ -2,7 +2,7 @@
 			<nav class="navbar navbar-expand-md">
                 <div class="container-fluid">
                     <!-- Brand -->
-                    <a class="navbar-brand d-block" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/page-logo.jpg')?>"></a>
+                    <a class="navbar-brand d-block" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/logo.png')?>"></a>
                     <ul class="nav dsk-hide">
                         <li class="nav-item search-nav">
 							<a class="nav-link search-ico" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
@@ -81,7 +81,7 @@
                             <a class="nav-link" href="<?= base_url('cart')?>" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"> </i> <small> <?= $this->db->where(['userid'=>$this->session->userdata('motoubid')])->from("product_cart_iteam")->count_all_results();?></small></a>
                            <?php endif?>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item dropdown">
                             <?php if($this->session->userdata('motoubid')):?>
                             <?php $id= $this->session->userdata('motoubid');
                                   $this->db->select('name');
@@ -90,6 +90,15 @@
                                   $name= $this->db->get()->row('name');
                             ?>
                             <a class="nav-link btn btn-default log-reg_butt" href="<?= base_url('login')?>"><?=substr($name, 0, 8) ?>.. <i class="fa fa-user" aria-hidden="true"></i></a>
+                            <div class="dropdown-menu profilemenu" aria-labelledby="navbarDropdownMenuLink">
+                              <div class="submenu-item">
+                                <ul> 
+                                  <li><a class="submenu-link" href="#">My Profile</a></li>
+                                  <li><a class="submenu-link" href="#">Logout</a></li>
+                                </ul>
+                              </div>
+                            </div>
+
                             <?php else:?>
                                 <a class="nav-link btn btn-default log-reg_butt" href="<?= base_url('login')?>">Login / Register</a>
                             <?php endif?>

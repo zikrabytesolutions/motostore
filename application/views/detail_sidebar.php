@@ -11,9 +11,6 @@
 	</h5>
 	<ul class="nav flex-column detail_ul">
 		<li class="nav-item active">
-			<a class="nav-link" href="dashboard">Dashboard</a>
-		</li>
-		<li class="nav-item">
 			<a class="nav-link" href="order">Orders</a>
 		</li>
 		<li class="nav-item">

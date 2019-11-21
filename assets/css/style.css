@@ -37,7 +37,7 @@ body{
 }
 
 .p-prc {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -439,7 +439,7 @@ body .product-grid .product-item .item-info .item-price {
 
 
 /*header menu*/
-
+.profilemenu.show
 .customMenuDrpdwn.show {
     display: flex;
     justify-content: space-between;
@@ -456,7 +456,7 @@ body .product-grid .product-item .item-info .item-price {
     vertical-align: top;
     margin-left: 4px;
 }
-
+.profilemenu,
 .customMenuDrpdwn {
     border: 2px solid red;
     padding: 10px 15px;
@@ -464,10 +464,12 @@ body .product-grid .product-item .item-info .item-price {
     left: unset;
 }
 
+.profilemenu .submenu-item:first-child,
 .customMenuDrpdwn .submenu-item:first-child {
     padding-right: 2rem;
 }
 
+.profilemenu .submenu-link ,
 .customMenuDrpdwn .submenu-link {
     display: block;
     white-space: nowrap;
@@ -477,16 +479,19 @@ body .product-grid .product-item .item-info .item-price {
     line-height: 2;
 }
 
+.profilemenu .submenu-link:hover ,
 .customMenuDrpdwn .submenu-link:hover {
     color: #ff0202;
 }
 
+.profilemenu .submenu-item ul,
 .customMenuDrpdwn .submenu-item ul {
     padding: 0;
     list-style-type: none;
     margin: 0;
 }
 
+.profilemenu .submenu-item li,
 .customMenuDrpdwn .submenu-item li {
     border-top: 1.5px solid #ccc;
 }
@@ -500,19 +505,28 @@ header .nav-link, header .submenu-link  {
    margin: 0px 5px;
 }
 
-header .nav-link.search-ico, header .nav-link#cart-ico {
-    font-size: 1rem;
+header .nav-link.search-ico{
+font-size: 16px;
+    margin: 0;
+    padding: 10px;
+    } 
+    header .nav-link#cart-ico {
+    font-size: 16px;
+    margin: 0;
+    padding: 10px 30px 10px 10px;
 }
 
 header .nav-link#cart-ico small {
-    padding: 3px 6px;
     position: absolute;
-    bottom: 30px;
+    bottom: 26px;
     background: red;
     border-radius: 50%;
     font-size: 11px;
     font-weight: bold;
-    line-height: 1;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
 }
 
 .search-ico::before, #navbarDropdownMenuLink::before {
@@ -521,22 +535,19 @@ header .nav-link#cart-ico small {
 
 }
 
-.nav-link::before {
+/*.nav-link::before {
   transition: 300ms;
   height: 2px;
   content: "";
   position: absolute;
   background-color: #ff0202;
-}
-
-.nav-link::before {
   width: 0%;
   bottom: 0px;
-}
+}*/
 
-.nav-link:hover::before {
+/*.nav-link:hover::before {
   width: 65%;
-}
+}*/
 
 
 
@@ -739,15 +750,15 @@ header {
 
 .size-choose div  {
     border-radius: 50%;
-    border: 2px solid #fff;
+    /*border: 2px solid #fff;*/
     background-color: #eee;
     color: #000;
 }
 
 .size-choose div label {
     position: absolute;
-    height: 35px;
-    width: 35px;
+    height: 25px;
+    width: 25px;
     border-radius: 50%;
     top: 0;
     left: 0;
@@ -766,9 +777,9 @@ header {
 
 .size-choose div, .qty-choose a {
     display: flex;
-    height: 40px;
+    height: 25px;
     align-items: center;
-    width: 40px;
+    width: 25px;
     justify-content: center;
     margin-right: 10px;
     position: relative;
@@ -791,8 +802,8 @@ header {
 
 .color-choose input[type="radio"] + label span {
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   margin: -1px 4px 0 0;
   vertical-align: middle;
   cursor: pointer;
@@ -815,11 +826,12 @@ header {
   background-color: #323232;
 }
 
-.color-choose input[type="radio"]:checked + label span {
+/*.color-choose input[type="radio"]:checked + label span {
+  background-image: url(../images/item/checkmark.png);
   background-image: url(../images/item/check-icn.svg);
   background-repeat: no-repeat;
   background-position: center;
-}
+}*/
 
 /*qty choose*/
 
@@ -1334,7 +1346,7 @@ select {
     min-height: 20px;
     cursor: pointer;
 }
-
+.products-brand p,
 .products-page label, .products-page p, .products-page li, .products-page select, .products-page option {
     font-size: 0.9rem;
     font-weight: 600;
@@ -1489,8 +1501,13 @@ transition: width .2s cubic-bezier(0.215, 0.610, 0.355, 1.000), height .2s cubic
 .products_container .item-title h6 {
     font-size: 14px;
 }
+.products_container .item-title h6 a{
+    color: #707070;
+}
 
-
+a{
+    color: #707070;
+}
 
 /*cart*/
 
@@ -2002,24 +2019,28 @@ input, button {
 .log-reg_butt {
     padding: 10px 25px;
 }
-
-@media (min-width: 1300px){
-    .navbar-expand-custom {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-    }
-    .navbar-expand-custom .navbar-nav {
-        flex-direction: row;
-    }
-    .navbar-expand-custom .navbar-nav .nav-link {
-        padding-right: .5rem;
-        padding-left: .5rem;
-    }
-    .navbar-expand-custom .navbar-collapse {
-        display: flex!important;
-    }
-    .navbar-expand-custom .navbar-toggler {
-        display: none;
-    }
+.frmsec label{
+    font-weight: bold;
 }
+.multipleproduct{
+    margin-top: 30px;
+}
+.products-page .color-choose input[type="radio"]:checked + label span:after {
+   background-image: url(../images/item/checkmark.png);
+    z-index: 99999;
+    content: "";
+    display: block;
+      height: 18px;
+    position: relative;
+    top: -19px;
+    background-repeat: no-repeat;
+}
+aside.filterside {
+    box-shadow: 0px 0px 3px 1px rgba(0, 0,0,0.1);
+}
+.product-color p,
+.product-color .color-choose,
+.product-size p{
+   display: inline-block;
+}
+.product-size .size-choose{display:inline-flex;}
