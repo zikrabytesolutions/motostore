@@ -11,7 +11,7 @@
 	</h5>
 	<ul class="nav flex-column detail_ul">
 	<?php  $urlcheck= $this->uri->segment(1);?>
-	
+
 		<li class="nav-item <?php if($urlcheck=='order'){echo "active";}?>" >
 			<a class="nav-link" href="<?= base_url('order')?>">Orders</a>
 		</li>

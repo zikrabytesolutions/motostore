@@ -62,7 +62,7 @@
                                 </div>
                             </div>
 
-                            <div id="items-nav">
+                            <div id="items-nav" class="multipleproduct">
                                 <div><img src="<?= base_url('admin/assets/productimage/' . $pd->photo) ?>"
                                         class="sim-thumb" alt="" draggable="false" width="100px" ; height:100px></div>
                                 <div><img src="<?= base_url('admin/assets/productimage/' . $pd->photo) ?>"
@@ -85,8 +85,8 @@
                             <div class="product-overview">
                                 <p>Availability: <b><span id="stock"><?php if($pd->stockstatus=='0'){echo ' <span style="color:red"> Out Of Stock';}
 							else{echo '<span style="color:green">In Stock';}?></span></b></p>
-<h5 class="title-border mt-5">Description</h5>
-<?= $pd->description?>
+                                    <h5 class="title-border mt-5">Description</h5>
+                                    <?= $pd->description?>
 
 
                                 <?php
@@ -95,7 +95,7 @@
 							 foreach($prodetailsn as $prodet):
 								if(strtolower($prodet->attribute)=='color'):
 							?>
-                                <div class="product-color">
+                                <div class="product-color mt-4">
                                     <p><?= $prodet->attribute?> : </p>
                                     <div class="color-choose">
                                         <?php
@@ -105,6 +105,7 @@
 								 ?>
                                         <div>
                                             <?php
+
 										  $pid= strtr(base64_encode($pd->id), '+/', '-_');
 										  $pid=  strtr(base64_encode($pid), '+/', '-_');
 										  $pid=  strtr(base64_encode($pid), '+/', '-_');
@@ -169,6 +170,18 @@
                                 </div>
 
                                 <?php endif; endforeach; endif;?>
+
+                                <div class="product-brand mt-4">
+                                    <p>Brand :</p>
+                                    <div class="color-choose">
+                                        <div>
+                                            
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+
+
 
                                 <div class="product-cta flex-container mt-4">
                                     <?php

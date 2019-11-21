@@ -14,12 +14,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/owl.theme.default.min.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/animate.css')?>">
 	<!--fontello-->
-	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">	
+	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">
 	<link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css')?>" />
 	<!--styles -->
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css')?>">
-	
+
 </head>
 <body>
 
@@ -49,30 +49,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <input type="text" class="form-control" value="<?= $pro->name?>" name="name" placeholder="First name">
                                     </div>
 								  <input type="hidden" name="userid" value="<?= $pro->id?>">
-								  
+
 								  <div class="form-group col-sm-6">
                                         <label for="streetaddress">Phone *</label>
                                         <input type="text" class="form-control" value="<?= $pro->mobile?>" name="mobile" placeholder="Mobile" readonly>
                                     </div>
                                 </div>
-                               
-                                    
-                                
+
+
+
                                 <p>This will be how your name will be displayed in the account section and in reviews</p>
                                 <div class="form-group">
                                     <label for="email">Email address *</label>
                                     <input type="email" class="form-control" value="<?= $pro->email?>" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" placeholder="Email Address" readonly/>
 								</div>
-							  
+
 								<div class="row">
 								<div class="form-group col-sm-6">
                                     <label for="pwd">Street Address</label>
-                                    <input type="text" class="form-control"  name="streetaddress" value="<?= $pro->streetaddress?>">
+                                    <input type="text" class="form-control"  name="streetaddress" value="<?= $pro->streetaddress?>" required>
 								</div>
-								
+
 								<div class="form-group col-sm-6">
                                     <label for="pwd">Street Address-2</label>
-                                    <input type="text" class="form-control"  name="streetaddress1" value="<?= $pro->streetaddress1?>">
+                                    <input type="text" class="form-control"  name="streetaddress1" value="<?= $pro->streetaddress1?>" required>
 								</div>
 								<div class="form-group col-sm-6">
                                     <label for="pwd">City Name</label>
@@ -85,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</div>
 
 								<div class="row">
-                                
+
                                 <div class="form-group col-sm-4">
                                     <label for="pwd">Current password (leave blank to leave unchanged)</label>
                                     <input type="text" class="form-control" id="pwd" name="password">
@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</div>
 								</div>
                                 <input type="submit" class="btn-default bg-red my-4" value="Save Changes">
-                      
+
                             </form>
                         </div>
 				   <?php endforeach; endif;?>
@@ -118,8 +118,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
-					<img class="f-logo" src="<?= base_url('assets/images/page-logo.jpg')?>">	
-				
+					<img class="f-logo" src="<?= base_url('assets/images/page-logo.jpg')?>">
+
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -130,9 +130,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
 					<h6 class="txt-h-up">services</h6>
-				
+
 				<ul class="privacy-block">
-					
+
 					<li><a href="">privacy policy</a></li>
 					<li><a href="">cookie</a></li>
 				</ul>
@@ -161,7 +161,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 
 			</div>
-			
+
 		</div>
 	</div>
 </section>
@@ -187,11 +187,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script type="text/javascript" src="<?= base_url('assets/js/jquery.js')?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js')?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js')?>"></script>
-	<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>	
+	<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/custom.js')?>"></script>
 	<script type="text/javascript">
-		
+
 	</script>
 </body>
 </html>
