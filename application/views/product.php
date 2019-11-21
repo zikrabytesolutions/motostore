@@ -149,7 +149,7 @@
                                         <div class="p-item">
                                               
                                                 <div class="item-img">
-                                                    <img src="<?= base_url('admin/assets/productimage/' . $plist->photo) ?>" class="img-fluid">
+                                                    <a href=""><img src="<?= base_url('admin/assets/productimage/' . $plist->photo) ?>" class="img-fluid"></a>
                                                 </div>
                                                 <div class="item-title">
                                                 <h6 class="txt-h-up" class="tooltrip">
@@ -160,7 +160,7 @@
                                                            $pid=  strtr(base64_encode($pid), '+/', '-_');
                                                            
                                                          ?>
-                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $plist->product?>" target="_blank"><?= $stringCut = substr($plist->product, 0, 29); ?>..
+                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $plist->product?>" target="_blank"><?= $stringCut = substr($plist->product, 0, 29); ?>..</a>
                                                     </h6>
 
                                                 </div>
