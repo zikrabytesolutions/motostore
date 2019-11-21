@@ -28,8 +28,8 @@ class Cart extends CI_Controller
         
     }
 
-    function cartlist()
- {
+   function cartlist()
+   {
         $proid = $this->input->post( 'proid' );
         $prodetailsid = $this->input->post( 'prodetailsid' );
 
@@ -50,7 +50,8 @@ class Cart extends CI_Controller
             Cart::cartprocess();
             return redirect('cart');
         }
-        else{
+        else
+        {
             return redirect('cart');
         }
         
@@ -231,7 +232,31 @@ class Cart extends CI_Controller
 
        function cartadd()
        {
-           
+        $proid = $this->input->post( 'proid' );
+        $prodetailsid = $this->input->post( 'prodetailsid' );
+        $url = $this->input->post( 'url' );
+
+        $proid = base64_decode( strtr( $proid, '-_', '+/' ) );
+        $prodetailsid = base64_decode( strtr( $prodetailsid, '-_', '+/' ) );
+        $data = $this->cartModel->findproductdetails( $proid, $prodetailsid );
+        $datas = array(
+            'id'      =>  $data['id'],
+            'proid'      =>  $data['proid'],
+            'qty'     => 1,
+            'price'   =>$data['offer_price'],
+            'name'    => 'Moto Store',
+
+        );
+        $this->cart->insert( $datas );
+        if($this->session->userdata('motoubid'))
+        {
+            Cart::cartprocess();
+            return redirect($url);
+        }
+        else
+        {
+            return redirect($url);
+        }
        }
 
 }

@@ -142,9 +142,48 @@
                         <td><?= $rst->mobile?></td>
                         <td><?= $rst->iteam?></td>
                         <td><?= $rst->grand?></td>
-                        <td><span class="label label-warning">Pending</span></td>
-                        <td><a href="#" class="btn btn-primary btn-xs">  Set</a></td>
+                        <td>
+                          
+                            <span class="label label-warning">Pending</span>
+                        </td>
+                        <td><button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal<?=$i;?>">  View</a></td>
                     </tr>
+
+                    <div class="modal fade" id="myModal<?=$i;?>" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="color-line"></div>
+                                <div class="modal-header text-center">
+                                    <h4 class="modal-title">Product Status</h4>
+                                    <small class="font-bold"></small>
+                                </div>
+                                <?php form_open('stock/status')?>
+                                <div class="modal-body">
+                                   <div class="row">
+                                       <div class="col-md-12">
+                                       <div class="form-group">
+                                            <label class="control-label">Product Status</label>
+                                            <select class="form-control" name="status">
+                                                <option value="0">Pending</option>
+                                                <option value="1">Accept</option>
+                                                <option value="2">Shipped</option>
+                                                <option value="3">Deliverd</option>
+                                            </select>
+                                         </div>
+                                       </div>
+                                   </div>
+                                </div>
+                                <div class="modal-footer">
+                                <input type="hidden" name="orderid" value="<?= $rst->id?>">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                     <?php endforeach; endif;?>
                     </tbody>
                 </table>

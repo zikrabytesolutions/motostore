@@ -13,6 +13,11 @@ class Order extends MY_Controller
         $data['recentorder']= $this->userModel->myorder();
         $this->load->view('order',$data);
     }
+
+    function orderlistdetail($orderdid)
+    {
+       return $this->userModel->myorderlist($orderdid);
+    }
 }
 
 

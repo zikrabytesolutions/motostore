@@ -20,7 +20,7 @@
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Email</th>
-                        <th>Join Date</th>
+                        <th>Date of Registration</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -37,6 +37,13 @@
                     </tr>
                     <?php endforeach; endif?>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                            <a href="<?= base_url('user/exports_data')?>"> <u>Export All Data </u> </a>
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
                 </div>
 

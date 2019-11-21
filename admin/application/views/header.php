@@ -173,29 +173,34 @@
             <li>
                 <a href="<?= base_url('dashboard')?>"> <span class="nav-label">Dashboard</span> </a>
             </li>
-            <li>
+            <li><a href="<?= base_url('brand')?>">Brand</a></li>
+                    <li><a href="<?= base_url('category')?>">Category</a></li>
+                    <li><a href="<?= base_url('subcategory')?>">Sub Category</a></li>
+            <!-- <li>
                 <a href="<?= base_url('stock')?>"> <span class="nav-label">Stock </span> </a>
-            </li>
+            </li> -->
 
             <li>
                 <a href="<?= base_url('user')?>"> <span class="nav-label">User </span> </a>
             </li>
+
+            <li>
+                <a href="<?= base_url('tiles')?>"> <span class="nav-label">Home Page Tiles </span> </a>
+            </li>
             
-            <li class="active">
+            <li>
                 <a href="#"><span class="nav-label">Product Setting</span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
                     <li class="active"><a href="<?= base_url('product')?>"> Product</a></li>
                     <li class="active"><a href="<?= base_url('product/lists')?>"> Product List</a></li>
-                    <li><a href="<?= base_url('brand')?>">Brand</a></li>
-                    <li><a href="<?= base_url('category')?>">Category</a></li>
-                    <li><a href="<?= base_url('subcategory')?>">Sub Category</a></li>
+                   
                     <li><a href="<?= base_url('attribute')?>">Attribute</a></li>
                   
                 </ul>
             </li>
-            <li>
+            <!-- <li>
                 <a href="<?= base_url('pin')?>"> <span class="nav-label">Pin Management</span><span class="label label-warning pull-right">NEW</span> </a>
-            </li>
+            </li> -->
 
            
         </ul>

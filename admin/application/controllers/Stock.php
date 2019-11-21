@@ -49,6 +49,19 @@ class Stock extends MY_Controller
             echo "Somthing Went Wromg";
         }
     }
+
+
+    function status()
+    {
+       $status= $this->input->post('status');
+       $id= $this->input->post('orderid');
+       $success= $this->stockModel->statusupdate($status,$id);
+        if($success)
+        {
+          return redirect('stock');  
+        }
+
+    }
 }
 
 

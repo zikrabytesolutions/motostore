@@ -68,6 +68,38 @@ class Checkout extends CI_Controller
            return redirect('checkout');
         }
      }
+
+     function updateshippingaddress()
+     {
+        $data= $this->input->post();
+        $userid= $this->input->post('ids');
+        unset($data['ids']);
+        $success= $this->cartModel->updateaddress($data,$userid);
+        if($success)
+        {
+           return redirect('editaddress');
+        }
+     }
+
+     function addshippingaddressprofile()
+     {
+      $data= $this->input->post();
+      $data['userid']=  $id= $this->session->userdata('motoubid');
+      $success= $this->cartModel->insertaddress($data);
+      if($success)
+      {
+         return redirect('editaddress');
+      }
+     }
+
+     function delete($id)
+     {
+      $success= $this->cartModel->deleteaddress($id);
+      if($success)
+      {
+         return redirect('editaddress');
+      }
+     }
 }
 
 ?>

@@ -10,13 +10,15 @@
 		<?= $name?>
 	</h5>
 	<ul class="nav flex-column detail_ul">
-		<li class="nav-item active">
-			<a class="nav-link" href="order">Orders</a>
+	<?php  $urlcheck= $this->uri->segment(1);?>
+
+		<li class="nav-item <?php if($urlcheck=='order'){echo "active";}?>" >
+			<a class="nav-link" href="<?= base_url('order')?>">Orders</a>
 		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="editaddress">Address</a>
+		<li class="nav-item <?php if($urlcheck=='editaddress'){echo "active";}?>">
+			<a class="nav-link" href="<?= base_url('editaddress')?>">Address</a>
 		</li>
-		<li class="nav-item">
+		<li class="nav-item <?php if($urlcheck=='account'){echo "active";}?>">
 			<a class="nav-link" href="<?= base_url('account');?>">Account Details</a>
 		</li>
 		<li class="nav-item">

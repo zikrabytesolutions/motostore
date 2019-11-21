@@ -171,6 +171,16 @@ class CartModel extends CI_Model{
         $query= $this->db->get();
         return $query->result();
     }
+
+    function updateaddress($data,$userid)
+    {
+        return $this->db->where('id',$userid)->UPDATE('deliveryaddress',$data);
+    }
+
+    function deleteaddress($id)
+    {
+        return $this->db->where('id',$id)->DELETE('deliveryaddress');
+    }
     
 }
 
