@@ -156,6 +156,21 @@ class CartModel extends CI_Model{
         $query= $this->db->get();
         return $query->result();
     }
+
+    function insertaddress($data)
+    {
+        return $this->db->insert('deliveryaddress',$data);
+    }
+
+
+    function billingaddress($id)
+    {
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('id',$id);
+        $query= $this->db->get();
+        return $query->result();
+    }
     
 }
 

@@ -207,7 +207,6 @@ class Product extends MY_Controller
             'productcode' => $this->input->post('productcode'), // SKU Product
             'producttype' => $this->input->post('producttype'), //offroard, n road
             'gender' => $this->input->post('gender'),
-            'type' => $this->input->post('protype'), // simple or variation
             'status' => '1',
             'description' => $this->input->post('description'),
             'created' =>$now,

@@ -37,7 +37,7 @@
                                <?php echo form_open('login/auth',['id'=>'motostoreRegisterForm']);?>
 							   
 								<div class="form-group row">
-									<label for="phone" class="col-sm-4 col-form-label">Phone Number</label>
+									<label for="phone" class="col-sm-4 col-form-label">Email/Phone number</label>
 									<div class="col-sm-8">	
 									<?php if($this->session->flashdata('msg_error')):?>
                                           <span class="text-danger"><?= $this->session->flashdata('msg_error')?></span>
@@ -62,7 +62,7 @@
 							</form>
 							<hr/>
 							<div class="text-center">
-								<a href="<?= base_url('signup')?>">Already have an Account? Login instead!</a>
+							New to Motostore?<a href="<?= base_url('signup')?>"> Create an account</a>
 							</div>
 						</div>
 					</div>

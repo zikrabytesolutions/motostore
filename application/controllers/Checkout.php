@@ -21,6 +21,7 @@ class Checkout extends CI_Controller
               $data['proinfo'] = $this->cartModel->cartdata($id); //cartiteam
               $data['cartdata'] = $this->cartModel->carttotal($id); // cart data
               $data['delivery'] = $this->cartModel->deliveryaddress($id); // delivery address
+              $data['billing'] = $this->cartModel->billingaddress($id); // delivery address
              $this->load->view('logincheckout',$data);
             
          }
@@ -54,6 +55,18 @@ class Checkout extends CI_Controller
     function findattributecart( $data )
      {
         return $this->cartModel->attributefind( $data );
+     }
+
+
+     function addshippingaddress()
+     {
+        $data= $this->input->post();
+        $data['userid']=  $id= $this->session->userdata('motoubid');
+        $success= $this->cartModel->insertaddress($data);
+        if($success)
+        {
+           return redirect('checkout');
+        }
      }
 }
 

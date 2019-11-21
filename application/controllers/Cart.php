@@ -227,8 +227,11 @@ class Cart extends CI_Controller
 				   $inserted = $this->cartModel->deletecartiteam( $ds['rowid'] );
 			   }
 		   }
-   
-		   
+       }
+
+       function cartadd()
+       {
+           
        }
 
 }

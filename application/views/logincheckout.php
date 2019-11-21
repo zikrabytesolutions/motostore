@@ -33,13 +33,24 @@
         <section class="checkout-body py-5">
             <div class="container">
             <?php echo form_open('payment/orderplace');?>
+        
                 <div class="row">
-                    <div class="col-md-12">
-                        <h5 class="title-border clr-black">Select Shipping Address  </h5>
-                    </div>
-
                     <div class="col-md-7">
+
+                   <?php if($billing): foreach($billing as $bill):?>
+                        <h5 class="title-border clr-black" style="margin-bottom:-5px">Billing Address</h5>
+                        <div class="p-item">
+                             <h5 style="text-align:center"> <?= $bill->name;?></h5> <hr>
+                             <p>Mobile : <?= $bill->mobile?>, <?= $bill->streetaddress?>, <?= $bill->streetaddress1?>, <?= $bill->city?>, <?= $bill->postcode?></p>
+                        </div>
+                   <?php endforeach; endif;?>
+
+                      <br>
+
+                    <h5 class="title-border clr-black">Select Shipping Address  </h5>
+                    <a  class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="color:white">Add New Shipping Address</a>
                         <div class="row">
+                       
                         <?php $i=0; if($delivery): foreach($delivery as $del): $i++;?>
                           <div class="product-layout product-grid col-md-6 col-lg-6 mt-4">
                             <div class="p-item">
@@ -50,10 +61,17 @@
                                <p><?= $del->streetaddress?>, <?= $del->streetaddress1?>, <?= $del->city?>, <?= $del->postcode?></p>
                             </div>
                             </div>
+                           
                         <?php endforeach; else:?>
-                              <a href="#">Add Address</a>
+                             <!-- Button trigger modal -->
+
+
+
+
                             <?php endif?>
                         </div>
+
+                     
                     </div>
                     
                     <div class="col-md-5">
@@ -158,4 +176,71 @@
         </section>
 
     </div>
+
+
+
+    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h4 class="modal-title" id="myModalLabel">Shipping Address</h4>
+      </div>
+      <?php echo form_open('checkout/addshippingaddress');?>
+      <div class="modal-body">
+     
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-12">
+                                            <label for="firstname">Full name *</label>
+                                            <input type="text" class="form-control" id="firstname" name="name">
+                                        </div>
+                                        <!-- <div class="form-group col-sm-6">
+                                            <label for="lastname">Last name *</label>
+                                            <input type="text" class="form-control" id="lastname" name="lastname">
+                                        </div> -->
+                                    </div>
+                                    <p>Country *</p>
+                                    <p>India</p>
+                                    <div class="form-row align-items-end">
+                                     <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="city">Town / City *</label>
+                                            <input type="text" class="form-control" id="city" placeholder="1234 Main St" name="city">
+                                        </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="city">Mobile *</label>
+                                            <input type="text" class="form-control" id="dmobile" placeholder="Mobile" name="mobile">
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="streetaddress">Street address *</label>
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder="House number and street name">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress1" placeholder="Apartment, suite, unit etc. (optional)">
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="form-group">
+                                        <label for="postcode">Postcode / ZIP *</label>
+                                        <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode">
+                                    </div>
+                                
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+                             </form>
+    </div>
+  </div>
+</div>
     <?php include('footer.php');?>

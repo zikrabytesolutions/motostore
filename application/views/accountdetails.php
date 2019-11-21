@@ -62,20 +62,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="form-group">
                                     <label for="email">Email address *</label>
                                     <input type="email" class="form-control" value="<?= $pro->email?>" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" placeholder="Email Address">
+								</div>
+							  
+								<div class="row">
+								<div class="form-group col-sm-6">
+                                    <label for="pwd">Street Address</label>
+                                    <input type="text" class="form-control"  name="streetaddress" value="<?= $pro->streetaddress?>">
+								</div>
+								
+								<div class="form-group col-sm-6">
+                                    <label for="pwd">Street Address-2</label>
+                                    <input type="text" class="form-control"  name="streetaddress1" value="<?= $pro->streetaddress1?>">
+								</div>
+								<div class="form-group col-sm-6">
+                                    <label for="pwd">City Name</label>
+                                    <input type="text" class="form-control"  name="city" value="<?= $pro->city?>">
+								</div>
+								<div class="form-group col-sm-6">
+                                    <label for="pwd">Postel Code</label>
+                                    <input type="text" class="form-control"  name="postcode" value="<?= $pro->postcode?>">
                                 </div>
-                                <h6>Password Change</h6>
-                                <div class="form-group">
+								</div>
+
+								<div class="row">
+                                
+                                <div class="form-group col-sm-4">
                                     <label for="pwd">Current password (leave blank to leave unchanged)</label>
                                     <input type="text" class="form-control" id="pwd" name="password">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group col-sm-4">
                                     <label for="cpwd">New password (leave blank to leave unchanged)</label>
                                     <input type="text" class="form-control" id="cpwd" name="cpwd">
                                 </div>
-                                <div class="form-group">
-                                    <label for="npwd">Confirm new password</label>
+                                <div class="form-group col-sm-4">
+                                    <label for="npwd">Confirm new password (leave blank to leave unchanged)</label>
                                     <input type="text" class="form-control" id="npwd" name="npwd">
-                                </div>
+								</div>
+								</div>
                                 <input type="submit" class="btn-default bg-red my-4" value="Save Changes">
                       
                             </form>

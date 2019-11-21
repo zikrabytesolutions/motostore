@@ -178,6 +178,18 @@ class Product extends CI_Controller
         return $this->productModel->reletedproduct($proid);
 
     }
+
+    function attributeselect()
+    {
+        $proid= $this->input->post('pid');
+        $first= $this->input->post('first');
+        $second= $this->input->post('second');
+        $proid= base64_decode(strtr($proid, '-_', '+/'));
+        $first= base64_decode(strtr($first, '-_', '+/'));
+        $second= base64_decode(strtr($second, '-_', '+/'));
+        $data=$this->productModel->findvariantproduct($proid,$first,$second);
+        echo json_encode($data);
+    }
     
     
 }

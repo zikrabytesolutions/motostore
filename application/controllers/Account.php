@@ -17,6 +17,8 @@ class Account Extends MY_Controller
 	function updateaccount()
 	{
 		$data= $this->input->post();
+
+		
 		$userid= $this->input->post('userid');
 		$password= md5($this->input->post('userid'));
 		$avlaible= $this->userModel->checkpassword($userid,$password);

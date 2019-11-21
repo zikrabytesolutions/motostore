@@ -43,7 +43,7 @@
                             <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $menue->cat_name?><i class="fa fa-angle-down"></i></a>
                             <div class="dropdown-menu customMenuDrpdwn" aria-labelledby="navbarDropdownMenuLink">
                                 <div class="submenu-item">
-                                    <div class="header-megamenu">Type</div>
+                                  
                                     <ul> 
                                           <?php  if( $submenue): foreach($submenue as $sbm):?>
                                             <li><a class="submenu-link" href="#"><?= $sbm->sub_category_name?></a></li>
@@ -89,7 +89,7 @@
                                   $this->db->where('id',$id);
                                   $name= $this->db->get()->row('name');
                             ?>
-                            <a class="nav-link btn btn-default log-reg_butt" href="<?= base_url('login')?>"><?= $name?> <i class="fa fa-user" aria-hidden="true"></i></a>
+                            <a class="nav-link btn btn-default log-reg_butt" href="<?= base_url('login')?>"><?=substr($name, 0, 8) ?>.. <i class="fa fa-user" aria-hidden="true"></i></a>
                             <?php else:?>
                                 <a class="nav-link btn btn-default log-reg_butt" href="<?= base_url('login')?>">Login / Register</a>
                             <?php endif?>

@@ -79,14 +79,14 @@
                             <h3><?= $pd->product; ?></h3>
                             <p>Product Code : <?= $pd->productcode; ?></p>
                             <div class="product-price"><b>
-                                <span class="slash" style="font-size:20px">&#x20A8;: <?= $pd->offer_price?></span> <span> <del>
+                            &#x20A8;: <span class="slash" style="font-size:20px" id="offerprice"> <?= $pd->offer_price?></span> <span > <del id="regularprice">
                                         <?= $pd->regular_price?></del> </span></b>
                             </div>
                             <div class="product-overview">
-                                <p>Availability: <b><span><?php if($pd->stockstatus=='0'){echo ' <span style="color:red"> Out Of Stock';}
+                                <p>Availability: <b><span id="stock"><?php if($pd->stockstatus=='0'){echo ' <span style="color:red"> Out Of Stock';}
 							else{echo '<span style="color:green">In Stock';}?></span></b></p>
 <h5 class="title-border mt-5">Description</h5>
-<ul><li>940g +- 60g in “M” size<br></li><li>Completely redesigned central chin vent area, extensive ventilation in the nape area</li><li>Rear fin that creates a depression for increased air extraction (much more ventilated)</li><li>Updated design ensuring excellent protection and helmet balance on the head</li><li>New polystyrene channelling added for greater ventilation</li><li>Additional air vent on the lower part of the helmet to facilitate the extraction of hot air / humidity from the helmet</li><li>New soft touch interior for effective humidity release</li><li>Larger nose area to better protect the nose from branches or debris</li><li>Adjustable visor</li><li>Removable, hypo-allergenic and washable interior</li></ul>
+<?= $pd->description?>
 
 
                                 <?php
@@ -112,9 +112,10 @@
 										  if($flag=='true')
 										  {$second=$pval->second;}
 										  elseif($rsecond!='') { $second=$rsecond;}
-										  $second=  strtr(base64_encode($second), '+/', '-_');
+                                          $second=  strtr(base64_encode($second), '+/', '-_');
+                                        
 										?>
-                                            <a href="<?= base_url('product/details/'.$pid.'/'.$first.'/'.$second.'/'.$pd->product)?>">
+                                           <a onclick="variation('<?= $pid ;?>','<?= $first ;?>','<?= $second;?>','<?=$pd->product;?>'); ">                                             
                                                 <input data-image="red" type="radio" value="red"
                                                     <?php if($rfirst==$pval->first){echo "checked";}?>>
                                                 <label for="red"><span style="background-color:<?= $pval->codes?>;">
@@ -154,8 +155,7 @@
 										  $first=  strtr(base64_encode($first), '+/', '-_');
 
 										?>
-                                            <a
-                                                href="<?= base_url('product/details/'.$pid.'/'.$first.'/'.$second.'/'.$pd->product)?>">
+                                             <a onclick="variation('<?= $pid ;?>','<?= $first ;?>','<?= $second;?>','<?=$pd->product;?>'); "> 
                                                 <input data-size="xs" type="radio" id="xs" name="size" value="xs"
                                                     checked>
                                                 <label for="<?= $pvals->value_name?>">
@@ -170,21 +170,6 @@
 
                                 <?php endif; endforeach; endif;?>
 
-                                <!-- <div class="product-qty">
-				                <p>Quantity</p>
-				                <div class="qty-choose flex-container">
-				                <div class="product-quantity-subtract">
-				                  <i class="fa fa-minus" aria-hidden="true"></i>
-				                </div>
-				                <div>
-				                  <input type="text" id="product-quantity-input" placeholder="0" value="0" />
-				                </div>
-				                <div class="product-quantity-add">
-				                  <i class="fa fa-plus" aria-hidden="true"></i>
-				                </div>
-				            </div>
-				              </div> -->
-
                                 <div class="product-cta flex-container mt-4">
                                     <?php
 								     $proid= strtr(base64_encode($pd->id), '+/', '-_');
@@ -194,7 +179,7 @@
 
 
                                     <div>
-                                        <?php echo form_open('cart/cartlist')?>
+                                        <?php echo form_open('cart/cartadd')?>
                                         <input type="hidden" name="proid" value="<?= $proid ?>">
                                         <input type="hidden" name="prodetailsid" value="<?= $pdetailsid ?>">
                                         <button type="submit" class="btn btn-default bg-black">
@@ -203,9 +188,14 @@
                                         <?php echo form_close()?>
                                     </div>
 
-                                    <div> <button class="btn btn-success btn-default bg-red">
+                                    <div>
+                                    <?php echo form_open('cart/cartlist')?>
+                                        <input type="hidden" name="proid" value="<?= $proid ?>">
+                                        <input type="hidden" name="prodetailsid" value="<?= $pdetailsid ?>">
+                                     <button class="btn btn-success btn-default bg-red">
                                             <span class="add-to-cart">Buy Now</span>
                                         </button>
+                                        <?php echo form_close()?>
                                     </div>
 <!--                                     <div href="#">
                                         <span class="icon-like"></span>
@@ -220,51 +210,6 @@
                     </div>
                 </div>
                 <?php endforeach; endif;?>
-            </section>
-<!--             <section class="product-desc mt-5">
-                <h4 class="title-border">Description</h4>
-                <p class="desc-content"><?= $pd->description?></p>
-            </section>
- -->
-            <section class="product-reviews mt-5">
-                <h4 class="title-border">Reviews</h4>
-                <div class="row">
-                    <div class="col-md-4"></div>
-                </div>
-                <div class="review-content">
-                    <div class="review-profile flex-container">
-                        <div class="review-profile-details">
-                            <span class="review-profile-name">anupam kumar</span><span class="review-rating">5<i
-                                    class="fa fa-star reting-color"></i></span>
-                        </div>
-                        <div class="review-time">
-                            <span>4 months ago</span>
-                        </div>
-                    </div>
-
-                    <p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                        eleifend, metus vulputate tincidunt bibendum, augue orci vehicula elit, ut vehicula risus orci
-                        et quam. Donec pellentesque est in aliquet laoreet. Maecenas lectus justo, venenatis ut nisl
-                        sed, ornare feugiat mauris. Quisque vel nulla fringilla, rutrum erat a, blandit orci.</p>
-                </div>
-
-                <div class="review-content">
-                    <div class="review-profile flex-container">
-                        <div class="review-profile-details">
-                            <span class="review-profile-name">anupam kumar</span><span class="review-rating">5<i
-                                    class="fa fa-star reting-color"></i></span>
-                        </div>
-                        <div class="review-time">
-                            <span>4 months ago</span>
-                        </div>
-                    </div>
-
-
-                    <p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                        eleifend, metus vulputate tincidunt bibendum, augue orci vehicula elit, ut vehicula risus orci
-                        et quam. Donec pellentesque est in aliquet laoreet. Maecenas lectus justo, venenatis ut nisl
-                        sed, ornare feugiat mauris. Quisque vel nulla fringilla, rutrum erat a, blandit orci.</p>
-                </div>
             </section>
 
             <section class="related-products mt-5">
@@ -362,6 +307,46 @@
 
         </div>
     </div>
-
+<script>
+ 
+function variation(pid,first,second,product)
+{
+  window.history.pushState('page2', 'Title', '<?= base_url()?>product/details/'+pid+'/'+first+'/'+second+'/'+product);
+  var dataString = 'pid='+ pid +'&first='+ first+'&second='+ second+'&product='+ product;
+            $.ajax({
+            type:"post",
+            cache:false,
+            url:"<?= base_url('product/attributeselect')?>",
+            data:dataString, 
+            dataType: 'json',  
+            success: function (data)
+                {
+                    if(data){
+                var len = data.length;
+                var txt = "";
+                if(len > 0){
+                    for(var i=0;i<len;i++){
+                        if(data[i].product)
+                        {
+                            $('#regularprice').html(data[i].regular_price);
+                            $('#offerprice').html(data[i].offer_price);
+                            if(data[i].stockstatus=='0')
+                            {
+                                $('#stock').html(' <span style="color:red"> Out Of Stock </span>');
+                            }
+                            else{
+                                $('#stock').html(' <span style="color:green"> In Stock </span>');
+                            }
+                        }
+                    }
+                   
+                }
+            }
+                   
+                }
+            });
+            return false;   
+}
+</script>
 
 <?php include('footer.php');?>
