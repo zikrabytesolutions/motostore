@@ -21,7 +21,7 @@
 
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/slick/slick-theme.css')?>"/>
     <link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/fancybox/dist/jquery.fancybox.min.css') ?>" />
     <!--styles -->
 
 </head>
@@ -30,6 +30,8 @@
 <?php $Ci = &get_instance(); ?>
     <div class="cart-page">
         <?php include('header.php');?>
+
+
         <div class="cart-body py-5">
         <div class="container">
             <h5 class="title-border">Shopping Cart</h5>
@@ -195,21 +197,5 @@
         </div>            
         </div>
     </div>
-    <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
-<script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js') ?>"></script>
-
-
-<!-- slick -->
-<script type="text/javascript" src="<?= base_url('assets/slick/slick.min.js') ?>"></script>
-<!-- slick -->
-<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>
-<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>	
-    <script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
-
-    <script type="text/javascript" src="<?= base_url('assets/js/custom.js') ?>"></script>
     <?php include('footer.php');?>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Moto store</title>
     <meta charset="utf-8">
@@ -10,14 +9,12 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/owl.carousel.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/owl.theme.default.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/animate.css') ?>">
-
-    
     <!--fontello-->
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/slick/slick.css')?>" />
 
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/slick/slick-theme.css')?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css') ?>" />
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/svg/css/fontello.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/fancybox/dist/jquery.fancybox.min.css') ?>" />
     <!--styles -->
 
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css') ?>">
@@ -30,7 +27,7 @@
     <div class="products-page">
 
     <?php include('header.php');?>
-        <br>
+   
         <div class="container product-single py-5">
             <section class="product-header">
                 <?php if($productdetail): foreach($productdetail as $pd): ?>
