@@ -78,8 +78,8 @@
                             <h3><?= $pd->product; ?></h3>
                             <p>Product Code : <?= $pd->productcode; ?></p>
                             <div class="product-price"><b>
-                            price Rs: <span class="slash" style="font-size:20px" id="offerprice"> <?= $pd->offer_price?></span> <span > <del id="regularprice">
-                                        <?= $pd->regular_price?></del> </span></b>
+                            Price Rs: <span > <del id="regularprice">
+                                        <?= $pd->regular_price?></del> </span><span class="slash" style="font-size:20px" id="offerprice"> <?= $pd->offer_price?></span> 
                             </div>
                             <div class="product-overview">
                                 <p>Availability: <b><span id="stock"><?php if($pd->stockstatus=='0'){echo ' <span style="color:red"> Out Of Stock';}
@@ -314,7 +314,7 @@
 </div> -->
                                                     <div class="related-price">
                                                         <?php $price= $this->db->select('regular_price,offer_price')->from('product_details')->where('pro_id',$pro->id)->order_by('id','ASC')->limit('1')->get()->row_array();?>
-                                                        <p class="txt-p-up"> Price:<span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span></p> 
+                                                        <p class=""> Price Rs:<span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span></p> 
                                                         <h4 class="p-prc"></h4>
                                                     </div>
                                                     <!-- <div class="product-cta flex-container">
