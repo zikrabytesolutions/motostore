@@ -67,11 +67,11 @@
 
                                     <div class="form-group col-sm-6">
                                         <label for="streetaddress">Street address *</label>
-                                        <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder="House number and street name" value="<?php echo set_value('streetaddress'); ?>">
+                                        <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder="House number and street name" value="<?php echo set_value('streetaddress'); ?>" required>
                                         <small style="color:red"><?php echo form_error('streetaddress'); ?></small>
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        <input type="text" class="form-control" id="streetaddress1" name="streetaddress1" placeholder="Apartment, suite, unit etc. (optional)" value="<?php echo set_value('streetaddress1'); ?>">
+                                        <input type="text" class="form-control" id="streetaddress1" name="streetaddress1" placeholder="Apartment, suite, unit etc. (optional)" value="<?php echo set_value('streetaddress1'); ?>" required>
                                     </div>
                                 </div>
 
@@ -103,8 +103,10 @@
                                         <div class="input-group">
                                             <input type="password" class="form-control" id="password" name="password" required>
                                             <div class="input-group-append">
-                                                <span class="input-group-text" id="showPw">show</span>
-                                            </div>
+                                          <span class="input-group-text" id="showPw"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                                          <span class="input-group-text" id="hidePw"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                                         
+                                        </div>
 
                                         </div>
                                         <small style="color:red"><?php echo form_error('password'); ?></small>
