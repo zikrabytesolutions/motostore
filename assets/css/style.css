@@ -110,7 +110,7 @@ a:hover, a:focus, a {
 .mid-logo-block {
     padding: 8px 0px;
     position: absolute;
-    left: 45%;
+    left: 44%;
     z-index: 999;
 }
 
@@ -1211,7 +1211,7 @@ header {
 .img-block.second:hover img,
 .img-block.third:hover img
  {
-    opacity: 0.5;
+    opacity: 0.8;
 }
     .img-block.first:hover,
     .img-block.second:hover,
@@ -2002,6 +2002,7 @@ ul.nav.flex-column.detail_ul li.active:after {
     display: none;
     position: absolute;
     left: 30%;
+    margin-top: 2px;
 }
 
 .search-bar input {
@@ -2098,6 +2099,11 @@ aside.filterside {
     width: 100%;
 }
 .rst-link {
+    color: blue;
+    text-decoration: underline;
+}
+.register-form a,
+.login-form a{
     color: blue;
     text-decoration: underline;
 }

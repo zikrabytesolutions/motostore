@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							            <th>Date</th>
 							            <th>Status</th>
 							            <th>Total</th>
-                                        <th>iteam</th>
+                                        <th>Item</th>
 							            
 							        </tr>
 							    </thead>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,7 +69,7 @@
                                                 </p>
 
                                                 <div class="cart_item__details">
-                                                    <p class="c_item_price"><span class="p-prc mr-2"><?= $rs->offer_price?></span><strike><?= $rs->regular_price?></strike></p>
+                                                    <p class="c_item_price"><b>Price Rs:</b> <del class="p-prc mr-2"><?= $rs->regular_price?></del><span class="p-prc mr-2"><?= $rs->offer_price?></span></p>
                                                    
                                                     <?php  $attribute= $Ci->findattributecart($rs->second);?>
                                                        <?php if($attribute): foreach($attribute as $att):?>

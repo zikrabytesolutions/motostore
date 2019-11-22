@@ -77,7 +77,7 @@
                         <section class="product-details">
                             <h3><?= $pd->product; ?></h3>
                             <p>Product Code : <?= $pd->productcode; ?></p>
-                            <div class="product-price"><b>
+                            <div class="product-price">
                             Price Rs: <span > <del id="regularprice">
                                         <?= $pd->regular_price?></del> </span><span class="slash" style="font-size:20px" id="offerprice"> <?= $pd->offer_price?></span> 
                             </div>
@@ -95,7 +95,7 @@
 								if(strtolower($prodet->attribute)=='color'):
 							?>
                                 <div class="product-color mt-4">
-                                    <p><?= $prodet->attribute?> : </p>
+                                    <p><b><?= $prodet->attribute?> : </b></p>
                                     <div class="color-choose">
                                         <?php
                                  $proattributevalue= $CI->findattributevale($pd->id,$prodet->id);
@@ -140,7 +140,7 @@
 								if(strtolower($prdet->attribute)=='size'):
 						  ?>
                                 <div class="product-size mt-4">
-                                    <p><?= $prdet->attribute?> : </p>
+                                    <p><b><?= $prdet->attribute?> : </b></p>
                                     <div class="size-choose flex-container">
                                         <?php
                                   $proattributevalue= $CI->findattributevalend($pd->id,$prdet->id);
@@ -175,7 +175,7 @@
                                 <?php endif; endforeach; endif;?>
 
                                 <div class="product-brand mt-4">
-                                    <p>Brand : <?= $pd->brandname?> </p>
+                                    <p><b>Brand :</b> <?= $pd->brandname?> </p>
                                     
                                 </div>
 
@@ -236,14 +236,7 @@
                                         </button>
                                         <?php echo form_close()?>
                                     </div>
-<!--                                     <div href="#">
-                                        <span class="icon-like"></span>
-                                    </div>
-                                    <div href="">
-                                        <span class="icon-share-bold"></span>
-                                    </div> -->
                                 </div>
-
                             </div>
                         </section>
                     </div>
@@ -258,86 +251,42 @@
                 </div>
                 <div class="rel-products-inner mt-4">
                     <div class="row">
-
                         <div class="col-md-10 offset-md-1">
                             <div class="owl-carousel owl-theme owl-loaded related-products-carousel">
                                 <div class="owl-stage-outer">
                                     <div class="owl-stage">
-
 									<?php  $product= $CI->findreletedproduct($this->uri->segment(3))?>
 									<?php if($product): foreach($product as $pro):?>
                                         <div class="owl-item">
                                             <div class="p-item">
-                                            
-                                                <div class="item-img">
-                                                    <img src="<?= base_url('admin/assets/productimage/'.$pro->photo)?>">
-                                                </div>
-                                                
-                                                <div class="item-dtl">
-                                                    <div class="item-title">
-                                                    <h6 class="txt-h-up" class="tooltrip">
-                                                        <?php
+                                              <?php
                                                            $catidgo=  strtr(base64_encode('catblank'), '+/', '-_');
                                                            $pid= strtr(base64_encode($pro->id), '+/', '-_');
                                                            $pid=  strtr(base64_encode($pid), '+/', '-_');
                                                            $pid=  strtr(base64_encode($pid), '+/', '-_');
 
                                                          ?>
+                                                <div class="item-img">
+                                                     <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$pro->product.'/'.$pid)?>"><img src="<?= base_url('admin/assets/productimage/'.$pro->photo)?>"></a>
+                                                </div>
+                                                
+                                                <div class="item-dtl">
+                                                    <div class="item-title">
+                                                    <h6 class="txt-h-up" class="tooltrip">
+                                                      
                                                     <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$pro->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $pro->product?>"><?= $stringCut = substr($pro->product, 0, 29); ?>..</a>
                                                     </h6>
                                                 </div>
-                                                <!-- <div class="p-left-txt">
-
-<?php
-        $attibute = $CI->findattribute($pro->id);
-        if ($attibute) : foreach ($attibute as $att) :
-                ?>
-        <div class="color-choose flex-container justify-content-start mb-3 ">
-            <p class="mr-2 mb-0"><?= $att->atname ?>:</p>
-            <?php $attibutevalue = $CI->findattributevalue($att->attribute_id, $att->product_id); ?>
-            <?php if ($att->atname == 'color') : ?>
-                <?php if ($attibutevalue) : foreach ($attibutevalue as $attv) : ?>
-                        <div>
-                            <input data-image="red" type="radio" value="red">
-                            <label for="red"><span style="background-color:<?= $attv->codes ?>;"></span></label>
-                        </div>
-                <?php endforeach;
-                                    endif; ?>
-            <?php else : ?>
-                <?php if ($attibutevalue) : foreach ($attibutevalue as $attv) : ?>
-                        <div>
-                            <input data-size="s" type="radio" id="s" name="size" value="s">
-                            <p style="margin-top: 10px;"><?= $attv->value_name . ', ' ?></p>
-                        </div>
-                <?php endforeach;
-                                    endif; ?>
-            <?php endif ?>
-        </div>
-<?php endforeach;
-        endif; ?>
-
-
-</div> -->
+                                    
                                                     <div class="related-price">
                                                         <?php $price= $this->db->select('regular_price,offer_price')->from('product_details')->where('pro_id',$pro->id)->order_by('id','ASC')->limit('1')->get()->row_array();?>
                                                         <p class=""> Price Rs:<span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span></p> 
                                                         <h4 class="p-prc"></h4>
                                                     </div>
-                                                    <!-- <div class="product-cta flex-container">
-                                                        <div><span class="add-to-cart"><i class="icon-cart"></i>add to
-                                                                cart</span></div>
-                                                        <div href="#">
-                                                            <span class="icon-like"></span>
-                                                        </div>
-                                                        <div href="">
-                                                            <span class="icon-share-bold"></span>
-                                                        </div>
-                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
                                      <?php  endforeach; endif;?>
-
                                     </div>
                                 </div>
                             </div>
@@ -345,9 +294,82 @@
                     </div>
                 </div>
             </section>
+        </div>
 
+<!-- footer start -->
+<section class="footer-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="f-block">
+                    <img class="f-logo" src="<?= base_url('assets/images/motologo.png')?>"> 
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="f-block">
+                    <h6 class="txt-h-up">services</h6>
+                <ul class="privacy-block">
+                    <li><a href="">Helmets</a></li>
+                    <li><a href="">Riding Gear</a></li>
+                    <li><a href="">Luggage</a></li>
+                </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="f-block">
+                    <h6 class="txt-h-up">Contact</h6>
+                <ul class="contact-block">
+                    <li><a href="">9, Lake Square, Kensington Road, Ulsoor, Bengaluru 560042</a></li>
+                    <li>phone : +91 94-4973-4040</li>
+                    <li>Email :<a href="mailto:info@motostore.com"> info@motostore.com</a></li>
+                </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="f-block">
+                    <h6 class="txt-h-up">motostore social</h6>
+                    <ul class="social-block">
+                        <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
+</section>
+<section class="cr-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="cpr-text">
+                    <h6>2019 &copy;Copyright Moto Store.</h6>
+                    <p>Powered by <a href="">zikrabye Solutions</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- footer end -->
+</div>
+    <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <!-- slick -->
+    <script type="text/javascript" src="<?= base_url('assets/slick/slick.min.js') ?>"></script>
+    <!-- slick -->
+    <script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>  
+    <script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
+    <!-- price range slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js') ?>"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/custom.js')?>"></script>
+
 <script>
  
 function variation(pid,first,second,product)
@@ -390,4 +412,10 @@ function variation(pid,first,second,product)
 }
 </script>
 
-<?php include('footer.php');?>
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+</body>
+</html>

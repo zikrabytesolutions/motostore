@@ -2,7 +2,7 @@
 			<nav class="navbar navbar-expand-md">
                 <div class="container-fluid">
                     <!-- Brand -->
-                    <a class="navbar-brand d-block" href="<?= base_url('home')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/logo.png')?>"></a>
+                    <a class="navbar-brand d-block" href="<?= base_url('home')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motologo.png')?>"></a>
                     <ul class="nav dsk-hide">
                         <li class="nav-item search-nav">
 							           <a class="nav-link search-ico search-ico-d" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
