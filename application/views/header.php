@@ -70,9 +70,7 @@
                     <ul class="nav mb-hide">
                         <li class="nav-item search-nav">
 							<a class="nav-link search-ico" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                            <div class="search-bar">
-                                <input type="text" name="search">
-                            </div>
+                           
                         </li>
                         <li class="nav-item">
                            <?php if($this->session->userdata('motoubid')): ?>
@@ -113,5 +111,10 @@
                     </ul>
                 </div>
             </nav>
+            <div>
+               <div class="search-bar">
+                                <input type="text" name="search">
+                            </div>
+            </div>
 
 		</header>
