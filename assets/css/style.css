@@ -2002,6 +2002,7 @@ ul.nav.flex-column.detail_ul li.active:after {
     display: none;
     position: absolute;
     left: 30%;
+    margin-top: 2px;
 }
 
 .search-bar input {
