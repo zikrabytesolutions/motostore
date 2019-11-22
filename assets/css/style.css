@@ -110,7 +110,7 @@ a:hover, a:focus, a {
 .mid-logo-block {
     padding: 8px 0px;
     position: absolute;
-    left: 45%;
+    left: 44%;
     z-index: 999;
 }
 
@@ -1211,7 +1211,7 @@ header {
 .img-block.second:hover img,
 .img-block.third:hover img
  {
-    opacity: 0.5;
+    opacity: 0.8;
 }
     .img-block.first:hover,
     .img-block.second:hover,
@@ -2102,6 +2102,7 @@ aside.filterside {
     color: blue;
     text-decoration: underline;
 }
+.register-form a,
 .login-form a{
     color: blue;
     text-decoration: underline;

@@ -95,7 +95,7 @@
 								if(strtolower($prodet->attribute)=='color'):
 							?>
                                 <div class="product-color mt-4">
-                                    <p><?= $prodet->attribute?> : </p>
+                                    <p><b><?= $prodet->attribute?> : </b></p>
                                     <div class="color-choose">
                                         <?php
 								 $proattributevalue= $CI->findattributevale($pd->id,$prodet->id);
@@ -137,7 +137,7 @@
 								if(strtolower($prdet->attribute)=='size'):
 						  ?>
                                 <div class="product-size mt-4">
-                                    <p><?= $prdet->attribute?> : </p>
+                                    <p><b><?= $prdet->attribute?> : </b></p>
                                     <div class="size-choose flex-container">
                                         <?php
 								  $proattributevalue= $CI->findattributevalend($pd->id,$prdet->id);
@@ -169,7 +169,7 @@
                                 <?php endif; endforeach; endif;?>
 
                                 <div class="product-brand mt-4">
-                                    <p>Brand : <?= $pd->brandname?> </p>
+                                    <p><b>Brand :</b> <?= $pd->brandname?> </p>
                                     
                                 </div>
 
@@ -262,21 +262,21 @@
 									<?php if($product): foreach($product as $pro):?>
                                         <div class="owl-item">
                                             <div class="p-item">
-                                            
-                                                <div class="item-img">
-                                                    <img src="<?= base_url('admin/assets/productimage/'.$pro->photo)?>">
-                                                </div>
-                                                
-                                                <div class="item-dtl">
-                                                    <div class="item-title">
-                                                    <h6 class="txt-h-up" class="tooltrip">
-                                                        <?php
+                                              <?php
                                                            $catidgo=  strtr(base64_encode('catblank'), '+/', '-_');
                                                            $pid= strtr(base64_encode($pro->id), '+/', '-_');
                                                            $pid=  strtr(base64_encode($pid), '+/', '-_');
                                                            $pid=  strtr(base64_encode($pid), '+/', '-_');
 
                                                          ?>
+                                                <div class="item-img">
+                                                     <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$pro->product.'/'.$pid)?>"><img src="<?= base_url('admin/assets/productimage/'.$pro->photo)?>"></a>
+                                                </div>
+                                                
+                                                <div class="item-dtl">
+                                                    <div class="item-title">
+                                                    <h6 class="txt-h-up" class="tooltrip">
+                                                      
                                                     <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$pro->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $pro->product?>"><?= $stringCut = substr($pro->product, 0, 29); ?>..</a>
                                                     </h6>
                                                 </div>

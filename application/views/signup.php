@@ -63,11 +63,11 @@
 									<div class="col-sm-8">	
 								        <div class="input-group">
 								        <input type="password" class="form-control" id="password" name="password" >
+								         <div class="input-group-append">
+								          <span class="input-group-text" id="showPw"><i class="fa fa-eye" aria-hidden="true"></i></span>
+								          <span class="input-group-text" id="hidePw"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
 								         
-                                        <div class="input-group-append">
-								          <span class="input-group-text" id="showPw">show</span>
 								        </div>
-                                        
                                       </div>
                                       <small style="color:red"><?php echo form_error('password'); ?></small>
 									</div>
@@ -94,7 +94,7 @@
 							</form>
 							<hr/>
 							<div class="text-center">
-								<a href="#">Already have an Account? Login instead!</a>
+								Already have an Account? <a href="#">Login</a>
 							</div>
 						</div>
 					</div>    	

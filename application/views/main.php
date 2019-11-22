@@ -41,7 +41,9 @@
 						<a href="<?= base_url('home')?>">
 							<img src="<?= base_url('assets/images/m1.png')?>" alt="" class="img-fluid">
 							<div class="overlay-text">
-								<h5>Motostore</h5>
+								<!-- <h5>Motostore</h5> -->
+								<a  href="<?= base_url('home')?>">
+									<img class="mx-auto d-block" src="<?= base_url('assets/images/motostore.png')?>"></a>
 							</div>
 						</a>
 					</div>
@@ -51,7 +53,7 @@
 						<a href="">
 							<img src="<?= base_url('assets/images/m2.png')?>" alt="" class="img-fluid">
 							<div class="overlay-text">
-								<h5>Motocafe</h5>
+								<a href="<?= base_url('home')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motocafe.png')?>"></a>
 							</div>
 						</a>
 					</div>
@@ -61,7 +63,8 @@
 						<a href="">
 							<img src="<?= base_url('assets/images/m3.png')?>" alt="" class="img-fluid">
 							<div class="overlay-text">
-								<h5>Motoexperience</h5>
+								<!-- <h5>Motoexperience</h5> -->
+								<a href="<?= base_url('home')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motoexperience.png')?>"></a>
 							</div>
 						</a>
 					</div>
