@@ -2090,3 +2090,7 @@ aside.filterside {
 #max {
     width: 100%;
 }
+.rst-link {
+    color: blue;
+    text-decoration: underline;
+}

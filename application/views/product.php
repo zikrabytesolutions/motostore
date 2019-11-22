@@ -41,7 +41,7 @@
                         <div class="shop-by-filter">
                             <h5 class="title-border">Shop By  
                                 <span style="float:right;font-size:15px;color:red">
-                                   <a href="<?= base_url('product/lists/'.$this->uri->segment(3).'/'.$this->uri->segment(4))?>"> Reset Filter</a>
+                                   <a href="<?= base_url('product/lists/'.$this->uri->segment(3).'/'.$this->uri->segment(4))?>" class="rst-link"> Reset Filter</a>
                                 </span>
                             </h5>
                             <label for="amount">Price range:</label>
