@@ -48,7 +48,7 @@
                                     <ul>
                                           <?php $i=0; if( $submenue): foreach($submenue as $sbm): $i++;?>
                                                  <?php
-                                                 $mins='blank'; $maxs='blank'; $atributes='';
+                                                 $mins='100'; $maxs='80000'; $atributes='';
                                                  $mins=  strtr(base64_encode($mins), '+/', '-_');
                                                  $maxs=  strtr(base64_encode($maxs), '+/', '-_');
                                                     $data= Array('data'=>$sbm->id);
@@ -121,6 +121,7 @@
             </nav>
 		</header>
         <div class="search-bar">
-          <input type="text" name="search" placeholder="Search here">
+          <input type="text" name="search" placeholder="Search here" id="search_text">
          <a class="nav-link close-ico" href="#"><i class="fa fa-close" aria-hidden="true"></i></a>
+         <ul id="result"></ul>
         </div>

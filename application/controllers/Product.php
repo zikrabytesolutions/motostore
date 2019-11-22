@@ -26,14 +26,11 @@ class Product extends CI_Controller
             $data['subcategory']= $this->productModel->subcategory($catid);
             $brands= json_decode($brands);
             $atributes= json_decode($atributes);
-           
-            $data['productlist']= $this->productModel->filtersearch($catid,$min,$max,$brands,$atributes);
-               
+            $data['productlist']= $this->productModel->filtersearch($catid,$min,$max,$brands,$atributes); 
             if($data['productlist'])
             {
-
                 $data['sbrand']=$brands; $data['min']=$min; $data['max']=$max;  $data['sattribute']=$atributes;
-                 $this->load->view('product',$data);
+                $this->load->view('product',$data);
             }
             else
             {
@@ -64,7 +61,6 @@ class Product extends CI_Controller
 
     function listfilter()
     {
-        
          $catid= $this->input->post('catid');
          $min= $this->input->post('min');
          $max= $this->input->post('max');
@@ -76,10 +72,8 @@ class Product extends CI_Controller
             if($branddata>0)
             {
                 $brands[$strippeds]= $branddata;
-            }
-            
+            } 
         }
-       
         $brndat= json_encode($brands);
          $attribute= $this->productModel->attributelist();
         foreach($attribute as $att)

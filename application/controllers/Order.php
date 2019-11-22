@@ -18,6 +18,13 @@ class Order extends MY_Controller
     {
        return $this->userModel->myorderlist($orderdid);
     }
+
+    
+        function fetch($search)
+        {
+           echo "hello";
+        }
+    
 }
 
 
