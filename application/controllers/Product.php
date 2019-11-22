@@ -130,7 +130,7 @@ class Product extends CI_Controller
             {
                 // echo  $first.'<br>';
                 // echo  $second;
-                $data['rsecond']=$second; $data['rfirst']=$first; $data['flag']='flase';
+                $data['rsecond']=$second; $data['rfirst']=$first; $data['flag']='false';  $data['ini']='0';
                 $data['productdetail']= $this->productModel->findvariantproduct($proid,$first,$second);
                  $this->load->view('productdetails',$data);
             }
@@ -139,6 +139,7 @@ class Product extends CI_Controller
         else
         {
             $data['productname']=$productname; $data['flag']='true'; $data['rsecond']=''; $data['rfirst']='';
+            $data['ini']='1';
             $data['productdetail']= $this->productModel->findproductdetails($proid);
             $this->load->view('productdetails',$data);
         }

@@ -20,7 +20,7 @@
 
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/slick/slick-theme.css')?>"/>
     <link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/fancybox/dist/jquery.fancybox.min.css') ?>" />
     <!--styles -->
 
 </head>
@@ -36,9 +36,8 @@
         
                 <div class="row">
                     <div class="col-md-7">
-
                    <?php if($billing): foreach($billing as $bill):?>
-                        <h5 class="title-border clr-black" style="margin-bottom:-5px">Billing Address</h5>
+                        <h5 class="title-border clr-black" style="margin-bottom:15px">Billing Address</h5>
                         <div class="p-item">
                              <h5 style="text-align:center"> <?= $bill->name;?></h5> <hr>
                              <p>Mobile : <?= $bill->mobile?><br> <?= $bill->streetaddress?>, <?= $bill->streetaddress1?>, <?= $bill->city?>, <?= $bill->postcode?></p>

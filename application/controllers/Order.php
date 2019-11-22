@@ -20,10 +20,6 @@ class Order extends MY_Controller
     }
 
     
-        function fetch($search)
-        {
-           echo "hello";
-        }
     
 }
 

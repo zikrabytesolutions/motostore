@@ -1,8 +1,18 @@
 <?php
-class Thankyou Extends CI_Controller{
+class Thankyou extends MY_Controller
+{
 
-	function index(){
-		$this->load->view('thankyou');
+	function __construct() 
+	{
+           parent::__construct();
+           
+           $this->load->model( 'paymentModel' );
+	   }
+	   
+	function index()
+	{
+		$data['order']=$this->paymentModel->orderinformation();
+		$this->load->view('thankyou',$data);
 	}
 }
 

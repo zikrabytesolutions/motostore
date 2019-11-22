@@ -40,20 +40,20 @@
             </div>
           </div>
         </div>
+        <?php date_default_timezone_set('Asia/Kolkata'); if($order): foreach($order as $ord):?>
         <div class="row">
           <div class="col-md-12">
             <div class="ty-dtl">
               <ul class="">
-                <li><b>Order number: </b> 43163</li>
-                <li><b>Date: </b> 22/11/2019</li>
-                <li><b>Email: </b> aishwaryad.zikrabyte1@gmail.com</li>
-                <li><b>Total: </b> Rs.81,496.00</li>
+                <li><b>Order number: </b> <?= $ord->orderdid?></li>
+                <li><b>Date: </b> <?=date("d-m-Y", strtotime( $ord->created))?></li>
+                <li><b>Total: </b> Rs. <?= $ord->grand?></li>
                 <li><b>Payment method: </b> Cash on Delivery</li>
               </ul>
-
             </div>
           </div>
         </div>
+        <?php endforeach; endif;?>
       </div>
     </section>
 

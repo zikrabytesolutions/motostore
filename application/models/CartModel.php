@@ -181,6 +181,12 @@ class CartModel extends CI_Model{
     {
         return $this->db->where('id',$id)->DELETE('deliveryaddress');
     }
+
+
+    function countalluser()
+    {
+        return $this->db->from("users")->count_all_results();
+    }
     
 }
 

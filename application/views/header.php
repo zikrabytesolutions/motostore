@@ -120,8 +120,65 @@
                 </div>
             </nav>
 		</header>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
+           #autoSuggestionsList > li {
+    background: none repeat scroll 0 0 #F3F3F3;
+    border-bottom: 1px solid #E3E3E3;
+    list-style: none outside none;
+    padding: 3px 15px 3px 15px;
+    text-align: left;
+}
+
+#autoSuggestionsList > li a { color: #black; }
+
+.auto_list {
+    border: 1px solid #E3E3E3;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+}
+        </style>
         <div class="search-bar">
-          <input type="text" name="search" placeholder="Search here" id="search_text">
+          <input type="text" name="search" placeholder="Search here" id="search_data" type="text" onkeyup="ajaxSearch();">
          <a class="nav-link close-ico" href="#"><i class="fa fa-close" aria-hidden="true"></i></a>
-         <ul id="result"></ul>
+         <div id="suggestions">
+         <div id="autoSuggestionsList"></div>
+     </div>
+        
         </div>
+
+        <script type="text/javascript">
+
+function ajaxSearch()
+{
+    var input_data = $('#search_data').val();
+
+    if (input_data.length === 0)
+    {
+        $('#suggestions').hide();
+    }
+    else
+    {
+
+        var post_data = {
+            'search_data': input_data,
+            '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>'
+            };
+
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url(); ?>datasearch/autocomplete/",
+            data: post_data,
+            success: function (data) {
+                // return success
+                if (data.length > 0) {
+                    $('#suggestions').show();
+                    $('#autoSuggestionsList').addClass('auto_list');
+                    $('#autoSuggestionsList').html(data);
+                }
+            }
+         });
+
+     }
+ }
+</script>
