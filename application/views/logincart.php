@@ -223,7 +223,7 @@
         </div>            
         </div>
     </div>
-    <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
+   <!--  <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -231,13 +231,11 @@
 <script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js') ?>"></script>
 
-
-<!-- slick -->
 <script type="text/javascript" src="<?= base_url('assets/slick/slick.min.js') ?>"></script>
-<!-- slick -->
+
 <script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>	
     <script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
 
-    <script type="text/javascript" src="<?= base_url('assets/js/custom.js') ?>"></script>
+    <script type="text/javascript" src="<?= base_url('assets/js/custom.js') ?>"></script> -->
     <?php include('footer.php');?>

@@ -30,12 +30,27 @@
         <?php include('header.php');?>
     
 
-    <section>
+    <section class="ty-sec">
       <div class="container">
-        <div class="row">
+        <div class="row text-center">
           <div class="col-md-12">
             <div class="tymsg">
-              <h1>Thank you. Your order has been received.</h1>
+              <h1>Thank you.</h1>
+              <p> Your order has been received.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="ty-dtl">
+              <ul class="">
+                <li><b>Order number: </b> 43163</li>
+                <li><b>Date: </b> 22/11/2019</li>
+                <li><b>Email: </b> aishwaryad.zikrabyte1@gmail.com</li>
+                <li><b>Total: </b> Rs.81,496.00</li>
+                <li><b>Payment method: </b> Cash on Delivery</li>
+              </ul>
+
             </div>
           </div>
         </div>

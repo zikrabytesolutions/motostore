@@ -265,18 +265,20 @@ $('#range').text(JSON.stringify(range, null, '\t'));
 
 
 //show password
+$(document).ready(function(){
+$('#hidePw').hide();
+})
 
+var showPW = document.getElementById('showPw');
 
-var showPw = document.getElementById('showPw');
-
-
-
-if(showPw){
+if(showPW){
 
 showPw.addEventListener('click', showPassword);
-
 function showPassword() {
-$('#showPw').toggleClass('shw');	
+	$('#showPw').hide();
+	$('#hidePw').show();
+
+$('#showPw').toggleClass('shw');			
   var x = document.getElementById("password");
   if (x.type === "password") {
     x.type = "text";
@@ -287,6 +289,25 @@ $('#showPw').toggleClass('shw');
 
 }
 
+var hidePW = document.getElementById('hidePw');
+
+if(hidePW){
+
+hidePw.addEventListener('click', hidePassword);
+function hidePassword() {
+	$('#showPw').show();
+	$('#hidePw').hide();
+
+$('#hidePw').toggleClass('shw');			
+  var x = document.getElementById("password");
+  if (x.type === "text") {
+    x.type = "password";
+  } else {
+    x.type = "text";
+  }
+}
+
+}
 
 //datepicker
 
@@ -348,16 +369,11 @@ $('.checkout').find("input[type=checkbox][value=createAcc]").on('change', functi
 });
 
 $('.search-ico').on('click', function() {
-	// $(".fa-search").toggleClass('fa-close');
-	// $(".search-bar").fadeToggle(200);
 	$(".search-bar").toggle(200);
 });
 $('.close-ico').on('click', function() {
-	// $(".fa-search").toggleClass('fa-close');
-	// $(".search-bar").fadeToggle(200);
-	$(".search-bar").hide(200);
+	$(".search-bar").toggle(200);
 });
-
   
 
 var min = "<?= $min; ?>";

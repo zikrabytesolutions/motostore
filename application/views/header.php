@@ -5,10 +5,8 @@
                     <a class="navbar-brand d-block" href="<?= base_url('home')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/logo.png')?>"></a>
                     <ul class="nav dsk-hide">
                         <li class="nav-item search-nav">
-							<a class="nav-link search-ico" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                            <div class="search-bar">
-                                <input type="text" name="search">
-                            </div>
+							           <a class="nav-link search-ico search-ico-d" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" id="cart-ico"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
@@ -80,8 +78,7 @@
                     </div>
                     <ul class="nav mb-hide">
                         <li class="nav-item search-nav">
-							<a class="nav-link search-ico" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                           
+							           <a class="nav-link search-ico" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
                         </li>
                         <li class="nav-item">
                            <?php if($this->session->userdata('motoubid')): ?>
@@ -105,7 +102,7 @@
                                   $this->db->where('id',$id);
                                   $name= $this->db->get()->row('name');
                             ?>
-                            <a class="nav-link btn btn-default log-reg_butt" href="<?= base_url('login')?>"><?=substr($name, 0, 8) ?>.. <i class="fa fa-user" aria-hidden="true"></i></a>
+                              <a class="nav-link btn btn-default log-reg_butt" href="<?= base_url('login')?>"><?=substr($name, 0, 8) ?>.. <i class="fa fa-user" aria-hidden="true"></i></a>
                             <div class="dropdown-menu profilemenu" aria-labelledby="navbarDropdownMenuLink">
                               <div class="submenu-item">
                                 <ul>
@@ -117,7 +114,7 @@
 
                             <?php else:?>
                                 <a class="nav-link btn btn-default log-reg_butt" href="<?= base_url('login')?>">Login / Register</a>
-                            <?php endif?>
+                            <?php endif ?>
                         </li>
                     </ul>
                 </div>

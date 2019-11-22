@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css') ?>">
     <!--fontello-->
     <link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/fancybox/dist/jquery.fancybox.min.css') ?>" />
     <!--styles -->
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
