@@ -199,7 +199,7 @@
                                        
                                         <?php if($this->session->userdata('motoubid')):?>
                                                <?php if($cartinfo): foreach($cartinfo as $cinfo):?>
-                                                 <?php if($cinfo['id']==$pd->id):?>
+                                                 <?php if($cinfo['id']==$pd->detailsid):?>
 
                                                  <?php endif?>
                                                <?php endforeach; endif;?>
