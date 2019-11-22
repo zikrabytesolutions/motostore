@@ -157,7 +157,7 @@ float: right;
     /*overflow: visible;*/
 }
 .p-prc{
-    color: #e60201;
+    color: #787878;
 
 }
 .portfolio-sec{
@@ -2000,8 +2000,7 @@ ul.nav.flex-column.detail_ul li.active:after {
 .search-bar {
     display: none;
     position: absolute;
-    left: -287px;
-    top: 64px;
+    left: 30%;
 }
 
 .search-bar input {
@@ -2009,7 +2008,9 @@ ul.nav.flex-column.detail_ul li.active:after {
     border-radius: 20px !important;
     background: #fff;
     border: 2px solid black;
-    min-width: 320px;
+    min-width: 500px;
+    margin: 0 auto;
+    display: block;
 }
 
 input, button {
@@ -2044,3 +2045,16 @@ aside.filterside {
    display: inline-block;
 }
 .product-size .size-choose{display:inline-flex;}
+.item-dtl p{
+ color: #000;
+}
+.item-img img {
+    width: 180px;
+    height: 180px;
+}
+.search-bar a {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    color: black;
+}

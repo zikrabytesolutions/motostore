@@ -11,8 +11,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/owl.theme.default.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/animate.css') ?>">
 
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css') ?>">
+    
     <!--fontello-->
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/slick/slick.css')?>" />
 
@@ -20,6 +19,9 @@
     <link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css') ?>" />
     <!--styles -->
+
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css') ?>">
 
 </head>
 
@@ -250,7 +252,13 @@
 									<?php if($product): foreach($product as $pro):?>
                                         <div class="owl-item">
                                             <div class="p-item">
-                                            <div class="item-title">
+                                            
+                                                <div class="item-img">
+                                                    <img src="<?= base_url('admin/assets/productimage/'.$pro->photo)?>">
+                                                </div>
+                                                
+                                                <div class="item-dtl">
+                                                    <div class="item-title">
                                                     <h6 class="txt-h-up" class="tooltrip">
                                                         <?php
                                                            $catidgo=  strtr(base64_encode('catblank'), '+/', '-_');
@@ -262,11 +270,7 @@
                                                     <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$pro->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $pro->product?>"><?= $stringCut = substr($pro->product, 0, 29); ?>..</a>
                                                     </h6>
                                                 </div>
-                                                <div class="item-img">
-                                                    <img src="<?= base_url('admin/assets/productimage/'.$pro->photo)?>">
-                                                </div>
-                                                <div class="item-dtl">
-                                                <div class="p-left-txt">
+                                                <!-- <div class="p-left-txt">
 
 <?php
         $attibute = $CI->findattribute($pro->id);
@@ -297,11 +301,11 @@
         endif; ?>
 
 
-</div>
-<div class="p-right-txt">
-
+</div> -->
+                                                    <div class="related-price">
                                                         <?php $price= $this->db->select('regular_price,offer_price')->from('product_details')->where('pro_id',$pro->id)->order_by('id','ASC')->limit('1')->get()->row_array();?>
-                                                        <p class="txt-p-up" style="font-size:18px"> &#x20A8;:</p> <h4 class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></h4>
+                                                        <p class="txt-p-up"> Price:<span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span></p> 
+                                                        <h4 class="p-prc"></h4>
                                                     </div>
                                                     <!-- <div class="product-cta flex-container">
                                                         <div><span class="add-to-cart"><i class="icon-cart"></i>add to

@@ -348,8 +348,14 @@ $('.checkout').find("input[type=checkbox][value=createAcc]").on('change', functi
 });
 
 $('.search-ico').on('click', function() {
-	$(".fa-search").toggleClass('fa-close');
-	$(".search-bar").fadeToggle(200);
+	// $(".fa-search").toggleClass('fa-close');
+	// $(".search-bar").fadeToggle(200);
+	$(".search-bar").toggle(200);
+});
+$('.close-ico').on('click', function() {
+	// $(".fa-search").toggleClass('fa-close');
+	// $(".search-bar").fadeToggle(200);
+	$(".search-bar").hide(200);
 });
 
   

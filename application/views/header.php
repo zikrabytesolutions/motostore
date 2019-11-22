@@ -111,10 +111,8 @@
                     </ul>
                 </div>
             </nav>
-            <div>
-               <div class="search-bar">
-                  <input type="text" name="search">
-               </div>
-            </div>
-
 		</header>
+        <div class="search-bar">
+          <input type="text" name="search" placeholder="Search here">
+         <a class="nav-link close-ico" href="#"><i class="fa fa-close" aria-hidden="true"></i></a>
+        </div>
