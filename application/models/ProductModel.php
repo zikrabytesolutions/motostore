@@ -233,16 +233,7 @@ class ProductModel extends CI_Model
 
     }
 
-    function allcartrow()
-    {
-        $id= $this->session->userdata('motoubid');
-        $this->db->select('*');
-        $this->db->from('product_cart_iteam');
-        $this->db->where('userid', $id);
-        $query= $this->db->get();
-        return $result= $query->result();
-
-    }
+    
 
 
 }
