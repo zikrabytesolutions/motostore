@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,36 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!-- header start -->
 		<?php include('header.php');?>
 		<!-- header end -->
-		<!-- slider start -->
-<!-- 		<section class="slider-sec">
-			<div id="main-slider" class="carousel slide" data-ride="carousel">
 
-
-				<ul class="carousel-indicators">
-					<li data-target="#main-slider" data-slide-to="0" class="active"></li>
-					<li data-target="#main-slider" data-slide-to="1"></li>
-					<li data-target="#main-slider" data-slide-to="2"></li>
-				</ul>
-
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="images/s2.png" alt="">
-					</div>
-					<div class="carousel-item">
-						<img src="images/s2.png" alt="">
-					</div>
-
-				</div>
-
-				<a class="carousel-control-prev" href="#main-slider" data-slide="prev">
-					<span class="carousel-control-prev-icon"></span>
-				</a>
-				<a class="carousel-control-next" href="#main-slider" data-slide="next">
-					<span class="carousel-control-next-icon"></span>
-				</a>
-
-			</div>
-		</section> -->
 <div id="slider_main" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#slider_main" data-slide-to="0" class="active icon-wheel"></li>
@@ -223,4 +193,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 </section>
 <!-- News section end -->
+</div>
+
 <?php include('footer.php')?>

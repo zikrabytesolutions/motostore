@@ -110,16 +110,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
 	<!-- Account details section end -->
-
-
 <!-- footer start -->
 <section class="footer-sec">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
-					<img class="f-logo" src="<?= base_url('assets/images/page-logo.jpg')?>">
-
+					<img class="f-logo" src="<?= base_url('assets/images/motologo.png')?>">	
+				
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -130,11 +128,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
 					<h6 class="txt-h-up">services</h6>
-
+				
 				<ul class="privacy-block">
-
-					<li><a href="">privacy policy</a></li>
-					<li><a href="">cookie</a></li>
+					
+					<li><a href="">Helmets</a></li>
+					<li><a href="">Riding Gear</a></li>
+					<li><a href="">Luggage</a></li>
 				</ul>
 				</div>
 
@@ -152,7 +151,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
-					<h6 class="txt-h-up">motosotre social</h6>
+					<h6 class="txt-h-up">motostore social</h6>
 					<ul class="social-block">
 						<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 						<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -161,7 +160,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 
 			</div>
-
+			
 		</div>
 	</div>
 </section>
@@ -178,9 +177,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </section>
 <!-- footer end -->
-
-
-
 
 	</div>
 

@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
-					<img class="f-logo" src="<?= base_url('assets/images/logo.png')?>">	
+					<img class="f-logo" src="<?= base_url('assets/images/motologo.png')?>">	
 				
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -19,8 +19,9 @@
 				
 				<ul class="privacy-block">
 					
-					<li><a href="">privacy policy</a></li>
-					<li><a href="">cookie</a></li>
+					<li><a href="">Helmets</a></li>
+					<li><a href="">Riding Gear</a></li>
+					<li><a href="">Luggage</a></li>
 				</ul>
 				</div>
 
