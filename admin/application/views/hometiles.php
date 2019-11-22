@@ -20,13 +20,8 @@
                    </div>
                    <div class="col-md-8">
                        <div class="form-group">
-                        <label class=" control-label">Select Url</label>
-                          <select class="form-control" name="catid">
-                          <?php if($category): foreach($category as $cat):?>
-                            <option value="<?= $cat->id?>"><?= base_url('product/lists/')?><?= $cat->cat_name?></option>
-
-                          <?php endforeach; endif?>
-                          </select>
+                        <label class=" control-label">Enter Url</label>
+                        <input type="text" class="form-control" name="url">
                        </div>
                    </div>
 
