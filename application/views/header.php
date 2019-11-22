@@ -30,6 +30,10 @@
                        $query= $this->db->get();
                        $menucat= $query->result();
                        if( $menucat): foreach($menucat as $menue):
+                        $cid= strtr(base64_encode($menue->id), '+/', '-_');
+                        $cid=  strtr(base64_encode($cid), '+/', '-_');
+                        $cid=  strtr(base64_encode($cid), '+/', '-_');
+                        $ctid=  strtr(base64_encode('catblank'), '+/', '-_');
 
                         $this->db->select('*');
                         $this->db->from('sub_category');
@@ -38,15 +42,22 @@
                         $submenue= $query->result();
 
                         ?>
-
                           <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $menue->cat_name?><i class="fa fa-angle-down"></i></a>
+                            <a class="nav-link" href="<?= base_url('product/lists/'.$cid.'/'.$ctid)?>" id="navbarDropdownMenuLink"   aria-haspopup="true" aria-expanded="false"><?= $menue->cat_name?><i class="fa fa-angle-down"></i></a>
                             <div class="dropdown-menu customMenuDrpdwn" aria-labelledby="navbarDropdownMenuLink">
                                 <div class="submenu-item">
 
                                     <ul>
-                                          <?php  if( $submenue): foreach($submenue as $sbm):?>
-                                            <li><a class="submenu-link" href="#"><?= $sbm->sub_category_name?></a></li>
+                                          <?php $i=0; if( $submenue): foreach($submenue as $sbm): $i++;?>
+                                                 <?php
+                                                 $mins='blank'; $maxs='blank'; $atributes='';
+                                                 $mins=  strtr(base64_encode($mins), '+/', '-_');
+                                                 $maxs=  strtr(base64_encode($maxs), '+/', '-_');
+                                                    $data= Array('data'=>$sbm->id);
+                                                    $subcatid= json_encode($data);
+                                                    $brndat=  strtr(base64_encode($subcatid), '+/', '-_');
+                                                 ?>
+                                            <li><a class="submenu-link" href="<?= base_url('product/lists/'.$cid.'/'.$mins.'/'.$maxs.'/'.$brndat.'/'.$atributes)?>"><?= $sbm->sub_category_name?></a></li>
                                             <?php endforeach; endif?>
                                         </ul>
 

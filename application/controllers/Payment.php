@@ -15,13 +15,14 @@ class Payment extends CI_Controller
     {
         $data= $this->input->post();
         
-        if (!$this->form_validation->run('checkout') == TRUE )
-        {
-            $data['proinfo'] = $this->cart->contents();
-            $this->load->view('checkout',$data);
-        }
-        else
-        {
+        // if (!$this->form_validation->run('checkout') == TRUE )
+        // {
+        //     $data['proinfo'] = $this->cart->contents();
+        //     $this->load->view('checkout',$data);
+        // }
+        // else
+        // {
+
             date_default_timezone_set('Asia/Kolkata');
             $now = date("Y-m-d H:i:s");
             $name= $this->input->post('name');
@@ -32,6 +33,7 @@ class Payment extends CI_Controller
             $mobile= $this->input->post('mobile');
             $email= $this->input->post('email');
             $password= md5($this->input->post('password'));
+
 
             $dname= $this->input->post('dname');
             $dstreetaddress= $this->input->post('dstreetaddress');
@@ -47,7 +49,11 @@ class Payment extends CI_Controller
             $success= $this->paymentModel->userregister($data);
             $delivery= Array('userid'=>$success,'name'=>$dname,'mobile'=>$dmobile,'city'=>$dcity,'postcode'=>$dpostcode,
             'streetaddress'=>$dstreetaddress,'streetaddress1'=>$dstreetaddress1,'created'=>$now);
-            $this->orderModel->addaddress($delivery);
+            if($dname!='')
+            {
+                $this->orderModel->addaddress($delivery);
+            }
+            
             if($success)
             {
                         $this->session->set_userdata( 'motoubid', $success);
@@ -111,7 +117,7 @@ class Payment extends CI_Controller
                    }
             }
         }
-    }
+    
 
     function findcartvalue( $proid, $detailsid )
      {

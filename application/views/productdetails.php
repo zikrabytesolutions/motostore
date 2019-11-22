@@ -118,7 +118,8 @@
                                           $second=  strtr(base64_encode($second), '+/', '-_');
                                         
 										?>
-                                           <a onclick="variation('<?= $pid ;?>','<?= $first ;?>','<?= $second;?>','<?=$pd->product;?>'); ">                                             
+                                           <a
+                                                href="<?= base_url('product/details/'.$pid.'/'.$first.'/'.$second.'/'.$pd->product)?>">
                                                 <input data-image="red" type="radio" value="red"
                                                     <?php if($rfirst==$pval->first){echo "checked";}?>>
                                                 <label for="red"><span style="background-color:<?= $pval->codes?>;">
@@ -158,12 +159,9 @@
 										  $first=  strtr(base64_encode($first), '+/', '-_');
 
 										?>
-                                             <a onclick="variation('<?= $pid ;?>','<?= $first ;?>','<?= $second;?>','<?=$pd->product;?>'); "> 
+                                            <a href="<?= base_url('product/details/'.$pid.'/'.$first.'/'.$second.'/'.$pd->product)?>">
                                                 <input data-size="xs" type="radio" id="xs" name="size" value="xs"
-                                                    checked>
-                                                <label for="<?= $pvals->value_name?>">
-                                                    <span></span>
-                                                </label>
+                                                <?php if($rsecond==$pval->second){echo "checked";}?>>
                                                 <p><?= $pvals->value_name?></p>
                                             </a>
                                         </div>
@@ -175,12 +173,7 @@
 
                                 <div class="product-brand mt-4">
                                     <p>Brand : <?= $pd->brandname?> </p>
-                                    <div class="color-choose">
-                                        <div>
-                                            
-                                        
-                                        </div>
-                                    </div>
+                                    
                                 </div>
 
 

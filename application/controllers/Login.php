@@ -47,14 +47,14 @@ class Login extends CI_Controller
                         $this->session->set_userdata( 'email', $user->email );
                         if ( $this->cart->total_items() == '0' )
                         {
-                            return redirect( 'dashboard' );
+                            return redirect( 'order' );
 						} 
 						else
 						 {
                             $success =Login::cartprocess();
                             if ( $success )
                             {
-                                return redirect( 'dashboard' );
+                                return redirect( 'order' );
                             }
                         }
 

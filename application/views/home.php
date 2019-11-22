@@ -87,12 +87,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<?php if($category):
 					foreach($category as $cat):
 
-						$cid= strtr(base64_encode($cat->catid), '+/', '-_');
+						$cid= strtr(base64_encode($cat->url), '+/', '-_');
 						$cid=  strtr(base64_encode($cid), '+/', '-_');
 						$cid=  strtr(base64_encode($cid), '+/', '-_');
 					?>
 					<div class="product-item">
-						<a href="<?= base_url('product/lists/'.$cid.'/'.$cat->tiles_name)?>" style="background-image:url('<?= base_url('admin/assets/productimage/'.$cat->image) ?>');">
+						<a href="<?= $cat->url?>" style="background-image:url('<?= base_url('admin/assets/productimage/'.$cat->image) ?>');">
 							<div class="item-info">
 								<span class="item-name">
 								<?php

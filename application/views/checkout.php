@@ -101,7 +101,7 @@
                                     <div class="form-group">
                                         <label for="password">Password *</label>
                                         <div class="input-group">
-                                            <input type="password" class="form-control" id="password" name="password">
+                                            <input type="password" class="form-control" id="password" name="password" required>
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="showPw">show</span>
                                             </div>

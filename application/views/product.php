@@ -204,10 +204,10 @@
 	$( function() {
 		$("#slider-range" ).slider({
 			range: true,
-			min: 0,
-			max: 5000,
+			min: 100,
+			max: 80000,
 			values: [min , max ],
-            step: 100,
+            step: 500,
             slide: function( event, ui ) 
             {
                 $( "#min" ).val(  ui.values[ 0 ]);

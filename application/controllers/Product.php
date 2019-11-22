@@ -42,7 +42,7 @@ class Product extends CI_Controller
             }
         }
         else
-        {    $data['sbrand']=$brands;$data['min']='100'; $data['max']='4000'; $data['sattribute']=$atributes;
+        {    $data['sbrand']=$brands;$data['min']='100'; $data['max']='80000'; $data['sattribute']=$atributes;
             $data['subcategory']= $this->productModel->subcategory($catid);
             $data['productlist']= $this->productModel->getallproductreleted($catid);
             if($data)

@@ -40,3 +40,12 @@ Attribute for product page
                                                 <label for="red"><span style="background-color:<?= $pval->codes?>;">
                                                     </span></label>
                                             </a>
+
+
+
+                                            <a onclick="variation('<?= $pid ;?>','<?= $first ;?>','<?= $second;?>','<?=$pd->product;?>'); ">                                             
+                                                <input data-image="red" type="radio" value="red"
+                                                    <?php if($rfirst==$pval->first){echo "checked";}?>>
+                                                <label for="red"><span style="background-color:<?= $pval->codes?>;">
+                                                    </span></label>
+                                            </a>

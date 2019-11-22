@@ -43,7 +43,7 @@
                 <div class="row"><br><br><br>
                 <?php if($tiles): foreach($tiles as $ts):?>
                   <div class="col-md-3">
-                     <img src="<?= base_url('assets/productimage/'.$ts->image)?>" width="200px"> 
+                     <img src="<?= base_url('assets/productimage/'.$ts->image)?>" width="200px" height="100px"> 
                      <p style="text-align:center"> <b><?= $ts->tiles_name?></b></p>
                   </div>
                 <?php endforeach; endif?>
