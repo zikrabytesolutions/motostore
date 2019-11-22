@@ -34,6 +34,10 @@
                    <label class=" control-label">Tiles Image</label>
                       <input type="file" class="form-control" name="userfile">
                    </div>
+                   <div class="col-md-3">
+                   <label class=" control-label">Starting Price</label>
+                      <input type="text" class="form-control" name="price">
+                   </div>
 
                    <div class="col-md-2"><br>
                      <button type="submit" class="btn btn-primary">Save</button>

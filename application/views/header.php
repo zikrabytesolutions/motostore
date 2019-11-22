@@ -100,8 +100,8 @@
                             <div class="dropdown-menu profilemenu" aria-labelledby="navbarDropdownMenuLink">
                               <div class="submenu-item">
                                 <ul>
-                                  <li><a class="submenu-link" href="#">My Profile</a></li>
-                                  <li><a class="submenu-link" href="#">Logout</a></li>
+                                  <li><a class="submenu-link" href="<?= base_url('account')?>">My Profile</a></li>
+                                  <li><a class="submenu-link" href="<?= base_url('login/logout')?>">Logout</a></li>
                                 </ul>
                               </div>
                             </div>

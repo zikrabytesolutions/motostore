@@ -95,6 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<a href="<?= base_url('product/lists/'.$cid.'/'.$cat->tiles_name)?>" style="background-image:url('<?= base_url('admin/assets/productimage/'.$cat->image) ?>');">
 							<div class="item-info">
 								<span class="item-name"><?= $stringCut = substr($cat->tiles_name, 0, 30);?>...</span>
+								<span class="item-name">Starting Price :  &#8377;<?= $cat->price;?></span>
 								
 							</div>
 						</a>

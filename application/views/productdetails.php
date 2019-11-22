@@ -172,7 +172,7 @@
                                 <?php endif; endforeach; endif;?>
 
                                 <div class="product-brand mt-4">
-                                    <p>Brand :</p>
+                                    <p>Brand : <?= $pd->brandname?> </p>
                                     <div class="color-choose">
                                         <div>
                                             
@@ -196,17 +196,15 @@
                                         <input type="hidden" name="url" value="<?= $this->uri->uri_string();?>">
                                         <input type="hidden" name="proid" value="<?= $proid ?>">
                                         <input type="hidden" name="prodetailsid" value="<?= $pdetailsid ?>">
-                                        <button type="submit" class="btn btn-default bg-black">
-                                          <?php if($proinfo): foreach($proinfo as $crt):?>
-                                             <?php if($crt['id']==$pd->id):?>
-                                                <span class="add-to-cart"><i class="icon-cart"></i>Go to cart</span>
-                                             <?php else:?>
-                                                <span class="add-to-cart"><i class="icon-cart"></i>Add to cart</span>
-                                             <?php endif;?>
-                                          <?php endforeach; else:?>
-                                          <i class="add-to-cart"><i class="icon-cart"></i>Add to cart</i>
-                                             <?php endif;?>
-                                        </button>
+                                       
+                                        <?php if($this->session->userdata('motoubid')):?>
+                                               <?php if($cartinfo): foreach($cartinfo as $cinfo):?>
+                                                 <?php if($cinfo['id']==$pd->id):?>
+
+                                                 <?php endif?>
+                                               <?php endforeach; endif;?>
+                                         <?php endif?>   
+                                        
                                         <?php echo form_close()?>
                                     </div>
 

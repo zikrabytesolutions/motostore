@@ -138,10 +138,11 @@ class ProductModel extends CI_Model
         $proid= base64_decode(strtr($proid, '-_', '+/'));
         $proid= base64_decode(strtr($proid, '-_', '+/'));
 
-        $this->db->select('pd.id as detailsid,pd.pro_id,pd.regular_price,pd.offer_price,product.*,
+        $this->db->select('brand.brand as brandname, pd.id as detailsid,pd.pro_id,pd.regular_price,pd.offer_price,product.*,
         pd.stockstatus');
         $this->db->from('product');
         $this->db->join('product_details as pd','pd.pro_id=product.id');
+        $this->db->join('brand','brand.id=product.brand_id');
         $this->db->where('product.id', $proid);
         $this->db->order_by('product.id','ASC');
         $this->db->limit(1);
@@ -204,11 +205,12 @@ class ProductModel extends CI_Model
         $proid= base64_decode(strtr($proid, '-_', '+/'));
         $proid= base64_decode(strtr($proid, '-_', '+/'));
 
-        $this->db->select('pd.id as detailsid,pd.pro_id,pd.regular_price,pd.offer_price,product.*,
+        $this->db->select('brand.brand as brandname,pd.id as detailsid,pd.pro_id,pd.regular_price,pd.offer_price,product.*,
         pd.stockstatus');
         
         $this->db->from('product_details as pd');
         $this->db->join('product','product.id=pd.pro_id');
+        $this->db->join('brand','brand.id=product.brand_id');
         $this->db->where(['pd.first'=>$first, 'pd.second'=>$second,'pd.pro_id'=>$proid]);
         $this->db->limit(1);
         $query= $this->db->get();
@@ -226,6 +228,17 @@ class ProductModel extends CI_Model
         $this->db->from('product');
         $this->db->where('cat_id', $catid);
         $this->db->order_by('id','ASC');
+        $query= $this->db->get();
+        return $result= $query->result();
+
+    }
+
+    function allcartrow()
+    {
+        $id= $this->session->userdata('motoubid');
+        $this->db->select('*');
+        $this->db->from('product_cart_iteam');
+        $this->db->where('userid', $id);
         $query= $this->db->get();
         return $result= $query->result();
 
