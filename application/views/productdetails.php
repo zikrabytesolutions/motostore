@@ -78,7 +78,7 @@
                             <h3><?= $pd->product; ?></h3>
                             <p>Product Code : <?= $pd->productcode; ?></p>
                             <div class="product-price"><b>
-                            &#x20A8;: <span class="slash" style="font-size:20px" id="offerprice"> <?= $pd->offer_price?></span> <span > <del id="regularprice">
+                            price Rs: <span class="slash" style="font-size:20px" id="offerprice"> <?= $pd->offer_price?></span> <span > <del id="regularprice">
                                         <?= $pd->regular_price?></del> </span></b>
                             </div>
                             <div class="product-overview">
@@ -159,7 +159,7 @@
                                             <a href="<?= base_url('product/details/'.$pid.'/'.$first.'/'.$second.'/'.$pd->product)?>">
                                                 <input data-size="xs" type="radio" id="xs" name="size" value="xs"
                                                 <?php if($rsecond==$pval->second){echo "checked";}?>>
-                                                <p><?= $pvals->value_name?></p>
+                                                <label><span><?= $pvals->value_name?></span></label>
                                             </a>
                                         </div>
                                         <?php  endforeach; endif;?>
