@@ -1,12 +1,9 @@
 <?php
-class Thankyou Extends MY_Controller{
+class Thankyou Extends CI_Controller{
 
 	function index(){
 		$this->load->view('thankyou');
 	}
 }
-
-
-
 
 ?>

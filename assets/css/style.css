@@ -2058,3 +2058,27 @@ aside.filterside {
     top: 0px;
     color: black;
 }
+.related-price,
+.price-block{
+    text-align: center;
+}
+.ty-sec{
+    padding: 60px 0px;
+}
+.ty-dtl{
+    margin-top: 30px;
+}
+.tymsg h1{
+        color: #f80000;
+    font-weight: 600;
+}
+.tymsg p{
+  font-size: 20px;
+}
+.ty-dtl ul{
+    list-style-type: none;
+
+}
+.ty-dtl ul li {
+    font-size: 18px;
+}
