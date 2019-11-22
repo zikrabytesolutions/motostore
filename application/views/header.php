@@ -113,8 +113,8 @@
             </nav>
             <div>
                <div class="search-bar">
-                                <input type="text" name="search">
-                            </div>
+                  <input type="text" name="search">
+               </div>
             </div>
 
 		</header>
