@@ -49,12 +49,12 @@
                             <input type="hidden" value="page" name="side">
                               <div class="row">
                            
-                                <div class="col-md-8">
+                                <div class="col-md-6">
                                 <input type="text" id="min" name="min" readonly style="border:0; color:#f6931f; font-weight:bold;">
                                  </div>
 
-                                 <div class="col-md-4">
-                                 <input type="text" id="max" name="max" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                 <div class="col-md-6">
+                                 <input type="text" id="max" name="max" readonly style="border:0; color:#f6931f; font-weight:bold;text-align: right;">
                                  </div>
 
                                  
@@ -172,7 +172,7 @@
                                                     <div class="price-block">
                                                         
                                                         <?php $price= $this->db->select('regular_price,offer_price')->from('product_details')->where('pro_id',$plist->id)->order_by('id','ASC')->limit('1')->get()->row_array();?>
-                                                        <p class="">Price:<span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span></p> 
+                                                        <p class="">Price Rs:<span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span></p> 
                                                     </div>
                                                 </div>
                                                 </a>

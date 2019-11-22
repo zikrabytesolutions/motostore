@@ -105,7 +105,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								  }
 								  ?>   
 								 </span>
-								<span class="item-name">Starting Price :  &#8377;<?= $cat->price;?></span>
+								<span class="item-name">Starting Price Rs: <?= $cat->price;?></span>
+								<!-- <span class="item-name">Starting Price Rs:  &#8377;<?= $cat->price;?></span> -->
 								
 							</div>
 						</a>
