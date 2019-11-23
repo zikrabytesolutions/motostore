@@ -42,12 +42,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    <section class="frmsec">
                    <div class="account-form">
                         <h5><span style="float:right"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button></span></h5>
-
-                   <div class="row">
+                          
+                   <div class="row"><br>
                          <?php $i=0; if($address): foreach ($address as $ads): $i++;?>
                              <div class="col-md-12">
                                   <table>
-                                       <tr> <td >Name</td>  <td> <?= $ads->name?></td></tr>
+                                       <tr> <td width="100px">Name</td>  <td> <?= $ads->name?></td></tr>
                                        <tr> <td>Mobile</td>  <td> <?= $ads->mobile ?></td></tr>
                                        <tr> <td>Street Add.</td>  <td style="word-wrap: break-word;"> <?=$ads->streetaddress ?></td></tr>
                                        <tr> <td>House no.</td>  <td style="word-wrap: break-word;"> <?= $ads->streetaddress1?></td></tr>
@@ -127,10 +127,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="modal-content">
       <div class="modal-header">
 
-        <h4 class="modal-title" id="myModalLabel">Edit Address</h4>
+        <h4 class="modal-title" id="myModalLabel">Delete Address</h4>
       </div>
       <div class="modal-body">
-         <h4 style="text:red"> Are you sure you want to logout?</h4>
+         <h4 style="color:red"> Are you sure you want to logout?</h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
