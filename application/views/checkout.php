@@ -38,7 +38,8 @@
                     <div class="form-group">
                                     <label>
                                         <input type="checkbox" name="Acc" value="haveAcc" class="mr-2" value="1" <?php if($this->session->flashdata('msg_error')){echo "checked";}?>>
-                                        <div><i class="fa fa-check"></i></div>Already have  an account? <a href="" class="ck-lgn">Please login</a>.
+                                        <div><i class="fa fa-check"></i></div>Already have an account? 
+                                        <a href="" class="ck-lgn">Please login here</a>.
                                     </label>
 
                                     <label>
@@ -276,7 +277,7 @@
                                 <input type="checkbox" name="tnc" value="tnc" class="mr-2">
                                 <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
                                 </label>
-                                <button class="add-to-cart btn-default bg-red my-4" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
+                                <button class="add-to-cart btn-default bg-red my-4 btnsub" disabled="true" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
                                 <p>View Our <a href="">Privacy Policy</a></p>
                             </div>
                         </section>
@@ -287,3 +288,13 @@
         </section>
     </div>
 <?php include('footer.php');?>
+<script type="text/javascript">
+  
+
+    $('#orderPayment').find("input[type=checkbox][name=tnc]").on('change', function() {
+      // $(".btnsub").prop("disabled", false);
+        $(".btnsub").toggleAttr('disabled', false);
+    });
+  // $("input:radio").change(function () {
+  //   $("#orderPayment").prop("disabled", false);});
+</script>
