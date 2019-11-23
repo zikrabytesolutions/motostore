@@ -50,11 +50,14 @@
                 <li><b>Total: </b> Rs.81,496.00</li>
                 <li><b>Payment method: </b> Cash on Delivery</li>
               </ul>
-
+              <div class="tybtn">
+                <a href="" class="btn btn-success btn-default bg-red">
+                <span class="">Vie Details</span>
+              </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     </div>

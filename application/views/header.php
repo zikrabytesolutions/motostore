@@ -60,16 +60,7 @@
                                         </ul>
 
                                 </div>
-                                <!-- <div class="submenu-item">
-                                    <div class="header-megamenu">Brand</div>
-                                    <ul>
-                                        <li><a class="submenu-link" href="#">Our Staff</a></li>
-                                        <li><a class="submenu-link" href="#"> Services</a></li>
-                                        <li><a class="submenu-link" href="#">Full-Width Page</a></li>
-                                        <li><a class="submenu-link" href="#">Page Left Sidebar</a></li>
-                                        <li><a class="submenu-link" href="#">Page Right Sidebar</a></li>
-                                    </ul>
-                                </div> -->
+                        
                             </div>
                           </li>
                        <?php endforeach; endif?>

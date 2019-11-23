@@ -2,15 +2,18 @@
 	.nav-link{
 		padding: 5px 5px;
 	}
+    .mb-hide,
 	.nav.mb-hide{
 display: none;
 	}
 	
 }
 @media(min-width:768px){
+    .dsk-hide,
  .nav.dsk-hide{
  	display: none;
  }
+
 }
 @media(min-width:767px) and (max-width:992px){
 	.navbar .navbar-nav .nav-item .nav-link{

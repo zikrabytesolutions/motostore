@@ -15,26 +15,33 @@
 	img.img-fluid {
     width: 100%;
 }
-.footer-block.text-center {
-    position: relative;
-    top: -78px;
-    color: white;
+@media (max-width:768px){
+.container-fluid {
+    width: 100%;
+   	padding-right: 0; 
+    
+}
 }
 </style>
 </head>
 <body class="main-black">
-
+<!-- dsk-hide mb-hide-->
 	<div class="main-wrapper">
-		<div class="row">
-					<div class="mid-logo-block">
-						<!-- Brand -->
-						<a class="mid-logo" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/logo.png')?>"></a>	
-					</div>
-					
+				<div class="row dsk-hide">
+				<div class="mid-logo-block">
+					<!-- Brand -->
+					<a class="mid-logo" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/logo.png')?>"></a>	
 				</div>
+			</div>
 		<!-- section start -->
 	<section class="link-sec">
 		<div class="container-fluid">
+			<div class="row mb-hide">
+				<div class="mid-logo-block">
+					<!-- Brand -->
+					<a class="mid-logo" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/logo.png')?>"></a>	
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-lg-4 col-md-6 col-sm-6">
 					<div class="img-block first">
@@ -73,12 +80,21 @@
 		</div>
 		
 	</section>
-	<div class="footer-block text-center">
+	<!-- section end -->
+<!-- section start -->
+	<section class="main-footer-sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-12">
+					<div class="footer-block text-center">
 						<h5 class="mb-3">9, Lake Square, Kensington Road, Ulsoor, Bengaluru 560042</h5>
 							<p>Phone: +91 94-4973-4040 Email: info@motostore.com</p>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<!-- section end -->
-
 
 
 		<!-- section start -->
