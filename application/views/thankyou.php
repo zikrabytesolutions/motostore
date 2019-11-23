@@ -28,7 +28,7 @@
 
         <!-- header start -->
         <?php include('header.php');?>
-    
+
 
     <section class="ty-sec">
       <div class="container">
@@ -50,6 +50,11 @@
                 <li><b>Total: </b> Rs. <?= $ord->grand?></li>
                 <li><b>Payment method: </b> Cash on Delivery</li>
               </ul>
+                <div class="tybtn">
+                <a href="" class="btn btn-success btn-default bg-red">
+                <span class="">View Details</span>
+              </a>
+              </div>
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@
 								<div class="form-group row">
 									<label for="firstname" class="col-sm-4 col-form-label">Full Name</label>
 									<div class="col-sm-8">	
-										<input type="text" class="form-control" id="firstname" name="name" value="<?php echo set_value('name'); ?>">
+										<input type="text" class="form-control" id="firstname" name="name" value="<?php echo set_value('name'); ?>" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                                         <small style="color:red; font-size:10px"><?php echo form_error('name'); ?></small> 
                                     </div>
 								</div>
@@ -45,7 +45,7 @@
 								<div class="form-group row">
 									<label for="phone" class="col-sm-4 col-form-label">Phone Number</label>
 									<div class="col-sm-8">	
-										<input type="number" class="form-control" id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
+										<input type="number" class="form-control" id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>" maxlength="10" pattern="[6789][0-9]{9}" onkeypress="return ((event.charCode >=48 && event.charCode <=57) || (event.charCode >=0 && event.charCode <=31) )">
                                         <small style="color:red"><?php echo form_error('mobile'); ?></small> 
                                     </div>
 								</div>	
@@ -54,7 +54,7 @@
 								<div class="form-group row">
 									<label for="email" class="col-sm-4 col-form-label">Email</label>
 									<div class="col-sm-8">	
-										<input type="email" class="form-control" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" value="<?php echo set_value('email'); ?>">
+										<input type="email" class="form-control" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" value="<?php echo set_value('email'); ?>" required>
                                         <small style="color:red"><?php echo form_error('email'); ?></small> 
                                     </div>
 								</div>

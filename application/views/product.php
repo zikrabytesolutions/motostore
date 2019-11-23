@@ -115,7 +115,7 @@
                 <main class="col-md-10">
                     <section class="products_inner">
                         <div class="products_wrapper">
-                             <div class="products_container row mt-4">
+                             <div class="products_container row">
                                 <?php if ($productlist) : foreach ($productlist as $plist) : ?>
                                     <div class="product-layout product-grid col-md-3 col-lg-3 mt-4">
                                         <div class="p-item">
@@ -131,8 +131,8 @@
                                                 </div>
                                                <div class="item-dtl">
                                                     <div class="item-title">
-                                                    <h6 class="txt-h-up" class="tooltrip"> 
-                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $plist->product?>" target="_blank"><?= $stringCut = substr($plist->product, 0, 29); ?>..</a>
+                                                    <h6 class="txt-h-up tooltrip" data-toggle="tooltip" title="<?= $plist->product?>"> 
+                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>"  target="_blank"><?= $stringCut = substr($plist->product, 0, 29); ?>..</a>
                                                     </h6>
                                                     </div>
                                                     <div class="price-block">

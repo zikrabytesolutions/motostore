@@ -107,13 +107,16 @@ a:hover, a:focus, a {
     display: block;
     width: 20px;
 }
-.mid-logo-block {
+.mb-hide .mid-logo-block {
     padding: 8px 0px;
     position: absolute;
     left: 44%;
     z-index: 999;
 }
-
+.dsk-hide .mid-logo-block{
+    padding: 8px 0px;
+    margin: 0 auto;
+}
 .product-sec{
     padding: 80px 0px;
 }
@@ -1391,7 +1394,7 @@ select {
 /*uislider*/
 
 .ui-slider-horizontal .ui-slider-handle:nth-child(2) {
-    margin-left: -20px !important;
+    /*margin-left: -20px !important;*/
 }
 
 .filter-price {
@@ -2089,7 +2092,8 @@ aside.filterside {
 }
 .ty-dtl ul{
     list-style-type: none;
-
+    padding: 0;
+    margin: 0;
 }
 .ty-dtl ul li {
     font-size: 18px;
@@ -2106,4 +2110,10 @@ aside.filterside {
 .login-form a{
     color: blue;
     text-decoration: underline;
+}
+.manufacturer-check label{
+    display: block;
+}
+.tybtn{
+    margin-top: 30px;
 }

@@ -40,6 +40,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="carousel-item">
       <img class="d-block w-100" src="<?= base_url('assets/images/home-slider.png')?>" alt="Second slide">
     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="<?= base_url('assets/images/home-slider.png')?>" alt="Second slide">
+    </div>
   </div>
   <a class="carousel-control-prev" href="#slider_main" role="button" data-slide="prev">
     <span class="icon-slider-arrow" aria-hidden="true"></span>

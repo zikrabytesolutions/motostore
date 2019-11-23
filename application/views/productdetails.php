@@ -78,7 +78,7 @@
                             <h3><?= $pd->product; ?></h3>
                             <p>Product Code : <?= $pd->productcode; ?></p>
                             <div class="product-price">
-                            Price Rs: <span > <del id="regularprice">
+                            <b>Price Rs:</b> <span > <del id="regularprice">
                                         <?= $pd->regular_price?></del> </span><span class="slash" style="font-size:20px" id="offerprice"> <?= $pd->offer_price?></span> 
                             </div>
                             <div class="product-overview">
@@ -272,9 +272,9 @@
                                                 
                                                 <div class="item-dtl">
                                                     <div class="item-title">
-                                                    <h6 class="txt-h-up" class="tooltrip">
+                                                    <h6 class="txt-h-up tooltrip" data-toggle="tooltip" title="<?= $pro->product?>">
                                                       
-                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$pro->product.'/'.$pid)?>" data-toggle="tooltip" title="<?= $pro->product?>"><?= $stringCut = substr($pro->product, 0, 29); ?>..</a>
+                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$pro->product.'/'.$pid)?>" ><?= $stringCut = substr($pro->product, 0, 29); ?>..</a>
                                                     </h6>
                                                 </div>
                                     
