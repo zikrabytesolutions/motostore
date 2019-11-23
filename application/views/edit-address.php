@@ -45,9 +45,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <table class="table table-striped">
 							    <thead>
 							        <tr>
-							            <th>Billing address</th>
+							            <th>Billing address </th>
 							            
-							            <th>Action</th>
+							            <th>Action </th>
 							        </tr>
 							    </thead>
 							    <tbody>
