@@ -127,7 +127,7 @@
                                                            
                                                          ?>
                                                 <div class="item-img">
-                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>"><img src="<?= base_url('admin/assets/productimage/' . $plist->photo) ?>" class="img-fluid"></a>
+                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>" target="_blank"><img src="<?= base_url('admin/assets/productimage/' . $plist->photo) ?>" class="img-fluid"></a>
                                                 </div>
                                                <div class="item-dtl">
                                                     <div class="item-title">

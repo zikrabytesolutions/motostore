@@ -98,9 +98,11 @@
                                     <p><b><?= $prodet->attribute?> : </b></p>
                                     <div class="color-choose">
                                         <?php
-								 $proattributevalue= $CI->findattributevale($pd->id,$prodet->id);
+                                 $proattributevalue= $CI->findattributevale($pd->id,$prodet->id);
+                                 $i=0;
 								  if($proattributevalue):
-									 foreach($proattributevalue as $pval):
+                                     foreach($proattributevalue as $pval):
+                                        $i++;
 								 ?>
                                         <div>
                                             <?php
@@ -118,7 +120,8 @@
                                            <a
                                                 href="<?= base_url('product/details/'.$pid.'/'.$first.'/'.$second.'/'.$pd->product)?>">
                                                 <input data-image="red" type="radio" value="red"
-                                                    <?php if($rfirst==$pval->first){echo "checked";}?>>
+                                                    <?php if($rfirst==$pval->first){echo "checked";}
+                                                    elseif($ini=='1' && $i=='1'){echo "checked";}?>>
                                                 <label for="red"><span style="background-color:<?= $pval->codes?>;">
                                                     </span></label>
                                             </a>
@@ -140,9 +143,11 @@
                                     <p><b><?= $prdet->attribute?> : </b></p>
                                     <div class="size-choose flex-container">
                                         <?php
-								  $proattributevalue= $CI->findattributevalend($pd->id,$prdet->id);
+                                  $proattributevalue= $CI->findattributevalend($pd->id,$prdet->id);
+                                  $i=0;
 								  if($proattributevalue):
-									 foreach($proattributevalue as $pvals):
+                                     foreach($proattributevalue as $pvals):
+                                        $i++;
 								 ?>
                                         <div>
                                             <?php
@@ -158,7 +163,8 @@
 										?>
                                             <a href="<?= base_url('product/details/'.$pid.'/'.$first.'/'.$second.'/'.$pd->product)?>">
                                                 <input data-size="xs" type="radio" id="xs" name="size" value="xs"
-                                                <?php if($rsecond==$pval->second){echo "checked";}?>>
+                                                <?php if($rsecond==$pvals->second){echo "checked";}
+                                                elseif($ini=='1' && $i=='1'){echo "checked";}?>>
                                                 <label><span><?= $pvals->value_name?></span></label>
                                             </a>
                                         </div>

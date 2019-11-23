@@ -76,8 +76,8 @@ class Payment extends CI_Controller
                                 }
                         }
                         if ($insert)
-                        {
-                               $orderid= date('ymdhi').''.$id;
+                        {      $counts= $this->cartModel->countalluser();
+                               $orderid= date('ymdhi').''.$counts;
                                $cart_iteam=  $this->orderModel->allcartdata($id);
                                if($cart_iteam)
                                {
@@ -104,7 +104,8 @@ class Payment extends CI_Controller
 
                                                 if( $iteamdelete && $cartdelete)
                                                 {
-                                                      return redirect('order');
+                                                    
+                                                      return redirect('thankyou');
                                                 }
                                                 else
                                                 {
@@ -163,7 +164,7 @@ class Payment extends CI_Controller
 
                          if( $iteamdelete && $cartdelete)
                          {
-                               echo "Thank you page";
+                            return redirect('thankyou');
                          }
                          else
                          {

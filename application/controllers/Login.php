@@ -69,7 +69,7 @@ class Login extends CI_Controller
 
             }
         } else {
-            $this->session->set_flashdata( 'msg_error', 'Not Blank UserId or Password.' );
+            $this->session->set_flashdata( 'msg_error', 'UserId or Password can not be blank' );
             return redirect( 'login' );
 
         }

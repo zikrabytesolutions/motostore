@@ -54,8 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<section class="product-sec">
 			<div class="container">
 				<div class="product-grid flex-container">
-				<?php if($category):
-					foreach($category as $cat):
+				<?php if($category): foreach($category as $cat):
 
 						$cid= strtr(base64_encode($cat->url), '+/', '-_');
 						$cid=  strtr(base64_encode($cid), '+/', '-_');
@@ -82,7 +81,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</a>
 					</div>
 
-					<?php endforeach; endif; ?>
+					<?php endforeach; else: ?>
+
+					<h4>No tiles present </h4>
+
+					<?php endif; ?>
 
 				</div>
 			</div>
