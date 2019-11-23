@@ -269,11 +269,11 @@
                                     <small class="d-block">Pay via Paytm Wallet – Credit/Debit card, Netbanking, EMI & UPI.</small>
                                 </label>
                                 <label class="mt-2">
-                                   <input type="radio" name="payType" value="cod" class="mr-2" required>
+                                   <input type="radio" name="payType" value="cod" class="mr-2">
                                    <div><i class="fa fa-gear"></i></div>Cash on Delivery
                                 </label>
                                 <label class="mt-2">
-                                <input type="checkbox" name="tnc" value="tnc" class="mr-2" required>
+                                <input type="checkbox" name="tnc" value="tnc" class="mr-2">
                                 <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
                                 </label>
                                 <button class="add-to-cart btn-default bg-red my-4" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
