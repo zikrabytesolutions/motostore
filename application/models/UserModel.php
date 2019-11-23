@@ -41,9 +41,10 @@ class UserModel extends CI_Model
 
     function checkpassword($userid,$password)
     {
-        $this->db->select('password');
+        $this->db->select('*');
         $this->db->from('users');
-        $this->db->where(['id'=>$userid,'password'=>$password]);
+        $this->db->where('id',$userid);
+        $this->db->where('password', $password);
         return  $this->db->get()->row('name');
        
     }

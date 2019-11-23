@@ -21,7 +21,7 @@ $config = [
                                         [
                                             'required' => ' %s Cannot be Blank.', 
                                             'exact_length' => 'Mobile Number Should Be 10 Digit',
-                                            'is_unique'=> 'Mobile Number Already Registed',
+                                            'is_unique'=> 'Mobile number already registered',
                                         ],
                                      ],
 
@@ -32,7 +32,7 @@ $config = [
                                         "errors" => 
                                         [
                                             'required' => ' %s Cannot be Blank.', 
-                                            'is_unique'=> 'This %s Already Registed',
+                                            'is_unique'=> 'This %s already registered',
                                         ],
                                     ] ,
 
@@ -113,7 +113,7 @@ $config = [
                                             [
                                                 'required' => ' %s Cannot be Blank.', 
                                                 'exact_length' => 'Mobile Number Should Be 10 Digit',
-                                                'is_unique'=> 'Mobile Number Already Registerd',
+                                                'is_unique'=> 'Mobile number already registered',
                                             ],
                                          ],
     
@@ -124,7 +124,7 @@ $config = [
                                             "errors" => 
                                             [
                                                 'required' => ' %s Cannot be Blank.', 
-                                                'is_unique'=> 'This %s Already Registerd',
+                                                'is_unique'=> 'This %s already registered',
                                             ],
                                         ] ,
     
@@ -134,7 +134,7 @@ $config = [
                                             'rules' => 'required',
                                             "errors" => 
                                             [
-                                                'required' => ' %s Cannot be Blank.', 
+                                                'required' => ' %s cannot be blank.', 
                                                
                                                 
                                             ],

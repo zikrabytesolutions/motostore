@@ -42,13 +42,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						   <?php echo form_open('account/updateaccount')?>
                             <form id="accountForm" action="#" method="post" data-url="">
                                 <h5>Account Details</h5>
-
+								<?php if($this->session->flashdata('msg_error')):?>
+                                          <span class="text-danger"><?= $this->session->flashdata('msg_error')?></span>
+                                     <?php endif;?>
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
                                         <label for="firstname">Full Name *</label>
                                         <input type="text" class="form-control" value="<?= $pro->name?>" name="name" placeholder="First name" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                                     </div>
-								  <input type="hidden" name="userid" value="<?= $pro->id?>">
+								  
 
 								  <div class="form-group col-sm-6">
                                         <label for="streetaddress">Phone *</label>

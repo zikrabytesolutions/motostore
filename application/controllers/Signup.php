@@ -27,7 +27,7 @@ class Signup extends CI_Controller
             $conpassword= $this->input->post('conpassword');
             if($password!=$conpassword)
             {
-                $this->session->set_flashdata('password', 'Password & Confirm Password Doesnot Match');
+                $this->session->set_flashdata('password', 'Password & Confirm Password Doe snot match');
                 $this->load->view('signup');
             }
             else
@@ -58,7 +58,7 @@ class Signup extends CI_Controller
     function sendlink($token,$id, $url, $to)
     {
          $subject='Motostore Verification Link';
-        $message= 'Click below on link for verify your accoutn <br>'.
+        $message= 'Click on below link for verifying your accoutn <br>'.
         $headers  = 'From: MyWebsite<info@website.in>' . "\r\n" .
             		'MIME-Version: 1.0' . "\r\n" .
             	    'Content-type: text/html; charset=utf-8';

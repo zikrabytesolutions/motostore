@@ -98,10 +98,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                                         <div class="form-group col-sm-6">
                                             <label for="streetaddress">Street address *</label>
-                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder="House number and street name" value="<?= $ads->streetaddress?>">
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder=" street name" value="<?= $ads->streetaddress?>">
                                         </div>
                                         <div class="form-group col-sm-6">
-                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress1" placeholder="Apartment, suite, unit etc. (optional)" value="<?= $ads->streetaddress1?>">
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress1" placeholder="Apartment, suite" value="<?= $ads->streetaddress1?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -130,7 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h4 class="modal-title" id="myModalLabel">Delete Address</h4>
       </div>
       <div class="modal-body">
-         <h4 style="color:red"> Are you sure you want to logout?</h4>
+         <h4 style="color:red"> Are you sure you want to delete?</h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -141,7 +141,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 </div>
 
-                         <?php endforeach; endif;?>
+                         <?php endforeach; else:?>
+                           <h4>No data Found</h4>
+                         <?php endif?>
                    </div>
                    </div>
                    </section>
