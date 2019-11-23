@@ -1394,7 +1394,7 @@ select {
 /*uislider*/
 
 .ui-slider-horizontal .ui-slider-handle:nth-child(2) {
-    margin-left: -20px !important;
+    /*margin-left: -20px !important;*/
 }
 
 .filter-price {

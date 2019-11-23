@@ -382,7 +382,7 @@ $( function() {
 $("#slider-range" ).slider({
 	range: true,
 	min: 0,
-	max: 5000,
+	max: 100000,
 	values: [min , max ],
 	step: 100,
 	slide: function( event, ui ) 

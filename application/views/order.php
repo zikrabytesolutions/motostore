@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							            <th>Status</th>
 							            <th>Total</th>
                                         <th>Item</th>
-							            
+							            <th>Action</th>
 							        </tr>
 							    </thead>
 							    <tbody>
@@ -62,7 +62,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							            <td>Pending</td>
 							            <td><?= $order->grand?></td>
                                         <td><?= $order->iteam?></td>
-							            
+							            <td>
+										<button type="button" class="btn btn-info btn-xs" >View</button>
+                    					<button type="button" class="btn btn-danger btn-xs">Delete</button>
+							        	</td>
 							        </tr>
 
                                    <?php endforeach; endif?>
@@ -83,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
-					<img class="f-logo" src="<?= base_url('assets/images/page-logo.jpg')?>">	
+					<img class="f-logo" src="<?= base_url('assets/images/motologo.png')?>">	
 				
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -98,8 +101,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 				<ul class="privacy-block">
 					
-					<li><a href="">privacy policy</a></li>
-					<li><a href="">cookie</a></li>
+					<li><a href="">Helmets</a></li>
+					<li><a href="">Riding Gear</a></li>
+					<li><a href="">Luggage</a></li>
 				</ul>
 				</div>
 
@@ -117,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
-					<h6 class="txt-h-up">motosotre social</h6>
+					<h6 class="txt-h-up">motostore social</h6>
 					<ul class="social-block">
 						<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 						<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>

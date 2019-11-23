@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
                                         <label for="firstname">Full Name *</label>
-                                        <input type="text" class="form-control" value="<?= $pro->name?>" name="name" placeholder="First name">
+                                        <input type="text" class="form-control" value="<?= $pro->name?>" name="name" placeholder="First name" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                                     </div>
 								  <input type="hidden" name="userid" value="<?= $pro->id?>">
 
@@ -80,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</div>
 								<div class="form-group col-sm-6">
                                     <label for="pwd">Postel Code</label>
-                                    <input type="text" class="form-control"  name="postcode" value="<?= $pro->postcode?>">
+                                    <input type="text" class="form-control"  name="postcode" value="<?= $pro->postcode?>" maxlength="6" onkeypress="return ((event.charCode >=48 && event.charCode <=57) || (event.charCode >=0 && event.charCode <=31) )" required>
                                 </div>
 								</div>
 

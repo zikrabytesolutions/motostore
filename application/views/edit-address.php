@@ -56,9 +56,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							            <td><?= $ads->name?>, <?= $ads->streetaddress?>, <?= $ads->streetaddress1?>, <?= $ads->city?>, <?= $ads->postcode?></td>
 							           
 							            <td>
-										<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>">Edit</button>
+										<button type="button" class="btn btn-info btn-xs" >View</button>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>">Edit</button>
+                    <button type="button" class="btn btn-danger btn-xs">Delete</button>
 							            	
 							        	</td>
+
 							        </tr>
 							        
 <div class="modal fade" id="myModal<?= $i?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -74,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="form-row">
                                         <div class="form-group col-sm-12">
                                             <label for="firstname">Full name *</label>
-                                            <input type="text" class="form-control" id="firstname" name="name" value="<?= $ads->name?>">
+                                            <input type="text" class="form-control" id="firstname" name="name" value="<?= $ads->name?>" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )" required>
                                         </div>
                                         <!-- <div class="form-group col-sm-6">
                                             <label for="lastname">Last name *</label>
@@ -94,7 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="city">Mobile *</label>
-                                            <input type="text" class="form-control" id="dmobile" placeholder="Mobile" name="mobile" value="<?= $ads->mobile?>">
+                                            <input type="text" class="form-control" id="dmobile" placeholder="Mobile" name="mobile" value="<?= $ads->mobile?>" maxlength="10" pattern="[6789][0-9]{9}" onkeypress="return ((event.charCode >=48 && event.charCode <=57) || (event.charCode >=0 && event.charCode <=31) )" required>
                                         </div>
                                         </div>
 
@@ -106,13 +109,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <input type="text" class="form-control" id="streetaddress" name="streetaddress1" placeholder="Apartment, suite, unit etc. (optional)" value="<?= $ads->streetaddress1?>">
                                         </div>
                                     </div>
-
-
-
-
                                     <div class="form-group">
                                         <label for="postcode">Postcode / ZIP *</label>
-                                        <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode" value="<?= $ads->postcode?>">
+                                        <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode" value="<?= $ads->postcode?>" maxlength="6" onkeypress="return ((event.charCode >=48 && event.charCode <=57) || (event.charCode >=0 && event.charCode <=31) )" required>
                                     </div>
                                 
       </div>

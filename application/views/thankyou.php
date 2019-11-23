@@ -52,7 +52,7 @@
               </ul>
                 <div class="tybtn">
                 <a href="" class="btn btn-success btn-default bg-red">
-                <span class="">Vie Details</span>
+                <span class="">View Details</span>
               </a>
               </div>
             </div>

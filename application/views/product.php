@@ -115,7 +115,7 @@
                 <main class="col-md-10">
                     <section class="products_inner">
                         <div class="products_wrapper">
-                             <div class="products_container row mt-4">
+                             <div class="products_container row">
                                 <?php if ($productlist) : foreach ($productlist as $plist) : ?>
                                     <div class="product-layout product-grid col-md-3 col-lg-3 mt-4">
                                         <div class="p-item">
