@@ -37,7 +37,7 @@
 								<div class="form-group row">
 									<label for="firstname" class="col-sm-4 col-form-label">Full Name</label>
 									<div class="col-sm-8">	
-										<input type="text" class="form-control" id="firstname" name="name" value="<?php echo set_value('name'); ?>" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
+										<input type="text" class="form-control" id="firstname" name="name" value="<?php echo set_value('name'); ?>" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32))" placeholder="Full Name*" required>
                                         <small style="color:red; font-size:10px"><?php echo form_error('name'); ?></small> 
                                     </div>
 								</div>
@@ -45,7 +45,7 @@
 								<div class="form-group row">
 									<label for="phone" class="col-sm-4 col-form-label">Phone Number</label>
 									<div class="col-sm-8">	
-										<input type="number" class="form-control" id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>" maxlength="10" pattern="[6789][0-9]{9}" onkeypress="return ((event.charCode >=48 && event.charCode <=57) || (event.charCode >=0 && event.charCode <=31) )">
+										<input type="text" class="form-control" id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>" maxlength="10" pattern="[6789][0-9]{9}" onkeypress="return ((event.charCode >=48 && event.charCode <=57) || (event.charCode >=0 && event.charCode <=31) )" placeholder="Phone*" required>
                                         <small style="color:red"><?php echo form_error('mobile'); ?></small> 
                                     </div>
 								</div>	
@@ -54,7 +54,7 @@
 								<div class="form-group row">
 									<label for="email" class="col-sm-4 col-form-label">Email</label>
 									<div class="col-sm-8">	
-										<input type="email" class="form-control" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" value="<?php echo set_value('email'); ?>" required>
+										<input type="email" class="form-control" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" value="<?php echo set_value('email'); ?>" required placeholder="Email*">
                                         <small style="color:red"><?php echo form_error('email'); ?></small> 
                                     </div>
 								</div>
@@ -62,7 +62,7 @@
 									<label for="password" class="col-sm-4 col-form-label">Password</label>
 									<div class="col-sm-8">	
 								        <div class="input-group">
-								        <input type="password" class="form-control" id="password" name="password" >
+								        <input type="password" class="form-control" id="password" name="password" placeholder="Password*" required="">
 								         <div class="input-group-append">
 								          <span class="input-group-text" id="showPw"><i class="fa fa-eye" aria-hidden="true"></i></span>
 								          <span class="input-group-text" id="hidePw"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
@@ -77,7 +77,7 @@
 									<label for="password" class="col-sm-4 col-form-label">Confirm Password</label>
 									<div class="col-sm-8">	
 								       
-								        <input type="password" class="form-control"  name="conpassword" >
+								        <input type="password" class="form-control"  name="conpassword" placeholder="Confirm Password*" required="">
                                         <small style="color:red"><?php echo form_error('conpassword'); ?></small> 
                                         <?php if($this->session->flashdata('password')):?>
                                           <span class="text-danger"><?= $this->session->flashdata('password')?></span>

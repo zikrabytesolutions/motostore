@@ -762,15 +762,14 @@ header {
 }
 
 .size-choose div label {
-    position: absolute;
-    height: 42px;
-    width: 38px;
+        position: relative;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     top: 0;
-    left: 6px;
-    line-height: 22px;
+    left: 0px;
+    text-align: center;
 }
-
 
 .size-choose div p {
     margin: 0px;
@@ -778,7 +777,16 @@ header {
     padding: 0px 8px;
 }
 
-.size-choose div, .qty-choose a {
+
+.size-choose div{
+    height: 30px;
+    align-items: center;
+    width: 30px;
+    justify-content: center;
+    margin-right: 10px;
+    position: relative;
+}
+ .qty-choose a {
     display: flex;
     height: 25px;
     align-items: center;
@@ -788,6 +796,21 @@ header {
     position: relative;
 }
 
+.products-page .size-choose input[type="radio"]:checked + label{
+    border:2px solid red;
+}
+
+/*.products-page .size-choose input[type="radio"]:checked + label span:after {
+    background-image: url(../images/item/checkmark.png);
+    z-index: 99999;
+    content: "";
+    display: block;
+    height: 18px;
+    position: relative;
+    top: -48px;
+    background-repeat: no-repeat;
+}
+*/
 .size-choose, .qty-choose {
     justify-content: flex-start;
 
@@ -1345,9 +1368,9 @@ select {
 }
 
 .products-page label {
-    margin:0;
+    /*margin:0;
     min-height: 20px;
-    cursor: pointer;
+    cursor: pointer;*/
 }
 .products-brand p,
 /*.products-page label, .products-page p, .products-page li, .products-page select, .products-page option {*/
@@ -1718,6 +1741,7 @@ a{
 
 .checkout #shipToDiffAdd, .checkout #addPw {
     display: none;
+    margin-bottom: 20px;
 }
 
 .checkout .orderInfo {
@@ -2041,16 +2065,7 @@ input, button {
     top: -19px;
     background-repeat: no-repeat;
 }
-.products-page .size-choose input[type="radio"]:checked + label span:after {
-   background-image: url(../images/item/checkmark.png);
-    z-index: 99999;
-    content: "";
-    display: block;
-      height: 18px;
-    position: relative;
-    top: -48px;
-    background-repeat: no-repeat;
-}
+
 aside.filterside {
     box-shadow: 0px 0px 3px 1px rgba(0, 0,0,0.1);
 }
@@ -2116,4 +2131,15 @@ aside.filterside {
 }
 .tybtn{
     margin-top: 30px;
+}
+.btn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+a.btn.btn-primary{
+    cursor: pointer;
+}
+.checkout a.ck-lgn{
+ color: blue;
+ text-decoration: underline;
 }

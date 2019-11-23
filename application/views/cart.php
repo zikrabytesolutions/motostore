@@ -53,7 +53,7 @@
                                     <tbody>
 
                                     <?php if($proinfo): foreach($proinfo as $ds): ?>
-                                       
+
                                        <?php $result= $Ci->findcartvalue($ds['proid'],$ds['id'])?>
                                        <?php if($result): foreach($result as $rs): ?>
                                         <tr>
@@ -70,7 +70,7 @@
 
                                                 <div class="cart_item__details">
                                                     <p class="c_item_price"><b>Price Rs:</b> <del class="p-prc mr-2"><?= $rs->regular_price?></del><span class="p-prc mr-2"><?= $rs->offer_price?></span></p>
-                                                   
+
                                                     <?php  $attribute= $Ci->findattributecart($rs->second);?>
                                                        <?php if($attribute): foreach($attribute as $att):?>
                                                         <?php if(strtolower( $att->attribute)!='color'):?>
@@ -83,7 +83,7 @@
                                                         <?php if(strtolower( $att->attribute)=='color'):?>
                                                                 <div class="color-choose">
                                                                 <input data-image="red" type="radio" value="red">
-                                                                <label for="red"><b><?= $att->attribute?> :</b> 
+                                                                <label for="red"><b><?= $att->attribute?> :</b>
                                                                 <span style="background-color:<?= $att->codes?>"> </span></label>
                                                                 </div>
                                                         <?php endif; endforeach; endif?>
@@ -122,7 +122,7 @@
                                                 <a class="icon-bin-delete" title="Delete" href="<?= base_url('cart/delete/'.$ds['rowid'])?>"></a>
                                             </td>
                                         </tr>
-                                       
+
                                        <?php endforeach; endif;?>
                                        <?php endforeach; else:?>
                                        <h3><i class="icon-cart"></i>Your Cart is Empty</h3>
@@ -193,7 +193,7 @@
                 </aside>
 
             </div>
-        </div>            
+        </div>
         </div>
     </div>
 

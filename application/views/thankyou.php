@@ -51,7 +51,7 @@
                 <li><b>Payment method: </b> Cash on Delivery</li>
               </ul>
                 <div class="tybtn">
-                <a href="" class="btn btn-success btn-default bg-red">
+                <a href="<?= base_url('order'); ?>" class="btn btn-success btn-default bg-red">
                 <span class="">View Details</span>
               </a>
               </div>

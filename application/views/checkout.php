@@ -37,16 +37,20 @@
                     <div class="col-md-7">
                     <div class="form-group">
                                     <label>
-                                        <input type="checkbox" name="createAcc" value="createAcc" class="mr-2" value="1" <?php if($this->session->flashdata('msg_error')){echo "checked";}?>>
-                                        <div><i class="fa fa-check"></i></div>Already have  an account? please login.
+                                        <input type="checkbox" name="Acc" value="haveAcc" class="mr-2" value="1" <?php if($this->session->flashdata('msg_error')){echo "checked";}?>>
+                                        <div><i class="fa fa-check"></i></div>Already have  an account? <a href="" class="ck-lgn">Please login</a>.
                                     </label>
 
                                     <label>
-                                        <input type="checkbox" name="" value="" class="mr-2" value="1">
+                                        <input type="checkbox" name="Acc" value="createAcc" class="mr-2" value="1">
                                         <div><i class="fa fa-check"></i></div>Create an account?
                                     </label>
                                 </div>
-
+                                <div id="addmsg">
+                                    <div class="accountmsg">
+                                        <h6 class="text-danger">Please fill the below details*</h6>
+                                    </div>
+                                </div>
                          <div id="addPw">
                            <div class="login-form">
                             <?php echo form_open('checkoutlogin/checkauth',['id'=>'motostoreRegisterForm']);?>
@@ -63,7 +67,7 @@
                                     <label for="password" class="col-sm-4 col-form-label">Password</label>
                                     <div class="col-sm-8">
                                         <div class="input-group">
-                                            <input type="password" class="form-control" id="password" name="password" >
+                                            <input type="password" class="form-control" id="password1" name="password" >
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="showPw1"><i class="fa fa-eye" aria-hidden="true"></i></span>
                                                 <span class="input-group-text" id="hidePw1"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
@@ -253,13 +257,13 @@
                             </table>
                             <div id="orderPayment">
                                 <label class="mt-2">
-                                    <input type="radio" name="payType" value="ccard" class="mr-2">
+                                    <input type="radio" name="payType" value="ccard" class="mr-2" >
                                     <div><i class="fa fa-gear"></i></div>CCAvenue
                                     <img src="https://www.ccavenue.com/images_shoppingcart/ccavenue_pay_options.gif" class="img-fluid mt-2">
                                     <small class="d-block">Pay securely by Credit or Debit card or internet banking through Secure Servers.</small>
                                 </label>
                                 <label class="mt-2">
-                                    <input type="radio" name="payType" value="paytm" class="mr-2">
+                                    <input type="radio" name="payType" value="paytm" class="mr-2" >
                                     <div><i class="fa fa-gear"></i></div>Paytm Gateway
                                     <img src="https://www.customelements.in/wp-content/plugins/paytm/images/logo.gif" class="img-fluid mt-2">
                                     <small class="d-block">Pay via Paytm Wallet – Credit/Debit card, Netbanking, EMI & UPI.</small>
