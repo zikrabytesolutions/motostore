@@ -45,7 +45,7 @@
 								<div class="form-group row">
 									<label for="phone" class="col-sm-4 col-form-label">Phone Number</label>
 									<div class="col-sm-8">	
-										<input type="number" class="form-control" id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>" maxlength="10" pattern="[6789][0-9]{9}" onkeypress="return ((event.charCode >=48 && event.charCode <=57) || (event.charCode >=0 && event.charCode <=31) )">
+										<input type="text" class="form-control" id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>" maxlength="10" pattern="[6789][0-9]{9}" onkeypress="return ((event.charCode >=48 && event.charCode <=57) || (event.charCode >=0 && event.charCode <=31) )">
                                         <small style="color:red"><?php echo form_error('mobile'); ?></small> 
                                     </div>
 								</div>	
