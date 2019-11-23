@@ -63,11 +63,65 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							            <td><?= $order->grand?></td>
                                         <td><?= $order->iteam?></td>
 							            <td>
-										<button type="button" class="btn btn-info btn-xs" >View</button>
-                    					<button type="button" class="btn btn-danger btn-xs">Delete</button>
+										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<?=$i; ?>">View</button>
+										<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModald<?=$i; ?>">Delete</button>
 							        	</td>
 							        </tr>
+<!-- Modal -->
+<div class="modal fade" id="myModal<?=$i; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Order Details</h4>
+      </div>
+      <div class="modal-body">
+        <?php $orderlist= $ci->orderdetails($order->orderdid);?>
+		<?php $totalorderd= $ci->totalorder($order->orderdid);?>
+		  <?php if($orderlist): foreach($orderlist as $ord):?>
+			
+		     <div class="row">
+		        <div class="col-md-10"> <?=$ord->product?>-  <?=$ord->quantity?> x <?=$ord->price?> =   <?=$ord->total?> </div>
+				
+		    </div>
+          <?php endforeach; endif;?>
+		  <hr style="height:5px">
+		  Total Item : <?= $totalorderd['iteam']?> &nbsp; &nbsp;   Grand Total : <?= $totalorderd['grand']?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModald<?=$i; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel" style="color:red">Are you sure you want to Delete?</h4>
+      </div>
+      <div class="modal-body">
+        <?php $orderlist= $ci->orderdetails($order->orderdid);?>
+		<?php $totalorderd= $ci->totalorder($order->orderdid);?>
+		  <?php if($orderlist): foreach($orderlist as $ord):?>
+			
+		     <div class="row">
+		        <div class="col-md-10"> <?=$ord->product?>-  <?=$ord->quantity?> x <?=$ord->price?> =   <?=$ord->total?> </div>
+				
+		    </div>
+          <?php endforeach; endif;?>
+		  <hr style="height:5px">
+		  Total Item : <?= $totalorderd['iteam']?> &nbsp; &nbsp;   Grand Total : <?= $totalorderd['grand']?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancle</button>
+        <a href="<?= base_url('order/delete/'.$order->orderdid)?>" class="btn btn-primary">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
                                    <?php endforeach; endif?>
 							    </tbody>
 							</table>
@@ -78,8 +132,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
 	<!-- details section end -->
-
-
 <!-- footer start -->
 <section class="footer-sec">
 	<div class="container">

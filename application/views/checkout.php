@@ -40,7 +40,7 @@
                     <div class="col-md-7">
                     <div class="form-group">
                                     <label>
-                                        <input type="checkbox" name="createAcc" value="createAcc" class="mr-2" value="1">
+                                        <input type="checkbox" name="createAcc" value="createAcc" class="mr-2" value="1" <?php if($this->session->flashdata('msg_error')){echo "checked";}?>>
                                         <div><i class="fa fa-check"></i></div>Already have  an account? please login.
                                     </label>
 

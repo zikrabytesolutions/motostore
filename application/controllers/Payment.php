@@ -104,8 +104,11 @@ class Payment extends CI_Controller
 
                                                 if( $iteamdelete && $cartdelete)
                                                 {
-                                                    
+                                                    $token=rand(9999,1000);
+                                                    $token=  strtr(base64_encode($token), '+/', '-_');
+                                                    $id= strtr(base64_encode($id), '+/', '-_');
                                                     $url= base_url('token/verify');
+                                                    //  payment::sendlink($token,$id, $url, $email);
                                                     return redirect('thankyou');
                                                 }
                                                 else
@@ -121,8 +124,10 @@ class Payment extends CI_Controller
         }
     }
 
-    function sendlink()
+    function sendlink($token,$id, $url, $to)
     {
+         $subject='Motostore Verification Link';
+        $message= 'Click below on link for verify your accoutn <br>'.
         $headers  = 'From: MyWebsite<info@website.in>' . "\r\n" .
             		'MIME-Version: 1.0' . "\r\n" .
             	    'Content-type: text/html; charset=utf-8';

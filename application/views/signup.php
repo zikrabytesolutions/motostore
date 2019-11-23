@@ -94,7 +94,7 @@
 							</form>
 							<hr/>
 							<div class="text-center">
-								Already have an Account? <a href="#">Login</a>
+								Already have an Account? <a href="<?= base_url('login')?>">Login</a>
 							</div>
 						</div>
 					</div>    	

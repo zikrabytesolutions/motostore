@@ -38,10 +38,14 @@
 							   
 								<div class="form-group row">
 									<label for="phone" class="col-sm-4 col-form-label">Email/Phone number</label>
-									<div class="col-sm-8">	
+									<div class="col-sm-8">
+									<?php if($this->session->flashdata('link')):?>
+                                          <span class="text-success"><?= $this->session->flashdata('link')?></span>
+                                     <?php endif;?>
+
 									<?php if($this->session->flashdata('msg_error')):?>
                                           <span class="text-danger"><?= $this->session->flashdata('msg_error')?></span>
-                                        <?php endif;?>
+                                     <?php endif;?>
 										<input type="tel" class="form-control" id="phone" name="userid" >
 									</div>
 								</div>	

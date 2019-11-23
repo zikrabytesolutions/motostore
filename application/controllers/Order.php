@@ -14,9 +14,23 @@ class Order extends MY_Controller
         $this->load->view('order',$data);
     }
 
-    function orderlistdetail($orderdid)
+    function orderdetails($orderdid)
     {
        return $this->userModel->myorderlist($orderdid);
+    }
+
+    function totalorder($orderdid)
+    {
+        return $this->userModel->totalorder($orderdid);
+    }
+
+    function delete($orderdid)
+    {
+        $success= $this->userModel->deleteorder($orderdid);
+        if($success)
+        {
+             return redirect('order');
+        }
     }
 
     

@@ -40,31 +40,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </aside>
                 <main class="col-md-9">
                    <section class="frmsec">
-                   		<div class="account-form">
-                            <h5><span style="float:right"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button></span></h5> 
-                            <table class="table table-striped">
-							    <thead>
-							        <tr>
-							            <th>Billing address</th>
-							            
-							            <th>Action</th>
-							        </tr>
-							    </thead>
-							    <tbody>
-								<?php $i=0; if($address): foreach ($address as $ads): $i++;?>
-							        <tr>
-							            <td><?= $ads->name?>, <?= $ads->streetaddress?>, <?= $ads->streetaddress1?>, <?= $ads->city?>, <?= $ads->postcode?></td>
-							           
-							            <td>
-										<button type="button" class="btn btn-info btn-xs" >View</button>
-                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>">Edit</button>
-                    <button type="button" class="btn btn-danger btn-xs">Delete</button>
-							            	
-							        	</td>
-
-							        </tr>
-							        
-<div class="modal fade" id="myModal<?= $i?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                   <div class="account-form">
+                        <h5><span style="float:right"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button></span></h5> 
+                  
+                   <div class="row">
+                         <?php $i=0; if($address): foreach ($address as $ads): $i++;?> 
+                             <div class="col-md-12">
+                                  <table>
+                                       <tr> <td >Name</td>  <td> <?= $ads->name?></td></tr>
+                                       <tr> <td>Mobile</td>  <td> <?= $ads->mobile ?></td></tr>
+                                       <tr> <td>Street Add.</td>  <td style="word-wrap: break-word;"> <?=$ads->streetaddress ?></td></tr>
+                                       <tr> <td>House no.</td>  <td style="word-wrap: break-word;"> <?= $ads->streetaddress1?></td></tr>
+                                       <tr> <td>City</td>  <td><?= $ads->city?></td></tr>
+                                       <tr> <td>Postal Code</td>  <td><?= $ads->postcode?></td></tr>
+                                       <tr>
+                                        <td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>">Edit</button></td> 
+                                        <td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModald<?= $i?>">Delete</button></td>
+                                        </tr>
+                                  </table>
+                             </div>
+ <div class="modal fade" id="myModal<?= $i?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -117,17 +112,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-		<a href="<?= base_url('checkout/delete/'.$ads->id)?>" class="btn btn-default" >Delete</a>
+		
         <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
                              </form>
     </div>
   </div>
 </div>
-								<?php endforeach; endif;?>
-							    </tbody>
-							</table>
-                        </div>
+
+
+
+<div class="modal fade" id="myModald<?= $i?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h4 class="modal-title" id="myModalLabel">Edit Address</h4>
+      </div>
+      <div class="modal-body">   
+         <h4 style="text:red"> Are you sure you want to logout?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+        <a href="<?= base_url('checkout/delete/'.$ads->id)?>" class="btn btn-default" >Delete</a>
+      </div>
+    
+    </div>
+  </div>
+</div>
+							
+                         <?php endforeach; endif;?>
+                   </div>
+                   </div>
                    </section>
                 </main>
             </div>

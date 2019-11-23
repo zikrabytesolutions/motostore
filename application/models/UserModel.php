@@ -51,12 +51,28 @@ class UserModel extends CI_Model
 
     function myorderlist($orderdid)
     {
-        $this->db->select('product.name');
+        $this->db->select('product.product,poi.*');
         $this->db->from('product_order_iteam as poi');
         $this->db->join('product','product.id=poi.productid');
         $this->db->where('poi.orderdid',$orderdid);
         $query= $this->db->get();
         return $query->result();
+    }
+
+
+    function totalorder($orderdid)
+    {
+        $this->db->select('*');
+        $this->db->from('product_order');
+        $this->db->where('orderid',$orderdid);
+        $query= $this->db->get();
+        return $query->row_array();
+    }
+
+    function deleteorder($orderdid)
+    {
+         $this->db->where('orderdid',$orderdid)->delete('product_order_iteam');
+        return $this->db->where('orderid',$orderdid)->delete('product_order');
     }
 }
 
