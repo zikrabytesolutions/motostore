@@ -47,12 +47,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          <?php $i=0; if($address): foreach ($address as $ads): $i++;?>
                              <div class="col-md-12">
                                   <table>
-                                       <tr> <td width="100px">Name</td>  <td> <?= $ads->name?></td></tr>
-                                       <tr> <td>Mobile</td>  <td> <?= $ads->mobile ?></td></tr>
-                                       <tr> <td>Street Add.</td>  <td style="word-wrap: break-word;"> <?=$ads->streetaddress ?></td></tr>
-                                       <tr> <td>House no.</td>  <td style="word-wrap: break-word;"> <?= $ads->streetaddress1?></td></tr>
-                                       <tr> <td>City</td>  <td><?= $ads->city?></td></tr>
-                                       <tr> <td>Postal Code</td>  <td><?= $ads->postcode?></td></tr>
+                                       <tr> <th width="100px">Name : </th>  <td> <?= $ads->name?></td></tr>
+                                       <tr> <th>Mobile : </th>  <td> <?= $ads->mobile ?></td></tr>
+                                       <tr> <th>Street Add. : </th>  <td style="word-wrap: break-word;"> <?=$ads->streetaddress ?></td></tr>
+                                       <tr> <th>House no. : </th>  <td style="word-wrap: break-word;"> <?= $ads->streetaddress1?></td></tr>
+                                       <tr> <th>City : </th>  <td><?= $ads->city?></td></tr>
+                                       <tr> <th>Postal Code : </th>  <td><?= $ads->postcode?></td></tr>
                                        <tr>
                                         <td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>">Edit</button></td>
                                         <td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModald<?= $i?>">Delete</button></td>

@@ -411,9 +411,19 @@ $('.pay-book-carousel').owlCarousel({
 			$("#shipToDiffAdd").fadeToggle(200);
 		});
 
-$('.checkout').find("input[type=checkbox][value=createAcc]").on('change', function() {
+$('.checkout').find("input[type=checkbox][value=haveAcc]").on('change', function() {
 	$("#addPw").fadeToggle(200);
+	$("#addmsg").hide(200);
+	$("input[value='createAcc']").prop('checked', false);
 });
+
+$("#addmsg").hide(200);
+$('.checkout').find("input[type=checkbox][value=createAcc]").on('change', function() {
+	$("#addmsg").fadeToggle(200);
+	$("#addPw").hide(200);
+	$("input[value='haveAcc']").prop('checked', false);
+});
+
 
 $('.search-ico').on('click', function() {
 	$(".search-bar").toggle(200);

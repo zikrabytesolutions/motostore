@@ -1741,6 +1741,7 @@ a{
 
 .checkout #shipToDiffAdd, .checkout #addPw {
     display: none;
+    margin-bottom: 20px;
 }
 
 .checkout .orderInfo {
@@ -2137,4 +2138,8 @@ aside.filterside {
 }
 a.btn.btn-primary{
     cursor: pointer;
+}
+.checkout a.ck-lgn{
+ color: blue;
+ text-decoration: underline;
 }
