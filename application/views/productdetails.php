@@ -156,7 +156,7 @@
 										  $pid=  strtr(base64_encode($pid), '+/', '-_');
 										  $second=  strtr(base64_encode($pvals->second), '+/', '-_');
 										  if($flag=='true')
-										  {$first=$pval->first;}
+										  {$first=$pvals->first;}
 										  elseif($rfirst!='') { $first=$rfirst;}
 										  $first=  strtr(base64_encode($first), '+/', '-_');
 

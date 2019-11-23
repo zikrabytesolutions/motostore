@@ -24,7 +24,6 @@
     <!--styles -->
 
 </head>
-
 <body>
 <?php $Ci = &get_instance(); ?>
     <div class="checkout">
@@ -32,15 +31,63 @@
 
         <section class="checkout-body py-5">
             <div class="container">
-            <?php echo form_open('payment/inititate');?>
+          
                 <div class="row">
                     <div class="col-md-12">
                         <h4 class="title-border clr-black">Checkout details</h4>
                     </div>
 
                     <div class="col-md-7">
-                        <div class="login-form">
+                    <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="createAcc" value="createAcc" class="mr-2" value="1">
+                                        <div><i class="fa fa-check"></i></div>Already have  an account? please login.
+                                    </label>
 
+                                    <label>
+                                        <input type="checkbox" name="" value="" class="mr-2" value="1">
+                                        <div><i class="fa fa-check"></i></div>Create an account?
+                                    </label>
+                                </div>
+
+                         <div id="addPw">
+                           <div class="login-form">
+                            <?php echo form_open('checkoutlogin/checkauth',['id'=>'motostoreRegisterForm']);?>
+                            
+                             <div class="form-group row">
+                                 <label for="phone" class="col-sm-4 col-form-label">Email/Phone number</label>
+                                 <div class="col-sm-8">	
+                                 <?php if($this->session->flashdata('msg_error')):?>
+                                       <span class="text-danger"><?= $this->session->flashdata('msg_error')?></span>
+                                     <?php endif;?>
+                                     <input type="tel" class="form-control" id="phone" name="userid" >
+                                 </div>
+                             </div>	
+                                 
+                             <div class="form-group row">
+                                 <label for="password" class="col-sm-4 col-form-label">Password</label>
+                                 <div class="col-sm-8">	
+                                     <div class="input-group">
+                                     <input type="password" class="form-control" id="password" name="password" >
+                                     <div class="input-group-append">
+                                       <span class="input-group-text" id="showPw"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                                       <span class="input-group-text" id="hidePw"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                                     </div>
+                                   </div>
+                                 </div>
+                             </div>
+                             
+                             <button type="submit" class="btn btn-default d-block mx-auto">Login</button>
+                         </form>
+                     </div>
+                    </div>
+                    </div>
+                    </div> 
+                    <br>
+                    <?php echo form_open('payment/inititate');?>
+                        <div class="row">
+                        <div class="col-md-7">
+                        <div class="login-form">
                                 <h5>Billing details</h5>
 
                                 <div class="form-row">
@@ -90,14 +137,8 @@
                                     <input type="email" class="form-control" id="email" name="email" value="<?php echo set_value('email'); ?>" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" required="">
                                     <small style="color:red"><?php echo form_error('email'); ?></small>
                                 </div>
-                                <div class="form-group">
-                                    <label>
-                                        <input type="checkbox" name="createAcc" value="createAcc" class="mr-2" value="1">
-                                        <div><i class="fa fa-check"></i></div>Create an account?
-                                    </label>
-                                </div>
-
-                                <div id="addPw">
+                                
+                                
                                     <div class="form-group">
                                         <label for="password">Password *</label>
                                         <div class="input-group">
@@ -111,7 +152,7 @@
                                         </div>
                                         <small style="color:red"><?php echo form_error('password'); ?></small>
                                     </div>
-                                </div>
+                                
 
                                 <div class="form-group">
                                     <label>
@@ -191,7 +232,16 @@
                                        <?php if($result): foreach($result as $rs): ?>
                                     <tr>
                                         <td>
-                                            <span class="item"><?= $rs->product?>- (
+                                            <span class="item">
+                                            <?php
+								  if(strlen($rs->product)>25)
+								  {
+                                       echo  $stringCut = substr($rs->product, 0, 25).' ...';
+								  }
+								  else{
+                                         echo  $stringCut = substr($rs->product, 0, 25);
+								  }
+								  ?>- (
                                                    <?php  $attribute= $Ci->findattributecart($rs->first);?>
                                                        <?php if($attribute): foreach($attribute as $att):?>
                                                             <span class="c_item_size"><b><?= $att->value_name?></b></span>

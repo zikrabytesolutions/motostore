@@ -121,7 +121,7 @@
             </nav>
 		</header>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <style>
+        <!-- <style>
            #autoSuggestionsList > li {
     background: none repeat scroll 0 0 #F3F3F3;
     border-bottom: 1px solid #E3E3E3;
@@ -137,7 +137,7 @@
     border-radius: 5px 5px 5px 5px;
     position: absolute;
 }
-        </style>
+        </style> -->
         <div class="search-bar">
           <input type="text" name="search" placeholder="Search here" id="search_data" type="text" onkeyup="ajaxSearch();">
          <a class="nav-link close-ico" href="#"><i class="fa fa-close" aria-hidden="true"></i></a>

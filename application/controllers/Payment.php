@@ -15,13 +15,13 @@ class Payment extends CI_Controller
     {
         $data= $this->input->post();
         
-        // if (!$this->form_validation->run('checkout') == TRUE )
-        // {
-        //     $data['proinfo'] = $this->cart->contents();
-        //     $this->load->view('checkout',$data);
-        // }
-        // else
-        // {
+        if (!$this->form_validation->run('checkout') == TRUE )
+        {
+            $data['proinfo'] = $this->cart->contents();
+            $this->load->view('checkout',$data);
+        }
+        else
+        {
 
             date_default_timezone_set('Asia/Kolkata');
             $now = date("Y-m-d H:i:s");
@@ -105,7 +105,8 @@ class Payment extends CI_Controller
                                                 if( $iteamdelete && $cartdelete)
                                                 {
                                                     
-                                                      return redirect('thankyou');
+                                                    $url= base_url('token/verify');
+                                                    return redirect('thankyou');
                                                 }
                                                 else
                                                 {
@@ -118,7 +119,15 @@ class Payment extends CI_Controller
                    }
             }
         }
-    
+    }
+
+    function sendlink()
+    {
+        $headers  = 'From: MyWebsite<info@website.in>' . "\r\n" .
+            		'MIME-Version: 1.0' . "\r\n" .
+            	    'Content-type: text/html; charset=utf-8';
+		mail($to, $subject, $message, $headers,'-finfo@website.in');
+    }
 
     function findcartvalue( $proid, $detailsid )
      {
@@ -139,6 +148,7 @@ class Payment extends CI_Controller
         $last= $this->paymentModel->rowcounts();
         $orderid= date('ymdhi').''.$last;
         $cart_iteam=  $this->orderModel->allcartdata($id);
+        $addid= $this->input->post('daddress');
         if($cart_iteam)
         {
              foreach($cart_iteam as $crt)
@@ -154,7 +164,7 @@ class Payment extends CI_Controller
                  {
                      foreach($cart as $ct)
                      {
-                          $cartsummery= Array('orderid'=>$orderid,'userid'=>$id,'iteam'=>$ct->iteam,'grand'=>$ct->grandtotal,'created'=>$now);
+                          $cartsummery= Array('orderid'=>$orderid,'userid'=>$id,'iteam'=>$ct->iteam, 'delivery_address'=>$addid,'grand'=>$ct->grandtotal,'created'=>$now);
                           $datadone=$this->orderModel->insertorderd($cartsummery);
                      }
                      if($datadone)

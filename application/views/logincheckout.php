@@ -53,7 +53,12 @@
                         <?php $i=0; if($delivery): foreach($delivery as $del): $i++;?>
                           <div class="product-layout product-grid col-md-6 col-lg-6 mt-4">
                             <div class="p-item">
-                               <h5 style="margin-bottom:-10px"><?= $del->name?></h5>
+                               <h5 style="margin-bottom:-10px"><?= $del->name?>
+                               <label class="mt-2" style="float:right">
+	                                <input type="radio" name="daddress" value="<?= $del->id?>" class="mr-2" checked>
+	                                <div><i class="fa fa-gear"></i></div>
+	                            </label>
+                               </h5>
                                 
                                <hr>
                                <p>Mobile : <?= $del->mobile?></p>
