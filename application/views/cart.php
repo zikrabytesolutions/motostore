@@ -149,7 +149,7 @@
                                 <tbody>
                                     <tr>
                                         <td><?php echo $rows = count($this->cart->contents()); ?> Items</td>
-                                        <th><?php echo $this->cart->format_number($this->cart->total()); ?></th>
+                                        <th>Rs. <?php echo $this->cart->format_number($this->cart->total()); ?></th>
                                     </tr>
                                     <tr>
                                         <td>Shipping</td>
