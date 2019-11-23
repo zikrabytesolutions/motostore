@@ -1,4 +1,5 @@
-<header>
+ <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
+ <header>
 			<nav class="navbar navbar-expand-md">
                 <div class="container-fluid">
                     <!-- Brand -->
@@ -111,7 +112,7 @@
                 </div>
             </nav>
 		</header>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+       
         <!-- <style>
            #autoSuggestionsList > li {
     background: none repeat scroll 0 0 #F3F3F3;

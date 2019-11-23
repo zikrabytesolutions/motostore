@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/animate.css')?>">
 
 	<!--fontello-->
-	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">	
+	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">
 	<link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css')?>" />
 	<!--styles -->
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css')?>">
-	
+
 </head>
 <body>
 
@@ -41,10 +41,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <main class="col-md-9">
                    <section class="frmsec">
                    <div class="account-form">
-                        <h5><span style="float:right"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button></span></h5> 
-                  
+                        <h5><span style="float:right"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button></span></h5>
+
                    <div class="row">
-                         <?php $i=0; if($address): foreach ($address as $ads): $i++;?> 
+                         <?php $i=0; if($address): foreach ($address as $ads): $i++;?>
                              <div class="col-md-12">
                                   <table>
                                        <tr> <td >Name</td>  <td> <?= $ads->name?></td></tr>
@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                        <tr> <td>City</td>  <td><?= $ads->city?></td></tr>
                                        <tr> <td>Postal Code</td>  <td><?= $ads->postcode?></td></tr>
                                        <tr>
-                                        <td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>">Edit</button></td> 
+                                        <td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>">Edit</button></td>
                                         <td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModald<?= $i?>">Delete</button></td>
                                         </tr>
                                   </table>
@@ -63,12 +63,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-       
+
         <h4 class="modal-title" id="myModalLabel">Edit Address</h4>
       </div>
 	  <?php echo form_open('checkout/updateshippingaddress');?>
       <div class="modal-body">
-     
+
                                     <div class="form-row">
                                         <div class="form-group col-sm-12">
                                             <label for="firstname">Full name *</label>
@@ -108,11 +108,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="postcode">Postcode / ZIP *</label>
                                         <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode" value="<?= $ads->postcode?>" maxlength="6" onkeypress="return ((event.charCode >=48 && event.charCode <=57) || (event.charCode >=0 && event.charCode <=31) )" required>
                                     </div>
-                                
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-		
+
         <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
                              </form>
@@ -126,21 +126,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-       
+
         <h4 class="modal-title" id="myModalLabel">Edit Address</h4>
       </div>
-      <div class="modal-body">   
+      <div class="modal-body">
          <h4 style="text:red"> Are you sure you want to logout?</h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
         <a href="<?= base_url('checkout/delete/'.$ads->id)?>" class="btn btn-default" >Delete</a>
       </div>
-    
+
     </div>
   </div>
 </div>
-							
+
                          <?php endforeach; endif;?>
                    </div>
                    </div>
@@ -157,8 +157,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
         <div class="f-block">
-          <img class="f-logo" src="<?= base_url('assets/images/motologo.png')?>"> 
-        
+          <img class="f-logo" src="<?= base_url('assets/images/motologo.png')?>">
+
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -169,9 +169,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
         <div class="f-block">
           <h6 class="txt-h-up">services</h6>
-        
+
         <ul class="privacy-block">
-          
+
           <li><a href="">Helmets</a></li>
           <li><a href="">Riding Gear</a></li>
           <li><a href="">Luggage</a></li>
@@ -201,7 +201,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
       </div>
-      
+
     </div>
   </div>
 </section>
@@ -227,7 +227,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script type="text/javascript" src="<?= base_url('assets/js/jquery.js')?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js')?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js')?>"></script>
-	<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>	
+	<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
 	<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/custom.js')?>"></script>
@@ -237,12 +237,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-       
+
         <h4 class="modal-title" id="myModalLabel">Shipping Address</h4>
       </div>
       <?php echo form_open('checkout/addshippingaddressprofile');?>
       <div class="modal-body">
-     
+
                                     <div class="form-row">
                                         <div class="form-group col-sm-12">
                                             <label for="firstname">Full name *</label>
@@ -286,7 +286,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="postcode">Postcode / ZIP *</label>
                                         <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode">
                                     </div>
-                                
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
