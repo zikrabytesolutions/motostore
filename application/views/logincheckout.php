@@ -49,6 +49,23 @@
                     <h5 class="title-border clr-black">Select Shipping Address  </h5>
                     <a  class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="color:white">Add New Shipping Address</a>
                         <div class="row">
+
+                        <?php if($billing): foreach($billing as $bill):?>
+                            <div class="product-layout product-grid col-md-6 col-lg-6 mt-4">
+                            <div class="p-item">
+                               <h5 style="margin-bottom:-10px"><?= $bill->name?>
+                               <label class="mt-2" style="float:right">
+	                                <input type="radio" name="daddress" value="def" class="mr-2" checked>
+	                                <div><i class="fa fa-gear"></i></div>
+	                            </label>
+                               </h5>
+                                
+                               <hr>
+                               <p>Mobile : <?= $bill->mobile?></p>
+                               <p><?= $bill->streetaddress?>, <?= $bill->streetaddress1?>, <?= $bill->city?>, <?= $bill->postcode?></p>
+                            </div>
+                            </div>
+                       <?php endforeach; endif;?>
                        
                         <?php $i=0; if($delivery): foreach($delivery as $del): $i++;?>
                           <div class="product-layout product-grid col-md-6 col-lg-6 mt-4">

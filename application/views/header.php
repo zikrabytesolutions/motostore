@@ -99,7 +99,7 @@
                               <div class="submenu-item">
                                 <ul>
                                   <li><a class="submenu-link" href="<?= base_url('account')?>">My Profile</a></li>
-                                  <li><a class="submenu-link" href="<?= base_url('login/logout')?>">Logout</a></li>
+                                  <li><a class="submenu-link" href="#" data-toggle="modal" data-target="#logoutpromt">Logout</a></li>
                                 </ul>
                               </div>
                             </div>
@@ -174,3 +174,22 @@ function ajaxSearch()
      }
  }
 </script>
+
+<div class="modal fade" id="logoutpromt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h4 class="modal-title" id="myModalLabel">Logout!</h4>
+      </div>
+      <div class="modal-body">
+         <h4 style="color:red"> Are you sure you want to logout?</h4>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-warning" data-dismiss="modal">No</a>
+        <a href="<?= base_url('login/logout/')?>" class="btn btn-default" >Yes</a>
+      </div>
+
+    </div>
+  </div>
+</div>
