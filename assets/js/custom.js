@@ -267,6 +267,7 @@ $('#range').text(JSON.stringify(range, null, '\t'));
 //show password
 $(document).ready(function(){
 $('#hidePw').hide();
+$('#hidePw1').hide();
 })
 
 var showPW = document.getElementById('showPw');
@@ -308,6 +309,52 @@ $('#hidePw').toggleClass('shw');
 }
 
 }
+
+var showPW1 = document.getElementById('showPw1');
+
+if(showPW1){
+
+showPw1.addEventListener('click', showPassword1);
+function showPassword1() {
+	$('#showPw1').hide();
+	$('#hidePw1').show();
+
+$('#showPw1').toggleClass('shw');			
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+}
+
+var hidePW1 = document.getElementById('hidePw1');
+
+if(hidePW1){
+
+hidePw.addEventListener('click', hidePassword1);
+function hidePassword1() {
+	$('#showPw1').show();
+	$('#hidePw1').hide();
+
+$('#hidePw1').toggleClass('shw');			
+  var x = document.getElementById("password");
+  if (x.type === "text") {
+    x.type = "password";
+  } else {
+    x.type = "text";
+  }
+}
+
+}
+
+
+
+
+
+
 
 //datepicker
 
@@ -376,27 +423,27 @@ $('.close-ico').on('click', function() {
 });
   
 
-var min = "<?= $min; ?>";
-var max = "<?= $max; ?>";
-$( function() {
-$("#slider-range" ).slider({
-	range: true,
-	min: 0,
-	max: 100000,
-	values: [min , max ],
-	step: 100,
-	slide: function( event, ui ) 
-	{
-		$( "#min" ).val(  ui.values[ 0 ]);
-		$( "#max" ).val( ui.values[ 1 ] );
+// var min = "<?= $min; ?>";
+// var max = "<?= $max; ?>";
+// $( function() {
+// $("#slider-range" ).slider({
+// 	range: true,
+// 	min: 0,
+// 	max: 100000,
+// 	values: [min , max ],
+// 	step: 100,
+// 	slide: function( event, ui ) 
+// 	{
+// 		$( "#min" ).val(  ui.values[ 0 ]);
+// 		$( "#max" ).val( ui.values[ 1 ] );
 	   
-	}
+// 	}
 	
-});
-$( "#min" ).val(min);
-$( "#max" ).val(max);
+// });
+// $( "#min" ).val(min);
+// $( "#max" ).val(max);
 
-} );
+// } );
 
 $(document).ready(function(){
 $('[data-toggle="tooltip"]').tooltip();   
