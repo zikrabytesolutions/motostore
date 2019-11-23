@@ -300,7 +300,7 @@ function hidePassword() {
 	$('#hidePw').hide();
 
 $('#hidePw').toggleClass('shw');			
-  var x = document.getElementById("password");
+  var x = document.getElementById("password1");
   if (x.type === "text") {
     x.type = "password";
   } else {
