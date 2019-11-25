@@ -252,11 +252,14 @@
                              <label class="mt-2">
                                 <input type="checkbox" name="tnc" value="tnc" class="mr-2">
                                 <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
-                            </label>
-                            <input class="add-to-cart btn-default bg-red my-4 btnsub" type="submit"><i class="icon-cart"></i>Proceed to pay</input>
-                            <p>View Our <a href="">Privacy Policy</a></p>
-                        </div>
-                    </section>
+                                <small style="color:red"><?php echo form_error('tnc'); ?></small>
+                                </label>
+
+                                <button class="add-to-cart btn-default bg-red my-4 btnsub" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
+                                <p>View Our <a href="">Privacy Policy</a></p>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
         </form>
@@ -322,58 +325,3 @@
         });
     </script>
 <?php endif;?>
-
-
-<!-- <script type="text/javascript">
-
-    $(document).on('submit','#frmbill', function(e){
-        e.preventDefault();
-        // debugger;
-        
-        var createAcc="createAcc";
-        var radioName="payType";
-        var ckbxName="tnc";
-       
-
-
-// alert($('input[name='+ createAcc +']:checked').length)
-
-        // if ($('input[name='+ createAcc +']:checked').length) 
-        // {
-            
-        //         if ($('input[name='+ ckbxName +']:checked').length) 
-        //         {
-        //             return true;
-        //         }
-        //         else 
-        //         {
-        //             alert('Agree terms and conditions');
-        //         }
-            
-        // }
-        // else 
-        // {
-        //     alert('Please select create an account option');
-        // }
-      
-
-
-
-      // if ($('input[name='+ radioName +']:checked').length) {
-      //       $( "#frmbill" ).submit();
-      // }
-      // else {
-
-      //      alert('Please select Payment Type');
-      // }
-
-      //  if ($('input[name='+ ckbxName +']:checked').length) {
-      //       $( "#frmbill" ).submit();
-      // }
-      // else {
-
-      //      alert('Agree terms and conditions');
-      // }
-
-  });
-</script> -->
