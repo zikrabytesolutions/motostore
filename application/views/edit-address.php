@@ -39,31 +39,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <?php include "detail_sidebar.php";?>
                 </aside>
                 <main class="col-md-9">
-                   <section class="frmsec">
-                   <div class="account-form">
-                        <h5><span style="float:right"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button></span></h5>
+                   <section class="">
+                   <div class="">
+                        <span style="float:right"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button></span>
                           
-                   <div class="row"><br>
+                   <div class="row">
                          <?php $i=0; if($address): foreach ($address as $ads): $i++;?>
-                             <div class="col-md-12">
-                                  <table>
-                                       <tr> <th width="100px">Name : </th>  <td> <?= $ads->name?></td></tr>
-                                       <tr> <th>Mobile : </th>  <td> <?= $ads->mobile ?></td></tr>
-                                       <tr> <th>Street Add. : </th>  <td style="word-wrap: break-word;"> <?=$ads->streetaddress ?></td></tr>
-                                       <tr> <th>House no. : </th>  <td style="word-wrap: break-word;"> <?= $ads->streetaddress1?></td></tr>
-                                       <tr> <th>City : </th>  <td><?= $ads->city?></td></tr>
-                                       <tr> <th>Postal Code : </th>  <td><?= $ads->postcode?></td></tr>
-                                       <tr>
-                                        <td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>">Edit</button></td>
-                                        <td><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModald<?= $i?>">Delete</button></td>
-                                        </tr>
-                                  </table>
-                             </div>
+                      
+                                  
+                                  <div class="product-layout product-grid col-md-6 col-lg-6 mt-4">
+                            <div class="p-item">
+                               <h5 style="margin-bottom:-10px">
+                               <?= $ads->name?>
+                               <span style="float: right;">
+                               <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>"><i class="fa fa-pencil-square-o"></i></button>
+                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModald<?= $i?>"><i class="fa fa-trash"></i></button>
+                              </span>
+                               </h5>
+                               <hr style="margin-top: 25px;">
+                               <p>Mobile : <?= $ads->mobile ?></p>
+                               <p>Street Add. :<?=$ads->streetaddress ?></p>
+                               <p>House no. : <?= $ads->streetaddress1?></p>
+                               <p>City  :<?= $ads->city?></p>
+                               <p>Postal Code :<?= $ads->postcode?></p>
+                                
+                            </div>
+                            </div>
+                   
+
+
  <div class="modal fade" id="myModal<?= $i?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-
         <h4 class="modal-title" id="myModalLabel">Edit Address</h4>
       </div>
 	  <?php echo form_open('checkout/updateshippingaddress');?>
@@ -111,7 +119,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
         <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
@@ -130,13 +138,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h4 class="modal-title" id="myModalLabel">Delete Address</h4>
       </div>
       <div class="modal-body">
-         <h4 style="color:red"> Are you sure you want to delete?</h4>
+         <h6> Are you sure you want to delete?</h6>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-        <a href="<?= base_url('checkout/delete/'.$ads->id)?>" class="btn btn-default" >Delete</a>
+        <a href="" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <a href="<?= base_url('checkout/delete/'.$ads->id)?>" class="btn btn-success" >Delete</a>
       </div>
-
+ 
     </div>
   </div>
 </div>

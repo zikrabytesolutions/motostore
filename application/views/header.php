@@ -133,12 +133,15 @@
         <div class="search-bar">
           <input type="text" name="search" placeholder="Search here" id="search_data" type="text" onkeyup="ajaxSearch();">
          <a class="nav-link close-ico" href="#"><i class="fa fa-close" aria-hidden="true"></i></a>
+         
          <div id="suggestions">
-         <div id="autoSuggestionsList"></div>
-     </div>
-        
+         <ul id="autoSuggestionsList">
+           
+         </ul>
+        </div>
         </div>
 
+        
         <script type="text/javascript">
 
 function ajaxSearch()
@@ -183,11 +186,11 @@ function ajaxSearch()
         <h4 class="modal-title" id="myModalLabel">Logout!</h4>
       </div>
       <div class="modal-body">
-         <h4 style="color:red"> Are you sure you want to logout?</h4>
+         <h4> Are you sure you want to logout?</h4>
       </div>
       <div class="modal-footer">
-        <a type="button" class="btn btn-warning" data-dismiss="modal">No</a>
-        <a href="<?= base_url('login/logout/')?>" class="btn btn-default" >Yes</a>
+        <a href="" class="btn btn-danger" data-dismiss="modal">No</a>
+        <a href="<?= base_url('login/logout/')?>" class="btn btn-success" >Yes</a>
       </div>
 
     </div>

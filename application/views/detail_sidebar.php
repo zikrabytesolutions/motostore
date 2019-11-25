@@ -50,11 +50,11 @@
         <h4 class="modal-title" id="myModalLabel">Logout!</h4>
       </div>
       <div class="modal-body">
-         <h4 style="color:red"> Are you sure you want to logout?</h4>
+         <h6 style="color:red"> Are you sure you want to logout?</h6>
       </div>
       <div class="modal-footer">
-        <a type="button" class="btn btn-warning" data-dismiss="modal">No</a>
-        <a href="<?= base_url('login/logout/')?>" class="btn btn-default" >Yes</a>
+        <a href="" class="btn btn-danger" data-dismiss="modal">No</a>
+        <a href="<?= base_url('login/logout/')?>" class="btn btn-success" >Yes</a>
       </div>
 
     </div>

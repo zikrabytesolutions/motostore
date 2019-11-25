@@ -36,13 +36,9 @@
                     </div>
                     <div class="col-md-7">
                     <div class="form-group">
-                                    <label>
-                                    <a  data-toggle="modal" data-target="#myModal">Already have an account?Login here</a>
-
-                                    <label>
-                                        <input type="checkbox" name="Acc" value="createAcc" class="mr-2" value="1">
-                                        <div><i class="fa fa-check"></i></div>Create an account?
-                                    </label>
+                                    <label class="ck-lgn-icon">
+                                    <i class="fa fa-gear"></i>
+                                   Have an already account please  <a  data-toggle="modal" data-target="#myModal" class="ck-lgn">login here</a>
                                 </div>
                                 <div id="addmsg">
                                     <div class="accountmsg">
@@ -50,7 +46,7 @@
                                     </div>
                                 </div>
                          <div id="addPw">
-                           
+
                         </div>
                     </div>
                 </div>
@@ -112,6 +108,14 @@
                                 <small style="color:red"><?php echo form_error('password'); ?></small>
                             </div>
                             <div class="form-group">
+
+                                <label>
+                                        <input type="checkbox" name="Acc" value="createAcc" class="mr-2" required>
+                                        <div><i class="fa fa-check"></i></div>Create an account?
+                                    </label>
+                            </div>
+                            <div class="form-group">
+
                                 <label>
                                     <input type="checkbox" name="shipDiffAdd" value="2" class="mr-2">
                                     <div><i class="fa fa-check"></i></div>Ship to a different address
@@ -154,7 +158,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Order notes (optional)</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Notes about your order, e.g. special notes for delivery." name="dnotes"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Notes about your order, e.g. special notes for delivery." name="dnotes" style="min-height: 100px;"></textarea>
                             </div>
                         </div>
                     </div>
@@ -266,7 +270,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        
+
         <h4 class="modal-title" id="myModalLabel">Account Login</h4>
       </div>
       <div class="modal-body">
@@ -302,7 +306,7 @@
                             </div>
       </div>
       <div class="modal-footer">
-        
+
       </div>
     </div>
   </div>
@@ -318,11 +322,11 @@
 </script>
 <?php endif;?>
 <script type="text/javascript">
-  
+
 
     $('#orderPayment').find("input[type=checkbox][name=tnc]").on('change', function() {
       $(".btnsub").prop("disabled", false);
-      
+
     });
   // $("input:radio").change(function () {
   //   $("#orderPayment").prop("disabled", false);});

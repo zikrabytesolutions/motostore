@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <label for="email">Email address *</label>
                                     <input type="email" class="form-control" value="<?= $pro->email?>" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" placeholder="Email Address" readonly/>
 								</div>
-
+								<p>This will be used as your billing address</p>
 								<div class="row">
 								<div class="form-group col-sm-6">
                                     <label for="pwd">Street Address</label>
