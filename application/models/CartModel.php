@@ -186,7 +186,7 @@ class CartModel extends CI_Model{
 
     function countalluser()
     {
-        return $this->db->from("users")->count_all_results();
+        return $this->db->from("product_order_iteam")->count_all_results();
     }
     
 }

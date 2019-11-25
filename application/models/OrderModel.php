@@ -49,7 +49,7 @@ class OrderModel extends CI_Model
     
         public function get_autocomplete($search_data)
        {
-            $this->db->select('cat_name, id');
+            $this->db->select('*');
             $this->db->like('cat_name', $search_data);
 
             return $this->db->get('category', 10)->result();

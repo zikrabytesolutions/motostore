@@ -14,6 +14,13 @@ class Thankyou extends MY_Controller
 		$data['order']=$this->paymentModel->orderinformation();
 		$this->load->view('thankyou',$data);
 	}
+
+
+	function thankyoufirst()
+	{
+		$data['order']=$this->paymentModel->orderinformation();
+		$this->load->view('thankyoufirst',$data);
+	}
 }
 
 ?>
