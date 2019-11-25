@@ -327,7 +327,7 @@ body .product-grid .product-item {
 }
 
 body .product-grid .product-item:hover .item-info {
-    background-color: #34a2bb;
+    background-color: #000;
     color: #fff;
 }
 
