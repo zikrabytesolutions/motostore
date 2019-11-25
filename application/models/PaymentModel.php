@@ -22,5 +22,13 @@
          $query= $this->db->get();
          return $query->result();
      }
+
+
+
+     function shippingaddress($shipping)
+     {
+         $this->db->insert('deliveryaddress',$shipping);
+         return $this->db->insert_id();
+     }
  }
 ?>

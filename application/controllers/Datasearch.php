@@ -13,7 +13,11 @@ class Datasearch extends CI_Controller
          if (!empty($result))
          {    
               foreach ($result as $row):
-                   echo "<li><a href='#'>" . $row->cat_name . "</a></li>";
+               $cid= strtr(base64_encode($row->id), '+/', '-_');
+               $cid=  strtr(base64_encode($cid), '+/', '-_');
+               $cid=  strtr(base64_encode($cid), '+/', '-_');
+               $ctid=  strtr(base64_encode('catblank'), '+/', '-_');
+                   echo "<li><a href='". base_url('product/lists/'.$cid.'/'.$ctid)."'>" . $row->cat_name . "</a></li>";
               endforeach;
          }
          else

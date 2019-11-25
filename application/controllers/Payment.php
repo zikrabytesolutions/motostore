@@ -43,12 +43,18 @@ class Payment extends CI_Controller
             $dnotes= $this->input->post('dnotes');
             $dmobile= $this->input->post('dmobile');
 
+            
+
             $data= Array('name'=>$name,'mobile'=>$mobile,'email'=>$email,'password'=>$password,'city'=>$city,'postcode'=>$postcode,
             'streetaddress'=>$streetaddress,'streetaddress1'=>$streetaddress1,'created'=>$now);
            
             $success= $this->paymentModel->userregister($data);
             $delivery= Array('userid'=>$success,'name'=>$dname,'mobile'=>$dmobile,'city'=>$dcity,'postcode'=>$dpostcode,
             'streetaddress'=>$dstreetaddress,'streetaddress1'=>$dstreetaddress1,'created'=>$now);
+           
+            $shipping= Array('userid'=>$success,'name'=>$name,'mobile'=>$mobile,'city'=>$city,'postcode'=>$postcode,
+            'streetaddress'=>$streetaddress,'streetaddress1'=>$streetaddress1,'created'=>$now);
+             $addressid= $this->paymentModel->shippingaddress($shipping);
             if($dname!='')
             {
                 $this->orderModel->addaddress($delivery);
@@ -94,7 +100,7 @@ class Payment extends CI_Controller
                                         {
                                             foreach($cart as $ct)
                                             {
-                                                 $cartsummery= Array('orderid'=>$orderid,'userid'=>$id,'iteam'=>$ct->iteam,'grand'=>$ct->grandtotal,'created'=>$now);
+                                                 $cartsummery= Array('orderid'=>$orderid,'delivery_address'=> $addressid, 'userid'=>$id,'iteam'=>$ct->iteam,'grand'=>$ct->grandtotal,'created'=>$now);
                                                  $datadone=$this->orderModel->insertorderd($cartsummery);
                                             }
                                             if($datadone)
@@ -109,7 +115,7 @@ class Payment extends CI_Controller
                                                     $id= strtr(base64_encode($id), '+/', '-_');
                                                     $url= base_url('token/verify');
                                                     //  payment::sendlink($token,$id, $url, $email);
-                                                    return redirect('thankyou');
+                                                    return redirect('thankyou/thankyoufirst');
                                                 }
                                                 else
                                                 {
