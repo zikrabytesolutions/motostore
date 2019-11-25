@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <input type="text" class="form-control"  name="city" value="<?= $pro->city?>">
 								</div>
 								<div class="form-group col-sm-6">
-                                    <label for="pwd">Postal Code</label>
+                                    <label for="pwd">Pin Code*</label>
                                     <input type="text" class="form-control"  name="postcode" value="<?= $pro->postcode?>" maxlength="6" onkeypress="return ((event.charCode >=48 && event.charCode <=57) || (event.charCode >=0 && event.charCode <=31) )" required>
                                 </div>
 								</div>

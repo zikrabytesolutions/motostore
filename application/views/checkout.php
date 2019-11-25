@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="postcode">Postcode / ZIP *</label>
+                                <label for="postcode">Pin Code / ZIP *</label>
                                 <input type="text" class="form-control" id="postcode" name="postcode" value="<?php echo set_value('postcode'); ?>" maxlength="6" onchange="try{setCustomValidity('')}catch(e){}" onkeypress="return ((event.charCode >=48 &amp;&amp; event.charCode <=57) || (event.charCode >=0 &amp;&amp; event.charCode <=31) )" required="">
                                 <small style="color:red"><?php echo form_error('postcode'); ?></small>
                             </div>
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="postcode">Postcode / ZIP *</label>
+                                    <label for="postcode">Pin Code / ZIP *</label>
                                     <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="dpostcode">
                                 </div>
                             </div>

@@ -2218,10 +2218,12 @@ ul#autoSuggestionsList {
     font-size: 20px;
     text-align: center;
 }
+.deletemodal .modal-header,
 #logoutpromt .modal-header {
     padding: 8px 20px;
 }
-#logoutpromt  .modal-footer {
+.deletemodal .modal-footer,
+#logoutpromt .modal-footer {
     border: none !important;
     margin: 0 auto;
 }
