@@ -77,7 +77,27 @@ class Account Extends MY_Controller
 	   }
 		
 	}
-}
+
+
+
+	function updateaccountadd()
+	{
+		$data= $this->input->post();
+		$userid= $this->session->userdata('motoubid');
+	    
+		$success= $this->userModel->updateaccoutn($data,$userid);
+		if($success)
+		{
+			$username=$this->userModel->returnname();
+			$done= $this->userModel->insertaddress($data);
+			$this->session->set_flashdata('msg_error', 'Account Updated' );
+		     return redirect('checkout');
+		  
+		}
+	   }
+		
+	}
+
 
 
 

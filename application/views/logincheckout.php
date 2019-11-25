@@ -37,11 +37,27 @@
                 <div class="row">
                     <div class="col-md-7">
                    <?php if($billing): foreach($billing as $bill):?>
+                      
                         <h5 class="title-border clr-black" style="margin-bottom:15px">Billing Address</h5>
                         <div class="p-item">
-                             <h5 style="text-align:center"> <?= $bill->name;?></h5> <hr>
+                             <h5 style="text-align:center"> <?php
+                                                    if(strlen($bill->name)>18)
+                                                    {
+                                                     echo  $stringCut = substr($bill->name, 0, 18).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($bill->name, 0, 18);
+                                                    }
+                                                    ?> </h5>
+                                                     <hr>
+                                                     <?php $mobiles= $bill->mobile?>
+                        <?php if($bill->streetaddress!='' && $bill->streetaddress1!=''):?>
                              <p>Mobile : <?= $bill->mobile?><br> <?= $bill->streetaddress?>, <?= $bill->streetaddress1?>, <?= $bill->city?>, <?= $bill->postcode?></p>
+                             <?php else:?>
+                            <a  class="btn btn-primary" data-toggle="modal" data-target="#myModalbill" style="color:white">Update Billing Adress</a>
+                     <?php endif?>
                         </div>
+                         
                    <?php endforeach; endif;?>
 
                       <br>
@@ -51,9 +67,19 @@
                         <div class="row">
 
                         <?php if($billing): foreach($billing as $bill):?>
+                            <?php if($bill->streetaddress!='' && $bill->streetaddress1!=''):?>
                             <div class="product-layout product-grid col-md-6 col-lg-6 mt-4">
                             <div class="p-item">
-                               <h5 style="margin-bottom:-10px"><?= $bill->name?>
+                               <h5 style="margin-bottom:-10px">
+                               <?php
+                                                    if(strlen($bill->name)>18)
+                                                    {
+                                                     echo  $stringCut = substr($bill->name, 0, 18).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($bill->name, 0, 18);
+                                                    }
+                                                    ?> 
                                <label class="mt-2" style="float:right">
 	                                <input type="radio" name="daddress" value="def" class="mr-2" checked>
 	                                <div><i class="fa fa-gear"></i></div>
@@ -61,16 +87,25 @@
                                </h5>
                                 
                                <hr>
-                               <p>Mobile : <?= $bill->mobile?></p>
+                               <p>Mobile : <?=$bill->mobile?></p>
                                <p><?= $bill->streetaddress?>, <?= $bill->streetaddress1?>, <?= $bill->city?>, <?= $bill->postcode?></p>
                             </div>
                             </div>
+                                                <?php endif;?>
                        <?php endforeach; endif;?>
                        
                         <?php $i=0; if($delivery): foreach($delivery as $del): $i++;?>
                           <div class="product-layout product-grid col-md-6 col-lg-6 mt-4">
                             <div class="p-item">
-                               <h5 style="margin-bottom:-10px"><?= $del->name?>
+                               <h5 style="margin-bottom:-10px"><?php
+                                                    if(strlen($del->name)>18)
+                                                    {
+                                                     echo  $stringCut = substr($del->name, 0, 18).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($del->name, 0, 18);
+                                                    }
+                                                    ?> 
                                <label class="mt-2" style="float:right">
 	                                <input type="radio" name="daddress" value="<?= $del->id?>" class="mr-2" checked>
 	                                <div><i class="fa fa-gear"></i></div>
@@ -113,7 +148,15 @@
                                        <?php if($result): foreach($result as $rs): ?>
                                     <tr>
                                         <td>
-                                            <span class="item"><?= $rs->product?>- (
+                                            <span class="item"><?php
+                                                    if(strlen($rs->product)>23)
+                                                    {
+                                                     echo  $stringCut = substr($rs->product, 0, 23).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($rs->product, 0, 23);
+                                                    }
+                                                    ?>- (
                                                    <?php  $attribute= $Ci->findattributecart($rs->first);?>
                                                        <?php if($attribute): foreach($attribute as $att):?>
                                                             <span class="c_item_size"><b><?= $att->value_name?></b></span>
@@ -199,6 +242,59 @@
     </div>
 
 
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModalbill" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h4 class="modal-title" id="myModalLabel">Shipping Address</h4>
+      </div>
+      <?php echo form_open('account/updateaccountadd')?>
+      <div class="modal-body">
+     
+                                    
+                                    <p>Country *</p>
+                                    <p>India</p>
+                                    <div class="form-row align-items-end">
+                                     <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="city">Town / City *</label>
+                                            <input type="text" class="form-control" id="city" placeholder="City" name="city">
+                                        </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="city">Mobile *</label>
+                                            <input type="text" value="<?= $mobiles?>" class="form-control" id="dmobile" placeholder="Mobile" name="mobile" maxlength="10" pattern="[6789][0-9]{9}" oninvalid="setCustomValidity('Number should start from 9/8/7/6')" onchange="try{setCustomValidity('')}catch(e){}" onkeypress="return ((event.charCode >=48 &amp;&amp; event.charCode <=57) || (event.charCode >=0 &amp;&amp; event.charCode <=31) )" required="">
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="streetaddress">Street address *</label>
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder="Street address" required>
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress1" placeholder="Apartment, suite" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="postcode">Postcode / ZIP *</label>
+                                        <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode" maxlength="6" onchange="try{setCustomValidity('')}catch(e){}" onkeypress="return ((event.charCode >=48 &amp;&amp; event.charCode <=57) || (event.charCode >=0 &amp;&amp; event.charCode <=31) )" required="">
+                                    </div> 
+                                
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+                             </form>
+    </div>
+  </div>
+</div>
 
     <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

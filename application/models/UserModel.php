@@ -75,6 +75,26 @@ class UserModel extends CI_Model
          $this->db->where('orderdid',$orderdid)->delete('product_order_iteam');
         return $this->db->where('orderid',$orderdid)->delete('product_order');
     }
+
+    function getdeliveryaddress($orderid)
+    {
+        $this->db->select('deliveryaddress.*');
+        $this->db->from('product_order');
+        $this->db->join('deliveryaddress','deliveryaddress.id=product_order.delivery_address');
+        $this->db->where('product_order.orderid',$orderid);
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+
+    function getorderlist($orderid)
+    {
+        $this->db->select('*');
+        $this->db->from('product_order_iteam');
+        $this->db->where('productid',$orderid);
+        $query= $this->db->get();
+        return $query->row_array();
+    }
 }
 
 ?>

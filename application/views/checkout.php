@@ -37,10 +37,7 @@
                     <div class="col-md-7">
                     <div class="form-group">
                                     <label>
-                                        <input type="checkbox" name="Acc" value="haveAcc" class="mr-2" value="1" <?php if($this->session->flashdata('msg_error')){echo "checked";}?>>
-                                        <div><i class="fa fa-check"></i></div>Already have an account? 
-                                        <a href="" class="ck-lgn">Please login here</a>.
-                                    </label>
+                                    <a  data-toggle="modal" data-target="#myModal">Have an already account please login</a>
 
                                     <label>
                                         <input type="checkbox" name="Acc" value="createAcc" class="mr-2" value="1">
@@ -53,32 +50,7 @@
                                     </div>
                                 </div>
                          <div id="addPw">
-                           <div class="login-form">
-                            <?php echo form_open('checkoutlogin/checkauth',['id'=>'motostoreRegisterForm']);?>
-                                <div class="form-group row">
-                                    <label for="phone" class="col-sm-4 col-form-label">Email/Phone number</label>
-                                    <div class="col-sm-8">
-                                        <?php if($this->session->flashdata('msg_error')):?>
-                                        <span class="text-danger"><?= $this->session->flashdata('msg_error')?></span>
-                                        <?php endif;?>
-                                        <input type="tel" class="form-control" id="phone" name="userid" >
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="password" class="col-sm-4 col-form-label">Password</label>
-                                    <div class="col-sm-8">
-                                        <div class="input-group">
-                                            <input type="password" class="form-control" id="password1" name="password" >
-                                            <div class="input-group-append">
-                                                <span class="input-group-text" id="showPw1"><i class="fa fa-eye" aria-hidden="true"></i></span>
-                                                <span class="input-group-text" id="hidePw1"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-default d-block mx-auto">Login</button>
-                                </form>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -287,7 +259,64 @@
              </div>
         </section>
     </div>
+
+
+    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title" id="myModalLabel">Account Login</h4>
+      </div>
+      <div class="modal-body">
+      <div class="login-form">
+                            <?php echo form_open('checkoutlogin/checkauth',['id'=>'motostoreRegisterForm']);?>
+                                <div class="form-group row">
+                                    <label for="phone" class="col-sm-4 col-form-label">Email/Phone number</label>
+                                    <div class="col-sm-8">
+                                        <?php if($this->session->flashdata('msg_error')):?>
+                                        <span class="text-danger"><?= $this->session->flashdata('msg_error')?></span>
+                                        <?php endif;?>
+                                        <input type="tel" class="form-control" id="phone" name="userid" >
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="password" class="col-sm-4 col-form-label">Password</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="password1" name="password" >
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="showPw1"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                                                <span class="input-group-text" id="hidePw1"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-default d-block mx-auto">Login</button>
+                                </form>
+                                <hr/>
+							<div class="text-center">
+							New to Motostore?<a href="<?= base_url('signup')?>"> Create an account</a>
+							</div>
+                            </div>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <?php include('footer.php');?>
+<?php if($this->session->flashdata('msg_error')):?>
+    <script>
+    $(document).ready(function(){
+        $("#myModal").modal('show');
+    });
+</script>
+<?php endif;?>
 <script type="text/javascript">
   
 

@@ -16,7 +16,11 @@ class Order extends MY_Controller
 
     function orderdetails($orderdid)
     {
-       return $this->userModel->myorderlist($orderdid);
+       $orderid= base64_decode( strtr( $orderdid, '-_', '+/' ) );
+       $data['address']= $this->userModel->getdeliveryaddress($orderid);
+       $data['orderlist']= $this->userModel->getorderlist($orderid);
+    //    print_r($data);
+       $this->load->view('orderdetails',$data);
     }
 
     function totalorder($orderdid)

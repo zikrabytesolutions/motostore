@@ -42,64 +42,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <main class="col-md-9">
                    <section class="frmsec">
                    		<div class="account-form">
-                            <h5>Details</h5>
-							<table class="table table-striped">
-							<thead>
-							        <tr>
-							            <th>Order</th>
-							            <th>Date</th>
-							            <th>Status</th>
-							            <th>Total</th>
-                                        <th>Item</th>
-							            <th>Action</th>
-							        </tr>
-							    </thead>
-							    <tbody>
-								<?php $i=0; if($recentorder): foreach($recentorder as $order): $i++;?>
-							        <tr>
-							            <td>#<?= $order->orderdid?></td>
-							            <td><?= date("d/m/Y", strtotime($order->created))?></td>
-							            <td>Pending</td>
-							            <td><?= $order->grand?></td>
-                                        <td><?= $order->iteam?></td>
-							            <td>
-										<?php $orderid= strtr(base64_encode($order->orderdid), '+/', '-_');?>
-										<a href="<?= base_url('order/orderdetails/'.$orderid)?>" class="btn btn-primary">View</a>
-										
-							        	</td>
-							        </tr>
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModald<?=$i; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel" style="color:red">Are you sure you want to Delete?</h4>
-      </div>
-      <div class="modal-body">
-        <?php $orderlist= $ci->orderdetails($order->orderdid);?>
-		<?php $totalorderd= $ci->totalorder($order->orderdid);?>
-		  <?php if($orderlist): foreach($orderlist as $ord):?>
-			
-		     <div class="row">
-		        <div class="col-md-10"> <?=$ord->product?>-  <?=$ord->quantity?> x <?=$ord->price?> =   <?=$ord->total?> </div>
-				
-		    </div>
-          <?php endforeach; endif;?>
-		  <hr style="height:5px">
-		  Total Item : <?= $totalorderd['iteam']?> &nbsp; &nbsp;   Grand Total : <?= $totalorderd['grand']?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancle</button>
-        <a href="<?= base_url('order/delete/'.$order->orderdid)?>" class="btn btn-primary">Delete</a>
-      </div>
-    </div>
-  </div>
-</div>
-                                   <?php endforeach; endif?>
-							    </tbody>
-							</table>
+                           
+                           <div class="panel panel-default">
+                            <div class="panel-heading"><?php if($address): foreach($address as $add):?>
+                            <p>Name: <?= $add->name;?>, Mobile : <?= $add->mobile?></p>
+                            <p>Address: <?= $add->streetaddress;?>, <?= $add->streetaddress1;?>, <?= $add->city;?>- <?= $add->postcode;?></p>
+                           <?php endforeach; endif;?></div>
+                            <div class="panel-body">
+                                <table>
+                                     <tr>
+                                           <td></td>
+                                     </tr>
+                                </table>
+                            </div>
+                            </div>
+							
                         </div>
                    </section>
                 </main>

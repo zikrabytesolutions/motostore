@@ -7,7 +7,16 @@
                                   $this->db->where('id',$id);
                                   $name= $this->db->get()->row('name');
                             ?>
-		<?= $name?>
+		
+		<?php
+                                                    if(strlen($name)>18)
+                                                    {
+                                                     echo  $stringCut = substr($name, 0, 18).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($name, 0, 18);
+                                                    }
+                                                    ?> 
 	</h5>
 	<ul class="nav flex-column detail_ul">
 	<?php  $urlcheck= $this->uri->segment(1);?>
