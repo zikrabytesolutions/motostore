@@ -111,7 +111,7 @@
                   </div>  
                 </div>
               </div>
-              <button class="btn btn-warning" type="submit">GO</button>
+              <button class="btn btn-info" type="submit">GO</button>
             </div>
             </form>
           </section>

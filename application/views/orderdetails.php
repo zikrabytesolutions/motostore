@@ -42,15 +42,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <main class="col-md-9">
                    <section class="frmsec">
                    		<div class="account-form">
-                           <h6>Shipping Address</h6>
+                           <h5>Shipping Address</h5>
                            <div class="panel panel-default">
                             <div class="panel-heading">
 							 
                             	<div class="row">
                             		<div class="col-md-8">
                             			<?php if($address): foreach($address as $add):?>
-                            <span>Name: <?= $add->name;?>, Mobile : <?= $add->mobile?></span><br>
-                            <span>Address: <?= $add->streetaddress;?>, <?= $add->streetaddress1;?>, <?= $add->city;?>- <?= $add->postcode;?></span>
+                            <span> <b>Name: </b><?= $add->name;?><br> <b>Mobile :</b> <?= $add->mobile?></span><br>
+                            <span> <b>Address: </b> <?= $add->streetaddress;?>, <?= $add->streetaddress1;?>, <?= $add->city;?>- <?= $add->postcode;?></span>
                            <?php endforeach; endif;?>
                             		</div>
                             	
@@ -60,8 +60,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 							<span >
 							    <?php if($summery): foreach($summery as $sumr):?>
-									Order date : <?= date("d M, Y", strtotime($sumr->created))?><br>
-								Total  Item : <?= $sumr->iteam?>,  Grand Total : <?= $sumr->grand?>
+									 <b>Order date : </b><?= date("d M, Y", strtotime($sumr->created))?><br>
+								 <b>Total  Item :</b> <?= $sumr->iteam?><br>  <b> Grand Total :</b> Rs.<?= $sumr->grand?>
 									<?php endforeach; endif;?>
 							   </span>
 							</div>
@@ -114,13 +114,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </td>
 
                                             <td class="column_total">
-                                                <span class="money" data-currency-usd="$15.00"><?php echo $ds->total ?></span>
+                                                <span class="money" data-currency-usd="$15.00"><b>Rs.<?php echo $ds->total ?></b></span>
                                             </td>
 
                                         </tr>
 									 <?php endforeach; endif;?>
 								<?php endforeach; endif;?>
                                 </table>
+
+
+
+
+
                             </div>
                             </div>
 							
