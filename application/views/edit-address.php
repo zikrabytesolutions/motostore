@@ -183,7 +183,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
 
                           <?php endforeach; else:?>
-                          <h4>No data Found</h4>
+                            <tr><td colspan="6"><h4>No Data Found</h4></td></tr>
                         <?php endif?>
                       </div>
                     </div>

@@ -68,7 +68,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 							        	</td>
 							        </tr>
-                                   <?php endforeach; endif?>
+                                   <?php endforeach; else: ?>
+								   <tr><td colspan="6"><h4>No Data Found</h4></td></tr>
+                                       
+								   <?php endif; ?>
 							    </tbody>
 							</table>
                         </div>
