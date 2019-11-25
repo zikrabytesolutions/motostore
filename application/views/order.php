@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/animate.css')?>">
 
 	<!--fontello-->
-	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">	
+	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">
 	<link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css')?>" />
 	<!--styles -->
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css')?>">
-	
+
 </head>
 <body>
 
@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							    <tbody>
 								<?php $i=0; if($recentorder): foreach($recentorder as $order): $i++;?>
 							        <tr>
-							            <td>#<?= $order->orderdid?></td>
+							            <td>#<?= $order->orderid?></td>
 							            <td><?= date("d/m/Y", strtotime($order->created))?></td>
 							            <td>Pending</td>
 							            <td><?= $order->grand?></td>
@@ -65,38 +65,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							            <td>
 										<?php $orderid= strtr(base64_encode($order->orderdid), '+/', '-_');?>
 										<a href="<?= base_url('order/orderdetails/'.$orderid)?>" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
-										
+
 							        	</td>
 							        </tr>
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModald<?=$i; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel" style="color:red">Are you sure you want to Delete?</h4>
-      </div>
-      <div class="modal-body">
-        <?php $orderlist= $ci->orderdetails($order->orderdid);?>
-		<?php $totalorderd= $ci->totalorder($order->orderdid);?>
-		  <?php if($orderlist): foreach($orderlist as $ord):?>
-			
-		     <div class="row">
-		        <div class="col-md-10"> <?=$ord->product?>-  <?=$ord->quantity?> x <?=$ord->price?> =   <?=$ord->total?> </div>
-				
-		    </div>
-          <?php endforeach; endif;?>
-		  <hr style="height:5px">
-		  Total Item : <?= $totalorderd['iteam']?> &nbsp; &nbsp;   Grand Total : <?= $totalorderd['grand']?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancle</button>
-        <a href="<?= base_url('order/delete/'.$order->orderdid)?>" class="btn btn-primary">Delete</a>
-      </div>
-    </div>
-  </div>
-</div>
                                    <?php endforeach; endif?>
 							    </tbody>
 							</table>
@@ -113,8 +84,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
-					<img class="f-logo" src="<?= base_url('assets/images/motologo.png')?>">	
-				
+					<img class="f-logo" src="<?= base_url('assets/images/motologo.png')?>">
+
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -125,9 +96,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
 					<h6 class="txt-h-up">services</h6>
-				
+
 				<ul class="privacy-block">
-					
+
 					<li><a href="">Helmets</a></li>
 					<li><a href="">Riding Gear</a></li>
 					<li><a href="">Luggage</a></li>
@@ -157,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 
 			</div>
-			
+
 		</div>
 	</div>
 </section>
@@ -183,7 +154,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script type="text/javascript" src="<?= base_url('assets/js/jquery.js')?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js')?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js')?>"></script>
-	<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>	
+	<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
 	<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/custom.js')?>"></script>

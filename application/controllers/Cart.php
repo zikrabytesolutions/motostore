@@ -52,7 +52,7 @@ class Cart extends CI_Controller
         }
         else
         {
-            return redirect('cart');
+             return redirect('cart');
         }
         
     }
@@ -114,7 +114,7 @@ class Cart extends CI_Controller
     }
 
 
-    function loginmincart($rowid,$qty)
+    function loginmincart($rowid,$qty)    //quantity desc
     {
         $iteam= $this->cartModel->cart_iteam($rowid);
         $subtotal= $iteam['subtotal'] - $iteam['price'];
@@ -144,7 +144,7 @@ class Cart extends CI_Controller
         }
     }
 
-    function loginaddcart($rowid,$qty)
+    function loginaddcart($rowid,$qty)   //quantity desc
     {
         $iteam= $this->cartModel->cart_iteam($rowid);
         $subtotal= $iteam['subtotal'] + $iteam['price'];
@@ -217,7 +217,7 @@ class Cart extends CI_Controller
 		   $cart = Array( 'userid'=>$id, 'iteam'=>$rows, 'grandtotal'=>$total, 'created'=>$now );
 		   $this->cartModel->insertcart( $cart );
 		   $data = $this->cart->contents();
-		   foreach ( $data as $ds )
+		   foreach ($data as $ds)
 		  {
 			   $data = Array( 'rowid'=>$ds['rowid'], 'userid'=>$id, 'proid'=>$ds['proid'], 'variationid'=>$ds['id'],
 			   'qty'=>$ds['qty'], 'price'=>$ds['price'], 'subtotal'=>$ds['subtotal'], 'created'=>$now );
@@ -226,7 +226,7 @@ class Cart extends CI_Controller
 			   if ($insert)
 				{
 				   $inserted = $this->cartModel->deletecartiteam( $ds['rowid'] );
-			   }
+			    }
 		   }
        }
 

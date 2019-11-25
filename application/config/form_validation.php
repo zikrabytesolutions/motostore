@@ -131,7 +131,7 @@ $config = [
                                         [
                                             'field' => 'password',
                                             'label' => 'Password',
-                                            'rules' => 'required',
+                                            'rules' => 'required|numeric',
                                             "errors" => 
                                             [
                                                 'required' => ' %s cannot be blank.', 
@@ -139,7 +139,45 @@ $config = [
                                                 
                                             ],
                                         ]  
-                                ]
+                                        ],
+
+
+                                        'changepassword' => [
+              
+    
+                                             
+                                            
+                                            [
+                                                'field' => 'password',
+                                                'label' => 'Password',
+                                                'rules' => 'trim|required|numeric',
+                                                "errors" => 
+                                                [
+                                                    'required' => ' %s Cannot be Blank.', 
+                                                   
+                                                ],
+                                             ],
+        
+                                            [
+                                                'field' => 'npwd',
+                                                'label' => 'New Password',
+                                                'rules' => 'trim|required|numeric|min_length[6]',
+                                                "errors" => 
+                                                [
+                                                    'required' => ' %s Cannot be Blank.', 
+                                                ],
+                                            ] ,
+        
+                                            [
+                                                'field' => 'cpwd',
+                                                'label' => 'Confirm New Password',
+                                                'rules' => 'required|numeric',
+                                                "errors" => 
+                                                [
+                                                    'required' => ' %s cannot be blank.', 
+                                                ],
+                                            ]  
+                                    ]
            ];
            
             ?>

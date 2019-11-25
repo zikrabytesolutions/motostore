@@ -60,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-                                <p>This will be how your name will be displayed in the account section and in reviews</p>
+                                <p>This will be how your name will be displayed in the account section.</p>
                                 <div class="form-group">
                                     <label for="email">Email address *</label>
                                     <input type="email" class="form-control" value="<?= $pro->email?>" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" placeholder="Email Address" readonly/>
@@ -86,21 +86,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
 								</div>
 
-								<div class="row">
-
-                                <div class="form-group col-sm-4">
-                                    <label for="pwd">Current password (leave blank to leave unchanged)</label>
-                                    <input type="text" class="form-control" id="pwd" name="password">
-                                </div>
-                                <div class="form-group col-sm-4">
-                                    <label for="cpwd">New password (leave blank to leave unchanged)</label>
-                                    <input type="text" class="form-control" id="cpwd" name="cpwd">
-                                </div>
-                                <div class="form-group col-sm-4">
-                                    <label for="npwd">Confirm new password (leave blank to leave unchanged)</label>
-                                    <input type="text" class="form-control" id="npwd" name="npwd">
-								</div>
-								</div>
                                 <input type="submit" class="btn-default bg-red my-4" value="Save Changes">
 
                             </form>

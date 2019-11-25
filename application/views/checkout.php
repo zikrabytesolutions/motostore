@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
                          <div id="addPw">
-                           
+
                         </div>
                     </div>
                 </div>
@@ -108,14 +108,14 @@
                                 <small style="color:red"><?php echo form_error('password'); ?></small>
                             </div>
                             <div class="form-group">
-                                 
+
                                 <label>
                                         <input type="checkbox" name="Acc" value="createAcc" class="mr-2" required>
                                         <div><i class="fa fa-check"></i></div>Create an account?
                                     </label>
                             </div>
                             <div class="form-group">
-                                 
+
                                 <label>
                                     <input type="checkbox" name="shipDiffAdd" value="2" class="mr-2">
                                     <div><i class="fa fa-check"></i></div>Ship to a different address
@@ -270,7 +270,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        
+
         <h4 class="modal-title" id="myModalLabel">Account Login</h4>
       </div>
       <div class="modal-body">
@@ -306,7 +306,7 @@
                             </div>
       </div>
       <div class="modal-footer">
-        
+
       </div>
     </div>
   </div>
@@ -322,11 +322,11 @@
 </script>
 <?php endif;?>
 <script type="text/javascript">
-  
+
 
     $('#orderPayment').find("input[type=checkbox][name=tnc]").on('change', function() {
-      // $(".btnsub").prop("disabled", false);
-        $(".btnsub").toggleAttr('disabled', false);
+      $(".btnsub").prop("disabled", false);
+
     });
   // $("input:radio").change(function () {
   //   $("#orderPayment").prop("disabled", false);});

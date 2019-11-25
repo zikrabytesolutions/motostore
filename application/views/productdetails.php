@@ -231,7 +231,7 @@
                                        
                                         <input type="hidden" name="proid" value="<?= $proid ?>">
                                         <input type="hidden" name="prodetailsid" value="<?= $pdetailsid ?>">
-                                     <button class="btn btn-success btn-default bg-red">
+                                         <button class="btn btn-success btn-default bg-red">
                                             <span class="add-to-cart">Buy Now</span>
                                         </button>
                                         <?php echo form_close()?>
