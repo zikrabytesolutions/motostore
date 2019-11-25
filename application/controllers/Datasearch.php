@@ -11,14 +11,14 @@ class Datasearch extends CI_Controller
          $result = $this->OrderModel->get_autocomplete($search_data);
     
          if (!empty($result))
-         {
+         {    
               foreach ($result as $row):
                    echo "<li><a href='#'>" . $row->cat_name . "</a></li>";
               endforeach;
          }
          else
          {
-               echo "<li> <em> Not found ... </em> </li>";
+               echo "<li><b> Not found ... </b> </li>";
          }
      }
 }

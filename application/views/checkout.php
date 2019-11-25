@@ -36,8 +36,9 @@
                     </div>
                     <div class="col-md-7">
                     <div class="form-group">
-                                    <label>
-                                    <a  data-toggle="modal" data-target="#myModal">Have an already account please login</a>
+                                    <label class="ck-lgn-icon">
+                                    <i class="fa fa-gear"></i>
+                                   Have an already account please  <a  data-toggle="modal" data-target="#myModal" class="ck-lgn">login here</a>
 
                                     <label>
                                         <input type="checkbox" name="Acc" value="createAcc" class="mr-2" value="1">
@@ -154,7 +155,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Order notes (optional)</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Notes about your order, e.g. special notes for delivery." name="dnotes"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Notes about your order, e.g. special notes for delivery." name="dnotes" style="min-height: 100px;"></textarea>
                             </div>
                         </div>
                     </div>
