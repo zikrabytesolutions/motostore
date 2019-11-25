@@ -32,7 +32,7 @@
 
         <section class="checkout-body py-5">
             <div class="container">
-            <?php echo form_open('payment/orderplace');?>
+            <?php echo form_open('payment/orderplace',['id' => 'frmbill']);?>
         
                 <div class="row">
                     <div class="col-md-7">
@@ -142,7 +142,7 @@
                                         </td>
 
                                         <td>
-                                            <span title="Subtotal" href="#"><?php echo $ds->subtotal; ?></span>
+                                            <span title="Subtotal" href="#">Rs. <?php echo $ds->subtotal; ?></span>
                                         </td>
                                     </tr>
                                        <?php endforeach; endif;?>
@@ -183,27 +183,27 @@
                             </table>
 	                        <div id="orderPayment">
 	                            <label class="mt-2">
-	                                <input type="radio" name="payType" value="ccard" class="mr-2">
+	                                <input type="radio" name="payType" value="ccard" class="mr-2" required>
 	                                <div><i class="fa fa-gear"></i></div>CCAvenue
 	                                <img src="https://www.ccavenue.com/images_shoppingcart/ccavenue_pay_options.gif" class="img-fluid mt-2">
 	                                <small class="d-block">Pay securely by Credit or Debit card or internet banking through Secure Servers.</small>
 	                            </label>
 	                            <label class="mt-2">
-	                                <input type="radio" name="payType" value="paytm" class="mr-2">
+	                                <input type="radio" name="payType" value="paytm" class="mr-2" required>
 	                                <div><i class="fa fa-gear"></i></div>Paytm Gateway
 	                                <img src="https://www.customelements.in/wp-content/plugins/paytm/images/logo.gif" class="img-fluid mt-2">
 	                                <small class="d-block">Pay via Paytm Wallet – Credit/Debit card, Netbanking, EMI & UPI.</small>
 	                            </label>
 	                            <label class="mt-2">
-	                                <input type="radio" name="payType" value="cod" class="mr-2">
+	                                <input type="radio" name="payType" value="cod" class="mr-2" checked required>
 	                                <div><i class="fa fa-gear"></i></div>Cash on Delivery
 	                            </label>
                                 <label class="mt-2">
-                                    <input type="checkbox" name="tnc" value="tnc" class="mr-2">
+                                    <input type="checkbox" name="tnc" value="tnc" class="mr-2" required>
                                     <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
                                 </label>
                                 <?php if($delivery):?>
-                                <button class="add-to-cart btn-default bg-red my-4" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
+                                <button class="add-to-cart btn-default bg-red my-4 btnsub" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
                                 <?php else: ?>
                                     <a class="add-to-cart btn-default bg-red my-4" data-toggle="modal" data-target="#myModalblank" style="color:white"><i class="icon-cart"></i> Proceed to pay</a>
                                 <?php endif?>
@@ -281,11 +281,11 @@
     <div class="modal-content">
       <div class="modal-header">
        
-        <h4 class="modal-title" id="myModalLabel">Add Address</h4>
+        <h4 class="modal-title" id="myModalLabel">Alert!</h4>
       </div>
       <?php echo form_open('account/updateaccountadd')?>
       <div class="modal-body">
-          <h5 style="color:red">Please add shipping or billing address</h5>                    
+          <h6>Please add shipping or billing address</h6>                    
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -352,3 +352,34 @@
   </div>
 </div>
     <?php include('footer.php');?>
+
+
+
+
+
+<script type="text/javascript">
+    $(document).on('click','.btnsub', function(e){
+        e.preventDefault();
+    
+       var radioName="payType";
+       var ckbxName="tnc";
+     
+
+      if ($('input[name='+ radioName +']:checked').length) {
+            $( "#frmbill" ).submit();
+      }
+      else {
+           
+           alert('Please select Payment Type');
+      }
+
+       if ($('input[name='+ ckbxName +']:checked').length) {
+            $( "#frmbill" ).submit();
+      }
+      else {
+
+           alert('Agree terms and conditions');
+      }
+      
+    });
+</script>

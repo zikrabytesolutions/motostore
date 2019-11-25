@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							            <th>Order</th>
 							            <th>Date</th>
 							            <th>Status</th>
-							            <th>Total</th>
+							            <th>Total(Rs)</th>
                                         <th>Item</th>
 							            <th>Action</th>
 							        </tr>

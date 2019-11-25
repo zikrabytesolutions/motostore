@@ -38,19 +38,19 @@
                     <div class="form-group">
                                     <label class="ck-lgn-icon">
                                     <i class="fa fa-gear"></i>
-                                   Already have an account ? <a  data-toggle="modal" data-target="#myModal" class="ck-lgn">login here</a>
+                                   Already have an account ? <a  data-toggle="modal" data-target="#myModal" class="ck-lgn">Login here</a>
                                 </div>
-                                <div id="addmsg">
+                                <!-- <div id="addmsg">
                                     <div class="accountmsg">
                                         <h6 class="text-danger">Please fill the below details*</h6>
                                     </div>
-                                </div>
-                         <div id="addPw">
+                                </div> -->
+                         <!-- <div id="addPw">
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-<?php echo form_open('payment/inititate');?>
+<?php echo form_open('payment/inititate',['id' => 'frmbill']);?>
                 <div class="row">
                     <div class="col-md-7">
                         <div class="login-form">
@@ -110,7 +110,7 @@
                             <div class="form-group">
 
                                 <label>
-                                        <input type="checkbox" name="Acc" value="createAcc" class="mr-2" required>
+                                        <input type="checkbox" name="createAcc" value="createAcc" class="mr-2" required>
                                         <div><i class="fa fa-check"></i></div>Create an account?
                                     </label>
                             </div>
@@ -199,7 +199,7 @@
                                                 </span>
                                             </td>
                                             <td>
-                                            <span title="Subtotal" href="#"><?php echo $this->cart->format_number($ds['subtotal']); ?></span>
+                                            <span title="Subtotal" href="#">Rs. <?php echo $this->cart->format_number($ds['subtotal']); ?></span>
                                             </td>
                                         </tr>
                                     <?php endforeach; endif;?>
@@ -246,14 +246,14 @@
                                     <small class="d-block">Pay via Paytm Wallet – Credit/Debit card, Netbanking, EMI & UPI.</small>
                                 </label>
                                 <label class="mt-2">
-                                   <input type="radio" name="payType" value="cod" class="mr-2" required>
+                                   <input type="radio" name="payType" value="cod" class="mr-2" checked required>
                                    <div><i class="fa fa-gear"></i></div>Cash on Delivery
                                 </label>
                                 <label class="mt-2">
                                 <input type="checkbox" name="tnc" value="tnc" class="mr-2" required>
                                 <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
                                 </label>
-                                <button class="add-to-cart btn-default bg-red my-4 btnsub" disabled="true" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
+                                <button class="add-to-cart btn-default bg-red my-4 btnsub" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
                                 <p>View Our <a href="">Privacy Policy</a></p>
                             </div>
                         </section>
@@ -314,6 +314,7 @@
 
 
 <?php include('footer.php');?>
+
 <?php if($this->session->flashdata('msg_error')):?>
     <script>
     $(document).ready(function(){
@@ -321,13 +322,40 @@
     });
 </script>
 <?php endif;?>
+
+
 <script type="text/javascript">
+    $(document).on('click','.btnsub', function(e){
+        e.preventDefault();
+    
+       var radioName="payType";
+       var ckbxName="tnc";
+       var createAcc="createAcc";
 
 
-    $('#orderPayment').find("input[type=checkbox][name=tnc]").on('change', function() {
-      $(".btnsub").prop("disabled", false);
+       if ($('input[name='+ createAcc +']:checked').length) {
+            $( "#frmbill" ).submit();
+      }
+      else {
 
+           alert('Please select create an account checkbox');
+      }
+
+      if ($('input[name='+ radioName +']:checked').length) {
+            $( "#frmbill" ).submit();
+      }
+      else {
+           
+           alert('Please select Payment Type');
+      }
+
+       if ($('input[name='+ ckbxName +']:checked').length) {
+            $( "#frmbill" ).submit();
+      }
+      else {
+
+           alert('Agree terms and conditions');
+      }
+      
     });
-  // $("input:radio").change(function () {
-  //   $("#orderPayment").prop("disabled", false);});
 </script>
