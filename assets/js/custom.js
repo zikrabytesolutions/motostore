@@ -268,6 +268,7 @@ $('#range').text(JSON.stringify(range, null, '\t'));
 $(document).ready(function(){
 $('#hidePw').hide();
 $('#hidePw1').hide();
+$('#hidePw2').hide();
 })
 
 var showPW = document.getElementById('showPw');
@@ -300,7 +301,7 @@ function hidePassword() {
 	$('#hidePw').hide();
 
 $('#hidePw').toggleClass('shw');			
-  var x = document.getElementById("password1");
+  var x = document.getElementById("password");
   if (x.type === "text") {
     x.type = "password";
   } else {
@@ -320,7 +321,7 @@ function showPassword1() {
 	$('#hidePw1').show();
 
 $('#showPw1').toggleClass('shw');			
-  var x = document.getElementById("password");
+  var x = document.getElementById("password1");
   if (x.type === "password") {
     x.type = "text";
   } else {
@@ -340,7 +341,7 @@ function hidePassword1() {
 	$('#hidePw1').hide();
 
 $('#hidePw1').toggleClass('shw');			
-  var x = document.getElementById("password");
+  var x = document.getElementById("password1");
   if (x.type === "text") {
     x.type = "password";
   } else {
@@ -351,6 +352,45 @@ $('#hidePw1').toggleClass('shw');
 }
 
 
+var showPW2 = document.getElementById('showPw2');
+
+if(showPW2){
+
+showPw2.addEventListener('click', showPassword2);
+function showPassword2() {
+	$('#showPw2').hide();
+	$('#hidePw2').show();
+
+$('#showPw2').toggleClass('shw');			
+  var x = document.getElementById("password2");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+}
+
+var hidePW2 = document.getElementById('hidePw2');
+
+if(hidePW2){
+
+hidePw2.addEventListener('click', hidePassword2);
+function hidePassword2() {
+	$('#showPw2').show();
+	$('#hidePw2').hide();
+
+$('#hidePw2').toggleClass('shw');			
+  var x = document.getElementById("password2");
+  if (x.type === "text") {
+    x.type = "password";
+  } else {
+    x.type = "text";
+  }
+}
+
+}
 
 
 
@@ -411,18 +451,18 @@ $('.pay-book-carousel').owlCarousel({
 			$("#shipToDiffAdd").fadeToggle(200);
 		});
 
-$('.checkout').find("input[type=checkbox][value=haveAcc]").on('change', function() {
-	$("#addPw").fadeToggle(200);
-	$("#addmsg").hide(200);
-	$("input[value='createAcc']").prop('checked', false);
-});
+// $('.checkout').find("input[type=checkbox][value=haveAcc]").on('change', function() {
+// 	$("#addPw").fadeToggle(200);
+// 	$("#addmsg").hide(200);
+// 	$("input[value='createAcc']").prop('checked', false);
+// });
 
-$("#addmsg").hide(200);
-$('.checkout').find("input[type=checkbox][value=createAcc]").on('change', function() {
-	$("#addmsg").fadeToggle(200);
-	$("#addPw").hide(200);
-	$("input[value='haveAcc']").prop('checked', false);
-});
+// $("#addmsg").hide(200);
+// $('.checkout').find("input[type=checkbox][value=createAcc]").on('change', function() {
+// 	$("#addmsg").fadeToggle(200);
+// 	$("#addPw").hide(200);
+// 	$("input[value='haveAcc']").prop('checked', false);
+// });
 
 
 $('.search-ico').on('click', function() {

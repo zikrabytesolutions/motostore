@@ -38,19 +38,19 @@
                     <div class="form-group">
                                     <label class="ck-lgn-icon">
                                     <i class="fa fa-gear"></i>
-                                   Have an already account please  <a  data-toggle="modal" data-target="#myModal" class="ck-lgn">login here</a>
+                                   Already have an account ? <a  data-toggle="modal" data-target="#myModal" class="ck-lgn">Login here</a>
                                 </div>
-                                <div id="addmsg">
+                                <!-- <div id="addmsg">
                                     <div class="accountmsg">
                                         <h6 class="text-danger">Please fill the below details*</h6>
                                     </div>
-                                </div>
-                         <div id="addPw">
+                                </div> -->
+                         <!-- <div id="addPw">
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-<?php echo form_open('payment/inititate');?>
+<?php echo form_open('payment/inititate',['id' => 'frmbill']);?>
                 <div class="row">
                     <div class="col-md-7">
                         <div class="login-form">
@@ -110,7 +110,7 @@
                             <div class="form-group">
 
                                 <label>
-                                        <input type="checkbox" name="Acc" value="createAcc" class="mr-2" required>
+                                        <input type="checkbox" name="createAcc" value="createAcc" class="mr-2" required>
                                         <div><i class="fa fa-check"></i></div>Create an account?
                                     </label>
                             </div>
@@ -158,7 +158,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Order notes (optional)</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Notes about your order, e.g. special notes for delivery." name="dnotes" style="min-height: 100px;"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Notes about your order, e.g. special notes for delivery." name="dnotes" style="min-height: 100px;max-height: 100px;"></textarea>
                             </div>
                         </div>
                     </div>
@@ -199,7 +199,7 @@
                                                 </span>
                                             </td>
                                             <td>
-                                            <span title="Subtotal" href="#"><?php echo $this->cart->format_number($ds['subtotal']); ?></span>
+                                            <span title="Subtotal" href="#">Rs. <?php echo $this->cart->format_number($ds['subtotal']); ?></span>
                                             </td>
                                         </tr>
                                     <?php endforeach; endif;?>
@@ -234,26 +234,26 @@
                             </table>
                             <div id="orderPayment">
                                 <label class="mt-2">
-                                    <input type="radio" name="payType" value="ccard" class="mr-2" >
+                                    <input type="radio" name="payType" value="ccard" class="mr-2" required>
                                     <div><i class="fa fa-gear"></i></div>CCAvenue
                                     <img src="https://www.ccavenue.com/images_shoppingcart/ccavenue_pay_options.gif" class="img-fluid mt-2">
                                     <small class="d-block">Pay securely by Credit or Debit card or internet banking through Secure Servers.</small>
                                 </label>
                                 <label class="mt-2">
-                                    <input type="radio" name="payType" value="paytm" class="mr-2" >
+                                    <input type="radio" name="payType" value="paytm" class="mr-2" required>
                                     <div><i class="fa fa-gear"></i></div>Paytm Gateway
                                     <img src="https://www.customelements.in/wp-content/plugins/paytm/images/logo.gif" class="img-fluid mt-2">
                                     <small class="d-block">Pay via Paytm Wallet – Credit/Debit card, Netbanking, EMI & UPI.</small>
                                 </label>
                                 <label class="mt-2">
-                                   <input type="radio" name="payType" value="cod" class="mr-2">
+                                   <input type="radio" name="payType" value="cod" class="mr-2" checked required>
                                    <div><i class="fa fa-gear"></i></div>Cash on Delivery
                                 </label>
                                 <label class="mt-2">
-                                <input type="checkbox" name="tnc" value="tnc" class="mr-2">
+                                <input type="checkbox" name="tnc" value="tnc" class="mr-2" required>
                                 <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
                                 </label>
-                                <button class="add-to-cart btn-default bg-red my-4 btnsub" disabled="true" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
+                                <button class="add-to-cart btn-default bg-red my-4 btnsub" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
                                 <p>View Our <a href="">Privacy Policy</a></p>
                             </div>
                         </section>
@@ -289,10 +289,10 @@
                                     <label for="password" class="col-sm-4 col-form-label">Password</label>
                                     <div class="col-sm-8">
                                         <div class="input-group">
-                                            <input type="password" class="form-control" id="password1" name="password" >
+                                            <input type="password" class="form-control" id="password2" name="password" >
                                             <div class="input-group-append">
-                                                <span class="input-group-text" id="showPw1"><i class="fa fa-eye" aria-hidden="true"></i></span>
-                                                <span class="input-group-text" id="hidePw1"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                                                <span class="input-group-text" id="showPw2"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                                                <span class="input-group-text" id="hidePw2"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -314,6 +314,7 @@
 
 
 <?php include('footer.php');?>
+
 <?php if($this->session->flashdata('msg_error')):?>
     <script>
     $(document).ready(function(){
@@ -321,13 +322,40 @@
     });
 </script>
 <?php endif;?>
+
+
 <script type="text/javascript">
+    $(document).on('click','.btnsub', function(e){
+        e.preventDefault();
+    
+       var radioName="payType";
+       var ckbxName="tnc";
+       var createAcc="createAcc";
 
 
-    $('#orderPayment').find("input[type=checkbox][name=tnc]").on('change', function() {
-      $(".btnsub").prop("disabled", false);
+       if ($('input[name='+ createAcc +']:checked').length) {
+            $( "#frmbill" ).submit();
+      }
+      else {
 
+           alert('Please select create an account checkbox');
+      }
+
+      if ($('input[name='+ radioName +']:checked').length) {
+            $( "#frmbill" ).submit();
+      }
+      else {
+           
+           alert('Please select Payment Type');
+      }
+
+       if ($('input[name='+ ckbxName +']:checked').length) {
+            $( "#frmbill" ).submit();
+      }
+      else {
+
+           alert('Agree terms and conditions');
+      }
+      
     });
-  // $("input:radio").change(function () {
-  //   $("#orderPayment").prop("disabled", false);});
 </script>

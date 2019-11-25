@@ -47,7 +47,7 @@
     <div class="modal-content">
       <div class="modal-header">
 
-        <h4 class="modal-title" id="myModalLabel">Logout!</h4>
+        <h4 class="modal-title" id="myModalLabel">Alert!</h4>
       </div>
       <div class="modal-body">
          <h6 style="color:red"> Are you sure you want to logout?</h6>

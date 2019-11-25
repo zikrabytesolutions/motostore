@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/animate.css')?>">
 
 	<!--fontello-->
-	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">	
+	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">
 	<link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css')?>" />
 	<!--styles -->
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css')?>">
-	
+
 </head>
 <body>
 
@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							            <th>Order</th>
 							            <th>Date</th>
 							            <th>Status</th>
-							            <th>Total</th>
+							            <th>Total(Rs)</th>
                                         <th>Item</th>
 							            <th>Action</th>
 							        </tr>
@@ -63,9 +63,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							            <td><?= $order->grand?></td>
                                         <td><?= $order->iteam?></td>
 							            <td>
-									     <?php 	$orderid=  strtr(base64_encode($order->orderid), '+/', '-_'); ?>
-										<a href="<?= base_url('order/orderdetails/'.$orderid)?>" class="btn btn-primary">View</a>
-										
+										<?php $orderid= strtr(base64_encode($order->orderdid), '+/', '-_');?>
+										<a href="<?= base_url('order/orderdetails/'.$orderid)?>" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
+
 							        	</td>
 							        </tr>
                                    <?php endforeach; endif?>
@@ -84,8 +84,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
-					<img class="f-logo" src="<?= base_url('assets/images/motologo.png')?>">	
-				
+					<img class="f-logo" src="<?= base_url('assets/images/motologo.png')?>">
+
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -96,9 +96,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
 					<h6 class="txt-h-up">services</h6>
-				
+
 				<ul class="privacy-block">
-					
+
 					<li><a href="">Helmets</a></li>
 					<li><a href="">Riding Gear</a></li>
 					<li><a href="">Luggage</a></li>
@@ -128,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 
 			</div>
-			
+
 		</div>
 	</div>
 </section>
@@ -154,7 +154,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script type="text/javascript" src="<?= base_url('assets/js/jquery.js')?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js')?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/owl.carousel.min.js')?>"></script>
-	<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>	
+	<script type="text/javascript" src="<?= base_url('assets/zoom/dist/easyzoom.js') ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/datepicker.min.js') ?>"></script>
 	<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/custom.js')?>"></script>

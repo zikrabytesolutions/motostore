@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <main class="col-md-9">
                    <section class="">
                    <div class="">
-                        <span style="float:right"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add</button></span>
+                        <span style="float:right"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add new <i class="fa fa-plus-circle" aria-hidden="true"></i></button></span>
                           
                    <div class="row">
                          <?php $i=0; if($address): foreach ($address as $ads): $i++;?>
