@@ -70,12 +70,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               
 						   </div>
                             <div class="panel-body">
-							<hr>
+							
                                 <table>
 								<?php if($orderlist): foreach($orderlist as $ds):?>
 									<?php $result= $ci->findcartvalue($ds->productid,$ds->variationid);?>
 								
                                        <?php if($result): foreach($result as $rs): ?>
+                                       	<hr>
 										<tr>
                                             <td class="column_product_img">
                                                 <a href="#">

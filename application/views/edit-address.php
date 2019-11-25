@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <main class="col-md-9">
                    <section class="">
                    <div class="">
-                        <span style="float:right"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add new <i class="fa fa-plus-circle" aria-hidden="true"></i></button></span>
+                        <span style="float:right"><button class="btn btn-addnew" data-toggle="modal" data-target="#myModal">Add new <i class="fa fa-plus-circle" aria-hidden="true"></i></button></span>
                           
                    <div class="row">
                          <?php $i=0; if($address): foreach ($address as $ads): $i++;?>
@@ -52,8 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                <h5 style="margin-bottom:-10px">
                                <?= $ads->name?>
                                <span style="float: right;">
-                               <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>"><i class="fa fa-pencil-square-o"></i></button>
-                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModald<?= $i?>"><i class="fa fa-trash"></i></button>
+                               <button type="button" class="btn btn-edit btn-xs" data-toggle="modal" data-target="#myModal<?= $i?>"><i class="fa fa-pencil-square-o"></i></button>
+                                <button type="button" class="btn btn-delete btn-xs" data-toggle="modal" data-target="#myModald<?= $i?>"><i class="fa fa-trash"></i></button>
                               </span>
                                </h5>
                                <hr style="margin-top: 25px;">

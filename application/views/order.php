@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<table class="table table-striped">
 							<thead>
 							        <tr>
-							            <th>Order</th>
+							            <th>Order Id</th>
 							            <th>Date</th>
 							            <th>Status</th>
 							            <th>Total(Rs)</th>
@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <td><?= $order->iteam?></td>
 							            <td>
 										<?php $orderid= strtr(base64_encode($order->orderid), '+/', '-_');?>
-										<a href="<?= base_url('order/orderdetails/'.$orderid)?>" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
+										<a href="<?= base_url('order/orderdetails/'.$orderid)?>" class="btn btn-view"><i class="fa fa-eye" aria-hidden="true"></i></a>
 
 							        	</td>
 							        </tr>

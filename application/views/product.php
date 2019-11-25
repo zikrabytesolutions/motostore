@@ -49,10 +49,10 @@
               <input type="hidden" value="page" name="side">
               <div class="row">
                 <div class="col-md-6">
-                  <input type="text" id="min" name="min" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                  <input type="text" id="min" name="min" readonly style="border:0; color:#000; font-weight:bold;">
                 </div>
                 <div class="col-md-6">
-                  <input type="text" id="max" name="max" readonly style="border:0; color:#f6931f; font-weight:bold;text-align: right;">
+                  <input type="text" id="max" name="max" readonly style="border:0; color:#000; font-weight:bold;text-align: right;">
                 </div>    
               </div>
               <div id="slider-range"></div>
