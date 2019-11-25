@@ -68,7 +68,7 @@
                                                 </p>
 
                                                 <div class="cart_item__details">
-                                                    <p class="c_item_price"><b>Price Rs: </b><del class="p-prc mr-2"><?= $rs->regular_price?></del><span class="p-prc mr-2"><?= $rs->offer_price?></span></p>
+                                                    <p class="c_item_price"><b>Rs. </b><del class="p-prc mr-2"><?= $rs->regular_price?></del><span class="p-prc mr-2"><?= $rs->offer_price?></span></p>
                                                    
                                                     <?php  $attribute= $Ci->findattributecart($rs->second);?>
                                                        <?php if($attribute): foreach($attribute as $att):?>
@@ -149,7 +149,7 @@
                                 <tbody>
                                     <tr>
                                         <td><?php echo $crd->iteam ?> Items</td>
-                                        <th><?php echo $crd->grandtotal; ?></th>
+                                        <th>Rs. <?php echo $crd->grandtotal; ?></th>
                                     </tr>
                                     <tr>
                                         <td>Shipping</td>
@@ -157,7 +157,7 @@
                                     </tr>
                                     <tr>
                                         <td>Total Price ( With GST )</td>
-                                        <th class="p-prc"><?php echo $crd->grandtotal; ?></th>
+                                        <th class="p-prc">Rs. <?php echo $crd->grandtotal; ?></th>
                                     </tr>
                                 </tbody>
                                 <tfoot>

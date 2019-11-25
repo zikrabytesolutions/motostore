@@ -92,7 +92,7 @@
                                             </td>
 
                                             <td class="column_total">
-                                                <span class="money" data-currency-usd="$15.00"><?php echo $this->cart->format_number($ds['subtotal']); ?></span>
+                                                <span class="money" data-currency-usd="$15.00">Rs.<?php echo $this->cart->format_number($ds['subtotal']); ?></span>
                                             </td>
 
                                             <td class="column_quantity">
@@ -149,7 +149,7 @@
                                 <tbody>
                                     <tr>
                                         <td><?php echo $rows = count($this->cart->contents()); ?> Items</td>
-                                        <th> Rs <?php echo $this->cart->format_number($this->cart->total()); ?></th>
+                                        <th> Rs. <?php echo $this->cart->format_number($this->cart->total()); ?></th>
                                     </tr>
                                     <tr>
                                         <td>Shipping</td>
@@ -157,7 +157,7 @@
                                     </tr>
                                     <tr>
                                         <td>Total Price ( With GST )</td>
-                                        <th class="p-prc">Rs <?php echo $this->cart->format_number($this->cart->total()); ?></th>
+                                        <th class="p-prc">Rs. <?php echo $this->cart->format_number($this->cart->total()); ?></th>
                                     </tr>
                                 </tbody>
                                 <tfoot>
