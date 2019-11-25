@@ -323,3 +323,57 @@
     </script>
 <?php endif;?>
 
+
+<!-- <script type="text/javascript">
+
+    $(document).on('submit','#frmbill', function(e){
+        e.preventDefault();
+        // debugger;
+        
+        var createAcc="createAcc";
+        var radioName="payType";
+        var ckbxName="tnc";
+       
+
+
+// alert($('input[name='+ createAcc +']:checked').length)
+
+        // if ($('input[name='+ createAcc +']:checked').length) 
+        // {
+            
+        //         if ($('input[name='+ ckbxName +']:checked').length) 
+        //         {
+        //             return true;
+        //         }
+        //         else 
+        //         {
+        //             alert('Agree terms and conditions');
+        //         }
+            
+        // }
+        // else 
+        // {
+        //     alert('Please select create an account option');
+        // }
+      
+
+
+
+      // if ($('input[name='+ radioName +']:checked').length) {
+      //       $( "#frmbill" ).submit();
+      // }
+      // else {
+
+      //      alert('Please select Payment Type');
+      // }
+
+      //  if ($('input[name='+ ckbxName +']:checked').length) {
+      //       $( "#frmbill" ).submit();
+      // }
+      // else {
+
+      //      alert('Agree terms and conditions');
+      // }
+
+  });
+</script> -->

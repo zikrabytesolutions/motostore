@@ -256,12 +256,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="form-row">
                                         <div class="form-group col-sm-12">
                                             <label for="firstname">Full name *</label>
-                                            <input type="text" class="form-control" id="firstname" name="name">
+                                            <input type="text" class="form-control" id="firstname" name="name" onkeypress="return ((event.charCode >=97 &amp;&amp; event.charCode <=122) || (event.charCode >=65 &amp;&amp; event.charCode <=90) || (event.charCode >=0 &amp;&amp; event.charCode <=32) )" required>
                                         </div>
-                                        <!-- <div class="form-group col-sm-6">
-                                            <label for="lastname">Last name *</label>
-                                            <input type="text" class="form-control" id="lastname" name="lastname">
-                                        </div> -->
                                     </div>
                                     <p>Country *</p>
                                     <p>India</p>
@@ -276,31 +272,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="city">Mobile *</label>
-                                            <input type="text" class="form-control" id="dmobile" placeholder="Mobile" name="mobile">
+                                            <input type="text" class="form-control" id="dmobile" placeholder="Mobile" name="mobile" maxlength="10" pattern="[6789][0-9]{9}" oninvalid="setCustomValidity('Number should start from 9/8/7/6')" onchange="try{setCustomValidity('')}catch(e){}" onkeypress="return ((event.charCode >=48 &amp;&amp; event.charCode <=57) || (event.charCode >=0 &amp;&amp; event.charCode <=31) )" required="">
                                         </div>
                                         </div>
 
                                         <div class="form-group col-sm-6">
                                             <label for="streetaddress">Street address *</label>
-                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder="House number and street name">
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder="House number and street name" required>
                                         </div>
                                         <div class="form-group col-sm-6">
-                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress1" placeholder="Apartment, suite, unit etc. (optional)">
+                                            <input type="text" class="form-control" id="streetaddress" name="streetaddress1" placeholder="Apartment, suite, unit etc. (optional)" required>
                                         </div>
                                     </div>
-
-
-
-
                                     <div class="form-group">
                                         <label for="postcode">Postcode / ZIP *</label>
-                                        <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode">
+                                        <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode" maxlength="6" onkeypress="return ((event.charCode >=48 &amp;&amp; event.charCode <=57) || (event.charCode >=0 &amp;&amp; event.charCode <=31) )" required="">
                                     </div>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Save changes</button>
       </div>
                              </form>
     </div>
