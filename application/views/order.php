@@ -57,46 +57,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							    <tbody>
 								<?php $i=0; if($recentorder): foreach($recentorder as $order): $i++;?>
 							        <tr>
-							            <td>#<?= $order->orderdid?></td>
+							            <td>#<?= $order->orderid?></td>
 							            <td><?= date("d/m/Y", strtotime($order->created))?></td>
 							            <td>Pending</td>
 							            <td><?= $order->grand?></td>
                                         <td><?= $order->iteam?></td>
 							            <td>
-										<?php $orderid= strtr(base64_encode($order->orderdid), '+/', '-_');?>
+									     <?php 	$orderid=  strtr(base64_encode($order->orderid), '+/', '-_'); ?>
 										<a href="<?= base_url('order/orderdetails/'.$orderid)?>" class="btn btn-primary">View</a>
 										
 							        	</td>
 							        </tr>
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModald<?=$i; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel" style="color:red">Are you sure you want to Delete?</h4>
-      </div>
-      <div class="modal-body">
-        <?php $orderlist= $ci->orderdetails($order->orderdid);?>
-		<?php $totalorderd= $ci->totalorder($order->orderdid);?>
-		  <?php if($orderlist): foreach($orderlist as $ord):?>
-			
-		     <div class="row">
-		        <div class="col-md-10"> <?=$ord->product?>-  <?=$ord->quantity?> x <?=$ord->price?> =   <?=$ord->total?> </div>
-				
-		    </div>
-          <?php endforeach; endif;?>
-		  <hr style="height:5px">
-		  Total Item : <?= $totalorderd['iteam']?> &nbsp; &nbsp;   Grand Total : <?= $totalorderd['grand']?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancle</button>
-        <a href="<?= base_url('order/delete/'.$order->orderdid)?>" class="btn btn-primary">Delete</a>
-      </div>
-    </div>
-  </div>
-</div>
                                    <?php endforeach; endif?>
 							    </tbody>
 							</table>

@@ -83,7 +83,7 @@ class Payment extends CI_Controller
                                {
                                     foreach($cart_iteam as $crt)
                                     {
-                                       $dataiteam = Array('orderdid'=> $orderid, 'userid'=>$id, 'productid'=>$crt->proid, 'variationid'=>$crt->id,
+                                       $dataiteam = Array('orderdid'=> $orderid, 'userid'=>$id, 'productid'=>$crt->proid, 'variationid'=>$crt->variationid,
                                        'quantity'=>$crt->qty, 'price'=>$crt->price, 'total'=>$crt->subtotal, 'created'=>$now );
                                        $generate=$this->orderModel->insertorderiteam($dataiteam);
                                     }
@@ -158,7 +158,7 @@ class Payment extends CI_Controller
         {
              foreach($cart_iteam as $crt)
              {
-                $dataiteam = Array('orderdid'=> $orderid, 'userid'=>$id, 'productid'=>$crt->proid, 'variationid'=>$crt->id,
+                $dataiteam = Array('orderdid'=> $orderid, 'userid'=>$id, 'productid'=>$crt->proid, 'variationid'=>$crt->variationid,
                 'quantity'=>$crt->qty, 'price'=>$crt->price, 'total'=>$crt->subtotal, 'created'=>$now );
                 $generate=$this->orderModel->insertorderiteam($dataiteam);
              }

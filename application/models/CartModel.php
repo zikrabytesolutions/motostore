@@ -49,7 +49,8 @@ class CartModel extends CI_Model{
         {
             return true;
         }
-        else{
+        else
+        {
             return $this->db->insert('product_cart_iteam',$data);
         } 
      

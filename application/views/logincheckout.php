@@ -66,33 +66,6 @@
                     <a  class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="color:white">Add New Shipping Address</a>
                         <div class="row">
 
-                        <?php if($billing): foreach($billing as $bill):?>
-                            <?php if($bill->streetaddress!='' && $bill->streetaddress1!=''):?>
-                            <div class="product-layout product-grid col-md-6 col-lg-6 mt-4">
-                            <div class="p-item">
-                               <h5 style="margin-bottom:-10px">
-                               <?php
-                                                    if(strlen($bill->name)>18)
-                                                    {
-                                                     echo  $stringCut = substr($bill->name, 0, 18).' ...';
-                                                    }
-                                                    else{
-                                                   echo  $stringCut = substr($bill->name, 0, 18);
-                                                    }
-                                                    ?> 
-                               <label class="mt-2" style="float:right">
-	                                <input type="radio" name="daddress" value="def" class="mr-2" checked>
-	                                <div><i class="fa fa-gear"></i></div>
-	                            </label>
-                               </h5>
-                                
-                               <hr>
-                               <p>Mobile : <?=$bill->mobile?></p>
-                               <p><?= $bill->streetaddress?>, <?= $bill->streetaddress1?>, <?= $bill->city?>, <?= $bill->postcode?></p>
-                            </div>
-                            </div>
-                                                <?php endif;?>
-                       <?php endforeach; endif;?>
                        
                         <?php $i=0; if($delivery): foreach($delivery as $del): $i++;?>
                           <div class="product-layout product-grid col-md-6 col-lg-6 mt-4">
@@ -229,7 +202,11 @@
                                     <input type="checkbox" name="tnc" value="tnc" class="mr-2">
                                     <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
                                 </label>
+                                <?php if($delivery):?>
                                 <button class="add-to-cart btn-default bg-red my-4" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
+                                <?php else: ?>
+                                    <a class="add-to-cart btn-default bg-red my-4" data-toggle="modal" data-target="#myModalblank" style="color:white"><i class="icon-cart"></i> Proceed to pay</a>
+                                <?php endif?>
                                 <p>View Our <a href="">Privacy Policy</a></p>
 	                        </div>
                         </section>
@@ -250,7 +227,7 @@
     <div class="modal-content">
       <div class="modal-header">
        
-        <h4 class="modal-title" id="myModalLabel">Shipping Address</h4>
+        <h4 class="modal-title" id="myModalLabel">Billing Address</h4>
       </div>
       <?php echo form_open('account/updateaccountadd')?>
       <div class="modal-body">
@@ -290,6 +267,28 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+                             </form>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModalblank" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h4 class="modal-title" id="myModalLabel">Add Address</h4>
+      </div>
+      <?php echo form_open('account/updateaccountadd')?>
+      <div class="modal-body">
+          <h5 style="color:red">Please add shipping or billing address</h5>                    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
                              </form>
     </div>

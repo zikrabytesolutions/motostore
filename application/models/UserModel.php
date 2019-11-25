@@ -4,12 +4,9 @@ class UserModel extends CI_Model
     function myorder()
     {
        $id= $this->session->userdata('motoubid');
-       $this->db->select('product_order_iteam.*,users.name,users.mobile,product_order.iteam,product_order.grand');
-       $this->db->from('product_order_iteam');
-       $this->db->join('users','users.id=product_order_iteam.userid');
-       $this->db->join('product_order','product_order.orderid=product_order_iteam.orderdid');
-       $this->db->group_by('product_order_iteam.orderdid');
-       $this->db->where('product_order_iteam.userid',$id);
+       $this->db->select('*');
+       $this->db->from('product_order');
+       $this->db->where('userid',$id);
        $query=$this->db->get();
        return $query->result();
     }
@@ -78,10 +75,15 @@ class UserModel extends CI_Model
 
     function getdeliveryaddress($orderid)
     {
-        $this->db->select('deliveryaddress.*');
+
+        $this->db->select('delivery_address');
         $this->db->from('product_order');
-        $this->db->join('deliveryaddress','deliveryaddress.id=product_order.delivery_address');
-        $this->db->where('product_order.orderid',$orderid);
+        $this->db->where('orderid',$orderid);
+        $deliveryid= $this->db->get()->row('delivery_address');
+
+        $this->db->select('*');
+        $this->db->from('deliveryaddress');
+        $this->db->where('id',$deliveryid);
         $query= $this->db->get();
         return $query->result();
     }
@@ -89,11 +91,53 @@ class UserModel extends CI_Model
 
     function getorderlist($orderid)
     {
+    
         $this->db->select('*');
         $this->db->from('product_order_iteam');
-        $this->db->where('productid',$orderid);
+        $this->db->where('orderdid',$orderid);
         $query= $this->db->get();
-        return $query->row_array();
+        return $query->result();
+
+    }
+
+    function returnname()
+    {
+        $id= $this->session->userdata('motoubid');
+        $this->db->select('name');
+        $this->db->from('users');
+        $this->db->where('id',$id);
+        return  $this->db->get()->row('name');
+    }
+
+
+    function getsummery($orderdid)
+    {
+        $this->db->select('*');
+        $this->db->from('product_order');
+        $this->db->where('orderid',$orderdid);
+       $query= $this->db->get();
+        return $query->result();
+    }
+
+    function insertaddress($data)
+    {
+        return $this->db->insert('deliveryaddress',$data);
+    }
+
+    function checkpasswords($password,$id)
+    {
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('id',$id);
+        $this->db->where('password',$password);
+       $query= $this->db->get();
+        return $query->result();
+    }
+
+
+    function passwordchange($password,$id)
+    {
+        return $this->db->where('id',$id)->UPDATE('users',['password'=>$password]);
     }
 }
 

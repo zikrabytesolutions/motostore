@@ -9,12 +9,12 @@
                             ?>
 		
 		<?php
-                                                    if(strlen($name)>18)
+                                                    if(strlen($name)>13)
                                                     {
-                                                     echo  $stringCut = substr($name, 0, 18).' ...';
+                                                     echo  $stringCut = substr($name, 0, 13).' ...';
                                                     }
                                                     else{
-                                                   echo  $stringCut = substr($name, 0, 18);
+                                                   echo  $stringCut = substr($name, 0, 13);
                                                     }
                                                     ?> 
 	</h5>
@@ -33,10 +33,11 @@
 		<li class="nav-item">
 			<a class="nav-link" href="#">Ride Details</a>
 		</li>
+    <li class="nav-item">
+			<a class="nav-link" href="<?= base_url('users/changepassword')?>" >Change Password</a>
+		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="#" data-toggle="modal" data-target="#logoutpromt">Logout</a>
-
-
 		</li>
 	</ul>
 </section>

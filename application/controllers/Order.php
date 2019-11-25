@@ -5,7 +5,8 @@ class Order extends MY_Controller
     function __construct() 
 	{
 		   parent::__construct();
-		   $this->load->model( 'userModel' );
+           $this->load->model( 'userModel' );
+           $this->load->model( 'cartModel' );
        }
        
     function index()
@@ -16,11 +17,12 @@ class Order extends MY_Controller
 
     function orderdetails($orderdid)
     {
-       $orderid= base64_decode( strtr( $orderdid, '-_', '+/' ) );
-       $data['address']= $this->userModel->getdeliveryaddress($orderid);
-       $data['orderlist']= $this->userModel->getorderlist($orderid);
-    //    print_r($data);
-       $this->load->view('orderdetails',$data);
+        $orderdid= base64_decode(strtr($orderdid, '-_', '+/'));
+        $data['address']= $this->userModel->getdeliveryaddress($orderdid);
+        $data['orderlist']= $this->userModel->getorderlist($orderdid);
+        $data['summery']= $this->userModel->getsummery($orderdid);
+
+        $this->load->view('orderdetails',$data);
     }
 
     function totalorder($orderdid)
@@ -36,6 +38,18 @@ class Order extends MY_Controller
              return redirect('order');
         }
     }
+
+
+    function findcartvalue( $proid, $detailsid )
+    {
+
+       return $this->cartModel->showtempcartvalue($proid,$detailsid);
+    }
+
+    function findattributecart( $data )
+     {
+        return $this->cartModel->attributefind( $data );
+     }
 
     
     

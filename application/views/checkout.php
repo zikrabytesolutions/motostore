@@ -37,7 +37,7 @@
                     <div class="col-md-7">
                     <div class="form-group">
                                     <label>
-                                    <a  data-toggle="modal" data-target="#myModal">Have an already account please login</a>
+                                    <a  data-toggle="modal" data-target="#myModal">Already have an account?Login here</a>
 
                                     <label>
                                         <input type="checkbox" name="Acc" value="createAcc" class="mr-2" value="1">
@@ -321,8 +321,8 @@
   
 
     $('#orderPayment').find("input[type=checkbox][name=tnc]").on('change', function() {
-      // $(".btnsub").prop("disabled", false);
-        $(".btnsub").toggleAttr('disabled', false);
+      $(".btnsub").prop("disabled", false);
+      
     });
   // $("input:radio").change(function () {
   //   $("#orderPayment").prop("disabled", false);});
