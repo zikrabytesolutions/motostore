@@ -2166,3 +2166,6 @@ ul#autoSuggestionsList {
 .modal-footer{
     border:none !important;
 }
+.filterside {
+    margin-top: 25px;
+}
