@@ -231,9 +231,23 @@
                                        
                                         <input type="hidden" name="proid" value="<?= $proid ?>">
                                         <input type="hidden" name="prodetailsid" value="<?= $pdetailsid ?>">
-                                         <button class="btn btn-success btn-default bg-red">
-                                            <span class="add-to-cart">Buy Now</span>
-                                        </button>
+                                        <?php if($this->session->userdata('motoubid')):?>
+                                          <?php    $id= $this->session->userdata('motoubid');
+                                                    $this->db->select('*');
+                                                    $this->db->from('product_cart_iteam');
+                                                    $this->db->where('userid', $id);
+                                                    $this->db->where('variationid', $pd->detailsid);
+                                                    $query= $this->db->get();
+                                                    $logincart= $query->result();
+                                                   if($logincart):?>
+                                                     <a href="<?= base_url('cart')?>"  class="btn btn-success btn-default bg-red"><span class="add-to-cart">Buy Now</span></a>
+                                                   <?php else:?>
+                                                    <button type="submit"  class="btn btn-success btn-default bg-red"><span class="add-to-cart">Buy Now</span></button>
+                                                   <?php endif;?>
+                                                   
+                                                   <?php else:?> 
+                                                    <button type="submit"  class="btn btn-success btn-default bg-red"><span class="add-to-cart">Buy Now</span></button>
+                                                   <?php endif?>
                                         <?php echo form_close()?>
                                     </div>
                                 </div>
