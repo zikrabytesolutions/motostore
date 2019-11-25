@@ -148,7 +148,7 @@
                             <table class="table table-bordered cart_details">
                                 <tbody>
                                     <tr>
-                                        <td><?php echo $crd->iteam ?> Items</td>
+                                        <td><?php echo $crd->iteam;  if($crd->iteam>1){echo " Items";}else{echo " Item";} ?></td>
                                         <th>Rs. <?php echo $crd->grandtotal; ?></th>
                                     </tr>
                                     <tr>

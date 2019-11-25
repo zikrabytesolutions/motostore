@@ -148,7 +148,9 @@
                             <table class="table table-bordered cart_details">
                                 <tbody>
                                     <tr>
-                                        <td><?php echo $rows = count($this->cart->contents()); ?> Items</td>
+                                        <td><?php echo $rows = count($this->cart->contents()); ?>
+                                           <?php if(count($this->cart->contents())>1){echo "Items";}else{echo "Item";}?>
+                                         </td>
                                         <th> Rs. <?php echo $this->cart->format_number($this->cart->total()); ?></th>
                                     </tr>
                                     <tr>
