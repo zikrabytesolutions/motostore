@@ -25,7 +25,7 @@
     <!--styles -->
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	 <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+	 <!-- <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css"> -->
 </head>
 
 <body>
@@ -111,7 +111,7 @@
                   </div>  
                 </div>
               </div>
-              <button class="btn btn-warning" type="submit">GO</button>
+              <button class="btn btn-info" type="submit">GO</button>
             </div>
             </form>
           </section>

@@ -42,21 +42,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <main class="col-md-9">
                    <section class="frmsec">
                    		<div class="account-form">
-                           
+                           <h5>Shipping Address</h5>
                            <div class="panel panel-default">
                             <div class="panel-heading">
 							 
-							<span style="float:right">
+                            	<div class="row">
+                            		<div class="col-md-8">
+                            			<?php if($address): foreach($address as $add):?>
+                            <span> <b>Name: </b><?= $add->name;?><br> <b>Mobile :</b> <?= $add->mobile?></span><br>
+                            <span> <b>Address: </b> <?= $add->streetaddress;?>, <?= $add->streetaddress1;?>, <?= $add->city;?>- <?= $add->postcode;?></span>
+                           <?php endforeach; endif;?>
+                            		</div>
+                            	
+
+                            	
+                            		<div class="col-md-4">
+
+							<span >
 							    <?php if($summery): foreach($summery as $sumr):?>
-									Order date : <?= date("d M, Y", strtotime($sumr->created))?><br>
-								Total  Item : <?= $sumr->iteam?>,  Grand Total : <?= $sumr->grand?>
+									 <b>Order date : </b><?= date("d M, Y", strtotime($sumr->created))?><br>
+								 <b>Total  Item :</b> <?= $sumr->iteam?><br>  <b> Grand Total :</b> Rs.<?= $sumr->grand?>
 									<?php endforeach; endif;?>
 							   </span>
-
-							<?php if($address): foreach($address as $add):?>
-                            <span>Name: <?= $add->name;?>, Mobile : <?= $add->mobile?></span><br>
-                            <span>Address: <?= $add->streetaddress;?>, <?= $add->streetaddress1;?>, <?= $add->city;?>- <?= $add->postcode;?></span>
-                           <?php endforeach; endif;?>
+							</div>
+				</div>
+							
                               
 						   </div>
                             <div class="panel-body">
@@ -79,12 +89,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 </p>
 
                                                 <div class="cart_item__details">
-                                                    <p class="c_item_price"><b>Price Rs:</b> <span class="p-prc mr-2"><?= $ds->price?>, <b>Quantity : </b> <span class="p-prc mr-2"><?= $ds->quantity?></span></p>
+                                                    <p class="c_item_price"><b>Rs. </b> 
+                                                    	<span class="p-prc mr-2"><?= $ds->price?>,</span> <b>Quantity : </b> <span class="p-prc mr-2"><?= $ds->quantity?></span></p>
 
                                                     <?php  $attribute= $ci->findattributecart($rs->second);?>
                                                        <?php if($attribute): foreach($attribute as $att):?>
                                                         <?php if(strtolower( $att->attribute)!='color'):?>
-                                                            <p class="c_item_size"><b><?= $att->attribute?> :</b> <?= $att->value_name?></p>
+                                                            <p class="c_item_size">
+                                                            	<span class=""><b><?= $att->attribute?> :</b> <?= $att->value_name?></span></p>
                                                     <?php endif; endforeach; endif?>
 
 
@@ -93,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <?php if(strtolower( $att->attribute)=='color'):?>
                                                                 <div class="color-choose">
                                                                 <input data-image="red" type="radio" value="red">
-                                                                <label for="red"><b><?= $att->attribute?> :</b>
+                                                                <label for="red"><b style="font-weight: 700"><?= $att->attribute?> :</b>
                                                                 <span style="background-color:<?= $att->codes?>"> </span></label>
                                                                 </div>
                                                         <?php endif; endforeach; endif?>
@@ -102,13 +114,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </td>
 
                                             <td class="column_total">
-                                                <span class="money" data-currency-usd="$15.00"><?php echo $ds->total ?></span>
+                                                <span class="money" data-currency-usd="$15.00"><b>Rs.<?php echo $ds->total ?></b></span>
                                             </td>
 
                                         </tr>
 									 <?php endforeach; endif;?>
 								<?php endforeach; endif;?>
                                 </table>
+
+
+
+
+
                             </div>
                             </div>
 							

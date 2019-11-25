@@ -396,6 +396,7 @@ $('#hidePw2').toggleClass('shw');
 
 
 
+
 //datepicker
 
 $('[data-toggle="datepicker"]').datepicker();
