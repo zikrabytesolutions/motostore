@@ -150,9 +150,26 @@ class Payment extends CI_Controller
      {
         return $this->cartModel->attributefind( $data );
      }
-
+     
      function orderplace()
      {
+        if (!$this->form_validation->run('logincheck') == TRUE )
+        {
+            $id= $this->session->userdata('motoubid');
+            $iteam= $this->cartModel->carrowcpont($id);
+             if($iteam>0)
+            {
+              $data['proinfo'] = $this->cartModel->cartdata($id); //cartiteam
+              $data['cartdata'] = $this->cartModel->carttotal($id); // cart data
+              $data['delivery'] = $this->cartModel->deliveryaddress($id); // delivery address
+              $data['billing'] = $this->cartModel->billingaddress($id); // delivery address
+              $this->load->view('logincheckout',$data);
+            
+          }
+        }
+        else{
+
+        
         date_default_timezone_set('Asia/Kolkata');
         $now = date("Y-m-d H:i:s");
         $id= $this->session->userdata('motoubid');
@@ -195,6 +212,7 @@ class Payment extends CI_Controller
                  }
            }
    }
+}
 }
 }
 

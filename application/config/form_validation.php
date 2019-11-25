@@ -85,6 +85,36 @@ $config = [
                                                 ],
                                             ],
 
+                                            [
+                                                'field' => 'payType',
+                                                'label' => 'payment mode',
+                                                'rules' => 'required',
+                                                "errors" => 
+                                                [
+                                                    'required' => 'Please select %s ',  
+                                                ],
+                                            ],
+
+                                            [
+                                                'field' => 'tnc',
+                                                'label' => 'Terms & Conditions',
+                                                'rules' => 'required',
+                                                "errors" => 
+                                                [
+                                                    'required' => 'Please agree %s ',  
+                                                ],
+                                            ],
+
+                                            [
+                                                'field' => 'createAcc',
+                                                'label' => 'above checkbox',
+                                                'rules' => 'required',
+                                                "errors" => 
+                                                [
+                                                    'required' => 'Please Select %s.',  
+                                                ],
+                                            ],
+
                                             
 
                                             [
@@ -179,6 +209,33 @@ $config = [
                                                     'required' => ' %s cannot be blank.', 
                                                 ],
                                             ]  
+                                            ],
+
+                                            
+                                        'logincheck' => [
+              
+                                            [
+                                                'field' => 'payType',
+                                                'label' => 'payment mode',
+                                                'rules' => 'required',
+                                                "errors" => 
+                                                [
+                                                    'required' => 'Please select %s ',  
+                                                ],
+                                            ],
+
+                                            [
+                                                'field' => 'tnc',
+                                                'label' => 'Terms & Conditions',
+                                                'rules' => 'required',
+                                                "errors" => 
+                                                [
+                                                    'required' => 'Please agree %s ',  
+                                                ],
+                                            ],
+
+        
+                                           
                                     ]
            ];
            

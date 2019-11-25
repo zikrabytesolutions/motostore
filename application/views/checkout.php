@@ -110,9 +110,11 @@
                             <div class="form-group">
 
                                 <label>
-                                    <input type="checkbox" name="createAcc" value="createAcc" class="mr-2" >
+                                    <input type="checkbox" name="createAcc" value="createAcc" class="mr-2"  <?php if(set_value('createAcc')){echo "checked";}else{echo "";} ?>>
+                                    
                                     <div><i class="fa fa-check"></i></div>Create an account?
                                 </label>
+                                <small style="color:red"><?php echo form_error('createAcc'); ?></small>
                             </div>
                             <div class="form-group">
 
@@ -234,23 +236,24 @@
                             </table>
                             <div id="orderPayment">
                                 <label class="mt-2">
-                                    <input type="radio" name="payType" value="ccard" class="mr-2" >
+                                    <input type="radio" name="payType" value="1" class="mr-2" >
                                     <div><i class="fa fa-gear"></i></div>CCAvenue
                                     <img src="https://www.ccavenue.com/images_shoppingcart/ccavenue_pay_options.gif" class="img-fluid mt-2">
                                     <small class="d-block">Pay securely by Credit or Debit card or internet banking through Secure Servers.</small>
                                 </label>
                                 <label class="mt-2">
-                                    <input type="radio" name="payType" value="paytm" class="mr-2" >
+                                    <input type="radio" name="payType" value="1" class="mr-2" >
                                     <div><i class="fa fa-gear"></i></div>Paytm Gateway
                                     <img src="https://www.customelements.in/wp-content/plugins/paytm/images/logo.gif" class="img-fluid mt-2">
                                     <small class="d-block">Pay via Paytm Wallet – Credit/Debit card, Netbanking, EMI & UPI.</small>
                                 </label>
                                 <label class="mt-2">
-                                 <input type="radio" name="payType" value="cod" class="mr-2" checked >
+                                 <input type="radio" name="payType" value="1" class="mr-2" <?php if(set_value('payType')){echo "checked";}else{echo "";} ?>>
                                  <div><i class="fa fa-gear"></i></div>Cash on Delivery
                              </label>
+                             <small style="color:red"><?php echo form_error('payType'); ?></small>
                              <label class="mt-2">
-                                <input type="checkbox" name="tnc" value="tnc" class="mr-2">
+                                <input type="checkbox" name="tnc" value="1" class="mr-2" <?php if(set_value('tnc')){echo "checked";}else{echo "";} ?>>
                                 <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
                                 <small style="color:red"><?php echo form_error('tnc'); ?></small>
                                 </label>
