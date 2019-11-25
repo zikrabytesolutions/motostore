@@ -78,7 +78,7 @@
                             <h3><?= $pd->product; ?></h3>
                             <p>Product Code : <?= $pd->productcode; ?></p>
                             <div class="product-price">
-                            <b>Rs:</b> <span > <del id="regularprice">
+                            <b>Rs.</b> <span > <del id="regularprice">
                                         <?= $pd->regular_price?></del> </span><span class="slash" style="font-size:20px" id="offerprice"> <?= $pd->offer_price?></span> 
                             </div>
                             <div class="product-overview">

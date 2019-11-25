@@ -2142,6 +2142,7 @@ a.btn.btn-primary{
 .checkout a.ck-lgn{
  color: blue;
  text-decoration: underline;
+ cursor: pointer;
 }
 .checkout .ck-lgn-icon i{
 border: 1px solid #6a6a6a;
