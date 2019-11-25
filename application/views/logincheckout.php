@@ -100,9 +100,7 @@
                             <?php endif?>
                         </div>
 
-                     
                     </div>
-                    
                     <div class="col-md-5">
                         <section class="orderInfo">
                             <h5>Your Order</h5>
@@ -199,7 +197,7 @@
 	                                <div><i class="fa fa-gear"></i></div>Cash on Delivery
 	                            </label>
                                 <label class="mt-2">
-                                    <input type="checkbox" name="tnc" value="tnc" class="mr-2" required>
+                                    <input type="checkbox" name="tnc" value="1" class="mr-2" required>
                                     <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
                                 </label>
                                 <?php if($delivery):?>

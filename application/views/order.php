@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							            <td><?= $order->grand?></td>
                                         <td><?= $order->iteam?></td>
 							            <td>
-										<?php $orderid= strtr(base64_encode($order->orderdid), '+/', '-_');?>
+										<?php $orderid= strtr(base64_encode($order->orderid), '+/', '-_');?>
 										<a href="<?= base_url('order/orderdetails/'.$orderid)?>" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
 
 							        	</td>

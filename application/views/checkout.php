@@ -252,7 +252,9 @@
                                 <label class="mt-2">
                                 <input type="checkbox" name="tnc" value="tnc" class="mr-2" required>
                                 <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
+                                <small style="color:red"><?php echo form_error('tnc'); ?></small>
                                 </label>
+
                                 <button class="add-to-cart btn-default bg-red my-4 btnsub" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
                                 <p>View Our <a href="">Privacy Policy</a></p>
                             </div>
