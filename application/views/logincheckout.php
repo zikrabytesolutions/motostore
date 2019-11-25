@@ -63,22 +63,25 @@
                       <br>
 
                     <h5 class="title-border clr-black">Select Shipping Address  </h5>
-                    <a  class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="color:white">Add New Shipping Address</a>
+                    <a  class="btn btn-default bg-black" data-toggle="modal" data-target="#myModal" style="color:white">Add New Shipping Address</a>
                         <div class="row">
 
 
                         <?php $i=0; if($delivery): foreach($delivery as $del): $i++;?>
                           <div class="product-layout product-grid col-md-6 col-lg-6 mt-4">
                             <div class="p-item">
-                               <h5 style="margin-bottom:-10px"><?php
-                                                    if(strlen($del->name)>18)
+                               <h5 style="margin-bottom:-10px">
+                                <span data-toggle="tooltip" title="<?= $del->name; ?>">
+                                <?php
+                                                    if(strlen($del->name)>8)
                                                     {
-                                                     echo  $stringCut = substr($del->name, 0, 18).' ...';
+                                                     echo  $stringCut = substr($del->name, 0, 8).' ...';
                                                     }
                                                     else{
-                                                   echo  $stringCut = substr($del->name, 0, 18);
+                                                   echo  $stringCut = substr($del->name, 0, 8);
                                                     }
                                                     ?>
+                                                  </span>
                                <label class="mt-2" style="float:right">
 	                                <input type="radio" name="daddress" value="<?= $del->id?>" class="mr-2" checked>
 	                                <div><i class="fa fa-gear"></i></div>
@@ -87,7 +90,30 @@
 
                                <hr>
                                <p>Mobile : <?= $del->mobile?></p>
-                               <p><?= $del->streetaddress?>, <?= $del->streetaddress1?>, <?= $del->city?>, <?= $del->postcode?></p>
+                               <p>Street : <span data-toggle="tooltip" title="<?= $del->streetaddress?>">
+                                <?php
+                                 if(strlen($del->streetaddress)>25)
+                                 {
+                                   echo  $stringCut = substr($del->streetaddress, 0, 25).' ...';
+                                 }
+                                 else{
+                                   echo  $stringCut = substr($del->streetaddress, 0, 25);
+                                 }
+                                 ?></span></p>
+                                <p>House : <span data-toggle="tooltip" title="<?= $del->streetaddress1 ;?>">
+                                  <?php
+                                 if(strlen($del->streetaddress1)>25)
+                                 {
+                                   echo  $stringCut = substr($del->streetaddress1, 0, 25).' ...';
+                                 }
+                                 else{
+                                   echo  $stringCut = substr($del->streetaddress1, 0, 25);
+                                 }
+                                 ?>
+
+                                </span></p>
+                                <p>City : <?= $del->city?></p>
+                                <p>Pin Code : <?= $del->postcode?></p>
                             </div>
                             </div>
 

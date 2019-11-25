@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
                                         <label for="firstname">Full Name *</label>
-                                        <input type="text" class="form-control" value="<?= $pro->name?>" name="name" placeholder="First name" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
+                                        <input type="text" class="form-control" value="<?= $pro->name?>" name="name" placeholder="First name" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )" required>
                                     </div>
 								  
 
@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <label for="email">Email address *</label>
                                     <input type="email" class="form-control" value="<?= $pro->email?>" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z]+\.[a-z]{2,3}$" placeholder="Email Address" readonly/>
 								</div>
-								<p>This will be used as your billing address</p>
+								<p>This will be used as your billing address.</p>
 								<div class="row">
 								<div class="form-group col-sm-6">
                                     <label for="pwd">Street Address</label>
@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <input type="text" class="form-control"  name="city" value="<?= $pro->city?>">
 								</div>
 								<div class="form-group col-sm-6">
-                                    <label for="pwd">Postel Code</label>
+                                    <label for="pwd">Pin Code*</label>
                                     <input type="text" class="form-control"  name="postcode" value="<?= $pro->postcode?>" maxlength="6" onkeypress="return ((event.charCode >=48 && event.charCode <=57) || (event.charCode >=0 && event.charCode <=31) )" required>
                                 </div>
 								</div>
