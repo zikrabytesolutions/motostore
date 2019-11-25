@@ -50,7 +50,7 @@
         <h4 class="modal-title" id="myModalLabel">Alert!</h4>
       </div>
       <div class="modal-body">
-         <h6 style="color:red"> Are you sure you want to logout?</h6>
+         <p class="alt-txt"> Are you sure you want to logout?</p>
       </div>
       <div class="modal-footer">
         <a href="" class="btn btn-danger" data-dismiss="modal">No</a>

@@ -49,8 +49,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             	<div class="row">
                             		<div class="col-md-8">
                             			<?php if($address): foreach($address as $add):?>
-                            <span> <b>Name: </b><?= $add->name;?><br> <b>Mobile :</b> <?= $add->mobile?></span><br>
-                            <span> <b>Address: </b> <?= $add->streetaddress;?>, <?= $add->streetaddress1;?>, <?= $add->city;?>- <?= $add->postcode;?></span>
+                            <span> <b>Name : </b><?= $add->name;?><br> <b>Mobile :</b> <?= $add->mobile?></span><br>
+                            <span> <b>Address : </b> <?= $add->streetaddress;?>, <?= $add->streetaddress1;?>, <?= $add->city;?>- <?= $add->postcode;?></span>
                            <?php endforeach; endif;?>
                             		</div>
                             	
@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							   </span>
 							</div>
 				</div>
-							
+							 	<hr>
                               
 						   </div>
                             <div class="panel-body">
@@ -76,7 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<?php $result= $ci->findcartvalue($ds->productid,$ds->variationid);?>
 								
                                        <?php if($result): foreach($result as $rs): ?>
-                                       	<hr>
+                                      
 										<tr>
                                             <td class="column_product_img">
                                                 <a href="#">
@@ -119,6 +119,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </td>
 
                                         </tr>
+
 									 <?php endforeach; endif;?>
 								<?php endforeach; endif;?>
                                 </table>
