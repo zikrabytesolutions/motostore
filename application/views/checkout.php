@@ -269,6 +269,7 @@
       <div class="modal-header">
 
         <h4 class="modal-title" id="myModalLabel">Account Login</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
     </div>
     <div class="modal-body">
       <div class="login-form">
@@ -307,10 +308,12 @@
 </div>
 </div>
 </div>
-</div>
+
 
 
 <?php include('footer.php');?>
+</div>
+<?php include('js.php');?>
 
 <?php if($this->session->flashdata('msg_error')):?>
     <script>
