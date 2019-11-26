@@ -762,7 +762,8 @@ header {
 }
 
 .size-choose div label {
-        position: relative;
+    cursor: pointer;
+    position: relative;
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -800,17 +801,6 @@ header {
     border:2px solid red;
 }
 
-/*.products-page .size-choose input[type="radio"]:checked + label span:after {
-    background-image: url(../images/item/checkmark.png);
-    z-index: 99999;
-    content: "";
-    display: block;
-    height: 18px;
-    position: relative;
-    top: -48px;
-    background-repeat: no-repeat;
-}
-*/
 .size-choose, .qty-choose {
     justify-content: flex-start;
 
@@ -1759,13 +1749,6 @@ a{
     padding: 0.8rem 0.2rem;
 }
 
-
-
-
-
-
-
-
 .banner-sec{
     padding: 130px 0px;
     background-image: url('../images/contactbg.jpg');
@@ -1790,14 +1773,16 @@ a{
 .banner-title h4{
     color: #fff;
 }
-.cat-sec{
+.cat-sec,
+.eventgal-sec{
     padding: 40px 0px;
 }
-.category-carousel img{
+.category-carousel img,
+.eventgal-carousel img{
     border-radius: 8px;
 }
 .owl-carousel.category-carousel .owl-nav button.owl-next{
-    position: absolute !important;
+  position: absolute !important;
     top: 34% !important;
     right: -2% !important;
     color: red !important;
@@ -1809,8 +1794,34 @@ a{
     box-shadow: 0 0px 3px 0px #7b6e6e !important;
 }
 .owl-carousel.category-carousel .owl-nav button.owl-prev{
-    position: absolute !important;
+position: absolute !important;
     top: 34% !important;
+    left: -2% !important;
+    color: red !important;
+    background: #fff !important;
+    text-align: center !important;
+    font-size: 20px !important;
+    padding: 2px 12px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 0px 3px 0px #7b6e6e !important;
+}
+
+.owl-carousel.eventgal-carousel .owl-nav button.owl-next{
+    position: absolute !important;
+    top: 40% !important;
+    right: -2% !important;
+    color: red !important;
+    background: #fff !important;
+    text-align: center !important;
+    font-size: 20px !important;
+    padding: 2px 12px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 0px 3px 0px #7b6e6e !important;
+}
+
+.owl-carousel.eventgal-carousel .owl-nav button.owl-prev{
+    position: absolute !important;
+    top: 40% !important;
     left: -2% !important;
     color: red !important;
     background: #fff !important;
@@ -1823,7 +1834,8 @@ a{
 .side-title{
     margin-bottom: 20px;
 }
-.cat-sec h5{
+.cat-sec h5,
+.eventgal-sec h5{
     position: absolute;
     color: #fff;
     bottom: 0;
@@ -1846,13 +1858,13 @@ a{
 .place .img-col{
     margin-bottom: 20px;
 }
-.pay-book-sec{
+.eventblog-sec{
     padding: 40px 0px;
 }
-.pay-book-carousel img{
+.eventblog-carousel img{
     border-radius: 8px 8px 0px 0px;
 }
-.owl-carousel.pay-book-carousel .owl-nav button.owl-next{
+.owl-carousel.eventblog-carousel .owl-nav button.owl-next{
     position: absolute !important;
     top: 28% !important;
     right: -2% !important;
@@ -1864,7 +1876,7 @@ a{
     border-radius: 20px !important;
     box-shadow: 0 0px 3px 0px #7b6e6e !important;
 }
-.owl-carousel.pay-book-carousel .owl-nav button.owl-prev{
+.owl-carousel.eventblog-carousel .owl-nav button.owl-prev{
     position: absolute !important;
     top: 28% !important;
     left: -2% !important;
@@ -2163,6 +2175,9 @@ ul#autoSuggestionsList {
     border-radius: 2px;
     box-shadow: 0px 2px 5px 1px rgba(0,0,0,.5);
 }
+#autoSuggestionsList a{
+    color: black;
+}
 .modal-footer{
     border:none !important;
 }
@@ -2228,4 +2243,53 @@ ul#autoSuggestionsList {
 #logoutpromt .modal-footer {
     border: none !important;
     margin: 0 auto;
+}
+.event-imgbg img,
+.cafe-imgbg img{
+    width:100%;
+    height: 450px;
+}
+.cafebg .col-md-6.col-lg-6.col-sm-12{
+    padding: 0 !important;
+} 
+.event-imgbg .event-txt a{
+position: absolute;
+    width: 50%;
+    padding: 20px;
+    right: 0;
+    background: #ffff;
+    bottom: 60px;
+}
+.cafe-imgbg .cafe-txt a{
+position: absolute;
+    width: 50%;
+    padding: 20px;
+    background: #ffff;
+    bottom: 60px;
+}
+.event-des {
+    padding: 10px 20px 20px 20px;
+}
+.event-place p{
+    margin: 0;
+}
+.event-place {
+    position: absolute;
+    background: red;
+    color: white;
+    padding: 8px;
+    border-radius: 0px 0px 6px 0px;
+}
+.event-date {
+    font-size: 16px;
+    font-weight: 500;
+}
+.event-des-title {
+    color: #ff0000;
+}
+.eventbtn a{
+    color: red;
+}
+.eventbtn a:hover{
+    color: red;
 }

@@ -7,18 +7,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>Moto store</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap.min.css')?>">
-	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/font-awesome.css')?>">
-	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/owl.carousel.min.css')?>">
-	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/owl.theme.default.min.css')?>">
-	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/animate.css')?>">
-
-	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css')?>">
-	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css')?>">
-	<!--fontello-->
-	<link rel="stylesheet" href="<?= base_url('assets/svg/css/fontello.css')?>">
-	<link rel="stylesheet" href="<?= base_url('assets/fancybox\dist\jquery.fancybox.min.css')?>" />
+	
 	<!--styles -->
+	<?php include 'css.php';  ?>
 </head>
 <body>
 
@@ -199,6 +190,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 </section>
 <!-- News section end -->
-</div>
 
-<?php include('footer.php')?>
+
+<?php include('footer.php'); ?>
+</div>
+<?php include('js.php'); ?>
+
+
+</body>
+</html>

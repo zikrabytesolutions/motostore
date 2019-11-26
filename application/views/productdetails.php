@@ -4,21 +4,12 @@
     <title>Moto store</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/font-awesome.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/owl.carousel.min.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/owl.theme.default.min.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/animate.css') ?>">
+   <?php include 'css.php'; ?>
     <!--fontello-->
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/slick/slick.css')?>" />
 
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/slick/slick-theme.css')?>" />
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/svg/css/fontello.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/fancybox/dist/jquery.fancybox.min.css') ?>" />
-    <!--styles -->
-
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css') ?>">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css') ?>">
+ 
 
 </head>
 
@@ -294,7 +285,7 @@
                                     
                                                     <div class="related-price">
                                                         <?php $price= $this->db->select('regular_price,offer_price')->from('product_details')->where('pro_id',$pro->id)->order_by('id','ASC')->limit('1')->get()->row_array();?>
-                                                        <p class=""> Rs:<span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span></p> 
+                                                        <p class=""> Rs. <span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span></p> 
                                                         <h4 class="p-prc"></h4>
                                                     </div>
                                                 </div>
