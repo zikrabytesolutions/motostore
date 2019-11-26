@@ -447,24 +447,54 @@ $('.pay-book-carousel').owlCarousel({
 				}
 			}
 		})
+$('.eventgal-carousel').owlCarousel({
+			dots:false,
+			loop:true,
+			margin:30,
+			responsiveClass:true,
+			nav: true,
+		    navText: [
+		        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+		        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+		    ],
+					responsive:{
+				0:{
+					items:1,
+				},
+				600:{
+					items:2,
+				},
+				1000:{
+					items:4, 
+				}
+			}
+		})
+$('.eventblog-carousel').owlCarousel({
+			dots:false,
+			loop:true,
+			margin:30,
+			responsiveClass:true,
+			nav: true,
+		    navText: [
+		        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+		        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+		    ],
+					responsive:{
+				0:{
+					items:1,
+				},
+				600:{
+					items:2,
+				},
+				1000:{
+					items:3, 
+				}
+			}
+		})
 
 		$('.checkout').find("input[type=checkbox][name=shipDiffAdd]").on('change', function() {
 			$("#shipToDiffAdd").fadeToggle(200);
 		});
-
-// $('.checkout').find("input[type=checkbox][value=haveAcc]").on('change', function() {
-// 	$("#addPw").fadeToggle(200);
-// 	$("#addmsg").hide(200);
-// 	$("input[value='createAcc']").prop('checked', false);
-// });
-
-// $("#addmsg").hide(200);
-// $('.checkout').find("input[type=checkbox][value=createAcc]").on('change', function() {
-// 	$("#addmsg").fadeToggle(200);
-// 	$("#addPw").hide(200);
-// 	$("input[value='haveAcc']").prop('checked', false);
-// });
-
 
 $('.search-ico').on('click', function() {
 	$(".search-bar").toggle(200);
@@ -474,27 +504,6 @@ $('.close-ico').on('click', function() {
 });
   
 
-// var min = "<?= $min; ?>";
-// var max = "<?= $max; ?>";
-// $( function() {
-// $("#slider-range" ).slider({
-// 	range: true,
-// 	min: 0,
-// 	max: 100000,
-// 	values: [min , max ],
-// 	step: 100,
-// 	slide: function( event, ui ) 
-// 	{
-// 		$( "#min" ).val(  ui.values[ 0 ]);
-// 		$( "#max" ).val( ui.values[ 1 ] );
-	   
-// 	}
-	
-// });
-// $( "#min" ).val(min);
-// $( "#max" ).val(max);
-
-// } );
 
 $(document).ready(function(){
 $('[data-toggle="tooltip"]').tooltip();   

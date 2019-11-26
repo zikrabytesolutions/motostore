@@ -154,7 +154,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="modal-content">
                                   <div class="modal-header">
 
-                                    <h4 class="modal-title" id="myModalLabel">Delete Address</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Alert !</h4>
                                   </div>
                                   <div class="modal-body">
                                    <p class="alt-txt"> Are you sure you want to delete?</p>
