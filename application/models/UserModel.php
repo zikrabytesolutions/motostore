@@ -7,6 +7,7 @@ class UserModel extends CI_Model
        $this->db->select('*');
        $this->db->from('product_order');
        $this->db->where('userid',$id);
+       $this->db->order_by('id','DESC');
        $query=$this->db->get();
        return $query->result();
     }
@@ -139,6 +140,26 @@ class UserModel extends CI_Model
     {
         return $this->db->where('id',$id)->UPDATE('users',['password'=>$password]);
     }
+
+    function checkaddress($userid)
+    {
+        $this->db->select('*');
+        $this->db->from('deliveryaddress');
+        $this->db->where('userid',$userid);
+        $this->db->where('profiledata','1');
+         $query= $this->db->get();
+        return $query->result();
+    }
+
+    function checkuserid($mobile)
+    {
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('email',$mobile);
+         $query= $this->db->get();
+        return $query->result();
+    }
+
 }
 
 ?>

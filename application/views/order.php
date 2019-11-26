@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    <section class="frmsec">
                    		<div class="account-form">
                             <h5>Details</h5>
-							<table class="table table-striped">
+							<table class="table table-striped" id="myTable">
 							<thead>
 							        <tr>
 							            <th>Order Id</th>

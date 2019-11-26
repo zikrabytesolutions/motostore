@@ -198,6 +198,19 @@
                   
                 </ul>
             </li>
+
+
+            <li>
+                <a href="#"><span class="nav-label">Moto Cafe </span><span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li class="active"><a href="<?= base_url('event/add')?>"> Event</a></li>
+                    <li class="active"><a href="<?= base_url('product/lists')?>"> Gallery</a></li>
+                   
+                  
+                  
+                </ul>
+            </li>
+
             <!-- <li>
                 <a href="<?= base_url('pin')?>"> <span class="nav-label">Pin Management</span><span class="label label-warning pull-right">NEW</span> </a>
             </li> -->

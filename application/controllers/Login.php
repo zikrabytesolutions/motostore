@@ -6,7 +6,8 @@ class Login extends CI_Controller
 	function __construct() 
 	{
 		   parent::__construct();
-		   $this->load->model( 'cartModel' );
+           $this->load->model( 'cartModel' );
+           $this->load->model( 'userModel' );
 	   }
 
     function index()
@@ -104,12 +105,57 @@ class Login extends CI_Controller
 		   }
        }
        
+       function forgot()
+       {
+           $this->load->view('forgotpassword');
+       }
+
+       function forgotpost()
+       {
+            $this->load->library( 'form_validation' );
+            $this->form_validation->set_rules( 'userid', 'Email/Phone number', 'required' );
+            if (!$this->form_validation->run() == TRUE )
+            {
+                $this->load->view('forgotpassword');
+            }
+            else
+            {
+                $userid=$this->input->post('userid');
+                $found= $this->userModel->checkuserid($userid);
+                if(!$found)
+                {
+                    $this->session->set_flashdata( 'msg_error', 'Please enter correct Email/Phone number.' );
+                    return redirect( 'login/forgot' );   
+                }
+                else
+                {
+                    $token=rand(9999,1000);
+                    $token=  strtr(base64_encode($token), '+/', '-_');
+                    $id= strtr(base64_encode($id), '+/', '-_');
+                    $url= base_url('token/verify');
+                    //  payment::sendlink($token,$id, $url, $email);
+                    $this->session->set_flashdata( 'link', 'Please check your email. we have sent you reset link' );
+                    return redirect( 'login/forgot' );   
+                }
+            }
+       }
 
        function logout()
        {
         $this->session->unset_userdata(motoubid);
         $this->session->sess_destroy();
         return redirect('home');
+       }
+
+
+       function sendlink($token,$id, $url, $to)
+       {
+            $subject='Motostore Verification Link';
+           $message= 'Click below on link for verify your accoutn <br>'.
+           $headers  = 'From: MyWebsite<info@website.in>' . "\r\n" .
+                       'MIME-Version: 1.0' . "\r\n" .
+                       'Content-type: text/html; charset=utf-8';
+           mail($to, $subject, $message, $headers,'-finfo@website.in');
        }
 }
 

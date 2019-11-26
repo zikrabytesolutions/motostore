@@ -43,39 +43,26 @@
                                      <?php endif;?>
 									</div>
 								</div>
-                               <?php echo form_open('login/auth',['id'=>'motostoreRegisterForm']);?>
+                               <?php echo form_open('login/forgotpost',['id'=>'motostoreRegisterForm']);?>
 							   
 								<div class="form-group row">
 									<label for="phone" class="col-sm-4 col-form-label">Email/Phone number</label>
 									<div class="col-sm-8">
 										<input type="tel" class="form-control" id="phone" name="userid" >
+                                        <small style="color:red"><?php echo form_error('userid'); ?></small> 
 									</div>
 								</div>		
-								<div class="form-group row">
-									<label for="password" class="col-sm-4 col-form-label">Password</label>
-									<div class="col-sm-8">	
-								        <div class="input-group">
-								        <input type="password" class="form-control" id="password" name="password" >
-								        <div class="input-group-append">
-								          <span class="input-group-text" id="showPw"><i class="fa fa-eye" aria-hidden="true"></i></span>
-								          <span class="input-group-text" id="hidePw"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
-								         
-								        </div>
-								      </div>
-									</div>
-								</div>
+								
 								<div class="row">
-								   <div class="col-sm-6" >
-								      <button style="float:right" type="submit" class="btn btn-default d-block mx-auto">Login</button>
+								   <div class="col-sm-9">
+								      <button style="float:right" type="submit" class="btn btn-default d-block mx-auto">Submit</button>
 								   </div>
-								   <div class="col-sm-6">
-								   <a href="<?= base_url('login/forgot')?>">Forgot password</a>
-								   </div>
+								  
 								 </div>
 							</form>
 							<hr/>
 							<div class="text-center">
-							New to Motostore?<a href="<?= base_url('signup')?>"> Create an account</a>
+							<a href="<?= base_url('login')?>">Login</a>
 							</div>
 						</div>
 					</div>

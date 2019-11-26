@@ -22,9 +22,25 @@ class Account Extends MY_Controller
 		$success= $this->userModel->updateaccoutn($data,$userid);
 		if($success)
 		{
-			$this->session->set_flashdata('msg_error', 'Account Updated' );
-			return redirect('account'); 
-		}
+			unset($data['email']);
+			$data['userid']= $userid;
+			$data['profiledata']='1';
+			$check= $this->userModel->checkaddress($userid);
+			if($check)
+			{
+                $this->session->set_flashdata('msg_error', 'Account Updated' );
+				return redirect('account'); 
+			}
+			else
+			{
+				$done= $this->userModel->insertaddress($data);
+				if($done)
+				{
+					$this->session->set_flashdata('msg_error', 'Account Updated' );
+					return redirect('account'); 
+				}
+		}	
+	  }
 	}
 	
 
@@ -40,6 +56,7 @@ class Account Extends MY_Controller
 		{
 			$data['name']= $username=$this->userModel->returnname();
 			$data['userid']=$userid;
+			
 			$done= $this->userModel->insertaddress($data);
 			if($done)
 			{
