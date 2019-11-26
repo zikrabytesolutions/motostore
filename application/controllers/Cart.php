@@ -20,7 +20,8 @@ class Cart extends CI_Controller
             $this->load->view( 'logincart', $data );
            
         }
-        else{
+        else
+        {
             $data['proinfo'] = $this->cart->contents();
             $this->load->view( 'cart', $data );
         }

@@ -144,7 +144,7 @@
                 <aside class="col-md-4">
                     <section>
                         <div>
-                        <?php if($cartdata): foreach($cartdata as $crd):?>
+                        <?php if($cartdata>0): foreach($cartdata as $crd):?>
                             <table class="table table-bordered cart_details">
                                 <tbody>
                                     <tr>
@@ -163,7 +163,7 @@
                                 <tfoot>
                                     <tr>
                                         <td colspan="5" class="text-center">
-                                           <?php if(count($crd->iteam)>0):?>
+                                           <?php if(count($crd->iteam)>=1):?>
                                             <a class="add-to-cart btn-default btn-sm" href="<?= base_url('checkout')?>">proceed to checkout</a>
                                            <?php else : ?>
                                             <a class="btn-default btn-sm" href="#" style="background-color: #a09c9c">proceed to checkout</a>
