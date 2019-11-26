@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-md-6 col-lg-6 col-sm-12">
             <div class="event-imgbg">
-              <img src="<?= base_url('assets/images/m2.png')?>" alt="" class="img-fluid">
+              <img src="<?= base_url('assets/images/m1.png')?>" alt="" class="img-fluid">
               <div class="event-txt">
                  <a href=""><h2>Events</h2></a>
               </div>
@@ -65,7 +65,7 @@
                   </div>
                   <img src="<?= base_url('assets/images/blog/img1.png')?>" class="img-fluid" alt="alt_text">
                     <div class="event-des">
-                      <p class="event-date">Published on 25 Nov 2019 at 6:30pm  </p>
+                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
                       <h5 class="event-des-title">Title</h5>
                       <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
                      <div class="text-right eventbtn">
@@ -84,7 +84,7 @@
                   </div>
                   <img src="<?= base_url('assets/images/blog/img2.png')?>" class="img-fluid" alt="alt_text">
                   <div class="event-des">
-                      <p class="event-date">Published on 25 Nov 2019 at 6:30pm  </p>
+                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
                       <h5 class="event-des-title">Title</h5>
                       <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
                      <div class="text-right eventbtn">
@@ -100,7 +100,7 @@
                   </div>
                   <img src="<?= base_url('assets/images/blog/img3.png')?>" class="img-fluid" alt="alt_text">
                   <div class="event-des">
-                      <p class="event-date">Published on 25 Nov 2019 at 6:30pm  </p>
+                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
                       <h5 class="event-des-title">Title</h5>
                       <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
                      <div class="text-right eventbtn">
@@ -116,7 +116,7 @@
                   </div>
                   <img src="<?= base_url('assets/images/blog/img1.png')?>" class="img-fluid" alt="alt_text">
                   <div class="event-des">
-                      <p class="event-date">Published on 25 Nov 2019 at 6:30pm  </p>
+                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
                       <h5 class="event-des-title">Title</h5>
                       <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
                      <div class="text-right eventbtn">
@@ -132,7 +132,7 @@
                   </div>
                   <img src="<?= base_url('assets/images/blog/img2.png')?>" class="img-fluid" alt="alt_text">
                   <div class="event-des">
-                      <p class="event-date">Published on 25 Nov 2019 at 6:30pm  </p>
+                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
                       <h5 class="event-des-title">Title</h5>
                       <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
                      <div class="text-right eventbtn">
@@ -148,7 +148,7 @@
                   </div>
                   <img src="<?= base_url('assets/images/blog/img3.png')?>" class="img-fluid" alt="alt_text">
                   <div class="event-des">
-                      <p class="event-date">Published on 25 Nov 2019 at 6:30pm  </p>
+                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
                       <h5 class="event-des-title">Title</h5>
                       <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
                      <div class="text-right eventbtn">
@@ -164,7 +164,7 @@
                   </div>
                   <img src="<?= base_url('assets/images/blog/img1.png')?>" class="img-fluid" alt="alt_text">
                   <div class="event-des">
-                      <p class="event-date">Published on 25 Nov 2019 at 6:30pm  </p>
+                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
                       <h5 class="event-des-title">Title</h5>
                       <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
                      <div class="text-right eventbtn">
@@ -180,7 +180,7 @@
                   </div>
                   <img src="<?= base_url('assets/images/blog/img4.png')?>" class="img-fluid" alt="alt_text">
                   <div class="event-des">
-                      <p class="event-date">Published on 25 Nov 2019 at 6:30pm  </p>
+                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
                       <h5 class="event-des-title">Title</h5>
                       <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
                      <div class="text-right eventbtn">

@@ -2247,7 +2247,7 @@ ul#autoSuggestionsList {
 .event-imgbg img,
 .cafe-imgbg img{
     width:100%;
-    height: 450px;
+    height: 550px;
 }
 .cafebg .col-md-6.col-lg-6.col-sm-12{
     padding: 0 !important;
@@ -2259,6 +2259,7 @@ position: absolute;
     right: 0;
     background: #ffff;
     bottom: 60px;
+    color: #707070;
 }
 .cafe-imgbg .cafe-txt a{
 position: absolute;
@@ -2283,12 +2284,16 @@ position: absolute;
 .event-date {
     font-size: 16px;
     font-weight: 500;
-}
-.event-des-title {
     color: #ff0000;
+}
+.event-des-title{
+    
 }
 .eventbtn a{
     color: red;
+}
+.eventbtn i{
+    vertical-align: middle;
 }
 .eventbtn a:hover{
     color: red;
