@@ -25,7 +25,7 @@
             <div class="event-imgbg">
               <img src="<?= base_url('assets/images/m1.png')?>" alt="" class="img-fluid">
               <div class="event-txt">
-                 <a href=""><h2>Events</h2></a>
+                 <a href="#eventblog-sec"><h2>Events</h2></a>
               </div>
             </div>
             
@@ -34,7 +34,7 @@
             <div class="cafe-imgbg">
               <img src="<?= base_url('assets/images/m2.png')?>" alt="" class="img-fluid">
               <div class="cafe-txt">
-              <a href=""><h2>Cafe</h2></a>
+              <a href="#eventgal-sec"><h2>Cafe</h2></a>
             </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
 
 <!-- section eventblog start -->
   
-<section class="eventblog-sec">
+<section class="eventblog-sec" id="eventblog-sec">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -202,7 +202,7 @@
 
 <!-- section eventgal start -->
   
-<section class="eventgal-sec">
+<section class="eventgal-sec" id="eventgal-sec">
   <div class="container">
     <div class="row">
       <div class="col-12">
