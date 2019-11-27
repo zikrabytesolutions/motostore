@@ -50,6 +50,7 @@
 					<div class="owl-stage-outer">
 						<div class="owl-stage">
 							<div class="owl-item">
+								<a href="">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
@@ -66,8 +67,10 @@
 								</div>
 								</div>
 								</div>
+							</a>
 							</div>
 							 <div class="owl-item">
+							 	<a href="">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
@@ -84,8 +87,10 @@
 								</div>
 								</div>
 								</div>
+							</a>
 							</div>
 							<div class="owl-item">
+								<a href="">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img3.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
@@ -102,8 +107,10 @@
 								</div>
 								</div>
 								</div>
+							</a>
 							</div>
 							<div class="owl-item">
+								<a href="">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img4.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
@@ -120,8 +127,10 @@
 								</div>
 								</div>
 								</div>
+							</a>
 							</div>
 							<div class="owl-item">
+								<a href="">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
@@ -138,8 +147,10 @@
 								</div>
 								</div>
 								</div>
+							</a>
 							</div>
 							<div class="owl-item">
+								<a href="">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
@@ -156,8 +167,10 @@
 								</div>
 								</div>
 								</div>
+							</a>
 							</div>
 							<div class="owl-item">
+								<a href="">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img3.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
@@ -174,8 +187,10 @@
 								</div>
 								</div>
 								</div>
+								</a>
 							</div>
 							<div class="owl-item">
+								<a href="">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img4.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
@@ -192,6 +207,7 @@
 								</div>
 								</div>
 								</div>
+							</a>
 							</div> 
 						</div>
 					</div>

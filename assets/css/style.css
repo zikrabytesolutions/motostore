@@ -1756,6 +1756,10 @@ a{
     background-size: 100% 100%;
     background-position: center;
 }
+.cafe-banner{
+    background-image: url('../images/slide-motocafe.png');
+    
+}
 .banner-sec .form-control{
     border-radius: 20px !important;
     background: #fff;
