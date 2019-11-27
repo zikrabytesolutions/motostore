@@ -28,7 +28,7 @@
         <div class="row">
           <div class="col-md-6 col-lg-6 col-sm-12">
             <div class="event-imgbg">
-              <img src="<?= base_url('assets/images/m1.png')?>" alt="" class="img-fluid">
+              <img src="<?= base_url('assets/images/motoevent-bg.png')?>" alt="" class="img-fluid">
               <div class="event-txt">
                  <a href="#eventblog-sec"><h2>Events</h2></a>
               </div>
@@ -37,7 +37,7 @@
           </div>
           <div class="col-md-6 col-lg-6 col-sm-12">
             <div class="cafe-imgbg">
-              <img src="<?= base_url('assets/images/m2.png')?>" alt="" class="img-fluid">
+              <img src="<?= base_url('assets/images/motocafe-bg.png')?>" alt="" class="img-fluid">
               <div class="cafe-txt">
               <a href="#eventgal-sec"><h2>Cafe</h2></a>
             </div>
@@ -67,7 +67,7 @@
       </select>
     </div>
    <div class="col-lg-1 col-sm-6">
-      <button class="btn btn-danger" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+      <button class="btn btn-danger" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
     </div>
     </div>
 </form>

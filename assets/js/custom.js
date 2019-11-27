@@ -425,34 +425,68 @@ $('.category-carousel').owlCarousel({
 				}
 			}
 		})
-$('.pay-book-carousel').owlCarousel({
+$('.domestic-carousel').owlCarousel({
 			dots:false,
-			loop:true,
+			 // dots: ($(".domestic-carousel .owl-item").length > 1) ? true: false,
+    		loop:($(".domestic-carousel .owl-item").length > 3) ? true: false,
 			margin:30,
 			responsiveClass:true,
 			nav: true,
+			autoWidth:true,
 		    navText: [
 		        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
 		        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-		    ],
+		    ],  navigation: true,
+        pagination: true,
+        lazyLoad: true,
 					responsive:{
 				0:{
 					items:1,
-					rows:1
+				
 				},
 				600:{
-					items:2,
-					rows:1
+					items:1,
+				
 				},
 				1000:{
 					items:3, 
-					rows:2
 				}
+				
+			}
+		})
+$('.international-carousel').owlCarousel({
+	        dots:false,
+			 // dots: ($(".international-carousel .owl-item").length > 1) ? true: false,
+    		loop:($(".international-carousel .owl-item").length > 3) ? true: false,
+			margin:30,
+			responsiveClass:true,
+			nav: true,
+			autoWidth:true,
+		    navText: [
+		        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+		        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+		    ],  navigation: true,
+        pagination: true,
+        lazyLoad: true,
+					responsive:{
+				0:{
+					items:1,
+				
+				},
+				600:{
+					items:1,
+				
+				},
+				1000:{
+					items:3, 
+				}
+				
 			}
 		})
 $('.eventgal-carousel').owlCarousel({
 			dots:false,
-			loop:true,
+			// dots: ($(".eventgal-carousel .owl-item").length > 3) ? true: false,
+    		loop:($(".eventgal-carousel .owl-item").length > 3) ? true: false,
 			margin:30,
 			responsiveClass:true,
 			nav: true,
@@ -474,7 +508,8 @@ $('.eventgal-carousel').owlCarousel({
 		})
 $('.eventblog-carousel').owlCarousel({
 			dots:false,
-			loop:true,
+			// dots: ($(".eventblog-carousel .owl-item").length > 3) ? true: false,
+    		loop:($(".eventblog-carousel .owl-item").length > 3) ? true: false,
 			margin:30,
 			responsiveClass:true,
 			nav: true,

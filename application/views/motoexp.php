@@ -36,26 +36,38 @@
 	</div>
 </section>
 <!-- banner section end  -->
-<!-- section pay-book start -->
-<section class="pay-book-sec">
+<!-- section domestic start -->
+<section class="domestic-sec">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<h3 class="side-title">Pay and Book : Limited period offer</h3>
+				<h3 class="side-title">Domestic : Limited period offer</h3>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<div class="owl-carousel owl-theme owl-loaded pay-book-carousel">
+				<div class="owl-carousel owl-theme owl-loaded domestic-carousel">
 					<div class="owl-stage-outer">
 						<div class="owl-stage">
-							<div class="row">
-								<div class="col-md-4">
-									
+							<div class="owl-item">
+								<div class="col-content">
+									<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
+								<div class="pb-content">
+									<div class="pb-left">
+									<h6 class="pb-title txt-h-up">Package</h6>
+									<h5 class="pb-place">Best of Kerala</h5>
+									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<p class="pb-price"><span>7,500</span> / person</p>
+								</div>
+								<div class="pb-right">
+									<p><span class="lbl">4D-3N</span></p>
+									<a href="" class="btn">Get Quote</a>
+								</div>
+								</div>
 								</div>
 							</div>
-							
-							<div class="owl-item">
+							 <div class="owl-item">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
@@ -180,7 +192,7 @@
 								</div>
 								</div>
 								</div>
-							</div>
+							</div> 
 						</div>
 					</div>
 				</div>
@@ -188,8 +200,190 @@
 		</div>
 	</div>
 </section>
-<!-- section pay-book end -->
+<!-- section domestic end -->
 
+<!-- section international start -->
+<section class="international-sec">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h3 class="side-title">International : Limited period offer</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="owl-carousel owl-theme owl-loaded international-carousel">
+					<div class="owl-stage-outer">
+						<div class="owl-stage">
+
+							<div class="owl-item">
+								<a href="">
+								<div class="col-content">
+									<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
+								<div class="pb-content">
+									<div class="pb-left">
+									<h6 class="pb-title txt-h-up">Package</h6>
+									<h5 class="pb-place">Best of Kerala</h5>
+									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<p class="pb-price"><span>7,500</span> / person</p>
+								</div>
+								<div class="pb-right">
+									<p><span class="lbl">4D-3N</span></p>
+									<a href="" class="btn">Get Quote</a>
+								</div>
+								</div>
+								</div>
+							</a>
+							</div>
+							 <div class="owl-item">
+							 	<a href="">
+								<div class="col-content">
+									<img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
+								<div class="pb-content">
+									<div class="pb-left">
+									<h6 class="pb-title txt-h-up">Package</h6>
+									<h5 class="pb-place">Best of Kerala</h5>
+									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<p class="pb-price"><span>7,500</span> / person</p>
+								</div>
+								<div class="pb-right">
+									<p><span class="lbl">4D-3N</span></p>
+									<a href="" class="btn">Get Quote</a>
+								</div>
+								</div>
+								</div>
+							</a>
+							</div>
+							<div class="owl-item">
+								<a href="">
+								<div class="col-content">
+									<img src="<?= base_url();?>assets/images/blog/img3.png" class="img-fluid" alt="alt_text">
+								<div class="pb-content">
+									<div class="pb-left">
+									<h6 class="pb-title txt-h-up">Package</h6>
+									<h5 class="pb-place">Best of Kerala</h5>
+									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<p class="pb-price"><span>7,500</span> / person</p>
+								</div>
+								<div class="pb-right">
+									<p><span class="lbl">4D-3N</span></p>
+									<a href="" class="btn">Get Quote</a>
+								</div>
+								</div>
+								</div>
+							    </a>
+							</div>
+							<div class="owl-item">
+								<a href="">
+								<div class="col-content">
+									<img src="<?= base_url();?>assets/images/blog/img4.png" class="img-fluid" alt="alt_text">
+								<div class="pb-content">
+									<div class="pb-left">
+									<h6 class="pb-title txt-h-up">Package</h6>
+									<h5 class="pb-place">Best of Kerala</h5>
+									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<p class="pb-price"><span>7,500</span> / person</p>
+								</div>
+								<div class="pb-right">
+									<p><span class="lbl">4D-3N</span></p>
+									<a href="" class="btn">Get Quote</a>
+								</div>
+								</div>
+								</div>
+							</a>
+							</div>
+							<div class="owl-item">
+								<a href="">
+								<div class="col-content">
+									<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
+								<div class="pb-content">
+									<div class="pb-left">
+									<h6 class="pb-title txt-h-up">Package</h6>
+									<h5 class="pb-place">Best of Kerala</h5>
+									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<p class="pb-price"><span>7,500</span> / person</p>
+								</div>
+								<div class="pb-right">
+									<p><span class="lbl">4D-3N</span></p>
+									<a href="" class="btn">Get Quote</a>
+								</div>
+								</div>
+								</div>
+							</a>
+							</div>
+							<div class="owl-item">
+								<a href="">
+								<div class="col-content">
+									<img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
+								<div class="pb-content">
+									<div class="pb-left">
+									<h6 class="pb-title txt-h-up">Package</h6>
+									<h5 class="pb-place">Best of Kerala</h5>
+									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<p class="pb-price"><span>7,500</span> / person</p>
+								</div>
+								<div class="pb-right">
+									<p><span class="lbl">4D-3N</span></p>
+									<a href="" class="btn">Get Quote</a>
+								</div>
+								</div>
+								</div>
+							</a>
+							</div>
+							<div class="owl-item">
+								<a href="">
+								<div class="col-content">
+									<img src="<?= base_url();?>assets/images/blog/img3.png" class="img-fluid" alt="alt_text">
+								<div class="pb-content">
+									<div class="pb-left">
+									<h6 class="pb-title txt-h-up">Package</h6>
+									<h5 class="pb-place">Best of Kerala</h5>
+									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<p class="pb-price"><span>7,500</span> / person</p>
+								</div>
+								<div class="pb-right">
+									<p><span class="lbl">4D-3N</span></p>
+									<a href="" class="btn">Get Quote</a>
+								</div>
+								</div>
+								</div>
+							</a>
+							</div>
+							<div class="owl-item">
+								<a href="">
+								<div class="col-content">
+									<img src="<?= base_url();?>assets/images/blog/img4.png" class="img-fluid" alt="alt_text">
+								<div class="pb-content">
+									<div class="pb-left">
+									<h6 class="pb-title txt-h-up">Package</h6>
+									<h5 class="pb-place">Best of Kerala</h5>
+									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<p class="pb-price"><span>7,500</span> / person</p>
+								</div>
+								<div class="pb-right">
+									<p><span class="lbl">4D-3N</span></p>
+									<a href="" class="btn">Get Quote</a>
+								</div>
+								</div>
+								</div>
+							</a>
+							</div> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- section international end -->
 <?php include 'footer.php'; ?>
 	</div>
 <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
