@@ -1888,6 +1888,37 @@ position: absolute !important;
     border-radius: 20px !important;
     box-shadow: 0 0px 3px 0px #7b6e6e !important;
 }
+
+.pay-book-sec{
+    padding: 40px 0px;
+}
+.pay-book-carousel img{
+    border-radius: 8px 8px 0px 0px;
+}
+.owl-carousel.pay-book-carousel .owl-nav button.owl-next{
+    position: absolute !important;
+    top: 28% !important;
+    right: -2% !important;
+    color: red !important;
+    background: #fff !important;
+    text-align: center !important;
+    font-size: 20px !important;
+    padding: 2px 12px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 0px 3px 0px #7b6e6e !important;
+}
+.owl-carousel.pay-book-carousel .owl-nav button.owl-prev{
+    position: absolute !important;
+    top: 28% !important;
+    left: -2% !important;
+    color: red !important;
+    background: #fff !important;
+    text-align: center !important;
+    font-size: 20px !important;
+    padding: 2px 12px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 0px 3px 0px #7b6e6e !important;
+}
 .pb-content{
     padding: 20px 10px;
     display: block;
@@ -2268,6 +2299,8 @@ ul#autoSuggestionsList {
     bottom: 60px;
     color: #ff0000;
     text-align: right;
+    border-radius: 4px 0px 0px 4px;
+    box-shadow: 0px 1px 6px rgba(255,255,255,0.5);
 }
 .cafe-imgbg .cafe-txt a{
  position: absolute;
@@ -2276,6 +2309,9 @@ ul#autoSuggestionsList {
     background: #ff0000;
     bottom: 60px;
     color: #fff;
+    border-radius: 0px 4px 4px 0px;
+    box-shadow: 0px 1px 2px rgba(255,255,255,0.5);
+}
 }
 .event-imgbg .event-txt a:hover,
 {
@@ -2283,6 +2319,9 @@ ul#autoSuggestionsList {
 }
 .cafe-imgbg .cafe-txt a:hover{
     color: #fff;
+}
+.event-des-txt{
+    text-align: justify;
 }
 .event-des {
     padding: 10px 20px 20px 20px;

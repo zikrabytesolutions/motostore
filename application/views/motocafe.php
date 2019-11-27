@@ -67,7 +67,7 @@
       </select>
     </div>
    <div class="col-lg-1 col-sm-6">
-      <button class="btn btn-danger" type="button">Go</button>
+      <button class="btn btn-danger" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
     </div>
     </div>
 </form>
