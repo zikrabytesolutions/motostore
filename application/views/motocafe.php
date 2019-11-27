@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <?php include 'css.php'; ?>
+
+       <link rel="stylesheet" href="<?= base_url('assets/css/select2-3.5.2/select2.css') ?>" />
+        <link rel="stylesheet" href="<?= base_url('assets/css/select2-bootstrap/select2-bootstrap.css') ?>" />
+
 </head>
 
 <body>
@@ -49,9 +53,20 @@
 <section class="eventblog-sec" id="eventblog-sec">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-8">
         <h3 class="side-title">Events</h3>
       </div>
+       <div class="col-3">
+      <select class="form-control selectplace" name="place" id="place">
+        <option value="">Select Place</option>
+        <option value="">Place1</option>
+        <option value="">Place2</option>
+        <option value="">Place3</option>
+      </select>
+    </div>
+   <div class="col-1">
+      <button class="btn btn-danger" type="button">Go</button>
+    </div>
     </div>
     <div class="row">
       <div class="col-12">
@@ -67,7 +82,7 @@
                   <img src="<?= base_url('admin/assets/eventimages/'.$ev->images)?>" class="img-fluid" alt="alt_text">
                     <div class="event-des">
                       <p class="event-date"><?= date("d M,Y,h:i A", strtotime($ev->eventdate))?> </p>
-                      <h5 class="event-des-title">
+                      <h5 class="event-des-title" data-toggle="tooltip" title="<?php echo $ev->name ;?>">
                       <?php
                                                     if(strlen($ev->name)>20)
                                                     {
@@ -81,18 +96,18 @@
                       </h5>
                       <p class="event-des-txt">
                       <?php
-                                                    if(strlen($ev->description)>140)
+                                                    if(strlen($ev->description)>180)
                                                     {
-                                                     echo  $stringCut = substr($ev->description, 0, 140).' ...';
+                                                     echo  $stringCut = substr($ev->description, 0, 180).' ...';
                                                     }
                                                     else{
-                                                   echo  $stringCut = substr($ev->description, 0, 140);
+                                                   echo  $stringCut = substr($ev->description, 0, 180);
                                                     }
                                                     ?>
                        </p>
-                     <div class="text-right eventbtn">
+                     <!-- <div class="text-right eventbtn">
                         <a href="">Read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                      </div>
+                      </div> -->
                     </div>
                 </div>
               </div>
@@ -145,7 +160,11 @@
 
 </div>
 <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
+
  <?php include 'js.php'; ?>
-  
+  <script type="text/javascript" src="<?= base_url('assets/css/select2-3.5.2/select2.min.js') ?>"></script>
+  <script type="text/javascript">
+    $('.selectplace').select2();
+  </script>
 </body>
 </html> 

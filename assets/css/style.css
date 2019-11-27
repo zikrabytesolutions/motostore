@@ -2264,7 +2264,7 @@ ul#autoSuggestionsList {
     width: 50%;
     padding: 20px;
     right: 0;
-    background: #a0a0a0;
+    background: #000;
     bottom: 60px;
     color: #ff0000;
     text-align: right;
@@ -2320,4 +2320,7 @@ ul#autoSuggestionsList {
     position: absolute;
     right: 0;
     top: -20px;
+}
+.eventblog-carousel .col-content{
+    height: 425px;
 }
