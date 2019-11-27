@@ -148,7 +148,7 @@
               <div class="owl-item">
                 <a href="<?= base_url('admin/assets/eventimages/'.$gl->images)?>" data-toggle="lightbox" data-gallery="example-gallery">
                 <img src="<?= base_url('admin/assets/eventimages/'.$gl->images)?>" class="img-fluid" alt="alt_text">
-                <h5><?= $gl->title?></h5>
+                <!-- <h5><?= $gl->title?></h5> -->
                 </a>
               </div>
               <?php endforeach; endif;?>
