@@ -2306,13 +2306,16 @@ ul#autoSuggestionsList {
     
 }
 .eventbtn a{
-    color: red;
+    color: #fff;
+    padding: 5px 15px;
+    background: red;
+    border-radius: 20px;
 }
 .eventbtn i{
     vertical-align: middle;
 }
 .eventbtn a:hover{
-    color: red;
+    color: #fff;
 }
 .rst-filter-link{
     font-size: 15px;
