@@ -23,7 +23,7 @@
       </header>
       <!-- header end -->
   <!-- banner section start -->
-<section class="banner-sec">
+<section class="banner-sec cafe-banner">
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3 text-center">

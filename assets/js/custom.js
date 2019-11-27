@@ -15,7 +15,7 @@ $('.portfolio-carousel').owlCarousel({
 					items:2,
 				},
 				1000:{
-					items:2, 
+					items:2,
 				}
 			}
 		})
@@ -34,7 +34,7 @@ $('.testimonial-carousel').owlCarousel({
 					items:1,
 				},
 				1000:{
-					items:1, 
+					items:1,
 				}
 			}
 		})
@@ -58,7 +58,7 @@ $('.related-products-carousel').owlCarousel({
 					items:2,
 				},
 				1000:{
-					items:3, 
+					items:3,
 				}
 			}
 		})
@@ -94,7 +94,7 @@ if(itemsNav){
 }
 
 // $('.items-nav').on('mouseenter', '.slick-slide', function (e) {
-// var $currTarget = $(e.currentTarget), 
+// var $currTarget = $(e.currentTarget),
 //     index = $currTarget.data('slick-index'),
 //     slickObj = $('.item-nav').slick('getSlick');
 
@@ -112,7 +112,7 @@ if(itemsNav){
 
 
 // $('[data-fancybox="images"]').fancybox({
-//   buttons : [ 
+//   buttons : [
 //     'slideShow',
 //     'share',
 //     'zoom',
@@ -177,7 +177,7 @@ var api = $easyzoom.data('easyZoom');
 $('#motostoreContactForm').on('submit', function(e) {
 
 	e.preventDefault();
-	
+
 	$('.has-error').removeClass('has-error');
 	$('.js-show-feedback').removeClass('js-show-feedback');
 
@@ -187,7 +187,7 @@ $('#motostoreContactForm').on('submit', function(e) {
 	var phone = form.find('#phone').val();
 	var message = form.find('#message').val();
 	//var ajaxurl = form.data('url');
-	
+
 	//Contact form Error
 
 	if( name === '' ) {
@@ -280,7 +280,7 @@ function showPassword() {
 	$('#showPw').hide();
 	$('#hidePw').show();
 
-$('#showPw').toggleClass('shw');			
+$('#showPw').toggleClass('shw');
   var x = document.getElementById("password");
   if (x.type === "password") {
     x.type = "text";
@@ -300,7 +300,7 @@ function hidePassword() {
 	$('#showPw').show();
 	$('#hidePw').hide();
 
-$('#hidePw').toggleClass('shw');			
+$('#hidePw').toggleClass('shw');
   var x = document.getElementById("password");
   if (x.type === "text") {
     x.type = "password";
@@ -320,7 +320,7 @@ function showPassword1() {
 	$('#showPw1').hide();
 	$('#hidePw1').show();
 
-$('#showPw1').toggleClass('shw');			
+$('#showPw1').toggleClass('shw');
   var x = document.getElementById("password1");
   if (x.type === "password") {
     x.type = "text";
@@ -340,7 +340,7 @@ function hidePassword1() {
 	$('#showPw1').show();
 	$('#hidePw1').hide();
 
-$('#hidePw1').toggleClass('shw');			
+$('#hidePw1').toggleClass('shw');
   var x = document.getElementById("password1");
   if (x.type === "text") {
     x.type = "password";
@@ -361,7 +361,7 @@ function showPassword2() {
 	$('#showPw2').hide();
 	$('#hidePw2').show();
 
-$('#showPw2').toggleClass('shw');			
+$('#showPw2').toggleClass('shw');
   var x = document.getElementById("password2");
   if (x.type === "password") {
     x.type = "text";
@@ -381,7 +381,7 @@ function hidePassword2() {
 	$('#showPw2').show();
 	$('#hidePw2').hide();
 
-$('#hidePw2').toggleClass('shw');			
+$('#hidePw2').toggleClass('shw');
   var x = document.getElementById("password2");
   if (x.type === "text") {
     x.type = "password";
@@ -421,39 +421,72 @@ $('.category-carousel').owlCarousel({
 					items:2,
 				},
 				1000:{
-					items:4, 
+					items:4,
 				}
 			}
 		})
-$('.pay-book-carousel').owlCarousel({
+$('.domestic-carousel').owlCarousel({
 			dots:false,
-			loop:true,
+			 // dots: ($(".domestic-carousel .owl-item").length > 1) ? true: false,
+    		loop:($(".domestic-carousel .owl-item").length > 3) ? true: false,
 			margin:30,
 			responsiveClass:true,
 			nav: true,
+			autoWidth:true,
 		    navText: [
 		        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
 		        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-		    ],
+		    ],  navigation: true,
+        pagination: true,
+        lazyLoad: true,
 					responsive:{
 				0:{
 					items:1,
-					rows:1
+
 				},
 				600:{
-					items:2,
-					rows:1
+					items:1,
+
 				},
 				1000:{
-					items:3, 
-					rows:2
+					items:3,
 				}
+
+			}
+		})
+$('.international-carousel').owlCarousel({
+	        dots:false,
+			 // dots: ($(".international-carousel .owl-item").length > 1) ? true: false,
+    		loop:($(".international-carousel .owl-item").length > 3) ? true: false,
+			margin:30,
+			responsiveClass:true,
+			nav: true,
+			autoWidth:true,
+		    navText: [
+		        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+		        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+		    ],  navigation: true,
+        pagination: true,
+        lazyLoad: true,
+					responsive:{
+				0:{
+					items:1,
+
+				},
+				600:{
+					items:1,
+
+				},
+				1000:{
+					items:3,
+				}
+
 			}
 		})
 $('.eventgal-carousel').owlCarousel({
 			dots:false,
-			loop:true,
-			autoWidth:true,
+			// dots: ($(".eventgal-carousel .owl-item").length > 3) ? true: false,
+    		loop:($(".eventgal-carousel .owl-item").length > 3) ? true: false,
 			margin:30,
 			responsiveClass:true,
 			nav: true,
@@ -469,13 +502,14 @@ $('.eventgal-carousel').owlCarousel({
 					items:2,
 				},
 				1000:{
-					items:4, 
+					items:4,
 				}
 			}
 		})
 $('.eventblog-carousel').owlCarousel({
 			dots:false,
-			loop:true,
+			// dots: ($(".eventblog-carousel .owl-item").length > 3) ? true: false,
+    		loop:($(".eventblog-carousel .owl-item").length > 3) ? true: false,
 			margin:30,
 			responsiveClass:true,
 			nav: true,
@@ -491,7 +525,7 @@ $('.eventblog-carousel').owlCarousel({
 					items:2,
 				},
 				1000:{
-					items:3, 
+					items:3,
 				}
 			}
 		})
@@ -506,7 +540,7 @@ $('.search-ico').on('click', function() {
 $('.close-ico').on('click', function() {
 	$(".search-bar").toggle(200);
 });
-  
+
 
 $('.ft-close').hide();
 $('.ft-open').click(function(){
@@ -524,7 +558,5 @@ $('.ft-close').click(function(){
 
 
 $(document).ready(function(){
-$('[data-toggle="tooltip"]').tooltip();   
+$('[data-toggle="tooltip"]').tooltip();
 });
-
-

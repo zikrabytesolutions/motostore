@@ -1756,6 +1756,10 @@ a{
     background-size: 100% 100%;
     background-position: center;
 }
+.cafe-banner{
+    background-image: url('../images/slide-motocafe.png');
+    
+}
 .banner-sec .form-control{
     border-radius: 20px !important;
     background: #fff;
@@ -1888,14 +1892,16 @@ position: absolute !important;
     border-radius: 20px !important;
     box-shadow: 0 0px 3px 0px #7b6e6e !important;
 }
-
-.pay-book-sec{
+.domestic-sec,
+.international-sec{
     padding: 40px 0px;
 }
-.pay-book-carousel img{
+.domestic-carousel img,
+.international-carousel img{
     border-radius: 8px 8px 0px 0px;
 }
-.owl-carousel.pay-book-carousel .owl-nav button.owl-next{
+.owl-carousel.domestic-carousel .owl-nav button.owl-next,
+.owl-carousel.international-carousel .owl-nav button.owl-next{
     position: absolute !important;
     top: 28% !important;
     right: -2% !important;
@@ -1907,7 +1913,8 @@ position: absolute !important;
     border-radius: 20px !important;
     box-shadow: 0 0px 3px 0px #7b6e6e !important;
 }
-.owl-carousel.pay-book-carousel .owl-nav button.owl-prev{
+.owl-carousel.domestic-carousel .owl-nav button.owl-prev,
+.owl-carousel.international-carousel .owl-nav button.owl-prev{
     position: absolute !important;
     top: 28% !important;
     left: -2% !important;
