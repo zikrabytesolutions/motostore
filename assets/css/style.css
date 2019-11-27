@@ -2314,3 +2314,10 @@ ul#autoSuggestionsList {
 .eventbtn a:hover{
     color: red;
 }
+.rst-filter-link{
+    font-size: 15px;
+    color: red;
+    position: absolute;
+    right: 0;
+    top: -20px;
+}

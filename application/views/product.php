@@ -19,12 +19,18 @@
     <?php include('header.php');?>
     <div class="container-fluid products-body">
       <div class="row mt-50 mb-35 mr-2 ml-2">
-        <aside class="col-md-2 filterside">
+        <button class="btn btn-danger filter-toggle ft-open dsk-hide" type="button">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <button class="btn btn-danger filter-toggle ft-close dsk-hide" type="button">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+        <aside class="col-lg-2 filterside mb-hide" id="filter">
           <section class="products-sidebar">
             <?php echo form_open('product/listfilter')?>
             <div class="shop-by-filter">
               <h5 class="title-border">Shop By  
-                <span style="float:right;font-size:15px;color:red">
+                <span class="rst-filter-link">
                   <a href="<?= base_url('product/lists/'.$this->uri->segment(3).'/'.$this->uri->segment(4))?>" class="rst-link"> Reset Filter</a>
                 </span>
               </h5>

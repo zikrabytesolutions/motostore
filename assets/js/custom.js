@@ -504,7 +504,23 @@ $('.close-ico').on('click', function() {
 });
   
 
+$('.ft-close').hide();
+$('.ft-open').click(function(){
+	$('#filter').show();
+	$('.ft-open').hide();
+	$('.ft-close').show();
+
+});
+$('.ft-close').click(function(){
+	$('#filter').hide();
+	$('.ft-close').hide();
+	$('.ft-open').show();
+
+});
+
 
 $(document).ready(function(){
 $('[data-toggle="tooltip"]').tooltip();   
 });
+
+
