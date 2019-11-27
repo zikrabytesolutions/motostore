@@ -18,7 +18,7 @@
     <!-- header start -->
       <header>
         <div class="cafe-logo">
-         <a class="cafemid-logo" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motocafe.png'); ?>" height="64px" width="164px"></a> 
+         <a class="cafemid-logo" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motocafe.png'); ?>" height="64px" width="164px"></a>
         </div>
       </header>
       <!-- header end -->
@@ -33,7 +33,7 @@
                  <a href="#eventblog-sec"><h2>Events</h2></a>
               </div>
             </div>
-            
+
           </div>
           <div class="col-md-6 col-lg-6 col-sm-12">
             <div class="cafe-imgbg">
@@ -50,25 +50,27 @@
 
 
 <!-- section eventblog start -->
-  
+
 <section class="eventblog-sec" id="eventblog-sec">
   <div class="container">
+  <?php echo form_open('Motocafe/post')?>
     <div class="row">
       <div class="col-lg-8 col-sm-12">
         <h3 class="side-title">Events</h3>
       </div>
       <div class="col-lg-3 col-sm-6">
       <select class="form-control selectplace" name="place" id="place">
-        <option value="">Select Place</option>
-        <option value="">Place1</option>
-        <option value="">Place2</option>
-        <option value="">Place3</option>
+      <option value="">Select Place</option>
+      <?php  if($select): foreach($select as $sel):?>
+        <option value="<?= $sel->place?>" <?php if($selected==$sel->place){echo "selected";}?>><?= $sel->place?></option>
+        <?php endforeach; endif;?>
       </select>
     </div>
    <div class="col-lg-1 col-sm-6">
       <button class="btn btn-danger" type="button">Go</button>
     </div>
     </div>
+</form>
     <div class="row">
       <div class="col-12">
         <div class="owl-carousel owl-theme owl-loaded eventblog-carousel">
@@ -93,7 +95,7 @@
                                                    echo  $stringCut = substr($ev->name, 0, 20);
                                                     }
                                                     ?>
-                     
+
                       </h5>
                       <p class="event-des-txt">
                       <?php
@@ -125,7 +127,7 @@
 
 
 <!-- section eventgal start -->
-  
+
 <section class="eventgal-sec" id="eventgal-sec">
   <div class="container">
     <div class="row">
@@ -134,7 +136,7 @@
       </div>
       <div class="col-lg-2 text-right eventbtn">
         <a href="<?= base_url();?>motocafe/viewall">View All </a>
-       
+
       </div>
     </div>
     <div class="row">
@@ -178,4 +180,4 @@
             });
   </script>
 </body>
-</html> 
+</html>
