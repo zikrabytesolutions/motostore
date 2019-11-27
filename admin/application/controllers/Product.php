@@ -603,7 +603,7 @@ function filterproduct()
    
     if(!empty($_FILES['files']['name']))
     {
-      echo  $filesCount = count($_FILES['files']['name']);
+        $filesCount = count($_FILES['files']['name']);
         for($i = 0; $i < $filesCount; $i++)
         {
             $uniqueid=uniqid();
