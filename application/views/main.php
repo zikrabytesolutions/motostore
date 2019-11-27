@@ -57,10 +57,10 @@
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-6">
 					<div class="img-block second">
-						<a href="">
+						<a href="<?= base_url('motocafe')?>">
 							<img src="<?= base_url('assets/images/m2.png')?>" alt="" class="img-fluid">
 							<div class="overlay-text">
-								<a href="<?= base_url('home')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motocafe.png')?>"></a>
+								<a href="<?= base_url('motocafe/view')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motocafe.png')?>"></a>
 							</div>
 						</a>
 					</div>

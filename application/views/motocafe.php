@@ -52,22 +52,24 @@
   
 <section class="eventblog-sec" id="eventblog-sec">
   <div class="container">
+  <?php echo form_open('Motocafe/post')?>
     <div class="row">
       <div class="col-8">
         <h3 class="side-title">Events</h3>
       </div>
        <div class="col-3">
       <select class="form-control selectplace" name="place" id="place">
-        <option value="">Select Place</option>
-        <option value="">Place1</option>
-        <option value="">Place2</option>
-        <option value="">Place3</option>
+      <option value="">Select Place</option>
+      <?php  if($select): foreach($select as $sel):?>
+        <option value="<?= $sel->place?>" <?php if($selected==$sel->place){echo "selected";}?>><?= $sel->place?></option>
+        <?php endforeach; endif;?>
       </select>
     </div>
    <div class="col-1">
-      <button class="btn btn-danger" type="button">Go</button>
+      <button class="btn btn-danger" type="submit">Go</button>
     </div>
     </div>
+</form>
     <div class="row">
       <div class="col-12">
         <div class="owl-carousel owl-theme owl-loaded eventblog-carousel">

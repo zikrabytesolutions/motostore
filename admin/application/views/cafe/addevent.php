@@ -153,6 +153,47 @@
                             </div>
                         </div>
                     </div>
+<!--edit-->
+                    <div class="modal fade" id="myModaledit<?= $i?>" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="color-line"></div>
+                                <div class="modal-header text-center">
+                                    <h4 class="modal-title">Event Details</h4>
+                                 
+                                </div>
+                                <div class="modal-body">
+                                <div class="row">
+                                   <div class="col-md-3"><p> Event Name</p></div> 
+                                   <div class="col-md-9"><strong><?= $ev->name?></strong></div>
+                                </div>
+                                <div class="row">
+                                   <div class="col-md-3"><p> Event Place</p></div> 
+                                   <div class="col-md-9"><p><strong><?= $ev->place?></strong></p></div>
+                                </div>
+
+                                <div class="row">
+                                   <div class="col-md-3"><p> Event Date</div> 
+                                   <div class="col-md-9"><p><strong><?= date("d M, Y, h:i", strtotime($ev->eventdate));?></strong></p></div>
+                                </div>
+
+                                <div class="row">
+                                   <div class="col-md-3"><p> Description</div> 
+                                   <div class="col-md-9"><p><strong><?= $ev->description?></strong></p></div>
+                                </div>
+
+                                <div class="row">
+                                  
+                                   <div class="col-md-12"><img src="<?= base_url('assets/eventimages/'.$ev->images)?>" width="300px"></div>
+                                </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>           
                 <?php endforeach; endif?>
                 </tbody>
