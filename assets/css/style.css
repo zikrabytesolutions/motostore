@@ -2107,15 +2107,21 @@ aside.filterside {
 .ty-sec{
     padding: 60px 0px;
 }
-.ty-dtl{
+.ty-dtl {
     margin-top: 30px;
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,.5);
+    border-radius: 20px;
 }
 .tymsg h1{
-        color: #f80000;
+       color: #f80000;
     font-weight: 600;
+    font-size: 42px;
+    margin-bottom: 35px;
 }
 .tymsg p{
-  font-size: 20px;
+      font-size: 18px;
+    line-height: 14px;
 }
 .ty-dtl ul{
     list-style-type: none;
@@ -2143,6 +2149,7 @@ aside.filterside {
 }
 .tybtn{
     margin-top: 30px;
+    text-align: right;
 }
 .btn:hover {
     color: #fff;
@@ -2253,20 +2260,29 @@ ul#autoSuggestionsList {
     padding: 0 !important;
 } 
 .event-imgbg .event-txt a{
-position: absolute;
+    position: absolute;
     width: 50%;
     padding: 20px;
     right: 0;
-    background: #ffff;
+    background: #a0a0a0;
     bottom: 60px;
-    color: #707070;
+    color: #ff0000;
+    text-align: right;
 }
 .cafe-imgbg .cafe-txt a{
-position: absolute;
+ position: absolute;
     width: 50%;
     padding: 20px;
-    background: #ffff;
+    background: #ff0000;
     bottom: 60px;
+    color: #fff;
+}
+.event-imgbg .event-txt a:hover,
+{
+    color: #fff;    
+}
+.cafe-imgbg .cafe-txt a:hover{
+    color: #fff;
 }
 .event-des {
     padding: 10px 20px 20px 20px;

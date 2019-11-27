@@ -21,15 +21,15 @@
         <div class="row text-center">
           <div class="col-md-12">
             <div class="tymsg">
-              <h1>Thank you.</h1>
-              <p style="text-align:center"> Your order has been received.</p>
-              <p style="text-align:center"> Your account has been created. Check your email for account verification.</p>
+              <h1>Thank you !</h1>
+              <p> Your order has been received.</p>
+              <p> Your account has been created. Check your email for account verification.</p>
             </div>
           </div>
         </div>
         <?php date_default_timezone_set('Asia/Kolkata'); if($order): foreach($order as $ord):?>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6 offset-md-3">
             <div class="ty-dtl">
               <ul class="">
                 <li><b>Order number: </b> <?= $ord->orderdid?></li>
