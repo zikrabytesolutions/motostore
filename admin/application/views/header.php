@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/vendor/bootstrap/dist/css/bootstrap.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/vendor/summernote/dist/summernote.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/vendor/summernote/dist/summernote-bs3.css')?>" />
-
+    <link rel="stylesheet" href="<?= base_url('assetsvendor/sweetalert/lib/sweet-alert.css')?>" />
     <!-- App styles -->
     <link rel="stylesheet" href="<?= base_url('assets/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/fonts/pe-icon-7-stroke/css/helper.css')?>" />
@@ -204,7 +204,7 @@
                 <a href="#"><span class="nav-label">Moto Cafe </span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
                     <li class="active"><a href="<?= base_url('event/add')?>"> Event</a></li>
-                    <li class="active"><a href="<?= base_url('product/lists')?>"> Gallery</a></li>
+                    <li class="active"><a href="<?= base_url('event/gallery')?>"> Gallery</a></li>
                    
                   
                   

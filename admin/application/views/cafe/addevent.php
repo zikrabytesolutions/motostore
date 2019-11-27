@@ -71,19 +71,47 @@
                 <tr>
                     <td><?= $i;?></td>
                     <td><img src="<?= base_url('assets/eventimages/'.$ev->images)?>" width="50px"></td>
-                    <td><?= $ev->name;?></td>
+                    <td><p aria-pressed="true" data-toggle="tooltip" data-placement="top" title="<?= $ev->name?>"><?php if(strlen($ev->name)>20)
+                                                        {
+                                                           echo  $stringCut = substr($ev->name, 0, 20).' ...';
+                                                       }
+                                                       else{
+                                                         echo  $stringCut = substr($ev->name, 0, 20);
+                                                     }?></p>
+                                                     </td>
                     <td><?= $ev->place;?></td>
                     <td><?= date("d-m-Y", strtotime($ev->eventdate));?></td>
                     <td>
                         <button class="btn btn-primary btn-xs" type="button" data-toggle="modal" data-target="#myModal<?= $i?>"><i class="fa fa-search" aria-hidden="true"></i></button>
                          <?php if($ev->status==0):?>
-                                <a  href="<?= base_url('event/on/'.$ev->id)?>"  class="btn btn-warning btn-xs"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For active"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
+                                <a  href="<?= base_url('event/on/'.$ev->id)?>"  class="btn btn-warning btn-xs"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For active"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
                          <?php else:?>
-                                <a  href="<?= base_url('event/off/'.$ev->id)?>" class="btn btn-success btn-xs"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For In active"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                <a  href="<?= base_url('event/off/'.$ev->id)?>" class="btn btn-success btn-xs"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For In active"><i class="fa fa-eye" aria-hidden="true"></i></a>
                          <?php endif?>
-                        <button class="btn btn-danger btn-xs" ><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#myModalsm<?= $i?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </td>
                 </tr>
+<!-- delete-->
+                <div class="modal fade" id="myModalsm<?=$i?>" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog modal-xs">
+                            <div class="modal-content">
+                                <div class="color-line"></div>
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Delete Event</h4>
+                                   
+                                </div>
+                                <div class="modal-body">
+                                    <h3 style="color:red"><b> Are you sure you want to Delete? </b></h3>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                    <a href="<?= base_url('event/delete/'.$ev->id)?>" class="btn btn-primary">Yes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="modal fade" id="myModal<?= $i?>" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog">
@@ -134,3 +162,4 @@
         </div>
     </div>
 </div>
+

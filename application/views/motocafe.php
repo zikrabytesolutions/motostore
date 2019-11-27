@@ -58,137 +58,45 @@
         <div class="owl-carousel owl-theme owl-loaded eventblog-carousel">
           <div class="owl-stage-outer">
             <div class="owl-stage">
+        <?php date_default_timezone_set('Asia/Kolkata'); if($event): foreach($event as $ev):?>
               <div class="owl-item">
                 <div class="col-content">
                   <div class="event-place">
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Bangalore</p>
+                    <p><i class="fa fa-map-marker" aria-hidden="true">&nbsp; </i><?= $ev->place?></p>
                   </div>
-                  <img src="<?= base_url('assets/images/blog/img1.png')?>" class="img-fluid" alt="alt_text">
+                  <img src="<?= base_url('admin/assets/eventimages/'.$ev->images)?>" class="img-fluid" alt="alt_text">
                     <div class="event-des">
-                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
-                      <h5 class="event-des-title">Title</h5>
-                      <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
-                     <div class="text-right eventbtn">
-                        <a href="">Read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                      </div>
-                      
-                    </div>
-
-
-                </div>
-              </div>
-              <div class="owl-item">
-                <div class="col-content">
-                  <div class="event-place">
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Bangalore</p>
-                  </div>
-                  <img src="<?= base_url('assets/images/blog/img2.png')?>" class="img-fluid" alt="alt_text">
-                  <div class="event-des">
-                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
-                      <h5 class="event-des-title">Title</h5>
-                      <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
-                     <div class="text-right eventbtn">
-                        <a href="">Read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="owl-item">
-                <div class="col-content">
-                  <div class="event-place">
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Bangalore</p>
-                  </div>
-                  <img src="<?= base_url('assets/images/blog/img3.png')?>" class="img-fluid" alt="alt_text">
-                  <div class="event-des">
-                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
-                      <h5 class="event-des-title">Title</h5>
-                      <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
+                      <p class="event-date"><?= date("d M,Y,h:i A", strtotime($ev->eventdate))?> </p>
+                      <h5 class="event-des-title">
+                      <?php
+                                                    if(strlen($ev->name)>20)
+                                                    {
+                                                     echo  $stringCut = substr($ev->name, 0, 20).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($ev->name, 0, 20);
+                                                    }
+                                                    ?>
+                     
+                      </h5>
+                      <p class="event-des-txt">
+                      <?php
+                                                    if(strlen($ev->description)>140)
+                                                    {
+                                                     echo  $stringCut = substr($ev->description, 0, 140).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($ev->description, 0, 140);
+                                                    }
+                                                    ?>
+                       </p>
                      <div class="text-right eventbtn">
                         <a href="">Read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                       </div>
                     </div>
                 </div>
               </div>
-              <div class="owl-item">
-                <div class="col-content">
-                  <div class="event-place">
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Bangalore</p>
-                  </div>
-                  <img src="<?= base_url('assets/images/blog/img1.png')?>" class="img-fluid" alt="alt_text">
-                  <div class="event-des">
-                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
-                      <h5 class="event-des-title">Title</h5>
-                      <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
-                     <div class="text-right eventbtn">
-                        <a href="">Read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="owl-item">
-                <div class="col-content">
-                  <div class="event-place">
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Bangalore</p>
-                  </div>
-                  <img src="<?= base_url('assets/images/blog/img2.png')?>" class="img-fluid" alt="alt_text">
-                  <div class="event-des">
-                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
-                      <h5 class="event-des-title">Title</h5>
-                      <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
-                     <div class="text-right eventbtn">
-                        <a href="">Read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="owl-item">
-                <div class="col-content">
-                  <div class="event-place">
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Bangalore</p>
-                  </div>
-                  <img src="<?= base_url('assets/images/blog/img3.png')?>" class="img-fluid" alt="alt_text">
-                  <div class="event-des">
-                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
-                      <h5 class="event-des-title">Title</h5>
-                      <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
-                     <div class="text-right eventbtn">
-                        <a href="">Read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="owl-item">
-                <div class="col-content">
-                  <div class="event-place">
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Bangalore</p>
-                  </div>
-                  <img src="<?= base_url('assets/images/blog/img1.png')?>" class="img-fluid" alt="alt_text">
-                  <div class="event-des">
-                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
-                      <h5 class="event-des-title">Title</h5>
-                      <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
-                     <div class="text-right eventbtn">
-                        <a href="">Read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="owl-item">
-                <div class="col-content">
-                  <div class="event-place">
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Bangalore</p>
-                  </div>
-                  <img src="<?= base_url('assets/images/blog/img4.png')?>" class="img-fluid" alt="alt_text">
-                  <div class="event-des">
-                      <p class="event-date">25 Nov 2019 at 6:30pm  </p>
-                      <h5 class="event-des-title">Title</h5>
-                      <p class="event-des-txt">Front-loading the Hiring Process: How Seismic is Maximizing Recruiting Time</p>
-                     <div class="text-right eventbtn">
-                        <a href="">Read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                </div>
-              </div>
+        <?php endforeach; endif;?>
             </div>
           </div>
         </div>
@@ -214,38 +122,12 @@
         <div class="owl-carousel owl-theme owl-loaded eventgal-carousel">
           <div class="owl-stage-outer">
             <div class="owl-stage">
+            <?php if($gallery): foreach($gallery as $gl):?>
               <div class="owl-item">
-                <img src="<?= base_url('assets/images/profile/img1.png')?>" class="img-fluid" alt="alt_text">
-                <h5>Ride 1</h5>
+                <img src="<?= base_url('admin/assets/eventimages/'.$gl->images)?>" class="img-fluid" alt="alt_text">
+                <h5><?= $gl->title?></h5>
               </div>
-              <div class="owl-item">
-                <img src="<?= base_url('assets/images/profile/img2.png')?>" class="img-fluid" alt="alt_text">
-                <h5>Ride 2</h5>
-              </div>
-              <div class="owl-item">
-                <img src="<?= base_url('assets/images/profile/img3.png')?>" class="img-fluid" alt="alt_text">
-                <h5>Ride 3</h5>
-              </div>
-              <div class="owl-item">
-                <img src="<?= base_url('assets/images/profile/img4.png')?>" class="img-fluid" alt="alt_text">
-                <h5>Ride 4</h5>
-              </div>
-              <div class="owl-item">
-                <img src="<?= base_url('assets/images/profile/img1.png')?>" class="img-fluid" alt="alt_text">
-                <h5>Ride 5</h5>
-              </div>
-              <div class="owl-item">
-                <img src="<?= base_url('assets/images/profile/img2.png')?>" class="img-fluid" alt="alt_text">
-                <h5>Ride 6</h5>
-              </div>
-              <div class="owl-item">
-                <img src="<?= base_url('assets/images/profile/img3.png')?>" class="img-fluid" alt="alt_text">
-                <h5>Ride 7</h5>
-              </div>
-              <div class="owl-item">
-                <img src="<?= base_url('assets/images/profile/img4.png')?>" class="img-fluid" alt="alt_text">
-                <h5>Ride 8</h5>
-              </div>
+              <?php endforeach; endif;?>
             </div>
           </div>
         </div>

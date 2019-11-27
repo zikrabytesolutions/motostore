@@ -29,7 +29,7 @@
 <script src="<?= base_url('assets/')?>vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
 <script src="<?= base_url('assets/')?>vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
 
-<!-- App scripts -->
+
 <script src="<?= base_url('assets/scripts/homer.js')?>"></script>
 
 
