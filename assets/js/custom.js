@@ -453,6 +453,7 @@ $('.pay-book-carousel').owlCarousel({
 $('.eventgal-carousel').owlCarousel({
 			dots:false,
 			loop:true,
+			autoWidth:true,
 			margin:30,
 			responsiveClass:true,
 			nav: true,

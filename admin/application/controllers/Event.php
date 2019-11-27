@@ -94,7 +94,7 @@ class Event extends MY_Controller
     function gallerysave()
     {
         $title= $this->input->post('title');
-
+        $uploadData = array();
         if(!empty($_FILES['files']['name']))
         {
             $filesCount = count($_FILES['files']['name']);
@@ -123,21 +123,27 @@ class Event extends MY_Controller
                 {
                     // Uploaded file data
                     $fileData = $this->upload->data();
-                    $uploadData[$i]['image'] = $uniqueid.$fileData['file_ext'];
-                    $uploadData[$i]['proid'] = $proid;
-                    $uploadData[$i]['prodetailsid'] = $vrtid;
+                    $uploadData[$i]['images'] = $uniqueid.$fileData['file_ext'];
+                    $uploadData[$i]['title'] = $title;
+                   
                 }
             }
             
             if(!empty($uploadData))
             {
-                // Insert files data into the database
-                $insert = $this->productSetting->updateimage($uploadData);
+               
+                $insert = $this->cafeModel->insertgallery($uploadData);
                 // Upload status message
                 $statusMsg = $insert?'Files uploaded successfully.':'Some problem occurred, please try again.';
                 $this->session->set_flashdata('statusMsg',$statusMsg);
                 return redirect('event/gallery');
             }
+            else{
+                echo "ok";
+            }
+        }
+        else{
+            echo "no";
         }
     }
 

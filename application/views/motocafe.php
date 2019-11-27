@@ -60,14 +60,14 @@
       </div>
       <div class="col-lg-3 col-sm-6">
       <select class="form-control selectplace" name="place" id="place">
-      <option value="">Select Place</option>
+      <option value="">All Places</option>
       <?php  if($select): foreach($select as $sel):?>
         <option value="<?= $sel->place?>" <?php if($selected==$sel->place){echo "selected";}?>><?= $sel->place?></option>
         <?php endforeach; endif;?>
       </select>
     </div>
    <div class="col-lg-1 col-sm-6">
-      <button class="btn btn-danger" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+      <button class="btn btn-danger" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
     </div>
     </div>
 </form>

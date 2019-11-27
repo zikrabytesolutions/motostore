@@ -17,7 +17,7 @@
             
             <div class="form-group">
                     <label class="control-label" for="username">Choose Image</label>
-                    <input type="file" name="files" required="" class="form-control" accept="image/*">
+                    <input type="file" name="files[]" required="" class="form-control" accept="image/*" multiple>
             </div>
             
 

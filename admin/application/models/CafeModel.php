@@ -32,7 +32,9 @@
 
      function insertgallery($data)
      {
-        return $this->db->insert('cafe_gallery',$data);
+        $insert = $this->db->insert_batch('cafe_gallery',$data);
+        return $insert?true:false;
+        
      }
 
      function gallerylist()

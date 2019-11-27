@@ -26,8 +26,6 @@ class Motocafe extends CI_Controller
 			{
                  echo "not found 404 URL Will Comme";
 			}
-			
-			
 		}
 		else
 		{
@@ -45,13 +43,14 @@ class Motocafe extends CI_Controller
 		 $place= $this->input->post('place');
 		 $place=  strtr(base64_encode($place), '+/', '-_');
          $place=  strtr(base64_encode($place), '+/', '-_');
-		 return redirect('motocafe/view/'.$place);
+		 return redirect('motocafe/view/'.$place.'#eventblog-sec');
 	}
 	
 
 	function viewall()
 	{
-		$this->load->view('viewallgallery');
+		$data['allimages']= $this->cafeModel->alliamges();
+		$this->load->view('viewallgallery',$data);
 	}
 }
 

@@ -45,38 +45,18 @@
       </div>
     </div>
     <div class="row">
+     <?php if($allimages): foreach($allimages as $img):?>
       <div class="col-lg-4">
         <div class="eventgal mt-25">
-                <a href="<?= base_url('assets/images/blog/img1.png'); ?>" data-toggle="lightbox" data-gallery="example-gallery">
-                <img src="<?= base_url('assets/images/blog/img1.png'); ?>" class="img-fluid" alt="alt_text">
+                <a href="<?= base_url('admin/assets/eventimages/'.$img->images); ?>" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="<?= base_url('admin/assets/eventimages/'.$img->images); ?>" class="img-fluid" alt="alt_text">
                 <!-- <h5>Title</h5> -->
                 </a>
         </div>
       </div>
-      <div class="col-lg-4 mt-25">
-        <div class="eventgal">
-                <a href="<?= base_url('assets/images/blog/img2.png'); ?>" data-toggle="lightbox" data-gallery="example-gallery">
-                <img src="<?= base_url('assets/images/blog/img2.png'); ?>" class="img-fluid" alt="alt_text">
-                <!-- <h5>Title</h5> -->
-                </a>
-        </div>
-      </div>
-      <div class="col-lg-4 mt-25">
-        <div class="eventgal">
-                <a href="<?= base_url('assets/images/blog/img3.png'); ?>" data-toggle="lightbox" data-gallery="example-gallery">
-                <img src="<?= base_url('assets/images/blog/img3.png'); ?>" class="img-fluid" alt="alt_text">
-                <!-- <h5>Title</h5> -->
-                </a>
-        </div>
-      </div>
-      <div class="col-lg-4 mt-25">
-        <div class="eventgal">
-                <a href="<?= base_url('assets/images/blog/img4.png'); ?>" data-toggle="lightbox" data-gallery="example-gallery">
-                <img src="<?= base_url('assets/images/blog/img4.png'); ?>" class="img-fluid" alt="alt_text">
-                <!-- <h5>Title</h5> -->
-                </a>
-        </div>
-      </div>
+     <?php endforeach; endif;?>
+     
+    
     </div>
   </div>
 </section>

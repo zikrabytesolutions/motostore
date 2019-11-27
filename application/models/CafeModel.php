@@ -39,6 +39,15 @@ class CafeModel extends CI_MOdel
         $query=$this->db->get();
         return $query->result();
     }
+
+    function alliamges()
+    {
+        $this->db->select('*');
+        $this->db->from('cafe_gallery');
+        $this->db->where('status','1');
+        $query=$this->db->get();
+        return $query->result();
+    }
 }
 
 ?>
