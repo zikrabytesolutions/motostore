@@ -61,9 +61,10 @@ class OrderModel extends CI_Model
             }
             else
             {
-                $this->db->select('*');
+                $this->db->select('id,sub_category_name,cat_id');
                 $this->db->like('sub_category_name', $search_data);
                 $this->db->from('sub_category');
+                $this->db->group_by('sub_category_name');
                 $this->db->limit('10');
                 $query= $this->db->get();
                 return $query->result();
