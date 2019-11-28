@@ -66,6 +66,9 @@
                             </div>
                           </li>
                        <?php endforeach; endif?>
+                      <li class="nav-item dropdown">
+                            <a class="nav-link" href="<?= base_url('contact')?>">contact</a>
+                          </li>
                         </ul>
 
                     </div>

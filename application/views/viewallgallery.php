@@ -64,7 +64,7 @@
 
 
 </div>
-<script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
+
 
  <?php include 'js.php'; ?>
   <script type="text/javascript" src="<?= base_url('assets/css/select2-3.5.2/select2.min.js') ?>"></script>
