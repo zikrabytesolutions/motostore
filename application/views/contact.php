@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div class="contact">
+		<?php include 'header.php';?>
 		<section class="contact-header">
 			<h1>Contact Us</h1>
 		</section>
