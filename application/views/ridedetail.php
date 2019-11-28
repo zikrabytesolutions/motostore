@@ -13,11 +13,7 @@
 <body>
   <div class="cafe-page">
     <!-- header start -->
-      <header>
-        <div class="cafe-logo">
-         <a class="cafemid-logo" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motocafe.png'); ?>" height="64px" width="164px"></a>
-        </div>
-      </header>
+     <?php include 'expheader.php'; ?>
       <!-- header end -->
   <!-- banner section start -->
 <section class="banner-sec">
