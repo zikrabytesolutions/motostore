@@ -4,7 +4,7 @@
 			<nav class="navbar navbar-expand-md">
                 <div class="container-fluid">
                     <!-- Brand -->
-                    <a class="navbar-brand d-block" href="<?= base_url('home')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motologo.png')?>"></a>
+                    <a class="navbar-brand d-block" href="<?= base_url('home')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/storelogo.png')?>"></a>
                     <ul class="nav dsk-hide">
                         <li class="nav-item search-nav">
 							           <a class="nav-link search-ico search-ico-d" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
@@ -131,7 +131,13 @@
     position: absolute;
 }
         </style> -->
-        <div class="search-bar">
+        
+
+        
+        <div class="container" style="position: absolute;">
+          <div class="row">
+            <div class="col-lg-6 offset-md-4">
+              <div class="search-bar">
           <input type="text" name="search" placeholder="Search here" id="search_data" type="text" onkeyup="ajaxSearch();">
          <a class="nav-link close-ico" href="#"><i class="fa fa-close" aria-hidden="true"></i></a>
          
@@ -141,8 +147,9 @@
          </ul>
         </div>
         </div>
-
-        
+            </div>
+          </div>
+        </div>
         <script type="text/javascript">
 
 function ajaxSearch()

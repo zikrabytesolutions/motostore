@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Moto Experience</title>
+  <title>Not Found</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -11,6 +11,11 @@
   .ntf-sec{
     padding: 60px 0px;
   }
+  .ntf-sec h1{
+        font-size: 80px;
+    line-height: 80px;
+    margin-bottom: 20px;
+      }
 </style>
 
 </head>
@@ -30,7 +35,8 @@
       <div class="row">
         <div class="col-12 text-center">
           <div>
-            <h1>Page Not Found</h1>
+            <h1 class="text-danger">404</h1>
+            <p>THE PAGE YOU ARE REQUESTED COULD NOT FOUND</p>
           </div>
         </div>
       </div>
