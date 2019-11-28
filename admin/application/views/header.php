@@ -205,9 +205,14 @@
                 <ul class="nav nav-second-level">
                     <li class="active"><a href="<?= base_url('event/add')?>"> Event</a></li>
                     <li class="active"><a href="<?= base_url('event/gallery')?>"> Gallery</a></li>
-                   
-                  
-                  
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><span class="nav-label">Moto experience </span><span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li class="active"><a href="<?= base_url('Motoexperience/place')?>"> Add Place</a></li>
+                    <li class="active"><a href="<?= base_url('event/gallery')?>"> Gallery</a></li>
                 </ul>
             </li>
 
