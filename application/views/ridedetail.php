@@ -7,20 +7,13 @@
 
     <?php include 'css.php'; ?>
 
-       <link rel="stylesheet" href="<?= base_url('assets/css/select2-3.5.2/select2.css') ?>" />
-        <link rel="stylesheet" href="<?= base_url('assets/css/select2-bootstrap/select2-bootstrap.css') ?>" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"/>
 
 </head>
 
 <body>
   <div class="cafe-page">
     <!-- header start -->
-      <header>
-        <div class="cafe-logo">
-         <a class="cafemid-logo" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motocafe.png'); ?>" height="64px" width="164px"></a>
-        </div>
-      </header>
+     <?php include 'expheader.php'; ?>
       <!-- header end -->
   <!-- banner section start -->
 <section class="banner-sec">
@@ -53,7 +46,7 @@
 </section>
 
     <!-- footer start -->
-   <?php include 'footer.php'; ?>
+   <?php include 'expfooter.php'; ?>
     <!-- footer end -->
 
 

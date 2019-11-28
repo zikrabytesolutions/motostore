@@ -9,11 +9,7 @@
 <body>
 	<div class="main-wrapper">
 		<!-- header start -->
-      <header>
-        <div class="cafe-logo">
-         <a class="cafemid-logo" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motocafe.png'); ?>" height="64px" width="164px"></a>
-        </div>
-      </header>
+     <?php include 'expheader.php'; ?>
  <!-- header end -->
 <!-- banner section start -->
 <section class="banner-sec">
@@ -406,7 +402,7 @@
 	</div>
 </section>
 <!-- section international end -->
-<?php include 'footer.php'; ?>
+<?php include 'expfooter.php'; ?>
 	</div>
 <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
 

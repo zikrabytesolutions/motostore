@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Moto store</title>
+    <title>Moto Cafe</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -16,11 +16,7 @@
 <body>
   <div class="cafe-page">
     <!-- header start -->
-      <header>
-        <div class="cafe-logo">
-         <a class="cafemid-logo" href="<?= base_url('')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motocafe.png'); ?>" height="64px" width="164px"></a>
-        </div>
-      </header>
+      <?php include 'cafeheader.php'; ?>
       <!-- header end -->
   <!-- banner section start -->
 <section class="banner-sec cafe-banner">
@@ -63,7 +59,7 @@
 <!-- section eventgal end -->
 
     <!-- footer start -->
-   <?php include 'footer.php'; ?>
+   <?php include 'cafefooter.php'; ?>
     <!-- footer end -->
 
 
