@@ -1892,10 +1892,15 @@ position: absolute !important;
     border-radius: 20px !important;
     box-shadow: 0 0px 3px 0px #7b6e6e !important;
 }
+
+.domesticall-sec,
+.internationalall-sec,
 .domestic-sec,
 .international-sec{
     padding: 40px 0px;
 }
+.domesticall-sec img.dimg,
+.internationalall-sec img.dimg,
 .domestic-carousel img,
 .international-carousel img{
     border-radius: 8px 8px 0px 0px;
@@ -2372,4 +2377,7 @@ ul#autoSuggestionsList {
 }
 .eventblog-carousel .col-content{
     height: 425px;
+}
+.ride-detail{
+    padding:40px 0px;
 }
