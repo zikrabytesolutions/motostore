@@ -7,9 +7,6 @@
 
     <?php include 'css.php'; ?>
 
-       <link rel="stylesheet" href="<?= base_url('assets/css/select2-3.5.2/select2.css') ?>" />
-        <link rel="stylesheet" href="<?= base_url('assets/css/select2-bootstrap/select2-bootstrap.css') ?>" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"/>
 
 </head>
 
@@ -53,7 +50,7 @@
 </section>
 
     <!-- footer start -->
-   <?php include 'footer.php'; ?>
+   <?php include 'expfooter.php'; ?>
     <!-- footer end -->
 
 
