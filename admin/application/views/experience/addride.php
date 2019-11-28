@@ -1,5 +1,8 @@
+<link rel="stylesheet" href="<?= base_url('assets/vendor/select2-3.5.2/select2.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/select2-bootstrap/select2-bootstrap.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/styles/static_custom.css')?>">
 <div class="row">
-<div class="col-lg-4">
+<div class="col-lg-12">
         <div class="hpanel hblue">
             <div class="panel-heading hbuilt">
                 <div class="panel-tools">
@@ -11,27 +14,29 @@
             <div class="panel-body">
             <?php echo form_open_multipart('motoexperience/saveplace');?>
             <div class="row">
-            <?php if($this->session->flashdata('link')):?>
-                          <span class="text-success"><b><?= $this->session->flashdata('link')?> </b></span>
-                      <?php endif;?>
-            <small style="color:red; text-align:center"> <b><?php echo form_error('type'); ?></b></small>
-                <div class="col-md-6">
-                   <label for="inter"> 
-                   <input type="radio" name="type" id="inter" value="1"> International</label>
-                </div>
-                <div class="col-md-6">
-                <label for="domestic">
-                   <input type="radio" name="type" id="domestic" value="2"> Domestic</label>
-                </div>
             
-           
-             <div class="col-md-12"><br>
-                <div class="form-group">
-                    <label class="control-label" for="username">Place Name</label>
-                    <input type="text" name="placename" required="" class="form-control">
-                    <small style="color:red"> <b><?php echo form_error('placename'); ?></b></small>
-                 </div>
-            </div>
+            <small style="color:red; text-align:center"> <b><?php echo form_error('type'); ?></b></small>
+                <div class="col-md-3">
+                   <label for="inter"> Type </label>
+                   <select name="type" id="type" class="js-source-states form-control" onChange="getplace(this.value);">
+                          <option value="1"> International</option>
+                          <option value="2"> Domestic</option>
+                   </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="inter"> Place </label>
+                     <select name="subcategory"  id="place" class="js-source-states form-control">
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="inter"> Date </label>
+                     <input type="date" name="ridedate" class="form-control">
+                    </select>
+                </div>
+                          
+             
             </div>
             <div class="form-group">
             <button type="submit" class="btn btn-primary btn-sm" style="float:right">Save Place</button>
@@ -156,3 +161,24 @@
     </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+<script src="<?= base_url('assets/vendor/select2-3.5.2/select2.min.js')?>"></script>	
+<script src="<?= base_url('assets/vendor/toastr/build/toastr.min.js')?>"></script>			
+		
+<script>
+$(".js-source-states-2").select2();
+$(".js-source-states").select2();
+</script>
+<script>
+  function getplace(val)
+  {
+    $.ajax({
+	type: "POST",
+	url: "<?= base_url('motoexperience/getplace')?>",
+	data:'type='+val,
+	success: function(data){
+		$("#place").html(data);
+	}
+	}); 
+  }
+</script>

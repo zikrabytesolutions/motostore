@@ -6,7 +6,7 @@
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                    
                 </div>
-                Add Event
+                Add Gallery
             </div>
             <div class="panel-body">
             <?php echo form_open_multipart('event/gallerysave');?>
@@ -40,7 +40,7 @@
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                    
                 </div>
-                Event List
+                Image List
             </div>
             <div class="panel-body">
             <table id="example2" class="table table-striped table-bordered table-hover">
