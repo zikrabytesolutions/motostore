@@ -40,9 +40,12 @@
 <section class="domestic-sec">
 	<div class="container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-lg-10">
 				<h3 class="side-title">Domestic : Limited period offer</h3>
 			</div>
+	        <div class="col-lg-2 text-right eventbtn">
+	            <a href="<?= base_url();?>motoexp/domesticall">View All </a>
+	        </div>
 		</div>
 		<div class="row">
 			<div class="col-12">
@@ -50,15 +53,15 @@
 					<div class="owl-stage-outer">
 						<div class="owl-stage">
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -70,15 +73,15 @@
 							</a>
 							</div>
 							 <div class="owl-item">
-							 	<a href="">
+							 	<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -90,15 +93,15 @@
 							</a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img3.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -110,15 +113,15 @@
 							</a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img4.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -130,15 +133,15 @@
 							</a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -150,15 +153,15 @@
 							</a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -170,15 +173,15 @@
 							</a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img3.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -190,15 +193,15 @@
 								</a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img4.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -222,9 +225,12 @@
 <section class="international-sec">
 	<div class="container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-lg-10 col-md-10 col-sm-12">
 				<h3 class="side-title">International : Limited period offer</h3>
 			</div>
+			<div class="col-lg-2 col-md-2 col-sm-12 text-right eventbtn">
+	            <a href="<?= base_url();?>motoexp/internationalall">View All </a>
+	        </div>
 		</div>
 		<div class="row">
 			<div class="col-12">
@@ -233,15 +239,15 @@
 						<div class="owl-stage">
 
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -253,15 +259,15 @@
 							</a>
 							</div>
 							 <div class="owl-item">
-							 	<a href="">
+							 	<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -273,15 +279,15 @@
 							</a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img3.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -293,15 +299,15 @@
 							    </a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img4.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -313,15 +319,15 @@
 							</a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -333,15 +339,15 @@
 							</a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -353,15 +359,15 @@
 							</a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img3.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
@@ -373,15 +379,15 @@
 							</a>
 							</div>
 							<div class="owl-item">
-								<a href="">
+								<a href="<?= base_url();?>motoexp/ridedetail">
 								<div class="col-content">
 									<img src="<?= base_url();?>assets/images/blog/img4.png" class="img-fluid" alt="alt_text">
 								<div class="pb-content">
 									<div class="pb-left">
 									<h6 class="pb-title txt-h-up">Package</h6>
 									<h5 class="pb-place">Best of Kerala</h5>
-									<p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 									<p class="pb-price"><span>7,500</span> / person</p>
 								</div>
 								<div class="pb-right">
