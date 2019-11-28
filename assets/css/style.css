@@ -2082,8 +2082,9 @@ ul.nav.flex-column.detail_ul li.active:after {
 
 .search-bar {
     display: none;
-    position: absolute;
-    left: 30%;
+    /*position: absolute;*/
+    position: relative;
+    /*left: 30%;*/
     margin-top: 2px;
 }
 
@@ -2092,7 +2093,9 @@ ul.nav.flex-column.detail_ul li.active:after {
     border-radius: 20px !important;
     background: #fff;
     border: 2px solid black;
-    min-width: 500px;
+   /* min-width: 500px;
+    margin: 0 auto;*/
+    width: 100% !important;
     margin: 0 auto;
     display: block;
 }

@@ -67,7 +67,6 @@
 			<!-- section domestic end -->
 			<?php include 'expfooter.php'; ?>
 		</div>
-		<script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
 
 		<?php include 'js.php'; ?>
 	</body>
