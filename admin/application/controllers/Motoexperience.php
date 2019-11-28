@@ -66,8 +66,9 @@ class Motoexperience extends MY_Controller
 
     function ride()
     {
+        $data['ridedetails']= $this->experienceModel->ridelist();
         $this->load->view('header');
-        $this->load->view('experience/addride');
+        $this->load->view('experience/addride',$data);
         $this->load->view('footer');
     }
 
@@ -79,6 +80,51 @@ class Motoexperience extends MY_Controller
         foreach($data as $ds)
         {
             echo '<option value="'.$ds->id.'">'.$ds->placename.'</option>';	
+        }
+    }
+
+    function saveride()
+    {
+        $data= $this->input->post();
+        $uid=uniqid();
+        if(isset($_FILES['userfile']['tmp_name']))
+        {
+        $config =  array
+            (
+                   'upload_path'     => 'assets/eventimages/',
+                   'upload_url'      => base_url().'assets/eventimages/',
+                   'allowed_types'   => 'jpeg|jpg|png|JPG|PNG',
+                   'overwrite'       => TRUE,
+                   'file_name'       => $uid      
+            );
+ 
+             $this->load->library('upload', $config);
+             $this->upload->do_upload();
+            
+             if($this->upload->data())
+             {
+                $data['created']=date("Y-m-d H:i:s");
+                $filedata=$this->upload->data();
+                $data['images']=$filePath=$uid.$filedata['file_ext'];
+                $success= $this->experienceModel->insertride($data);
+                if( $success)
+                {
+                    $this->session->set_flashdata('link', 'Ride Created successfully');
+                    return redirect('motoexperience/ride');
+                }
+             }
+         }   
+    }                     
+
+    
+
+    function deleteride()
+    {
+        $success= $this->experienceModel->deleteride($data);
+        if( $success)
+        {
+            $this->session->set_flashdata('link', 'Ride Deleted successfully');
+            return redirect('motoexperience/ride');
         }
     }
 }
