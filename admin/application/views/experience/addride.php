@@ -9,16 +9,16 @@
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                    
                 </div>
-                Add Place
+                Add Ride Details
             </div>
             <div class="panel-body">
-            <?php echo form_open_multipart('motoexperience/saveplace');?>
+            <?php echo form_open_multipart('motoexperience/saveride');?>
             <div class="row">
             
             <small style="color:red; text-align:center"> <b><?php echo form_error('type'); ?></b></small>
                 <div class="col-md-3">
                    <label for="inter"> Type </label>
-                   <select name="type" id="type" class="js-source-states form-control" onChange="getplace(this.value);">
+                   <select name="placetype" id="placetype" class="js-source-states form-control" onChange="getplace(this.value);" required>
                           <option value="1"> International</option>
                           <option value="2"> Domestic</option>
                    </select>
@@ -26,17 +26,36 @@
 
                 <div class="col-md-3">
                     <label for="inter"> Place </label>
-                     <select name="subcategory"  id="place" class="js-source-states form-control">
+                     <select name="place"  id="place" class="js-source-states form-control" required>
                     </select>
                 </div>
 
                 <div class="col-md-3">
                     <label for="inter"> Date </label>
-                     <input type="date" name="ridedate" class="form-control">
+                     <input type="date" name="ridedate" class="form-control" required>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="inter"> Price </label>
+                     <input type="number" name="price" class="form-control" required>
                     </select>
                 </div>
                           
-             
+               <div class="col-md-8">
+               <label for="inter"> Title </label>
+                     <input type="text" name="title" class="form-control" required>
+                    </select>
+               </div>
+
+               <div class="col-md-4"><br>
+                   <input type="file" name="userfile"  class="form-control" accept="image/*">
+               </div>
+
+               <div class="col-md-12"><br>
+                    <textarea class="summernote "  name="Itinerary" placeholder="Description Here" ></textarea>
+               </div>
+
             </div>
             <div class="form-group">
             <button type="submit" class="btn btn-primary btn-sm" style="float:right">Save Place</button>
@@ -48,7 +67,7 @@
     </div>
 
 
-    <div class="col-lg-8">
+    <div class="col-lg-12">
         <div class="hpanel hblue">
             <div class="panel-heading hbuilt">
                 <div class="panel-tools">
@@ -67,25 +86,32 @@
                     <th>#</th>
                     <th>Tyep</th>
                     <th>Title</th>
+                    <th>Place</th>
+                    <th>date</th>
+                    <th>price</th>
                     <th>Action</th>
                     
                 </tr>
                 </thead>
                 <tbody>
-                <?php $i=0; if($place): foreach($place as $pl): $i++;?>
+                <?php $i=0; date_default_timezone_set('Asia/Kolkata'); if($ridedetails): foreach($ridedetails as $ride): $i++;?>
                 <tr>
                     <td><?= $i;?></td>
-                    <td><?php if($pl->type==1){ echo "International";} else{echo "Domestic";}?></td>
-                    <td><p aria-pressed="true" data-toggle="tooltip" data-placement="top" title="<?= $pl->placename?>"><?php if(strlen($pl->placename)>20)
+                    <td><?php if($ride->placetype==1){ echo "International";} else{echo "Domestic";}?></td>
+                    <td><p aria-pressed="true" data-toggle="tooltip" data-placement="top" title="<?= $ride->title?>"><?php if(strlen($ride->title)>30)
                                                         {
-                                                           echo  $stringCut = substr($pl->placename, 0, 20).' ...';
+                                                           echo  $stringCut = substr($ride->title, 0, 30).' ...';
                                                        }
                                                        else{
-                                                         echo  $stringCut = substr($pl->placename, 0, 20);
+                                                         echo  $stringCut = substr($ride->title, 0, 30);
                                                      }?></p>
                                                      </td>
+                    <td><?= $ride->placename?></td>
+                    <td><?= date("d M,Y", strtotime($ride->ridedate))?></td>
+                    <td><?= $ride->price?></td>
         
                     <td>
+                    <button class="btn btn-info btn-xs" type="button" data-toggle="modal" data-target="#myModalview<?= $i?>"><i class="fa fa-search" aria-hidden="true"></i></button>
                         <button class="btn btn-primary btn-xs" type="button" data-toggle="modal" data-target="#myModal<?= $i?>"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                          
                         <button class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#myModalsm<?= $i?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -105,7 +131,29 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                                    <a href="<?= base_url('motoexperience/delete/'.$pl->id)?>" class="btn btn-primary">Yes</a>
+                                    <a href="<?= base_url('motoexperience/deleteride/'.$ride->id)?>" class="btn btn-primary">Yes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- view-->
+                <div class="modal fade" id="myModalview<?=$i?>" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog modal-xs">
+                            <div class="modal-content">
+                                <div class="color-line"></div>
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Description Of Ride</h4>
+                                   
+                                </div>
+                                <div class="modal-body">
+                                     <?= $ride->Itinerary?>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -118,32 +166,52 @@
                             <div class="modal-content">
                                 <div class="color-line"></div>
                                 <div class="modal-header text-center">
-                                    <h4 class="modal-title">Place Edit</h4>
+                                    <h4 class="modal-title">Ride Edit</h4>
                                 </div>
                                 <?php echo form_open('motoexperience/update');?>
                                 <div class="modal-body">
                                    <div class="row">
-                                   <div class="col-md-6">
-                   <label for="inter"> 
-                   <input type="radio" name="type" id="inter" value="1" <?php if($pl->type=='1'){ echo "checked";}?>> International</label>
-                </div>
-                <div class="col-md-6">
-                <label for="domestic">
-                   <input type="radio" name="type" id="domestic" value="2" <?php if($pl->type=='2'){ echo "checked";}?>> Domestic</label>
-                </div>
-            
-           
-             <div class="col-md-12"><br>
-                <div class="form-group">
-                    <label class="control-label" for="username">Place Name</label>
-                    <input type="text" name="placename" required="" class="form-control"  value="<?= $pl->placename?>">
-                    <small style="color:red"> <b><?php echo form_error('placename'); ?></b></small>
-                 </div>
-            </div>
+                                   
+                                   <div class="col-md-4">
+                                    <label for="inter"> Type </label>
+                                    <select name="placetype" id="placetype" class="js-source-states form-control" onChange="getplaceedit(this.value);" required>
+                                            <option value="1" <?php if($ride->placetype=='1'){echo "selected";}?>> International</option>
+                                            <option value="2" <?php if($ride->placetype=='2'){echo "selected";}?>> Domestic</option>
+                                    </select>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="inter"> Place </label>
+                                        <select name="place" id="placeedit" class="js-source-states form-control" required>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="inter"> Date </label>
+                                        <input type="date" name="ridedate" class="form-control" required>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="inter"> Price </label>
+                                        <input type="number" name="price" class="form-control" required>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <label for="inter"> Title </label>
+                                        <input type="text" name="title" class="form-control" required>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-12"><br>
+                                            <textarea class="summernote "  name="Itinerary" placeholder="Description Here" > <?= $ride->Itinerary?></textarea>
+                                    </div>
+
                                    </div>
                                 </div>
                                 <div class="modal-footer">
-                                     <input type="hidden" name="id" value="<?= $pl->id?>">
+                                     <input type="hidden" name="id" value="<?= $ride->id?>">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Save Change</button>
                                 </div>
@@ -178,6 +246,20 @@ $(".js-source-states").select2();
 	data:'type='+val,
 	success: function(data){
 		$("#place").html(data);
+	}
+	}); 
+  }
+</script>
+
+<script>
+  function getplaceedit(val)
+  {
+    $.ajax({
+	type: "POST",
+	url: "<?= base_url('motoexperience/getplace')?>",
+	data:'type='+val,
+	success: function(data){
+		$("#placeedit").html(data);
 	}
 	}); 
   }
