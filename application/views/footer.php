@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="f-block">
-					<img class="f-logo" src="<?= base_url('assets/images/motologo.png')?>">
+					<img class="f-logo" src="<?= base_url('assets/images/storelogo.png')?>">
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
