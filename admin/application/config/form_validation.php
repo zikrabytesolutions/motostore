@@ -159,7 +159,31 @@ $config = [
                                 ],
                         ]
 
-                 ]
+                        ],
+
+                        'place' => 
+                        [
+                                [
+                                        'field' => 'type',
+                                        'label' => 'Location type',
+                                        'rules' => 'required',
+                                        "errors" =>
+                                         [
+                                            'required' => 'Please Select %s .',
+                                        ],
+                                ],
+
+
+                                [
+                                        'field' => 'placename',
+                                        'label' => 'Place name',
+                                        'rules' => 'required',
+                                        "errors" =>
+                                         [
+                                            'required' => 'Please enter %s .',
+                                        ],
+                                ]
+                        ]
 
            ];
            
