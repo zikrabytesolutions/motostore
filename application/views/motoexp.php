@@ -57,11 +57,22 @@
 					<div class="owl-item">
 						<a href="<?= base_url();?>motoexp/ridedetail">
 							<div class="col-content">
-								<img src="<?= base_url('admin/assets/eventimages/'.$dom->images);?>" class="img-fluid" alt="alt_text" style="width:350px">
+								<img src="<?= base_url('admin/assets/eventimages/'.$dom->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
 								<div class="pb-content">
 									<div class="pb-left">
 										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place"><?= $dom->title?></h5>
+										<h5 class="pb-place">
+										<?php
+                                                    if(strlen($dom->title)>20)
+                                                    {
+                                                     echo  $stringCut = substr($dom->title, 0, 20).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($dom->title, 0, 20);
+                                                    }
+                                                    ?>
+									
+										</h5>
 									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 										<p class="pb-price"><span><?= number_format($dom->price)?></span> / person</p>
@@ -105,11 +116,20 @@
 							<div class="owl-item">
 						<a href="<?= base_url();?>motoexp/ridedetail">
 							<div class="col-content">
-								<img src="<?= base_url('admin/assets/eventimages/'.$int->images);?>" class="img-fluid" alt="alt_text" style="width:350px">
+								<img src="<?= base_url('admin/assets/eventimages/'.$int->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
 								<div class="pb-content">
 									<div class="pb-left">
 										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place"><?= $int->title?></h5>
+										<h5 class="pb-place">
+										<?php
+                                                    if(strlen($int->title)>20)
+                                                    {
+                                                     echo  $stringCut = substr($int->title, 0, 20).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($int->title, 0, 20);
+                                                    }
+                                                    ?></h5>
 									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 										<p class="pb-price"><span><?= number_format($int->price)?></span> / person</p>
