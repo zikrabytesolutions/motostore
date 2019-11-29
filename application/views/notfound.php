@@ -8,22 +8,95 @@
   <?php include 'css.php'; ?>
 
 <style type="text/css">
-  .ntf-sec{
-    padding: 60px 0px;
+      #notfound {
+    position: relative;
+    height: 50vh;
+    background: #030005;
+}
+#notfound .notfound {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.notfound {
+    max-width: 767px;
+    width: 100%;
+    line-height: 1.4;
+    text-align: center;
+}
+.notfound .notfound-404 {
+    position: relative;
+    height: 180px;
+    margin: 20px 0px;
+    z-index: -1;
+}
+.notfound .notfound-404 h1 {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50% , -50%);
+    -ms-transform: translate(-50% , -50%);
+    transform: translate(-50% , -50%);
+    font-size: 224px;
+    font-weight: 900;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: -12px;
+    color: #030005;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0px #ffffff, 1px 1px 0px #da251d;
+    letter-spacing: -20px;
+}
+.notfound .notfound-404 h2 {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 110px;
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 0px #8400ff;
+    letter-spacing: 13px;
+    margin: 0;
+}
+.notfound a {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #da251d;
+    background: transparent;
+    padding: 10px 40px;
+    font-size: 14px;
+    font-weight: 700;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+@media (max-width: 999px){
+  .notfound .notfound-404 h1 {
+     font-size: 150px;
   }
-  .ntf-sec h1{
-        font-size: 80px;
-    line-height: 80px;
-    margin-bottom: 20px;
-      }
+  .notfound .notfound-404 h2 {
+     font-size: 24px;
+    letter-spacing: 4px;
+  }
+    #notfound {
+    position: relative;
+    height: 50vh;
+  }
+}
 </style>
 
 </head>
 
 <body>
- <div class="static-btn">
-      <i class="fa fa-home"></i> <a href="<?= base_url();?>" >Go to main page</a>
-      </div>
   <!-- header start-->
   <header>
     <div class="mid-logo-block">
@@ -31,21 +104,15 @@
     </div>
   </header>
   <!-- header end -->
-
-  <section class="ntf-sec">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <div>
-            <h1 class="text-danger">404</h1>
-            <p>THE PAGE YOU ARE REQUESTED COULD NOT FOUND</p>
-          </div>
-        </div>
+<div id="notfound">
+    <div class="notfound">
+      <div class="notfound-404">
+        <h1>404</h1>
+        <h2>Page not found</h2>
       </div>
+      <a href="<?= base_url();?>">Go to main page</a>
     </div>
-  </section>
-
-
+  </div>
  <!-- footer start -->
 <section class="footer-sec">
   <div class="container">
