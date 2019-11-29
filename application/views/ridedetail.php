@@ -31,14 +31,28 @@
 <section class="ride-detail">
   <div class="container">
     <div class="row"> 
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="ride-img">
-          <img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
+          <img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6">
         <div class="ride-content">
-          <p>srthujk</p>
+          <h4>Title</h4>
+          <div class="row ride-list">
+            <div class="col-md-4 col-sm-6">
+              <i class="fa fa-list" aria-hidden="true"></i> International
+            </div>
+            <div class="col-md-4 col-sm-6">
+             <i class="fa fa-location-arrow" aria-hidden="true"></i> International
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <i class="fa fa-inr" aria-hidden="true"></i> 499
+            </div>
+          </div>
+          <div class="ride-des">
+          
+          </div>
         </div>
       </div>
     </div>
