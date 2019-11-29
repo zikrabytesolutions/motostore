@@ -63,6 +63,16 @@ class ExprienceModel extends CI_Model
         $query= $this->db->get();
         return $query->result();
     }
+
+    function ridedetails($id)
+    {
+        $this->db->select('moto_ride.*,place.placename');
+        $this->db->from('moto_ride');
+        $this->db->join('place','place.id=moto_ride.place');
+        $this->db->where('moto_ride.id',$id);
+        $query= $this->db->get();
+        return $query->result();
+    }
 }
 
 ?>

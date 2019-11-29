@@ -30,32 +30,44 @@
 <!-- banner section end  -->
 <section class="ride-detail">
   <div class="container">
+  <?php if($details): foreach($details as $del):?>
     <div class="row"> 
       <div class="col-md-6">
         <div class="ride-img">
-          <img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
+        <img src="<?= base_url('admin/assets/eventimages/'.$del->images);?>" class="img-fluid" >
         </div>
       </div>
       <div class="col-md-6">
         <div class="ride-content">
-          <h4>Title</h4>
+          <h4>
+          <?php
+                                                    if(strlen($del->title)>30)
+                                                    {
+                                                     echo  $stringCut = substr($del->title, 0, 30).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($del->title, 0, 30);
+                                                    }
+                                                    ?>
+          </h4>
           <div class="row ride-list">
             <div class="col-md-4 col-sm-6">
-              <i class="fa fa-list" aria-hidden="true"></i> International
+              <i class="fa fa-list" aria-hidden="true"></i> <?php if($del->placetype=='1'){echo "International";} else{echo "Domestic";}?>
             </div>
             <div class="col-md-4 col-sm-6">
-             <i class="fa fa-location-arrow" aria-hidden="true"></i> International
+             <i class="fa fa-location-arrow" aria-hidden="true"></i> <?= $del->placename?>
             </div>
             <div class="col-md-4 col-sm-6">
-              <i class="fa fa-inr" aria-hidden="true"></i> 499
+              <i class="fa fa-inr" aria-hidden="true"></i> <?= $del->price?>
             </div>
           </div>
           <div class="ride-des">
-          
+            <?= $del->Itinerary?>
           </div>
         </div>
       </div>
     </div>
+  <?php endforeach; endif;?>
   </div>
 </section>
 
