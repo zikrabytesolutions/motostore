@@ -83,7 +83,7 @@
 								<div class="pb-content">
 									<div class="pb-left">
 										<h6 class="pb-title txt-h-up" >Package</h6>
-										<h5 class="pb-place" title="<?= $dom->title?>">
+										<h5 class="pb-place" data-toggle="tooltip" title="<?= $dom->title?>">
 										<?php
                                                     if(strlen($dom->title)>20)
                                                     {
@@ -144,7 +144,7 @@
 								<div class="pb-content">
 									<div class="pb-left">
 										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place" title="<?= $int->title?>">
+										<h5 class="pb-place" data-toggle="tooltip" title="<?= $int->title?>">
 										<?php
                                                     if(strlen($int->title)>20)
                                                     {
@@ -199,7 +199,7 @@
 								<div class="pb-content">
 									<div class="pb-left">
 										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place" title="<?= $res->title?>">
+										<h5 class="pb-place" data-toggle="tooltip" title="<?= $res->title?>">
 										<?php
                                                     if(strlen($res->title)>20)
                                                     {
@@ -238,7 +238,7 @@
 </div>
 
 <?php include 'js.php'; ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+
 <script type="text/javascript" src="<?= base_url('assets/css/select2-3.5.2/select2.min.js') ?>"></script>
 <script type="text/javascript">
 	$('.search-input').select2();
@@ -258,5 +258,10 @@
 	}); 
   }
 </script>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+  });
+  </script>
 </body>
 </html>
