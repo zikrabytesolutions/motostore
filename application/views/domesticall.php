@@ -71,7 +71,7 @@
 								<div class="pb-content">
 									<div class="pb-left">
 										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place">
+										<h5 class="pb-place" data-toggle="tooltip" title="<?= $dom->title ; ?>">
 										<?php
                                                     if(strlen($dom->title)>20)
                                                     {
@@ -110,6 +110,10 @@
 	$('.search-input').select2();
 
 </script>
-
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+  });
+  </script>
 	</body>
 	</html>

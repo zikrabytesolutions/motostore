@@ -21,7 +21,9 @@
 </head>
 
 <body>
-
+ <div class="static-btn">
+      <i class="fa fa-home"></i> <a href="<?= base_url();?>" >Go to main page</a>
+      </div>
   <!-- header start-->
   <header>
     <div class="mid-logo-block">
