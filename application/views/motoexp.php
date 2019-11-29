@@ -45,7 +45,7 @@
 						<h3 class="side-title">Domestic : Limited period offer</h3>
 					</div>
 					<div class="col-lg-2 text-right eventbtn">
-						<a href="<?= base_url();?>motoexp/domesticall">View All </a>
+						<a href="<?= base_url();?>motoexprience/domestic">View All </a>
 					</div>
 				</div>
 				<div class="row">
@@ -55,7 +55,7 @@
 								<div class="owl-stage">
                 <?php if($ridedomestic): foreach($ridedomestic as $dom):?>
 					<div class="owl-item">
-						<a href="<?= base_url();?>motoexp/ridedetail">
+						<a href="<?= base_url();?>motoexprience/ridedetail">
 							<div class="col-content">
 								<img src="<?= base_url('admin/assets/eventimages/'.$dom->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
 								<div class="pb-content">
@@ -104,7 +104,7 @@
 				<h3 class="side-title">International : Limited period offer</h3>
 			</div>
 			<div class="col-lg-2 col-md-2 col-sm-12 text-right eventbtn">
-				<a href="<?= base_url();?>motoexp/internationalall">View All </a>
+				<a href="<?= base_url();?>motoexprience/international">View All </a>
 			</div>
 		</div>
 		<div class="row">
@@ -114,7 +114,7 @@
 						<div class="owl-stage">
                            <?php if($rideinternational): foreach($rideinternational as $int):?>
 							<div class="owl-item">
-						<a href="<?= base_url();?>motoexp/ridedetail">
+						<a href="<?= base_url();?>motoexprience/ridedetail">
 							<div class="col-content">
 								<img src="<?= base_url('admin/assets/eventimages/'.$int->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
 								<div class="pb-content">

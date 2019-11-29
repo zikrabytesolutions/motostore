@@ -42,26 +42,37 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4">
-						<a href="<?= base_url();?>motoexp/ridedetail">
-						<div class="col-content">
-							<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid dimg" alt="alt_text">
-							<div class="pb-content">
-								<div class="pb-left">
-									<h6 class="pb-title txt-h-up">Package</h6>
-									<h5 class="pb-place">Best of Kerala</h5>
+				<?php if($rideinternational): foreach($rideinternational as $int):?>
+						<div class="col-lg-4 col-md-4 col-sm-12">
+						<a href="<?= base_url();?>motoexprience/ridedetail">
+							<div class="col-content">
+								<img src="<?= base_url('admin/assets/eventimages/'.$int->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
+								<div class="pb-content">
+									<div class="pb-left">
+										<h6 class="pb-title txt-h-up">Package</h6>
+										<h5 class="pb-place">
+										<?php
+                                                    if(strlen($int->title)>20)
+                                                    {
+                                                     echo  $stringCut = substr($int->title, 0, 20).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($int->title, 0, 20);
+                                                    }
+                                                    ?></h5>
 									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
-										<p class="pb-price"><span>7,500</span> / person</p>
+										<p class="pb-price"><span><?= number_format($int->price)?></span> / person</p>
 									</div>
 									<div class="pb-right">
-										<p><span class="lbl">4D-3N</span></p>
+										<p><span class="lbl"><i class="fa fa-map-marker" aria-hidden="true">&nbsp; </i> <?= $int->placename?></span></p>
 										<a href="" class="btn">Get Quote</a>
 									</div>
 								</div>
 							</div>
 						</a>
-						</div>
+					</div>
+				<?php endforeach; endif?>
 					</div>
 				</div>
 			</section>

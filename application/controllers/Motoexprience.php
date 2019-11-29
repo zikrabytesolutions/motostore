@@ -14,14 +14,16 @@ class Motoexprience extends CI_Controller
 		$this->load->view('motoexp',$data);
 	}
 
-	function domesticall()
+	function domestic()
 	{
-		$this->load->view('domesticall');
+		$data['ridedomestic']= $this->exprienceModel->domesticsall();
+		$this->load->view('domesticall',$data);
 	}
 
-	function internationalall()
+	function international()
 	{
-		$this->load->view('internationalall');
+		$data['rideinternational']= $this->exprienceModel->internationalall();
+		$this->load->view('internationalall',$data);
 	}
 
 	function ridedetail()

@@ -22,6 +22,27 @@ class ExprienceModel extends CI_Model
         $query= $this->db->get();
         return $query->result();
     }
+
+
+    function domesticsall()
+    {
+       $this->db->select('moto_ride.*,place.placename');
+       $this->db->from('moto_ride');
+       $this->db->join('place','place.id=moto_ride.place');
+       $this->db->where('placetype','2');
+       $query= $this->db->get();
+       return $query->result();
+    }
+
+    function internationalall()
+    {
+        $this->db->select('moto_ride.*,place.placename');
+        $this->db->from('moto_ride');
+        $this->db->join('place','place.id=moto_ride.place');
+        $this->db->where('placetype','1');
+        $query= $this->db->get();
+        return $query->result();
+    }
 }
 
 ?>
