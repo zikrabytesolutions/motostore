@@ -5,6 +5,24 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<?php include 'css.php'; ?>
+	<link rel="stylesheet" href="<?= base_url('assets/css/select2-3.5.2/select2.css') ?>" />
+	<link rel="stylesheet" href="<?= base_url('assets/css/select2-bootstrap/select2-bootstrap.css') ?>" />
+	<style type="text/css">
+		.select2-container .select2-choice{
+			height: 38px !important;
+			border-radius: 20px;
+			border:none; 
+		}
+		.select2-container .select2-choice .select2-arrow b{
+			display: none;
+		}
+		#s2id_place{
+			text-align: left;
+		}
+		.select2-container .select2-choice > .select2-chosen{
+			line-height: 24px;
+		}
+	</style>
 </head>
 <body>
 	<div class="main-wrapper">
@@ -20,7 +38,10 @@
 							<h4>Lorem Ipsum is simply dummy text</h4>
 							<form method="POST" enctype="multipart/form-data">
 								<div class="input-group">
-									<input type="text" class="form-control" name="search" placeholder="Search">
+									<select class="form-control search-input" name="place" id="place">
+										<option value="">All Places</option>
+										<option value="" >Bangalore</option>	
+									</select>
 									<div class="input-group-append">
 										<span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
 									</div>
@@ -82,5 +103,13 @@
 
 
 		<?php include 'js.php'; ?>
+
+		
+		<script type="text/javascript" src="<?= base_url('assets/css/select2-3.5.2/select2.min.js') ?>"></script>
+<script type="text/javascript">
+	$('.search-input').select2();
+
+</script>
+
 	</body>
 	</html>
