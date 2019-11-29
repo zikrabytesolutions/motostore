@@ -21,7 +21,7 @@
 
             <div class="form-group">
             <label>Place Name</label>
-                  <input type="text"  class="form-control" name="place" placeholder="Place Name Name">
+                  <input type="text"  class="form-control" name="place" placeholder="Place Name ">
             </div>
 
              <div class="form-group" style="float:right">
@@ -135,7 +135,7 @@
                     <tfoot>
                         <tr>
                             <td colspan="5">
-                            <a href="<?= base_url('pin/exports_data')?>"> <u>Eport All Data </u> </a>
+                            <a href="<?= base_url('pin/exports_data')?>"> <u>Export All Data </u> </a>
                             </td>
                         </tr>
                     </tfoot>

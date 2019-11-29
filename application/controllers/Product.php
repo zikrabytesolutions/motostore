@@ -23,17 +23,14 @@ class Product extends CI_Controller
             $max= base64_decode(strtr($max, '-_', '+/'));
             $brands= base64_decode(strtr($brands, '-_', '+/'));
             $atributes= base64_decode(strtr($atributes, '-_', '+/'));
-            $data['brand']= $this->productModel->brandlist();
+            $data['subcategory']= $this->productModel->subcategory($catid);
             $brands= json_decode($brands);
             $atributes= json_decode($atributes);
-           
-            $data['productlist']= $this->productModel->filtersearch($catid,$min,$max,$brands,$atributes);
-               
+            $data['productlist']= $this->productModel->filtersearch($catid,$min,$max,$brands,$atributes); 
             if($data['productlist'])
             {
-
                 $data['sbrand']=$brands; $data['min']=$min; $data['max']=$max;  $data['sattribute']=$atributes;
-                 $this->load->view('product',$data);
+                $this->load->view('product',$data);
             }
             else
             {
@@ -42,15 +39,16 @@ class Product extends CI_Controller
             }
         }
         else
-        {    $data['sbrand']=$brands;$data['min']='100'; $data['max']='4000'; $data['sattribute']=$atributes;
-            $data['brand']= $this->productModel->brandlist();
+        {    $data['sbrand']=$brands;$data['min']='100'; $data['max']='80000'; $data['sattribute']=$atributes;
+            $data['subcategory']= $this->productModel->subcategory($catid);
             $data['productlist']= $this->productModel->getallproductreleted($catid);
             if($data)
             {
                 // echo "<pre>";
+               
                 //   print_r($data);
                 // echo "</pre>";
-                $this->load->view('product',$data);
+                 $this->load->view('product',$data);
             }
             else
             {
@@ -63,22 +61,19 @@ class Product extends CI_Controller
 
     function listfilter()
     {
-        
          $catid= $this->input->post('catid');
          $min= $this->input->post('min');
          $max= $this->input->post('max');
-         $brand= $this->productModel->brandlist();
+         $brand= $this->productModel->subcategorylist();
         foreach($brand as $brd)
         {
-            $strippeds = str_replace(' ', '', $brd->brand);
+            $strippeds = str_replace(' ', '', $brd->sub_category_name);
              $branddata=$this->input->post($strippeds);
             if($branddata>0)
             {
                 $brands[$strippeds]= $branddata;
-            }
-            
+            } 
         }
-       
         $brndat= json_encode($brands);
          $attribute= $this->productModel->attributelist();
         foreach($attribute as $att)
@@ -127,13 +122,15 @@ class Product extends CI_Controller
          $proid= base64_decode(strtr($proid, '-_', '+/'));
          $first= base64_decode(strtr($first, '-_', '+/'));
          $second= base64_decode(strtr($second, '-_', '+/'));
+         $data['proinfo'] = $this->cart->contents();
+        
         if($first!='catblank')
         {
             if(!$first=='')
             {
                 // echo  $first.'<br>';
                 // echo  $second;
-                $data['rsecond']=$second; $data['rfirst']=$first; $data['flag']='flase';
+                $data['rsecond']=$second; $data['rfirst']=$first; $data['flag']='false';  $data['ini']='0';
                 $data['productdetail']= $this->productModel->findvariantproduct($proid,$first,$second);
                  $this->load->view('productdetails',$data);
             }
@@ -142,6 +139,7 @@ class Product extends CI_Controller
         else
         {
             $data['productname']=$productname; $data['flag']='true'; $data['rsecond']=''; $data['rfirst']='';
+            $data['ini']='1';
             $data['productdetail']= $this->productModel->findproductdetails($proid);
             $this->load->view('productdetails',$data);
         }
@@ -168,6 +166,27 @@ class Product extends CI_Controller
         return $this->productModel->productattributevaluend($proid,$attid);
     }
 
+    function findreletedproduct($proid)
+    {
+        $proid= base64_decode(strtr($proid, '-_', '+/'));
+        $proid= base64_decode(strtr($proid, '-_', '+/'));
+        $proid= base64_decode(strtr($proid, '-_', '+/'));
+
+        return $this->productModel->reletedproduct($proid);
+
+    }
+
+    function attributeselect()
+    {
+        $proid= $this->input->post('pid');
+        $first= $this->input->post('first');
+        $second= $this->input->post('second');
+        $proid= base64_decode(strtr($proid, '-_', '+/'));
+        $first= base64_decode(strtr($first, '-_', '+/'));
+        $second= base64_decode(strtr($second, '-_', '+/'));
+        $data=$this->productModel->findvariantproduct($proid,$first,$second);
+        echo json_encode($data);
+    }
     
     
 }

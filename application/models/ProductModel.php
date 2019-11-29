@@ -34,10 +34,22 @@ class ProductModel extends CI_Model
         return $result= $query->result();  
     }
 
-    function brandlist()
+    function subcategory($catid)
+    {
+        $catid= base64_decode(strtr($catid, '-_', '+/'));
+        $catid= base64_decode(strtr($catid, '-_', '+/'));
+       
+        $this->db->select('*');
+        $this->db->from('sub_category');
+        $this->db->where('cat_id',$catid);
+        $query= $this->db->get();
+        return $result= $query->result();
+    }
+
+    function subcategorylist()
     {
         $this->db->select('*');
-        $this->db->from('brand');
+        $this->db->from('sub_category');
         $query= $this->db->get();
         return $result= $query->result();
     }
@@ -58,7 +70,7 @@ class ProductModel extends CI_Model
             {
                 if($brnd)
                 {
-                    $this->db->or_where('product.brand_id', $brnd); 
+                    $this->db->or_where('product.subcat_id', $brnd); 
                 } 
             }
             $this->db->group_end();
@@ -126,10 +138,11 @@ class ProductModel extends CI_Model
         $proid= base64_decode(strtr($proid, '-_', '+/'));
         $proid= base64_decode(strtr($proid, '-_', '+/'));
 
-        $this->db->select('pd.id as detailsid,pd.pro_id,pd.regular_price,pd.offer_price,pd.image,pd.image1,pd.image2,pd.image3,product.*,
+        $this->db->select('brand.brand as brandname, pd.id as detailsid,pd.pro_id,pd.regular_price,pd.offer_price,product.*,
         pd.stockstatus');
         $this->db->from('product');
         $this->db->join('product_details as pd','pd.pro_id=product.id');
+        $this->db->join('brand','brand.id=product.brand_id');
         $this->db->where('product.id', $proid);
         $this->db->order_by('product.id','ASC');
         $this->db->limit(1);
@@ -192,16 +205,35 @@ class ProductModel extends CI_Model
         $proid= base64_decode(strtr($proid, '-_', '+/'));
         $proid= base64_decode(strtr($proid, '-_', '+/'));
 
-        $this->db->select('pd.id as detailsid,pd.pro_id,pd.regular_price,pd.offer_price,pd.image,pd.image1,pd.image2,pd.image3,product.*,
+        $this->db->select('brand.brand as brandname,pd.id as detailsid,pd.pro_id,pd.regular_price,pd.offer_price,product.*,
         pd.stockstatus');
         
         $this->db->from('product_details as pd');
         $this->db->join('product','product.id=pd.pro_id');
+        $this->db->join('brand','brand.id=product.brand_id');
         $this->db->where(['pd.first'=>$first, 'pd.second'=>$second,'pd.pro_id'=>$proid]);
         $this->db->limit(1);
         $query= $this->db->get();
         return $result= $query->result();
     }
+
+    function reletedproduct($proid)
+    {
+        $this->db->select('cat_id');
+        $this->db->from('product');
+        $this->db->where('id',$proid);
+        $catid= $this->db->get()->row()->cat_id;
+
+        $this->db->select('*');
+        $this->db->from('product');
+        $this->db->where('cat_id', $catid);
+        $this->db->order_by('id','ASC');
+        $query= $this->db->get();
+        return $result= $query->result();
+
+    }
+
+    
 
 
 }

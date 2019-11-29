@@ -4,7 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 	public function index()
 	{
+		if (!$this->session->userdata('motoadsid'))
+        { 
 		$this->load->view('login');
+		}else{
+			return redirect('dashboard'); 
+		}
 	}
 
 	function validate()

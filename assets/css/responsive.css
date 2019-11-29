@@ -2,24 +2,60 @@
 	.nav-link{
 		padding: 5px 5px;
 	}
+    .mb-hide,
 	.nav.mb-hide{
 display: none;
 	}
 	
 }
 @media(min-width:768px){
+    .dsk-hide,
  .nav.dsk-hide{
  	display: none;
  }
+
 }
 @media(min-width:767px) and (max-width:992px){
 	.navbar .navbar-nav .nav-item .nav-link{
-		margin: 0px 2px;
-		font-size: 16px;
+		margin: 0px 0px;
+		font-size: 12px;
 	}
 }
 
 /*rahul*/
+
+/*home*/
+
+
+
+@media (min-width: 1024px) {
+
+    .product-item:nth-child(n) {
+        width: 33.33%;
+    }
+
+    .product-item:nth-child(7n + 2), .product-item:nth-child(7n + 6) {
+        width: 66.66%;
+    }
+}
+
+@media (max-width: 1023px) {
+
+    .product-item:nth-child(n) {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .product-item:nth-child(n) {
+        width: 100%;
+    }
+}
+
+
+
+/**/
 
 @media (min-width: 900px) {
     .customMenuDrpdwn {
@@ -28,6 +64,7 @@ display: none;
 }
 
 @media (min-width: 500px) {
+    .profilemenu .submenu-item,
     .customMenuDrpdwn .submenu-item {
     flex-grow: 1;
     }
@@ -68,10 +105,10 @@ padding: 37px 31px 44px;
     min-width: auto;
 }*/
 
-.products-page label, .products-page p, .products-page li, .products-page select, .products-page option {
+/*.products-page label, .products-page p, .products-page li, .products-page select, .products-page option {
     font-size: 0.8rem;
 }
-
+*/
 .p-prc {
     font-size: 16px;
 }
@@ -116,9 +153,9 @@ padding: 37px 31px 44px;
     flex:auto;
     max-width: initial;
    }
-   .products-page label, .products-page p, .products-page li, .products-page select, .products-page option {
+   /*.products-page label, .products-page p, .products-page li, .products-page select, .products-page option {
     font-size: 0.8rem;
-}
+}*/
 
 .p-prc {
     font-size: 16px;
@@ -131,9 +168,9 @@ padding: 37px 31px 44px;
     max-width: initial;
    }
 
-   .products-page label, .products-page p, .products-page li, .products-page select, .products-page option {
+   /*.products-page label, .products-page p, .products-page li, .products-page select, .products-page option {
     font-size: 0.8rem;
-}
+}*/
 
 .p-prc {
     font-size: 16px;
@@ -143,7 +180,7 @@ padding: 37px 31px 44px;
 @media screen and (min-width:1280px) and (max-width: 1900px) {
    .products_container .product-layout.product-grid {
     flex:inherit;
-    max-width: 33.33%;
+    /*max-width: 33.33%;*/
    }
 }
 
@@ -242,4 +279,24 @@ padding: 37px 31px 44px;
 }
 
 
+@media (min-width: 1300px){
+    .navbar-expand-custom {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .navbar-expand-custom .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-expand-custom .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+    .navbar-expand-custom .navbar-collapse {
+        display: flex!important;
+    }
+    .navbar-expand-custom .navbar-toggler {
+        display: none;
+    }
+}
 

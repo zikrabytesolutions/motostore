@@ -1,9 +1,9 @@
 <IfModule mod_rewrite.c>
 
 RewriteEngine On
-RewriteBase /moto/
+RewriteBase /motostore/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /moto/index.php/$1 [L,QSA] 
+RewriteRule ^(.*)$ /motostore/index.php/$1 [L,QSA] 
 
 </IfModule>

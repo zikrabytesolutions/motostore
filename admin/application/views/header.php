@@ -13,11 +13,13 @@
     <!--<link rel="shortcut icon" type="image/ico" href="favicon.ico" />-->
 
         <!-- Vendor styles -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/fontawesome/css/font-awesome.css')?>" />
+        <link rel="stylesheet" href="<?= base_url('assets/vendor/fontawesome/css/font-awesome.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/vendor/metisMenu/dist/metisMenu.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/vendor/animate.css/animate.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/vendor/bootstrap/dist/css/bootstrap.css')?>" />
-
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/summernote/dist/summernote.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/summernote/dist/summernote-bs3.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assetsvendor/sweetalert/lib/sweet-alert.css')?>" />
     <!-- App styles -->
     <link rel="stylesheet" href="<?= base_url('assets/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/fonts/pe-icon-7-stroke/css/helper.css')?>" />
@@ -157,7 +159,7 @@
                         <li><a href="profile.html">Profile</a></li>
                         <li><a href="analytics.html">Analytics</a></li>
                         <li class="divider"></li>
-                        <li><a href="login.html">Logout</a></li>
+                        <li><a href="<?= base_url('login/logout')?>">Logout</a></li>
                     </ul>
                 </div>
 
@@ -171,21 +173,52 @@
             <li>
                 <a href="<?= base_url('dashboard')?>"> <span class="nav-label">Dashboard</span> </a>
             </li>
+            <li><a href="<?= base_url('brand')?>">Brand</a></li>
+                    <li><a href="<?= base_url('category')?>">Category</a></li>
+                    <li><a href="<?= base_url('subcategory')?>">Sub Category</a></li>
+            <!-- <li>
+                <a href="<?= base_url('stock')?>"> <span class="nav-label">Stock </span> </a>
+            </li> -->
+
+            <li>
+                <a href="<?= base_url('user')?>"> <span class="nav-label">User </span> </a>
+            </li>
+
+            <li>
+                <a href="<?= base_url('tiles')?>"> <span class="nav-label">Home Page Tiles </span> </a>
+            </li>
             
-            <li class="active">
+            <li>
                 <a href="#"><span class="nav-label">Product Setting</span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
                     <li class="active"><a href="<?= base_url('product')?>"> Product</a></li>
-                    <li><a href="<?= base_url('brand')?>">Brand</a></li>
-                    <li><a href="<?= base_url('category')?>">Category</a></li>
-                    <li><a href="<?= base_url('subcategory')?>">Sub Category</a></li>
+                    <li class="active"><a href="<?= base_url('product/lists')?>"> Product List</a></li>
+                   
                     <li><a href="<?= base_url('attribute')?>">Attribute</a></li>
                   
                 </ul>
             </li>
+
+
             <li>
-                <a href="<?= base_url('pin')?>"> <span class="nav-label">Pin Management</span><span class="label label-warning pull-right">NEW</span> </a>
+                <a href="#"><span class="nav-label">Moto Cafe </span><span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li class="active"><a href="<?= base_url('event/add')?>"> Event</a></li>
+                    <li class="active"><a href="<?= base_url('event/gallery')?>"> Gallery</a></li>
+                </ul>
             </li>
+
+            <li>
+                <a href="#"><span class="nav-label">Moto experience </span><span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li class="active"><a href="<?= base_url('Motoexperience/place')?>"> Place</a></li>
+                    <li class="active"><a href="<?= base_url('Motoexperience/ride')?>"> Ride</a></li>
+                </ul>
+            </li>
+
+            <!-- <li>
+                <a href="<?= base_url('pin')?>"> <span class="nav-label">Pin Management</span><span class="label label-warning pull-right">NEW</span> </a>
+            </li> -->
 
            
         </ul>

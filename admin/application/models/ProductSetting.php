@@ -406,13 +406,15 @@ class ProductSetting extends CI_Model
         $id= $this->db->get()->row('id');
         if($id>0)
         {
-           return $this->db->where(['pro_id'=>$proid,'sr_no'=>$sr_no])->UPDATE('product_details',$data);
+            $this->db->where(['pro_id'=>$proid,'sr_no'=>$sr_no])->UPDATE('product_details',$data);
+            return  $id; 
         }
         else
         {
             if($regular>0)
             {
-                return $this->db->insert('product_details',$data);
+                 $this->db->insert('product_details',$data);
+                 return $this->db->insert_id();
             }
             
         } 
@@ -437,7 +439,139 @@ class ProductSetting extends CI_Model
         
     }
 
-    
+    function findsubcategory($category)
+    {
+        $this->db->select('*');
+        $this->db->from('sub_category');
+        $this->db->where('cat_id',$category);
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+   
+    function productlists($brand,$category,$subcategory,$producttype,$gender)
+    {
+        $this->db->select('product.*,brand.brand,category.cat_name,sub_category.sub_category_name');
+        $this->db->from('product');
+        $this->db->join('brand','brand.id=product.brand_id');
+        $this->db->join('category','category.id=product.cat_id');
+        $this->db->join('sub_category','sub_category.id=product.subcat_id');
+        $this->db->where(['product.cat_id'=>$category,'product.subcat_id'=>$subcategory,'product.brand_id'=>$brand,'product.producttype'=>$producttype,'product.gender'=>$gender]);
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+    function findproductattribute($proid)
+    {
+        $this->db->select('attribute.attribute as atname,product_attribute.attribute_id,product_attribute.product_id');
+        $this->db->from('product_attribute');
+        $this->db->join('attribute','attribute.id=product_attribute.attribute_id');
+        $this->db->where('product_attribute.product_id', $proid);
+        $query= $this->db->get();
+        return $result= $query->result();
+
+    }
+
+    function findattributevalues($aid,$pid)
+    {
+       $this->db->select('attribute_value.value_name,attribute_value.slug,attribute_value.codes');
+       $this->db->from('product_attribute_value');
+       $this->db->join('attribute_value','attribute_value.id=product_attribute_value.valueid');
+       $this->db->where(['productid'=>$pid,'attributeid'=>$aid]);
+        $query= $this->db->get();
+        return $result= $query->result();  
+    }
+
+    function productinfo($proid)
+    {
+        
+        $this->db->select('product.*,brand.id as brandid,category.id as catid,sub_category.id as subcatid');
+        $this->db->from('product');
+        $this->db->join('brand','brand.id=product.brand_id');
+        $this->db->join('category','category.id=product.cat_id');
+        $this->db->join('sub_category','sub_category.id=product.subcat_id');
+        $this->db->where('product.id',$proid);
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+    function producttype()
+    {
+        $this->db->select('*');
+        $this->db->from('product_type');
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+    function productoff($proid)
+    {
+        return $this->db->where('id',$proid)->UPDATE('product',['status'=>0]);
+    }
+
+    function producton($proid)
+    {
+        return $this->db->where('id',$proid)->UPDATE('product',['status'=>1]);
+    }
+
+    function findproductvarition($proid)
+    {
+        $this->db->select('*');
+        $this->db->from('product_details');
+        $this->db->where('pro_id',$proid);
+        $query=$this->db->get();
+        return $query->result();
+    }
+
+    function firstattribute($detailsid)
+    {
+        $this->db->select('attribute_value.value_name');
+        $this->db->from('product_details');
+        $this->db->join('attribute_value','attribute_value.id=product_details.first');
+        $this->db->where('product_details.id',$detailsid);
+        return $this->db->get()->row('value_name');
+       
+    }
+
+    function secondatattribute($detailsid)
+    {
+        $this->db->select('attribute_value.value_name');
+        $this->db->from('product_details');
+        $this->db->join('attribute_value','attribute_value.id=product_details.second');
+        $this->db->where('product_details.id',$detailsid);
+        return $this->db->get()->row('value_name');
+       
+    }
+
+    function updateproduct($data,$proid)
+    {
+        return $this->db->where('id',$proid)->UPDATE('product',$data);
+    }
+
+    function updatevariation($data,$vrtid)
+    {
+         $success= $this->db->where('id',$vrtid)->UPDATE('product_details',$data);
+         if($success)
+         {
+              return $vrtid;
+         }
+    }
+
+    function updateimage($uploadData)
+    {
+        $insert = $this->db->insert_batch('product_image',$uploadData);
+        return $insert?true:false;
+    }
+
+
+    function imagelist($proid,$vrtid)
+    {
+        $this->db->select('*');
+        $this->db->from('product_image');
+        $this->db->where('proid',$proid);
+        $this->db->where('prodetailsid',$vrtid);
+        $query=$this->db->get();
+        return $query->result();
+    }
     
 }
 
