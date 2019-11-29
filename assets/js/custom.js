@@ -241,7 +241,7 @@ var range = {
   '40%': 500,
   '42.3%': 666,
   '50%': 800,
-  'max': 1000
+  'max': 10000
 };
 
 
@@ -458,6 +458,35 @@ $('.international-carousel').owlCarousel({
 	        dots:false,
 			 // dots: ($(".international-carousel .owl-item").length > 1) ? true: false,
     		loop:($(".international-carousel .owl-item").length > 3) ? true: false,
+			margin:30,
+			responsiveClass:true,
+			nav: true,
+			autoWidth:true,
+		    navText: [
+		        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+		        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+		    ],  navigation: true,
+        pagination: true,
+        lazyLoad: true,
+					responsive:{
+				0:{
+					items:1,
+
+				},
+				600:{
+					items:1,
+
+				},
+				1000:{
+					items:3,
+				}
+
+			}
+		})
+$('.searchexp-carousel').owlCarousel({
+	        dots:false,
+			 // dots: ($(".searchexp-carousel .owl-item").length > 1) ? true: false,
+    		loop:($(".searchexp-carousel .owl-item").length > 3) ? true: false,
 			margin:30,
 			responsiveClass:true,
 			nav: true,
