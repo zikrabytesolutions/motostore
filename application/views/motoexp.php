@@ -13,7 +13,7 @@
 		.select2-container .select2-choice{
 			height: 38px !important;
 			border-radius: 0px 20px 20px 0px;
-			border:none; 
+			border:none;
 		}
 		.select2-container .select2-choice .select2-arrow b{
 			display: none;
@@ -38,14 +38,14 @@
 							<form method="POST" enctype="multipart/form-data">
 								<div class="input-group">
 									<select class="form-control select-tab">
-										<option>Select</option>
-										<option value="domestic">Domestic</option>
-										<option value="international">International</option>
+										<option disabled>Select</option>
+										<option value="2">Domestic</option>
+										<option value="1">International</option>
 									</select>
 									<!-- <input type="text" class="form-control search-input" name="search" placeholder="Search"> -->
 									<select class="form-control search-input" name="place" id="place">
 										<option value="">All Places</option>
-										<option value="" >Bangalore</option>	
+										<option value="" >Bangalore</option>
 									</select>
 									<div class="input-group-append">
 										<button type="submit" class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -74,26 +74,26 @@
 						<div class="owl-carousel owl-theme owl-loaded domestic-carousel">
 							<div class="owl-stage-outer">
 								<div class="owl-stage">
-									<?php if($ridedomestic): foreach($ridedomestic as $dom):?>
-										<div class="owl-item">
-											<a href="<?= base_url();?>motoexprience/ridedetail">
-												<div class="col-content">
-													<img src="<?= base_url('admin/assets/eventimages/'.$dom->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
-													<div class="pb-content">
-														<div class="pb-left">
-															<h6 class="pb-title txt-h-up">Package</h6>
-															<h5 class="pb-place">
-																<?php
-																if(strlen($dom->title)>20)
-																{
-																	echo  $stringCut = substr($dom->title, 0, 20).' ...';
-																}
-																else{
-																	echo  $stringCut = substr($dom->title, 0, 20);
-																}
-																?>
+                <?php if($ridedomestic): foreach($ridedomestic as $dom):?>
+					<div class="owl-item">
+						<a href="<?= base_url();?>motoexprience/ridedetail">
+							<div class="col-content">
+								<img src="<?= base_url('admin/assets/eventimages/'.$dom->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
+								<div class="pb-content">
+									<div class="pb-left">
+										<h6 class="pb-title txt-h-up" >Package</h6>
+										<h5 class="pb-place" title="<?= $dom->title?>">
+										<?php
+                                                    if(strlen($dom->title)>20)
+                                                    {
+                                                     echo  $stringCut = substr($dom->title, 0, 20).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($dom->title, 0, 20);
+                                                    }
+                                                    ?>
 
-															</h5>
+										</h5>
 									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 										<p class="pb-price"><span><?= number_format($dom->price)?></span> / person</p>
@@ -107,7 +107,7 @@
 						</a>
 					</div>
 				<?php endforeach; endif?>
-
+				</div>
 			</div>
 		</div>
 	</div>
@@ -133,24 +133,24 @@
 				<div class="owl-carousel owl-theme owl-loaded international-carousel">
 					<div class="owl-stage-outer">
 						<div class="owl-stage">
-							<?php if($rideinternational): foreach($rideinternational as $int):?>
-								<div class="owl-item">
-									<a href="<?= base_url();?>motoexprience/ridedetail">
-										<div class="col-content">
-											<img src="<?= base_url('admin/assets/eventimages/'.$int->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
-											<div class="pb-content">
-												<div class="pb-left">
-													<h6 class="pb-title txt-h-up">Package</h6>
-													<h5 class="pb-place">
-														<?php
-														if(strlen($int->title)>20)
-														{
-															echo  $stringCut = substr($int->title, 0, 20).' ...';
-														}
-														else{
-															echo  $stringCut = substr($int->title, 0, 20);
-														}
-														?></h5>
+                           <?php if($rideinternational): foreach($rideinternational as $int):?>
+							<div class="owl-item">
+						<a href="<?= base_url();?>motoexprience/ridedetail">
+							<div class="col-content">
+								<img src="<?= base_url('admin/assets/eventimages/'.$int->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
+								<div class="pb-content">
+									<div class="pb-left">
+										<h6 class="pb-title txt-h-up">Package</h6>
+										<h5 class="pb-place" title="<?= $int->title?>">
+										<?php
+                                                    if(strlen($int->title)>20)
+                                                    {
+                                                     echo  $stringCut = substr($int->title, 0, 20).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($int->title, 0, 20);
+                                                    }
+                                                    ?></h5>
 									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 										<p class="pb-price"><span><?= number_format($int->price)?></span> / person</p>
@@ -347,7 +347,7 @@
 								</div>
 							</div>
 						</a>
-					</div> 
+					</div>
 				</div>
 			</div>
 		</div>
