@@ -2420,3 +2420,16 @@ ul#autoSuggestionsList {
 .static-btn a{
     color: #fff;
 }
+.ride-detail .ride-img img{
+    width: 100%;
+}
+.ride-content {
+    padding: 10px 40px 10px;
+}
+.ride-content .ride-list i{
+    margin-right: 5px;
+}
+.ride-content h4{
+    color: #ff0000;
+    margin-bottom: 25px;
+}
