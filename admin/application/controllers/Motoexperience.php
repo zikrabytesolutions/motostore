@@ -118,15 +118,73 @@ class Motoexperience extends MY_Controller
 
     
 
-    function deleteride()
+    function deleteride($id)
     {
-        $success= $this->experienceModel->deleteride($data);
+        $success= $this->experienceModel->deleteride($id);
         if( $success)
         {
             $this->session->set_flashdata('link', 'Ride Deleted successfully');
             return redirect('motoexperience/ride');
         }
     }
+
+    function editride($id)
+    {
+        $data['ridedetails']= $this->experienceModel->filterride($id);
+        $this->load->view('header');
+        $this->load->view('experience/rideedit',$data);
+        $this->load->view('footer');
+    }
+
+    function selectedplace($placetype)
+    {
+        return $this->experienceModel->filterplace($placetype);
+    }
+
+
+    function updateride()
+    {
+        $data= $this->input->post();
+        $id= $this->input->post('id');
+        $uid=uniqid();
+        if(isset($_FILES['userfile']['tmp_name']))
+        {
+        $config =  array
+            (
+                   'upload_path'     => 'assets/eventimages/',
+                   'upload_url'      => base_url().'assets/eventimages/',
+                   'allowed_types'   => 'jpeg|jpg|png|JPG|PNG',
+                   'overwrite'       => TRUE,
+                   'file_name'       => $uid      
+            );
+ 
+             $this->load->library('upload', $config);
+             $this->upload->do_upload();
+            
+             if($this->upload->data())
+             {
+               
+                $filedata=$this->upload->data();
+                $data['images']=$filePath=$uid.$filedata['file_ext'];
+                $success= $this->experienceModel->updateride($data,$id);
+                if( $success)
+                {
+                    $this->session->set_flashdata('link', 'Ride Updated successfully');
+                    return redirect('motoexperience/editride/'.$id);
+                }
+             }
+         }  
+         else
+         {
+             unset($data['userfile']);
+            $success= $this->experienceModel->updateride($data,$id);
+            if( $success)
+            {
+                $this->session->set_flashdata('link', 'Ride Updated successfully');
+                return redirect('motoexperience/editride/'.$id);
+            }
+         } 
+    }              
 }
 
 ?>

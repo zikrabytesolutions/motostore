@@ -5,13 +5,16 @@ class Motoexp extends CI_Controller
 		$this->load->view('motoexp');
 	}
 
-	function domesticall(){
+	function domesticall()
+	{
 		$this->load->view('domesticall');
 	}
-	function internationalall(){
+	function internationalall()
+	{
 		$this->load->view('internationalall');
 	}
-	function ridedetail(){
+	function ridedetail()
+	{
 		$this->load->view('ridedetail');
 	}
 }

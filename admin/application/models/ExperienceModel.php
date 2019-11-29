@@ -53,6 +53,29 @@ class ExperienceModel extends CI_Model
     {
         return $this->db->where('id',$id)->delete('moto_ride');
     }
+
+    function filterplace($placetype)
+    {
+        $this->db->select('*');
+        $this->db->from('place');
+        $this->db->where('type',$placetype);
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+    function filterride($id)
+    {
+        $this->db->select('*');
+        $this->db->from('moto_ride');
+        $this->db->where('id',$id);
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+    function updateride($data,$id)
+    {
+        return $this->db->where('id',$id)->UPDATE('moto_ride',$data);
+    }
 }
 
 ?>

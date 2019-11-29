@@ -71,7 +71,7 @@
 							<img src="<?= base_url('assets/images/m3.png')?>" alt="" class="img-fluid">
 							<div class="overlay-text">
 								<!-- <h5>Motoexperience</h5> -->
-								<a href="<?= base_url('motoexp')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motoexperience.png')?>"></a>
+								<a href="<?= base_url('#')?>"><img class="mx-auto d-block" src="<?= base_url('assets/images/motoexperience.png')?>"></a>
 							</div>
 						</a>
 					</div>

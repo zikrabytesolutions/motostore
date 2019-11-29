@@ -112,7 +112,7 @@
         
                     <td>
                     <button class="btn btn-info btn-xs" type="button" data-toggle="modal" data-target="#myModalview<?= $i?>"><i class="fa fa-search" aria-hidden="true"></i></button>
-                        <button class="btn btn-primary btn-xs" type="button" data-toggle="modal" data-target="#myModal<?= $i?>"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        <a href="<?= base_url('motoexperience/editride/'.$ride->id)?>" class="btn btn-primary btn-xs" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
                          
                         <button class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#myModalsm<?= $i?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </td>
@@ -123,7 +123,7 @@
                             <div class="modal-content">
                                 <div class="color-line"></div>
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Place Event</h4>
+                                    <h4 class="modal-title">Delete Ride</h4>
                                    
                                 </div>
                                 <div class="modal-body">
@@ -136,90 +136,29 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-
-                <!-- view-->
-                <div class="modal fade" id="myModalview<?=$i?>" tabindex="-1" role="dialog"  aria-hidden="true">
+                    <div class="modal fade" id="myModalview<?=$i?>" tabindex="-1" role="dialog"  aria-hidden="true">
                         <div class="modal-dialog modal-xs">
                             <div class="modal-content">
                                 <div class="color-line"></div>
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Description Of Ride</h4>
+                                    <h4 class="modal-title">View Details</h4>
                                    
                                 </div>
                                 <div class="modal-body">
-                                     <?= $ride->Itinerary?>
+                                   <p><?= $ride->Itinerary?></p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                                   
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
 
-                <div class="modal fade" id="myModal<?= $i?>" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="color-line"></div>
-                                <div class="modal-header text-center">
-                                    <h4 class="modal-title">Ride Edit</h4>
-                                </div>
-                                <?php echo form_open('motoexperience/update');?>
-                                <div class="modal-body">
-                                   <div class="row">
-                                   
-                                   <div class="col-md-4">
-                                    <label for="inter"> Type </label>
-                                    <select name="placetype" id="placetype" class="js-source-states form-control" onChange="getplaceedit(this.value);" required>
-                                            <option value="1" <?php if($ride->placetype=='1'){echo "selected";}?>> International</option>
-                                            <option value="2" <?php if($ride->placetype=='2'){echo "selected";}?>> Domestic</option>
-                                    </select>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <label for="inter"> Place </label>
-                                        <select name="place" id="placeedit" class="js-source-states form-control" required>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <label for="inter"> Date </label>
-                                        <input type="date" name="ridedate" class="form-control" required>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <label for="inter"> Price </label>
-                                        <input type="number" name="price" class="form-control" required>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-9">
-                                        <label for="inter"> Title </label>
-                                        <input type="text" name="title" class="form-control" required>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-12"><br>
-                                            <textarea class="summernote "  name="Itinerary" placeholder="Description Here" > <?= $ride->Itinerary?></textarea>
-                                    </div>
-
-                                   </div>
-                                </div>
-                                <div class="modal-footer">
-                                     <input type="hidden" name="id" value="<?= $ride->id?>">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save Change</button>
-                                </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>           
                 <?php endforeach; endif?>
                 </tbody>
                 </table>
