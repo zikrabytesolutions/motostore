@@ -1,6 +1,6 @@
  <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
  <div class="static-btn">
-      <i class="fa fa-user"></i> <a href="<?= base_url();?>" >Go to main page</a>
+      <i class="fa fa-home"></i> <a href="<?= base_url();?>" >Go to main page</a>
       </div>
  <header>
 			<nav class="navbar navbar-expand-md">

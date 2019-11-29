@@ -5,6 +5,23 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<?php include 'css.php'; ?>
+	<link rel="stylesheet" href="<?= base_url('assets/css/select2-3.5.2/select2.css') ?>" />
+	<link rel="stylesheet" href="<?= base_url('assets/css/select2-bootstrap/select2-bootstrap.css') ?>" />
+
+
+	<style type="text/css">
+		.select2-container .select2-choice{
+			height: 38px !important;
+			border-radius: 0px 20px 20px 0px;
+			border:none;
+		}
+		.select2-container .select2-choice .select2-arrow b{
+			display: none;
+		}
+		#s2id_place{
+			text-align: left;
+		}
+	</style>
 </head>
 <body>
 	<div class="main-wrapper">
@@ -25,9 +42,13 @@
 										<option value="2">Domestic</option>
 										<option value="1">International</option>
 									</select>
-									<input type="text" class="form-control search-input" name="search" placeholder="Search">
+									<!-- <input type="text" class="form-control search-input" name="search" placeholder="Search"> -->
+									<select class="form-control search-input" name="place" id="place">
+										<option value="">All Places</option>
+										<option value="" >Bangalore</option>
+									</select>
 									<div class="input-group-append">
-										<span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+										<button type="submit" class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></button>
 									</div>
 								</div>
 							</form>
@@ -71,25 +92,26 @@
                                                    echo  $stringCut = substr($dom->title, 0, 20);
                                                     }
                                                     ?>
-									
+
 										</h5>
 									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
 										<p class="pb-price"><span><?= number_format($dom->price)?></span> / person</p>
 									</div>
 									<div class="pb-right">
-									<p><span class="lbl"><i class="fa fa-map-marker" aria-hidden="true">&nbsp; </i> <?= $dom->placename?></span></p>
+										<p><span class="lbl"><i class="fa fa-map-marker" aria-hidden="true">&nbsp; </i> <?= $dom->placename?></span></p>
 										<a href="" class="btn">Get Quote</a>
 									</div>
 								</div>
 							</div>
 						</a>
 					</div>
-				<?php endforeach; endif?>				
+				<?php endforeach; endif?>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 </div>
 </section>
@@ -143,10 +165,10 @@
 					</div>
 				<?php endforeach; endif?>
 
-				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 </div>
 </section>
@@ -325,7 +347,7 @@
 								</div>
 							</div>
 						</a>
-					</div> 
+					</div>
 				</div>
 			</div>
 		</div>
@@ -339,8 +361,12 @@
 
 <?php include 'expfooter.php'; ?>
 </div>
-<script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>
 
 <?php include 'js.php'; ?>
+<script type="text/javascript" src="<?= base_url('assets/css/select2-3.5.2/select2.min.js') ?>"></script>
+<script type="text/javascript">
+	$('.search-input').select2();
+
+</script>
 </body>
 </html>
