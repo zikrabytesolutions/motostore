@@ -22,8 +22,8 @@
 								<div class="input-group">
 									<select class="form-control select-tab">
 										<option disabled>Select</option>
-										<option value="domestic">Domestic</option>
-										<option value="international">International</option>
+										<option value="2">Domestic</option>
+										<option value="1">International</option>
 									</select>
 									<input type="text" class="form-control search-input" name="search" placeholder="Search">
 									<div class="input-group-append">
@@ -60,8 +60,8 @@
 								<img src="<?= base_url('admin/assets/eventimages/'.$dom->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
 								<div class="pb-content">
 									<div class="pb-left">
-										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place">
+										<h6 class="pb-title txt-h-up" >Package</h6>
+										<h5 class="pb-place" title="<?= $dom->title?>">
 										<?php
                                                     if(strlen($dom->title)>20)
                                                     {
@@ -85,8 +85,7 @@
 							</div>
 						</a>
 					</div>
-				<?php endforeach; endif?>
-					
+				<?php endforeach; endif?>				
 				</div>
 			</div>
 		</div>
@@ -120,7 +119,7 @@
 								<div class="pb-content">
 									<div class="pb-left">
 										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place">
+										<h5 class="pb-place" title="<?= $int->title?>">
 										<?php
                                                     if(strlen($int->title)>20)
                                                     {
