@@ -196,7 +196,14 @@ class Product extends MY_Controller
 
     function save()
     {
-       echo $adminid= $this->session->userdata('motoadsid'); 
+        if (!$this->form_validation->run('productadd'))
+        {
+            $msg =  validation_errors();
+            $array = array('status' => 'fail', 'error' => $msg, 'message' => 'hello');
+        }
+        else
+        {
+        $adminid= $this->session->userdata('motoadsid'); 
         $now = date("Y-m-d H:i:s");
         $product= Array(
             'commonid' => $this->input->post('commonid'),
@@ -330,6 +337,8 @@ class Product extends MY_Controller
            
         }
     }
+    echo json_encode($array);
+}
     
     function variant()
     { 

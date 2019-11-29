@@ -183,7 +183,21 @@ $config = [
                                             'required' => 'Please enter %s .',
                                         ],
                                 ]
-                        ]
+                                ],
+
+                                'productadd' => [
+              
+                                        [
+                                                'field' => 'product',
+                                                'label' => 'Product',
+                                                'rules' => 'trim|required',
+                                                "errors" =>
+                                                 [
+                                                    'required' => ' %s Can Not be Blank.',
+                                                ],
+                                        ]
+                                    
+                                ],
 
            ];
            

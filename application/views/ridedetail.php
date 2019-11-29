@@ -40,15 +40,16 @@
       <div class="col-md-6">
         <div class="ride-content">
           <h4>
-          <?php
-                                                    if(strlen($del->title)>30)
-                                                    {
-                                                     echo  $stringCut = substr($del->title, 0, 30).' ...';
-                                                    }
-                                                    else{
-                                                   echo  $stringCut = substr($del->title, 0, 30);
-                                                    }
-                                                    ?>
+                  <?php
+                   if(strlen($del->title)>30)
+                       {
+                          echo  $stringCut = substr($del->title, 0, 30).' ...';
+                        }
+                        else
+                        {
+                           echo  $stringCut = substr($del->title, 0, 30);
+                        }
+                  ?>
           </h4>
           <div class="row ride-list">
             <div class="col-md-4 col-sm-6">

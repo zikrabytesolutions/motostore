@@ -394,10 +394,19 @@ $(".js-source-states").select2();
 			beforeSend: function(){$("#cover").show();},
 			contentType: false,
     	    processData:false,
-			success: function(data)
-		    {
-                $("#savedat").html(data);
-                setTimeout(function() {$("#cover").hide(); },4000);
+            dataType: 'json',
+            success: function (res)
+             {
+                    if (res.status == 'success')
+                     {
+                        $("#savedat").html(data);
+                       setTimeout(function() {$("#cover").hide(); },4000);
+                    }
+                   else if(res.status == 'fail')
+                   {
+                    setTimeout(function() {$("#cover").hide(); },1000);
+                    toastr.error(res.error);
+                   }
 			},
 		  	error: function() 
 	    	{
