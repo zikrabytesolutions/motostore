@@ -1893,18 +1893,21 @@ position: absolute !important;
     box-shadow: 0 0px 3px 0px #7b6e6e !important;
 }
 
+.searchexp-sec,
 .domesticall-sec,
 .internationalall-sec,
 .domestic-sec,
 .international-sec{
     padding: 40px 0px;
 }
+.searchexp-sec img,
 .domesticall-sec img.dimg,
 .internationalall-sec img.dimg,
 .domestic-carousel img,
 .international-carousel img{
     border-radius: 8px 8px 0px 0px;
 }
+.owl-carousel.searchexp-carousel .owl-nav button.owl-next,
 .owl-carousel.domestic-carousel .owl-nav button.owl-next,
 .owl-carousel.international-carousel .owl-nav button.owl-next{
     position: absolute !important;
@@ -1918,6 +1921,7 @@ position: absolute !important;
     border-radius: 20px !important;
     box-shadow: 0 0px 3px 0px #7b6e6e !important;
 }
+.owl-carousel.searchexp-carousel .owl-nav button.owl-prev,
 .owl-carousel.domestic-carousel .owl-nav button.owl-prev,
 .owl-carousel.international-carousel .owl-nav button.owl-prev{
     position: absolute !important;
@@ -2384,4 +2388,35 @@ ul#autoSuggestionsList {
 }
 .ride-detail{
     padding:40px 0px;
+}
+.banner-sec .form-control.select-tab{
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border: none !important;
+}
+.banner-sec .form-control.search-input{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border: none !important;
+}
+.static-btn {
+    position: fixed;
+    background: red;
+    color: white;
+    padding: 8px;
+    right: -126px;
+    border-radius: 10px 0px 0px 10px;
+    top: 60%;
+    z-index: 99999;
+}
+.static-btn:hover {
+    right: 0;
+    transition: all 1s linear;
+}
+.static-btn i{
+    margin: 0px 5px 0px 5px;
+    font-size: 18px;
+}
+.static-btn a{
+    color: #fff;
 }
