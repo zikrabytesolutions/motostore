@@ -173,7 +173,7 @@
       			min: 100,
       			max: 80000,
       			values: [min , max ],
-                  step: 500,
+                  step: 100,
                   slide: function( event, ui ) 
                   {
                       $( "#min" ).val(  ui.values[ 0 ]);

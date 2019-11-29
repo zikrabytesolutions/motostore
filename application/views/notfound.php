@@ -112,7 +112,9 @@
       </div>
       <a href="<?= base_url();?>">Go to main page</a>
     </div>
+
   </div>
+
  <!-- footer start -->
 <section class="footer-sec">
   <div class="container">
