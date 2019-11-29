@@ -31,14 +31,14 @@
 <section class="ride-detail">
   <div class="container">
     <div class="row"> 
-      <div class="col-md-6">
-        <div class="ride-content">
-          <p>srthujk</p>
-        </div>
-      </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="ride-img">
           <img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="ride-content">
+          <p>srthujk</p>
         </div>
       </div>
     </div>
