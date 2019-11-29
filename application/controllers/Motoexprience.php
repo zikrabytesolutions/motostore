@@ -40,9 +40,10 @@ class Motoexprience extends CI_Controller
 		$this->load->view('internationalall',$data);
 	}
 
-	function ridedetail()
+	function ridedetail($id)
 	{
-		$this->load->view('ridedetail');
+         $data['details']= $this->exprienceModel->ridedetails($id);
+		$this->load->view('ridedetail',$data);
 	}
 
 	function getplace()

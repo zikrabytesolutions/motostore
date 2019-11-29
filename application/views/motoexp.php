@@ -77,7 +77,7 @@
 								<div class="owl-stage">
                 <?php if($ridedomestic): foreach($ridedomestic as $dom):?>
 					<div class="owl-item">
-						<a href="<?= base_url();?>motoexprience/ridedetail">
+					<a href="<?= base_url('motoexprience/ridedetail/'.$dom->id);?>">
 							<div class="col-content">
 								<img src="<?= base_url('admin/assets/eventimages/'.$dom->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
 								<div class="pb-content">
@@ -138,7 +138,7 @@
 						<div class="owl-stage">
                            <?php if($rideinternational): foreach($rideinternational as $int):?>
 							<div class="owl-item">
-						<a href="<?= base_url();?>motoexprience/ridedetail">
+							<a href="<?= base_url('motoexprience/ridedetail/'.$int->id);?>">
 							<div class="col-content">
 								<img src="<?= base_url('admin/assets/eventimages/'.$int->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
 								<div class="pb-content">
@@ -193,7 +193,7 @@
 						<div class="owl-stage">
 						<?php foreach ($result as $res):?>
 							<div class="owl-item">
-						<a href="<?= base_url();?>motoexprience/ridedetail">
+						<a href="<?= base_url('motoexprience/ridedetail/'.$res->id);?>">
 							<div class="col-content">
 								<img src="<?= base_url('admin/assets/eventimages/'.$res->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
 								<div class="pb-content">
