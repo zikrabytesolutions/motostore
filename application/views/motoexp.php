@@ -35,17 +35,16 @@
 					<div class="col-md-6 offset-md-3 text-center">
 						<div class="banner-title">
 							<h4>Lorem Ipsum is simply dummy text</h4>
-							<form method="POST" enctype="multipart/form-data">
+							<?php echo form_open('motoexprience/searchpost')?>
 								<div class="input-group">
-									<select class="form-control select-tab">
-										<option disabled>Select</option>
+									<select class="form-control select-tab" name="placetype" onChange="getplace(this.value);" required>
+										<option>Select</option>
 										<option value="2">Domestic</option>
 										<option value="1">International</option>
 									</select>
 									<!-- <input type="text" class="form-control search-input" name="search" placeholder="Search"> -->
-									<select class="form-control search-input" name="place" id="place">
-										<option value="">All Places</option>
-										<option value="" >Bangalore</option>
+									<select class="form-control search-input" name="place" id="place" required>
+										
 									</select>
 									<div class="input-group-append">
 										<button type="submit" class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -59,6 +58,8 @@
 		</section>
 		<!-- banner section end  -->
 		<!-- section domestic start -->
+
+		<?php if($place==''):?>
 		<section class="domestic-sec">
 			<div class="container">
 				<div class="row">
@@ -115,9 +116,11 @@
 </div>
 </div>
 </section>
+<?php endif?>
 <!-- section domestic end -->
 
 <!-- section international start -->
+<?php if($place==''):?>
 <section class="international-sec">
 	<div class="container">
 		<div class="row">
@@ -173,14 +176,14 @@
 </div>
 </section>
 <!-- section international end -->
-
-
+<?php endif?>
+<?php if(isset($result)): if($result):?>
 <!-- section searchexp start -->
 <section class="searchexp-sec">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10">
-				<h3 class="side-title">searchexp : Limited period offer</h3>
+				<h3 class="side-title">Search result</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -188,166 +191,38 @@
 				<div class="owl-carousel owl-theme owl-loaded searchexp-carousel">
 					<div class="owl-stage-outer">
 						<div class="owl-stage">
+						<?php foreach ($result as $res):?>
 							<div class="owl-item">
-								<a href="<?= base_url();?>motoexp/ridedetail">
-									<div class="col-content">
-										<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
-										<div class="pb-content">
-											<div class="pb-left">
-												<h6 class="pb-title txt-h-up">Package</h6>
-												<h5 class="pb-place">Best of Kerala</h5>
-									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
-										<p class="pb-price"><span>7,500</span> / person</p>
-									</div>
-									<div class="pb-right">
-										<p><span class="lbl">4D-3N</span></p>
-										<a href="" class="btn">Get Quote</a>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="owl-item">
-						<a href="<?= base_url();?>motoexp/ridedetail">
+						<a href="<?= base_url();?>motoexprience/ridedetail">
 							<div class="col-content">
-								<img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
+								<img src="<?= base_url('admin/assets/eventimages/'.$res->images);?>" class="img-fluid" alt="alt_text" style="width:350px; height:220px">
 								<div class="pb-content">
 									<div class="pb-left">
 										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place">Best of Kerala</h5>
+										<h5 class="pb-place" title="<?= $res->title?>">
+										<?php
+                                                    if(strlen($res->title)>20)
+                                                    {
+                                                     echo  $stringCut = substr($res->title, 0, 20).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($res->title, 0, 20);
+                                                    }
+                                                    ?></h5>
 									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
-										<p class="pb-price"><span>7,500</span> / person</p>
+										<p class="pb-price"><span><?= number_format($res->price)?></span> / person</p>
 									</div>
 									<div class="pb-right">
-										<p><span class="lbl">4D-3N</span></p>
+										<p><span class="lbl"><i class="fa fa-map-marker" aria-hidden="true">&nbsp; </i> <?= $res->placename?></span></p>
 										<a href="" class="btn">Get Quote</a>
 									</div>
 								</div>
 							</div>
 						</a>
 					</div>
-					<div class="owl-item">
-						<a href="<?= base_url();?>motoexp/ridedetail">
-							<div class="col-content">
-								<img src="<?= base_url();?>assets/images/blog/img3.png" class="img-fluid" alt="alt_text">
-								<div class="pb-content">
-									<div class="pb-left">
-										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place">Best of Kerala</h5>
-									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
-										<p class="pb-price"><span>7,500</span> / person</p>
-									</div>
-									<div class="pb-right">
-										<p><span class="lbl">4D-3N</span></p>
-										<a href="" class="btn">Get Quote</a>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="owl-item">
-						<a href="<?= base_url();?>motoexp/ridedetail">
-							<div class="col-content">
-								<img src="<?= base_url();?>assets/images/blog/img4.png" class="img-fluid" alt="alt_text">
-								<div class="pb-content">
-									<div class="pb-left">
-										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place">Best of Kerala</h5>
-									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
-										<p class="pb-price"><span>7,500</span> / person</p>
-									</div>
-									<div class="pb-right">
-										<p><span class="lbl">4D-3N</span></p>
-										<a href="" class="btn">Get Quote</a>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="owl-item">
-						<a href="<?= base_url();?>motoexp/ridedetail">
-							<div class="col-content">
-								<img src="<?= base_url();?>assets/images/blog/img1.png" class="img-fluid" alt="alt_text">
-								<div class="pb-content">
-									<div class="pb-left">
-										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place">Best of Kerala</h5>
-									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
-										<p class="pb-price"><span>7,500</span> / person</p>
-									</div>
-									<div class="pb-right">
-										<p><span class="lbl">4D-3N</span></p>
-										<a href="" class="btn">Get Quote</a>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="owl-item">
-						<a href="<?= base_url();?>motoexp/ridedetail">
-							<div class="col-content">
-								<img src="<?= base_url();?>assets/images/blog/img2.png" class="img-fluid" alt="alt_text">
-								<div class="pb-content">
-									<div class="pb-left">
-										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place">Best of Kerala</h5>
-									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
-										<p class="pb-price"><span>7,500</span> / person</p>
-									</div>
-									<div class="pb-right">
-										<p><span class="lbl">4D-3N</span></p>
-										<a href="" class="btn">Get Quote</a>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="owl-item">
-						<a href="<?= base_url();?>motoexp/ridedetail">
-							<div class="col-content">
-								<img src="<?= base_url();?>assets/images/blog/img3.png" class="img-fluid" alt="alt_text">
-								<div class="pb-content">
-									<div class="pb-left">
-										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place">Best of Kerala</h5>
-									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
-										<p class="pb-price"><span>7,500</span> / person</p>
-									</div>
-									<div class="pb-right">
-										<p><span class="lbl">4D-3N</span></p>
-										<a href="" class="btn">Get Quote</a>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="owl-item">
-						<a href="<?= base_url();?>motoexp/ridedetail">
-							<div class="col-content">
-								<img src="<?= base_url();?>assets/images/blog/img4.png" class="img-fluid" alt="alt_text">
-								<div class="pb-content">
-									<div class="pb-left">
-										<h6 class="pb-title txt-h-up">Package</h6>
-										<h5 class="pb-place">Best of Kerala</h5>
-									<!-- <p class="pb-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i></p> -->
-										<p class="pb-price"><span>7,500</span> / person</p>
-									</div>
-									<div class="pb-right">
-										<p><span class="lbl">4D-3N</span></p>
-										<a href="" class="btn">Get Quote</a>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+				
+						<?php endforeach; ?>
 				</div>
 			</div>
 		</div>
@@ -357,16 +232,31 @@
 </section>
 <!-- section searchexp end -->
 
-
+<?php endif?><?php endif?>
 
 <?php include 'expfooter.php'; ?>
 </div>
 
 <?php include 'js.php'; ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 <script type="text/javascript" src="<?= base_url('assets/css/select2-3.5.2/select2.min.js') ?>"></script>
 <script type="text/javascript">
 	$('.search-input').select2();
 
+</script>
+</script>
+<script>
+  function getplace(val)
+  {
+    $.ajax({
+	type: "POST",
+	url: "<?= base_url('motoexprience/getplace')?>",
+	data:'type='+val,
+	success: function(data){
+		$("#place").html(data);
+	}
+	}); 
+  }
 </script>
 </body>
 </html>

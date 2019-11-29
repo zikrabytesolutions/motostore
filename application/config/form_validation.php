@@ -39,7 +39,7 @@ $config = [
                                     [
                                         'field' => 'password',
                                         'label' => 'Password',
-                                        'rules' => 'required',
+                                        'rules' => 'required|exact_length[6]',
                                         "errors" => 
                                         [
                                             'required' => ' %s Cannot be Blank.', 
