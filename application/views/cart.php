@@ -171,15 +171,15 @@
                             <div class="row d-flex flex-nowrap justify-content-around">
                                 <div class="text-center">
                                     <span class="icon-shield"></span>
-                                    <p class="mt-2">Security Policy</p>
+                                    <p class="mt-2"  data-toggle="modal" data-target="#securitypolicy">Security Policy</p>
                                 </div>
                                 <div class="text-center">
                                     <span class="icon-delivery-truck"></span>
-                                    <p class="mt-2">Delivery Policy</p>
+                                    <p class="mt-2" data-toggle="modal" data-target="#deliverypolicy">Delivery Policy</p>
                                 </div>
                                 <div class="text-center">
                                     <span class="icon-back-arrow"></span>
-                                    <p class="mt-2">Return Policy</p>
+                                    <p class="mt-2" data-toggle="modal" data-target="#returnpolicy">Return Policy</p>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
         </div>
         </div>
    
-
+    <?php include('modals.php');?>
     <?php include('footer.php');?>
 </div>
     <?php include('js.php');?>
