@@ -171,15 +171,15 @@
                             <div class="row d-flex flex-nowrap justify-content-around">
                                 <div class="text-center">
                                     <span class="icon-shield"></span>
-                                    <p class="mt-2"  data-toggle="modal" data-target="#securitypolicy">Security Policy</p>
+                                    <p class="mt-2 modalbtn"  data-toggle="modal" data-target="#securitypolicy">Security Policy</p>
                                 </div>
                                 <div class="text-center">
                                     <span class="icon-delivery-truck"></span>
-                                    <p class="mt-2" data-toggle="modal" data-target="#deliverypolicy">Delivery Policy</p>
+                                    <p class="mt-2 modalbtn" data-toggle="modal" data-target="#deliverypolicy">Delivery Policy</p>
                                 </div>
                                 <div class="text-center">
                                     <span class="icon-back-arrow"></span>
-                                    <p class="mt-2" data-toggle="modal" data-target="#returnpolicy">Return Policy</p>
+                                    <p class="mt-2 modalbtn" data-toggle="modal" data-target="#returnpolicy">Return Policy</p>
                                 </div>
                             </div>
                         </div>
