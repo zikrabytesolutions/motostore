@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?= base_url('assets/')?>vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" />
 <div class="row">
 <div class="col-lg-3">
                 <div class="hpanel">
@@ -7,9 +8,7 @@
                             All Product
                         </h3>
                     </div>
-                    <div class="panel-footer">
-                        This is standard panel footer
-                    </div>
+                   
                 </div>
             </div>
             <div class="col-lg-3">
@@ -20,35 +19,29 @@
                             Out Of Stock
                         </h3>
                     </div>
-                    <div class="panel-footer">
-                        This is standard panel footer
-                    </div>
+                   
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="hpanel">
                     <div class="panel-body text-center">
-                    <h1 class="m-xs"><b>0</b></h1>
+                    <h1 class="m-xs"><b><?= $monthorder?></b></h1>
                     <h3 class="font-extra-bold no-margins text-success">
                             Monthly Order
                         </h3>
                     </div>
-                    <div class="panel-footer">
-                        This is standard panel footer
-                    </div>
+                   
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="hpanel">
                     <div class="panel-body text-center">
-                    <h1 class="m-xs"><b>0</b></h1>
+                    <h1 class="m-xs"><b><?= $todayorder?></b></h1>
                     <h3 class="font-extra-bold no-margins text-success">
                             Today Order
                         </h3>
                     </div>
-                    <div class="panel-footer">
-                        This is standard panel footer
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -62,9 +55,7 @@
                             All User
                         </h3>
                     </div>
-                    <div class="panel-footer">
-                        This is standard panel footer
-                    </div>
+                   
                 </div>
             </div>
             <div class="col-lg-3">
@@ -75,9 +66,7 @@
                             Out Of Stock
                         </h3>
                     </div>
-                    <div class="panel-footer">
-                        This is standard panel footer
-                    </div>
+                   
                 </div>
             </div>
             <div class="col-lg-3">
@@ -88,9 +77,7 @@
                     Monthly Order
                         </h3>
                     </div>
-                    <div class="panel-footer">
-                        This is standard panel footer
-                    </div>
+                    
                 </div>
             </div>
             <div class="col-lg-3">
@@ -101,9 +88,7 @@
                             Today Order
                         </h3>
                     </div>
-                    <div class="panel-footer">
-                        This is standard panel footer
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -120,15 +105,15 @@
             </div>
             <div class="panel-body">
             <div class="table-responsive">
-                <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+            <table id="example2" class="table table-striped table-bordered table-hover">
                     <thead>
                     <tr>
                     <th>#</th>
                         <th>Order Id</th>
                         <th>Name</th>
                         <th>Phone</th>
-                        <th>Iteam</th>
-                        <th>Grand</th>
+                        <th>Item</th>
+                        <th>Grand Total(Rs)</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -144,44 +129,10 @@
                         <td><?= $rst->grand?></td>
                         <td>
                           
-                            <span class="label label-warning">Pending</span>
+                            <span class="label label-warning" >Pending</span>
                         </td>
-                        <td><button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal<?=$i;?>">  View</a></td>
+                        <td><a href="<?= base_url('order/details/'.$rst->orderdid)?>" class="btn btn-primary btn-xs" >  View</a></td>
                     </tr>
-
-                    <div class="modal fade" id="myModal<?=$i;?>" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="color-line"></div>
-                                <div class="modal-header text-center">
-                                    <h4 class="modal-title">Product Status</h4>
-                                    <small class="font-bold"></small>
-                                </div>
-                                <?php form_open('stock/status')?>
-                                <div class="modal-body">
-                                   <div class="row">
-                                       <div class="col-md-12">
-                                       <div class="form-group">
-                                            <label class="control-label">Product Status</label>
-                                            <select class="form-control" name="status">
-                                                <option value="0">Pending</option>
-                                                <option value="1">Accept</option>
-                                                <option value="2">Shipped</option>
-                                                <option value="3">Deliverd</option>
-                                            </select>
-                                         </div>
-                                       </div>
-                                   </div>
-                                </div>
-                                <div class="modal-footer">
-                                <input type="hidden" name="orderid" value="<?= $rst->id?>">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
-                                </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                     <?php endforeach; endif;?>

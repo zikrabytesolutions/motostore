@@ -2423,7 +2423,8 @@ ul#autoSuggestionsList {
 .ride-detail .ride-img img{
     width: 100%;
 }
-.ride-content {
+.ride-content 
+{
     padding: 10px 40px 10px;
 }
 .ride-content .ride-list i{
@@ -2436,4 +2437,9 @@ ul#autoSuggestionsList {
 .ride-list{
     margin-bottom: 20px;
 
+}
+
+body 
+{
+    font-family: 'Roboto';font-size: 14px;
 }

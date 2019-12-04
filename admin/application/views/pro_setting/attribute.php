@@ -34,7 +34,7 @@
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                    
                 </div>
-                Add List
+                Attribute List
             </div>
             <div class="panel-body">
             <div class="table-responsive">
@@ -70,9 +70,32 @@
                                </td>
                             <td>
                                  <button class="btn btn-warning btn-xs" type="button" data-toggle="modal" data-target="#myModal<?=$at->id?>"><i class="fa fa-pencil"></i></button>
-                                 <button class="btn btn-danger btn-xs" type="button" data-toggle="modal" data-target="#myModal1<?=$at->id?>"><i class="fa fa-trash"></i></button>
+                                 <button class="btn btn-danger btn-xs" type="button" data-toggle="modal" data-target="#myModal2<?=$at->id?>"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
+
+
+                        <div class="modal fade hmodal-warning" id="myModal2<?=$at->id?>" tabindex="-1" role="dialog"  aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content animated bounceIn">
+                            <div class="color-line"></div>
+                            <div class="modal-header">
+                                <h5 class="modal-title">Delete</strong> </h5>
+                                <small class="font-bold"></small>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                     <h4 style="color:red"><b>Are you sure you want to delete?</b></h4>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                <a href="<?= base_url('attribute/delete/'.$at->id);?>" class="btn btn-primary" >Yes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
                   <div class="modal fade hmodal-warning" id="myModal<?=$at->id?>" tabindex="-1" role="dialog"  aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -86,14 +109,6 @@
                                 <div class="form-group">
                                     <label>Brand Name</label>
                                     <input type="text"  class="form-control" value="<?= $at->attribute?>" name="attribute" placeholder="Brand Name">
-                                </div>
-
-                                <div class="form-group">
-                                <label>Brand Status</label>
-                                 <select name="status" id="" class="form-control">
-                                    <option value="1">Active</option>
-                                    <option value="0">In Active</option>
-                                 </select>
                                 </div>
                             </div>
                             <div class="modal-footer">

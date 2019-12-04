@@ -449,14 +449,14 @@ class ProductSetting extends CI_Model
     }
 
    
-    function productlists($brand,$category,$subcategory,$producttype,$gender)
+    function productlists($brand,$category,$subcategory)
     {
         $this->db->select('product.*,brand.brand,category.cat_name,sub_category.sub_category_name');
         $this->db->from('product');
         $this->db->join('brand','brand.id=product.brand_id');
         $this->db->join('category','category.id=product.cat_id');
         $this->db->join('sub_category','sub_category.id=product.subcat_id');
-        $this->db->where(['product.cat_id'=>$category,'product.subcat_id'=>$subcategory,'product.brand_id'=>$brand,'product.producttype'=>$producttype,'product.gender'=>$gender]);
+        $this->db->where(['product.cat_id'=>$category,'product.subcat_id'=>$subcategory,'product.brand_id'=>$brand]);
         $query= $this->db->get();
         return $query->result();
     }
@@ -571,6 +571,52 @@ class ProductSetting extends CI_Model
         $this->db->where('prodetailsid',$vrtid);
         $query=$this->db->get();
         return $query->result();
+    }
+
+    function brandremove($id)
+    {
+        return $this->db->where('id',$id)->DELETE('brand');
+    }
+
+    function catremove($id)
+    {
+        return $this->db->where('id',$id)->DELETE('category');
+    }
+
+    function subcatremove($id)
+    {
+        return $this->db->where('id',$id)->DELETE('sub_category');
+    }
+
+    function allproductlists()
+    {
+        $this->db->select('product.*,brand.brand,category.cat_name,sub_category.sub_category_name');
+        $this->db->from('product');
+        $this->db->join('brand','brand.id=product.brand_id');
+        $this->db->join('category','category.id=product.cat_id');
+        $this->db->join('sub_category','sub_category.id=product.subcat_id');
+        $query= $this->db->get();
+        return $query->result();
+    }
+
+    function countcategory()
+    {
+        return $this->db->from("category")->count_all_results();
+    }
+
+    function countparoct()
+    {
+        return $this->db->from("product")->count_all_results();
+    }
+
+    function attdelete($id)
+    {
+        return $this->db->where('id',$id)->DELETE('attribute');
+    }
+
+    function configdelete($id)
+    {
+        return $this->db->where('id',$id)->DELETE('attribute_value');
     }
     
 }

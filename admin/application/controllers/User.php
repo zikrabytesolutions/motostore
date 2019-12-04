@@ -6,6 +6,8 @@ class User extends MY_Controller
     {
         parent::__construct();
         $this->load->model('userModel');
+        $this->load->model('orderModel');
+        $this->load->model('dashboardModel');
     }
 
     function index()
@@ -41,6 +43,40 @@ class User extends MY_Controller
             fclose($handle);
         exit;
     }
+
+    function timeline($id)
+    {
+        $data['userorder']=$this->orderModel->userorder($id);
+        $this->load->view('header');
+        $this->load->view('timeline',$data);
+        $this->load->view('footer');
+    }
+
+    function deliverydetails($orderid)
+    {
+       return $this->dashboardModel->getdeliveryaddress($orderid);
+    }
+
+    function getsummery($orderid)
+    {
+        return $this->dashboardModel->getsummery($orderid);
+    }
+
+    function getdetails($orderid)
+    {
+       return $this->dashboardModel->details($orderid);
+    }
+
+    function findcartvalue( $proid, $detailsid )
+    {
+       return $this->dashboardModel->showtempcartvalue($proid,$detailsid);
+    }
+
+    function findattributecart( $data )
+     {
+        return $this->dashboardModel->attributefind( $data );
+     }
+
 }
 
 ?>

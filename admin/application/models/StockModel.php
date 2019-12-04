@@ -41,6 +41,14 @@ class StockModel extends CI_Model
     {
         return $this->db->where('id',$id)->UPDATE('product_order_iteam',['status'=>$status]);
     }
+
+    function allemaillist()
+    {
+        $this->db->select('*');
+        $this->db->from('subscribed');
+        $query= $this->db->get();
+        return $query->result();
+    }
 }
 
 ?>

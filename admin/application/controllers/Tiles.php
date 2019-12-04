@@ -53,6 +53,26 @@ class Tiles extends My_Controller
                          
                        
 }
+
+function update()
+{
+        $data= $this->input->post();
+        $id= $this->input->post('id');
+        $success= $this->DashboardModel->updatetiles($data,$id);
+        if($success)
+         {
+            return redirect('tiles');
+         }
+}
+
+function delete($id)
+{
+    $success= $this->DashboardModel->removetiles($id);
+    if($success)
+     {
+        return redirect('tiles');
+     }
+}
               
     
 }

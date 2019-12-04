@@ -37,8 +37,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="text-center m-b-md">
-                <h3>PLEASE LOGIN TO APP</h3>
-                <small>Moto Store Admin Login</small>
+                <h3>Moto Store Admin Login</h3>
             </div>
             <div class="hpanel">
                 <div class="panel-body">
@@ -54,14 +53,14 @@
 					<?php echo form_open('login/validate',['id'=>'loginForm'])?>
                       
                             <div class="form-group">
-                                <label class="control-label" for="username">Username</label>
-                                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="userid" id="username" class="form-control">
-                                <span class="help-block small">Your unique username to app</span>
+                                <label class="control-label" for="username">Email ID</label>
+                                <input type="text" placeholder="Enter email id" title="Please enter you username" required="" value="" name="userid" id="username" class="form-control">
+                                
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Password</label>
                                 <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
-                                <span class="help-block small">Yur strong password</span>
+                               
                             </div>
                            
                             <button type="submit" class="btn btn-success btn-block">Login</button>

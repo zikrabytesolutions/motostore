@@ -20,20 +20,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div id="slider_main" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#slider_main" data-slide-to="0" class="active icon-wheel"></li>
-    <li data-target="#slider_main" data-slide-to="1" class="icon-wheel"></li>
-    <li data-target="#slider_main" data-slide-to="2" class="icon-wheel"></li>
+  <?php $i=0; if($slider): foreach( $slider as $sd):?>
+    <li data-target="#slider_main" data-slide-to="<?= $i?>" class="<?php if($i==0){echo "active";}?> icon-wheel"></li>
+	
+     <?php  $i++; endforeach; endif?>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="<?= base_url('assets/images/home-slider.png')?>" alt="First slide">
+
+   <?php $i=0; if($slider): foreach( $slider as $sd): $i++;?>
+    <div class="carousel-item <?php if($i==1){echo "active";}?>">
+      <img class="d-block w-100" src="<?= base_url('admin/assets/slider/'.$sd->images)?>" alt="First slide">
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="<?= base_url('assets/images/home-slider.png')?>" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="<?= base_url('assets/images/home-slider.png')?>" alt="Second slide">
-    </div>
+   <?php endforeach; endif?>
   </div>
   <a class="carousel-control-prev" href="#slider_main" role="button" data-slide="prev">
     <span class="icon-slider-arrow" aria-hidden="true"></span>
@@ -77,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					<?php endforeach; else: ?>
 
-					<h4>No tiles present </h4>
+					<h4>No tiles found </h4>
 
 					<?php endif; ?>
 
@@ -174,12 +172,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <p>LATEST NEWS FROM MOTOSTORE</p>
                                     </div>
                                     <div id="mc_embed_signup" class="subscribe-form">
-                                        <form action="#" method="post" id="subscribe-form" name="subscribe-form" class="validate" target="_blank" novalidate="">
+									<?php echo form_open('home/emailsave',['id'=>'subscribe-form','class'=>'validate' ]);?>
                                             <div id="mc_embed_signup_scroll" class="mc-form">
-                                                <input type="email" class="form-control" name="email" placeholder="Enter Email">
-                                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                                <div class="mc-news" aria-hidden="true"><input type="text" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" tabindex="-1" value=""></div>
-                                                <button type="submit" class="btn">Subscribe</button>
+                                                <input type="email" class="form-control" name="email" placeholder="Enter Email" required>
+                                                <?php if($this->session->flashdata('msg_error')):?>
+													<div style="color:yellow"><?= $this->session->flashdata('msg_error')?></div>
+												<?php endif;?>
+												<button type="submit" class="btn">Subscribe</button>
                                             </div>
                                         </form>
                                     </div>

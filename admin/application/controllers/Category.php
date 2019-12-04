@@ -34,6 +34,12 @@ class Category extends MY_Controller
             $data['updated']=$now;
             $data['updated_by']=  $id;
             unset($data['submit']);
+            $countcat= $this->productSetting->countcategory();
+            if($countcat>=5)
+            {
+                $this->session->set_flashdata('item', array('message' => 'you can add only 5 category','class' => 'danger'));
+                  return redirect('category');
+            }
            $success=$this->productSetting->addcategory($data);
            if($success>0)
            {
@@ -112,6 +118,15 @@ class Category extends MY_Controller
          {
             return redirect('category');
          }
+     }
+
+     function delete($id)
+     {
+        $done= $this->productSetting->catremove($id);
+        if($done)
+        {
+           return redirect('category');
+        }
      }
 }
 

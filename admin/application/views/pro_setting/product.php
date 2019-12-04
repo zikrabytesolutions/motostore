@@ -38,7 +38,7 @@
     display: none; 
 }
     </style>
-
+<?php $ci =& get_instance();?>
 <?php echo form_open_multipart('product/save',['id'=>'save'])?>
 <?php $common= uniqid(); ?>
 <input type="hidden" name="commonid" id="commonid" value="<?= $common ?>">
@@ -64,14 +64,8 @@
                            </div>
 
                            <div class="row">
-                               <div class="col-md-4">
-                                    <div class="form-group">
-                                     <label>Product Code</label>
-                                     <input type="text" id="productcode" class="form-control" name="productcode" placeholder="Product Code">
-                                    </div>
-                               </div>
-
-                               <div class="col-md-4">
+                              
+                               <!-- <div class="col-md-4">
                                     <div class="form-group">
                                      <label>Product Type</label>
                                      
@@ -93,17 +87,16 @@
                                            <option value="nomatter"> No Matter </option>
                                         </select>
                                     </div>
+                               </div> -->
+
+                               <div class="col-md-3">
+                                    <div class="form-group">
+                                     <?php $productcode= $ci->countrow();?>
+                                     <input type="text" id="productcode" class="form-control" name="productcode" value="MOTO-00<?= $productcode?>" readonly>
+                                    </div>
                                </div>
-                            </div>
 
-
-                           <div class="form-group">
-                           <label>Short Description</label>
-                               <textarea name="description" id="description" rows="4" class="form-control"></textarea>
-                           </div>   
-                       </div>
-
-                       <div class="col-md-4">
+                       <div class="col-md-3">
                              <select name="brand"  id="brand" class="js-source-states form-control">
                                 <option value="">Select Brand</option>
                                 <?php if($brandlist): foreach($brandlist as $brand):?>
@@ -113,7 +106,7 @@
                              </select>
                          </div>
 
-                       <div class="col-md-4">
+                       <div class="col-md-3">
                             <select name="category" id="category" class="js-source-states form-control" onChange="getsubcategory(this.value);">>
                                 <option value="">Select Product Category</option>
                                 <?php if($category): foreach($category as $cate):?>
@@ -122,10 +115,20 @@
                             </select>
                        </div>
 
-                         <div class="col-md-4">
+                         <div class="col-md-3">
                              <select name="subcategory"  id="subcate" class="form-control">
                              </select>
                          </div>
+                            </div>
+
+
+                           <div class="form-group">
+                           <label>Short Description</label>
+                               <!-- <textarea name="description" id="description" rows="4" class="form-control"></textarea> -->
+                               <textarea class="summernote " id="description" name="description" placeholder="Description Here" ></textarea>
+                           </div>   
+                       </div>
+                       
 
                          <br>
                         <div class="hr-line-dashed"></div>
@@ -138,7 +141,7 @@
 
 <div class="tabs-left">
 <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#tab-4" aria-expanded="true"> Infomation</a></li>
+    <li class="active"><a data-toggle="tab" href="#tab-4" aria-expanded="true"> Simple Product</a></li>
     <li class=""><a data-toggle="tab" href="#tab-6" aria-expanded="true"> Attribute</a></li>
     <li class="" id="rowvariant"><a data-toggle="tab" href="#tab-7" aria-expanded="false">Variation</a></li>
 </ul>
@@ -146,15 +149,69 @@
 
 <div id="tab-4" class="tab-pane active">
     <div class="panel-body">
-    What is Lorem Ipsum?
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-          when an unknown printer took a galley of type and scrambled it to make a type 
-          specimen book. It has survived not only five centuries, but also the leap into
-           electronic typesetting, remaining essentially unchanged. It was popularised in
-            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-             and more recently with desktop publishing software like Aldus PageMaker
-              including versions of Lorem Ipsum.
+    <div class="row">
+            <div class="form-group col-md-4">
+                <label>Product Quantity</label>
+                <input type="number"  id="productquantity" class="form-control" name="productquantity" >
+            </div>
+
+            <div class="form-group col-md-3">
+                <label>Status</label>
+                <select name="stockstatus" id="stockstatus" class="form-control">
+                    <option value="1">In Stock</option>
+                    <option value="0">Out Of Stock</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-4">
+            <label>Quantity Visible</label>
+            <select name="visible" id="visible" class="form-control">
+                    <option value="1">Yes</option>
+                    <option value="1">NO</option>
+                </select>
+            </div>
+
+            </div>
+
+            <div class="row">
+
+            <div class="col-md-4">
+            <label>Regular Price</label>
+                <input type="number"  id="price" class="form-control" name="price" >
+            </div>
+
+            <div class="col-md-4">
+            <label>Offer Price</label>
+                <input type="number"  id="periceoffer" class="form-control change" name="periceoffer" >
+            </div>
+
+
+            <div class="col-md-4">
+            <label>Offer %</label>
+                <input type="text"  id="offerper" class="form-control" name="offerper" >
+                <!-- <u data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color:blue"> <u>Schedule </u></a> -->
+            </div>
+
+            <!-- ----shedule----- -->
+            <div class="col-md-12">
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="row">
+                        <!-- <div class="col-md-4 col-md-offset-4"> -->
+                        <div class="col-md-6">
+                        <label>Date From</label>
+                            <input type="date"  id="offerstart" class="form-control" name="offerstart" >
+                        </div>
+
+                        <div class="col-md-6">
+                        <label>Date To</label>
+                            <input type="date"  id="offerend" class="form-control" name="offerend" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- -----------end shedule------- -->
+            </div> 
     </div>
 </div>
 <div id="tab-6" class="tab-pane">
@@ -166,7 +223,7 @@
           <div class="form-group">
              <label>Add Attribute for Product</label>
                 <select name="attribute" id="attribute" class="form-control">
-                    <option value="">Select Attribute</option>
+                    <option value="" disabled>Select Attribute</option>
                       <?php if($attribute): foreach($attribute as $att):?>
                           <option value="<?= $att->id?>"><?= $att->attribute?></option>
                        <?php endforeach; endif;?>
@@ -220,7 +277,7 @@
                 
             </div>
             <div class="panel-footer" id="savedat">
-                This is standard panel footer
+                
             </div>
         </div>
     </div>
@@ -231,13 +288,13 @@
         <div class="hpanel hblue">
             <div class="panel-heading hbuilt">
                 <div class="panel-tools">
-                    <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                    <a class="showhide" style="color:green"><i class="fa fa-chevron-up"></i></a>
                 </div>
                  Setting
             </div>
             <div class="panel-body">
             <button type="submit" class="btn btn-primary">Publish Product</button>
-             <span> 
+             <span id="productsaved"> 
              <img src="<?= base_url('assets/images/loder.gif')?>" id="cover">
             </span> <hr>
                 <label for="">Select Tags</label>
@@ -256,26 +313,14 @@
                        </label>
                        <input type="file" id="file-upload" name="userfile" accept="image/*" onchange="loadimage(event)" >
                      <span> <button class="btn btn-danger btn-circle" type="button" id="delbtn" onclick="removeimage('<?=$common?>')"><i class="fa fa-times" ></i></button> </span>
+                      <div id="productimage" style="color:red"></div>
                        <br>
                  <hr>
-                       <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingOne">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse" aria-expanded="true" aria-controls="collapseOne">
-                                   Product Gallery
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                 <input id="imagegallery" name="files[]" type="file" accept="image/*" multiple>
-                            </div>
-                        </div>
-                    </div>
+                     
 
             </div>
             <div class="panel-footer">
-                This is standard panel footer
+              
             </div>
         </div>
     </div>
@@ -376,6 +421,7 @@ $(".js-source-states").select2();
     {
         $('.outputimgn').show();
         $('#delbtn').show();
+        $('#productimage').text('');
       var outputImg = document.getElementById('outputImg');
       outputImg.src = reader.result;
     };
@@ -384,8 +430,16 @@ $(".js-source-states").select2();
 </script>
 
 <script>
- $(document).ready(function (e) {
-	$("#save").on('submit',(function(e) {
+ $(document).ready(function (e) 
+ {
+    
+	$("#save").on('submit',(function(e) 
+    {
+        if( document.getElementById("file-upload").files.length == 0 )
+        {
+            $('#productimage').text("Please Select Image");
+        }
+        
 		e.preventDefault();
 		$.ajax({
             url: "<?php echo site_url('product/save'); ?>",
@@ -397,15 +451,20 @@ $(".js-source-states").select2();
             dataType: 'json',
             success: function (res)
              {
-                    if (res.status == 'success')
+                    if (res.status == 'fail')
                      {
-                        $("#savedat").html(data);
-                       setTimeout(function() {$("#cover").hide(); },4000);
-                    }
-                   else if(res.status == 'fail')
-                   {
-                    setTimeout(function() {$("#cover").hide(); },1000);
+                        setTimeout(function() {$("#cover").hide(); },1000);
                     toastr.error(res.error);
+                    }
+                   else
+                   {
+                     // $("#savedat").html(data);
+                       setTimeout(function() 
+                       {
+                           $('#productsaved').text("Product Saved");
+                           $("#cover").hide(); 
+                       },4000);
+                   
                    }
 			},
 		  	error: function() 
@@ -413,8 +472,11 @@ $(".js-source-states").select2();
                 alert("Somthing Went Wrong");
 	    	} 	        
 	   });
+     
 	}));
+    
 });
+ 
 </script>
 
 <script type="text/javascript">
@@ -485,13 +547,12 @@ $(".js-source-states").select2();
         data:'commonid='+common,
         dataType: 'html',  
         success: function (html) 
-         { 
-            
+         {  
             setTimeout(function()
              {
                 var msg="Variation Created."
                 $('#loder').hide();
-                toastr.success(msg);
+                // toastr.success(msg);
                 $('#variation').html(html); 
                
               },4000);

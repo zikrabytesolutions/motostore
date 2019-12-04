@@ -142,6 +142,60 @@
         
      }
 
+     function delete($id)
+     {
+          $done = $this->productSetting->subcatremove($id);
+          if($done)
+          {
+            return redirect('subcategory');
+          }
+     }
+
+
+     function addpostcatpage()
+     {
+        $id= $this->session->userdata('motoadsid');
+        $catid=$this->input->post('cat_id');
+        if (!$this->form_validation->run('subcategory'))
+        {
+            
+            $msg =  validation_errors();
+             $this->session->set_flashdata('item', array('message' => $msg,'class' => 'danger'));
+             return redirect('subcategory');
+        }
+        else{
+            $now = date("Y-m-d H:i:s");
+            $data= $this->input->post();
+            $data['created']= $now;
+            $data['updated']=$now;
+            $data['updated_by']=  $id;
+            unset($data['submit']);
+           $success=$this->productSetting->addsubcategory($data);
+           if($success>0)
+           {
+               $activity= Array('activity_by'=>$id,'title'=>'Sub Category Inserted','codes'=>'2','activity_id'=>$success,'created'=>$now);
+               $done = $this->productSetting->categoryactivity($activity);
+               if($done)
+               {
+                $this->session->set_flashdata('item', array('message' => 'Saved successfully','class' => 'success'));
+                return redirect('subcategory');
+               }
+               else
+               {
+                $this->session->set_flashdata('item', array('message' => 'Somthing Went Wrong','class' => 'warning'));
+                return redirect('subcategory');
+               }
+           }
+           else
+           {
+            $this->session->set_flashdata('item', array('message' => 'Category Not Insert','class' => 'danger'));
+            return redirect('subcategory');
+           }
+
+
+        }
+     }
+
   }
 
 ?>

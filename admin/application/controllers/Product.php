@@ -104,7 +104,7 @@ class Product extends MY_Controller
                           <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
                             <div class="panel-tools">
-                                  <a class="closebox" style="color:red"> <i class="fa fa-times"> </i></a>
+                                
                             </div>
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne'.$att_id.'" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
@@ -196,10 +196,11 @@ class Product extends MY_Controller
 
     function save()
     {
+        $array = array();
         if (!$this->form_validation->run('productadd'))
         {
             $msg =  validation_errors();
-            $array = array('status' => 'fail', 'error' => $msg, 'message' => 'hello');
+            $array = array('status' => 'fail', 'error' => $msg, 'message' => '');
         }
         else
         {
@@ -212,8 +213,8 @@ class Product extends MY_Controller
             'brand_id' => $this->input->post('brand'),
             'product' => $this->input->post('product'),
             'productcode' => $this->input->post('productcode'), // SKU Product
-            'producttype' => $this->input->post('producttype'), //offroard, n road
-            'gender' => $this->input->post('gender'),
+            // 'producttype' => $this->input->post('producttype'), //offroard, n road
+            // 'gender' => $this->input->post('gender'),
             'status' => '1',
             'description' => $this->input->post('description'),
             'created' =>$now,
@@ -249,8 +250,6 @@ class Product extends MY_Controller
                          }
                        
                 }
-
-
                 // ===================================Tag=======================
                if($alltag= $this->input->post('tag'))
                {
@@ -334,8 +333,10 @@ class Product extends MY_Controller
                         }
                 
             }
+            
            
         }
+        $array = array('status' => 'Pass', 'error' =>'Product Inserted', 'message' => '');
     }
     echo json_encode($array);
 }
@@ -423,7 +424,7 @@ class Product extends MY_Controller
             <div class="col-md-4">
             <label>Offer %</label>
                 <input type="text"  id="vofferper" class="form-control" name="vofferper[]" >
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne2'.$d.'" aria-expanded="true" aria-controls="collapseOne" style="color:blue"> <u>Schedule </u></a>
+               
             </div>
 
             
@@ -467,28 +468,41 @@ function productimagedelete()
        $array = array('status' => 'pass',  'message' =>'Image Removed Successfully.');
     }
     else{
-       $array = array('status' => 'fail',  'message' => 'Somthing Went Wrong.');
+       $array = array('status' => 'fail',  'message' => 'Image Removed Successfully.');
     }
     echo json_encode($array);
 }
 
-function lists($brand='', $category='',$subcategory='', $producttype='',$gender='')
+function lists($brand='', $category='',$subcategory='')
 {
-    $brand= base64_decode(strtr($brand, '-_', '+/'));
-    $category= base64_decode(strtr($category, '-_', '+/'));
-    $subcategory= base64_decode(strtr($subcategory, '-_', '+/'));
-    $producttype= base64_decode(strtr($producttype, '-_', '+/'));
-    $gender= base64_decode(strtr($gender, '-_', '+/'));
-
-    $data['product']= $this->productSetting->productlists($brand,$category,$subcategory,$producttype,$gender);
-    $data['category']= $this->productSetting->categorylist();
-    $data['brandlist']= $this->productSetting->brandlist();
-    $data['subcategory']= $this->productSetting->findsubcategory($category);
-    $data['sbrand']=$brand; $data['scategory']=$category; $data['ssubcategory']=$subcategory;
-    $data['sproducttype']=$producttype;$data['sgender']=$gender;
-     $this->load->view('header');
-     $this->load->view('pro_setting/productlist',$data);
-     $this->load->view('footer');
+    if($brand=='' && $category=='')
+    {
+        $data['product']= $this->productSetting->allproductlists();
+        $data['category']= $this->productSetting->categorylist();
+        $data['brandlist']= $this->productSetting->brandlist();
+        $data['subcategory']= $this->productSetting->findsubcategory($category);
+        $data['sbrand']=''; $data['scategory']=''; $data['ssubcategory']='';
+        $data['sproducttype']='';$data['sgender']='';
+         $this->load->view('header');
+         $this->load->view('pro_setting/productlist',$data);
+         $this->load->view('footer');
+    }
+    else
+    {
+        $brand= base64_decode(strtr($brand, '-_', '+/'));
+        $category= base64_decode(strtr($category, '-_', '+/'));
+        $subcategory= base64_decode(strtr($subcategory, '-_', '+/'));
+        
+        $data['product']= $this->productSetting->productlists($brand,$category,$subcategory);
+        $data['category']= $this->productSetting->categorylist();
+        $data['brandlist']= $this->productSetting->brandlist();
+        $data['subcategory']= $this->productSetting->findsubcategory($category);
+        $data['sbrand']=$brand; $data['scategory']=$category; $data['ssubcategory']=$subcategory;
+         $this->load->view('header');
+         $this->load->view('pro_setting/productlist',$data);
+         $this->load->view('footer');
+    }
+ 
 }
 
 function filterproduct()
@@ -496,9 +510,7 @@ function filterproduct()
     $brand=  strtr(base64_encode($this->input->post('brand')), '+/', '-_');
     $category=  strtr(base64_encode($this->input->post('category')), '+/', '-_');
     $subcategory=  strtr(base64_encode($this->input->post('subcategory')), '+/', '-_');
-    $producttype=  strtr(base64_encode($this->input->post('producttype')), '+/', '-_');
-    $gender=  strtr(base64_encode($this->input->post('gender')), '+/', '-_');
-    return redirect('product/lists/'.$brand.'/'. $category.'/'.$subcategory.'/'.$producttype.'/'.$gender);
+    return redirect('product/lists/'.$brand.'/'. $category.'/'.$subcategory);
 }
 
   function findproductattribute($proid)
@@ -660,6 +672,11 @@ function filterproduct()
 function imageproductwise($proid,$vrtid)
 {
     return $this->productSetting->imagelist($proid,$vrtid);
+}
+
+function countrow()
+{
+    return $this->productSetting->countparoct();
 }
     
 }

@@ -213,6 +213,25 @@ class Attribute extends MY_Controller
             return redirect('attribute/config/'.$atid);
          }
      }
+
+
+     function delete($id)
+     {
+        $done= $this->productSetting->attdelete($id);
+        if($done)
+        {
+           return redirect('attribute');
+        }
+     }
+
+     function configdelete($id,$attid)
+     {
+        $done= $this->productSetting->configdelete($id);
+        if($done)
+        {
+           return redirect('attribute/config/'.$attid);
+        }
+     }
 }
 
 ?>

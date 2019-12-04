@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?= base_url('assets/')?>vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" />
 <link rel="stylesheet" href="<?= base_url('assets/vendor/select2-3.5.2/select2.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/vendor/select2-bootstrap/select2-bootstrap.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/styles/static_custom.css')?>">
@@ -84,7 +85,7 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Tyep</th>
+                    <th>Type</th>
                     <th>Title</th>
                     <th>Place</th>
                     <th>date</th>
