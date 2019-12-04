@@ -195,7 +195,63 @@ $config = [
                                                  [
                                                     'required' => ' %s Can Not be Blank.',
                                                 ],
+                                        ],
+
+                                        [
+                                                'field' => 'category',
+                                                'label' => 'Category',
+                                                'rules' => 'trim|required',
+                                                "errors" =>
+                                                 [
+                                                    'required' => ' %s Can Not be Blank.',
+                                                ],
+                                        ],
+                                        [
+                                                'field' => 'subcategory',
+                                                'label' => 'Sub Category',
+                                                'rules' => 'trim|required',
+                                                "errors" =>
+                                                 [
+                                                    'required' => ' %s Can Not be Blank.',
+                                                ],
+                                        ],
+                                        [
+                                                'field' => 'brand',
+                                                'label' => 'Brand',
+                                                'rules' => 'trim|required',
+                                                "errors" =>
+                                                 [
+                                                    'required' => ' %s Can Not be Blank.',
+                                                ],
+                                        ],
+                                        [
+                                                'field' => 'productcode',
+                                                'label' => 'Product Code',
+                                                'rules' => 'trim|required',
+                                                "errors" =>
+                                                 [
+                                                    'required' => ' %s Can Not be Blank.',
+                                                ],
+                                        ],
+                                        [
+                                                'field' => 'description',
+                                                'label' => 'Description',
+                                                'rules' => 'trim|required',
+                                                "errors" =>
+                                                 [
+                                                    'required' => ' %s Can Not be Blank.',
+                                                ],
                                         ]
+                                        // ,
+                                        // [
+                                        //         'field' => 'productquantity',
+                                        //         'label' => 'Product Quantity',
+                                        //         'rules' => 'trim|required',
+                                        //         "errors" =>
+                                        //          [
+                                        //             'required' => ' %s Can Not be Blank.',
+                                        //         ],
+                                        // ]
                                     
                                 ],
 

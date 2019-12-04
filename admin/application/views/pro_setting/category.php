@@ -11,13 +11,12 @@
             <?php echo form_open('category/add')?>
             <div class="panel-body">
             <div class="form-group">
-                 <label>Brand Name</label>
+                 <label>Category Name</label>
                   <input type="text"  class="form-control" name="cat_name" placeholder="Category Name">
                   <?php if($this->session->flashdata('item')):?>
                      <?php $info= $this->session->flashdata('item');?>
                           <span class="text-<?= $info['class']?>"><b><?= $info['message']?> </b></span>
-                      <?php endif;?>
-                          
+                      <?php endif;?>      
             </div>
            
              <div class="form-group" style="float:right">
@@ -36,7 +35,7 @@
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                    
                 </div>
-                Add List
+                Category List
             </div>
             <div class="panel-body">
             <div class="table-responsive">
@@ -99,6 +98,28 @@
                               <input type="hidden" value="<?= $cat->id?>" name="cat_id">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade hmodal-warning" id="myModal1<?=$cat->id?>" tabindex="-1" role="dialog"  aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content  animated bounceIn">
+                            <div class="color-line"></div>
+                            <div class="modal-header">
+                                <h5 class="modal-title">Delete Category </h5>
+                                <small class="font-bold"></small>
+                            </div>
+                            <?php echo form_open('category/update');?>
+                            <div class="modal-body">
+                               <h4 style="Color:red"><b>Are you sure you want to delete? </b></h4>
+                            </div>
+                            <div class="modal-footer">
+                             
+                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                <a href="<?= base_url('category/delete/'.$cat->id)?>" class="btn btn-primary">Yes</a>
                             </div>
                           </form>
                         </div>

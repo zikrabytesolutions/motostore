@@ -46,28 +46,6 @@
                           <?php endif?>
                              
                          </div>
-
-                         <div class="col-md-2">
-                             <select name="producttype"  id="producttype" class="form-control" required>
-                                <option value="1">Off Road</option>
-                                <option value="2">On Road</option>
-                               
-                             </select>
-                         </div>
-
-
-                         <div class="col-md-2">
-                             <select name="gender"  id="gender" class="form-control" required>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Boath">Boath</option>
-                                <option value="nomatter">No Matter</option>
-                             </select>
-                         </div>
-
-
-                        
-
                          <div class="col-md-2">
                             <button class="btn btn-success" > Search</button>
                          </div>
@@ -81,7 +59,7 @@
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne<?= $i?>" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
-                                   <b> <?= $pro->product?> </b>
+                                   <b> <?= $pro->product?> </b>   <b style="float:right"><?= $pro->brand?> > <?= $pro->cat_name?> > <?= $pro->sub_category_name?></b>
                                 </a>
                             </h4>
                         </div>
@@ -95,25 +73,27 @@
                               </div><br>
                                <div class="row">
                                <?php  $attribute= $ci->findproductattribute($pro->id)?>
-                                     <?php if($attribute): foreach($attribute as $att):?>
-                                          <div class="col-md-3">
+                               <div class="col-md-3">
+                                     <?php $f=0; $s=0; if($attribute): foreach($attribute as $att):?>
+                                         
                                           <?php $attibutevalue = $ci->findattributevalue($att->attribute_id, $att->product_id);?>
                                               <?php if(strtolower($att->atname)=='color'): ?>
                                               <?= ucfirst($att->atname);?> :
-                                              <?php $f=0; if ($attibutevalue) : foreach ($attibutevalue as $attv) : $f++;?>                               
+                                              <?php  if ($attibutevalue) : foreach ($attibutevalue as $attv) : $f++;?>                               
                                                 <button class="btn-circle" type="button" style="background-color:<?= $attv->codes ?>;"></button>
                                                <?php endforeach; endif; ?>
 
                                               <?php else: ?>
                                                 <?= $att->atname;?> :
-                                              <?php $s=0; if ($attibutevalue) : foreach ($attibutevalue as $attv) : $s++;?>                               
+                                              <?php  if ($attibutevalue) : foreach ($attibutevalue as $attv) : $s++;?>                               
                                                 <button class="btn btn-default" type="button" ><?= $attv->value_name ?></button>
                                                <?php endforeach; endif; ?>
                                               <?php endif?>
-                                           </div>
+                                          
                                      <?php endforeach; endif;?>
+                                     </div>
                                      <div class="col-md-3">
-                                         Total Variation : <?php echo $f*$s;?>
+                                         Total Variation : <?php  if(($f*$s)=='0'){echo "1";} else { echo $f*$s;}?>
                                      </div>
                                      
                                      <div class="col-md-3">
@@ -124,7 +104,9 @@
                             </div>
                         </div>
                     </div>
-                 <?php endforeach; endif;?>
+                 <?php endforeach; else:?>
+                   <h4>No result found.</h4>
+                 <?php endif?>
                 </div>
             </div>
         </div>

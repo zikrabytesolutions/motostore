@@ -2,8 +2,46 @@
     
     <!-- End Breadcrumb-->
     <div class="row">
+    <div class="col-lg-4">
+        <div class="hpanel hblue">
+            <div class="panel-heading hbuilt">
+                <div class="panel-tools">
+                    <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                   
+                </div>
+               Sub category List
+            </div>
+            <div class="panel-body">
+            <?php echo form_open('subcategory/addpostcatpage');?>
 
-    <div class="col-lg-12">
+             <div class="form-group">
+                 <label>Select category</label>
+                  <select  class="form-control" name="cat_id" >
+                    <?php if($category): foreach($category as $cat):?>
+                     <option value="<?= $cat->id?>"> <?= $cat->cat_name?> </option>
+                    <?php endforeach; endif;?>
+                  </select>
+                       
+            </div>
+
+             <div class="form-group">
+                 <label>Sub category</label>
+                  <input type="text"  class="form-control" name="sub_category_name" placeholder="Sub category">
+                  <?php if($this->session->flashdata('item')):?>
+                     <?php $info= $this->session->flashdata('item');?>
+                          <span class="text-<?= $info['class']?>"><b><?= $info['message']?> </b></span>
+                      <?php endif;?>      
+            </div>
+           
+             <div class="form-group" style="float:right">
+                    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Submit</button>
+             </div>
+            </form>
+           </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-8">
         <div class="hpanel hblue">
             <div class="panel-heading hbuilt">
                 <div class="panel-tools">
@@ -105,19 +143,7 @@
                                     </div>
                              </div>
                             
-                              <div class="col-md-12">
-                              <div class="form-group">
-                                    <label for="input-2">Status</label>
-                                      <?php 
-                                          $options = array(
-                                            '1'  => 'Active',
-                                            '0'  => 'In Active',
-                                          );
-                                    $formclass = array('class'=>'form-control');
-                                    echo form_dropdown('status', $options,'1', $formclass);
-                                      ?>
-                                </div>
-                              </div>
+                              
 
                          </div>
                     </div>
@@ -125,6 +151,28 @@
                               
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </form>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="modal fade hmodal-warning" id="myModal2<?=$cat->id?>" tabindex="-1" role="dialog"  aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content animated bounceIn">
+                            <div class="color-line"></div>
+                            <div class="modal-header">
+                                <h5 class="modal-title">Delete</h5>
+                                <small class="font-bold"></small>
+                            </div>
+                            <?php echo form_open('subcategory/update');?>
+                           <div class="modal-body">
+                               <h4 style="color:red"> <b>Are you sure you want to delete?</b></h4>
+                            </div>
+                            <div class="modal-footer">
+                              
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <a href="<?= base_url('subcategory/delete/'.$cat->id)?>" class="btn btn-primary">Yes</a>
                             </div>
                           </form>
                         </div>

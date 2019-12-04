@@ -3,6 +3,7 @@
       <i class="fa fa-home"></i> <a href="<?= base_url();?>" >Go to main page</a>
       </div>
  <header>
+ <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 			<nav class="navbar navbar-expand-md">
                 <div class="container-fluid">
                     <!-- Brand -->
@@ -68,9 +69,9 @@
                             </div>
                           </li>
                        <?php endforeach; endif?>
-                      <li class="nav-item dropdown">
+                      <!-- <li class="nav-item dropdown">
                             <a class="nav-link" href="<?= base_url('contact')?>">contact</a>
-                          </li>
+                          </li> -->
                         </ul>
 
                     </div>

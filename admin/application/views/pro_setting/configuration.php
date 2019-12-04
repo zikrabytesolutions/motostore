@@ -18,7 +18,7 @@
                           <span class="text-<?= $info['class']?>"><b><?= $info['message']?> </b></span>
                       <?php endif;?>
             </div>
-            <?php if($attribute=='color'):?>
+            <?php if($attribute=='Color'):?>
             <div class="form-group">
                  <label>Select Color</label>&nbsp;&nbsp;
                  <input type="color" id="head" name="codes" value="#e66465" required>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="form-group">
-                 <label>Enter Dscription</label>
+                 <label>Enter Description</label>
                   <textarea rows="4" class="form-control" name="description"> </textarea>
             </div>
 
@@ -82,9 +82,32 @@
                                
                             <td>
                                  <button class="btn btn-warning btn-xs" type="button" data-toggle="modal" data-target="#myModal<?=$at->id?>"><i class="fa fa-pencil"></i></button>
-                                 <button class="btn btn-danger btn-xs" type="button" data-toggle="modal" data-target="#myModal1<?=$at->id?>"><i class="fa fa-trash"></i></button>
+                                 <button class="btn btn-danger btn-xs" type="button" data-toggle="modal" data-target="#myModal2<?=$at->id?>"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
+                       
+                        <div class="modal fade hmodal-warning" id="myModal2<?=$at->id?>" tabindex="-1" role="dialog"  aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content animated bounceIn">
+                            <div class="color-line"></div>
+                            <div class="modal-header">
+                                <h5 class="modal-title">Delete</strong> </h5>
+                                <small class="font-bold"></small>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                     <h4 style="color:red"><b>Are you sure you want to delete?</b></h4>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                <a href="<?= base_url('attribute/configdelete/'.$at->id.'/'.$at->attribute_id);?>" class="btn btn-primary" >Yes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                  
                   <div class="modal fade hmodal-warning" id="myModal<?=$at->id?>" tabindex="-1" role="dialog"  aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -110,7 +133,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Enter Dscription</label>
+                                        <label>Enter Description</label>
                                         <textarea rows="4" class="form-control" name="description"> <?= $at->description?> </textarea>
                                     </div>
                                 <div class="form-group">

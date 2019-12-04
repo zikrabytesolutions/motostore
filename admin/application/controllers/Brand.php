@@ -117,6 +117,15 @@ class Brand extends MY_Controller
          }
      }
 
+     function delete($id)
+     {
+        $done= $this->productSetting->brandremove($id);
+        if($done)
+        {
+           return redirect('brand');
+        }
+     }
+
 }
 
 ?>

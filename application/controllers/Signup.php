@@ -37,7 +37,7 @@ class Signup extends CI_Controller
                 $email=$this->input->post('email');
                 $password= md5($password);
     
-                $data= Array('name'=>$name,'mobile'=>$mobile,'email'=>$email,'password'=>$password,'status'=>'1','created'=>$now);
+                $data= Array('name'=>$name,'mobile'=>$mobile,'email'=>$email,'password'=>$password,'status'=>'0','created'=>$now);
                 $success=$this->loginModel->registeruser($data);
                 if($success)
                 {

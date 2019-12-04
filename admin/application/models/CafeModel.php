@@ -59,5 +59,29 @@
      {
         return $this->db->where('id',$id)->delete('cafe_gallery');
      }
+
+
+     function addslider($title, $images)
+     {
+        return $this->db->insert('slider',['images'=>$images,'title'=>$title]);
+     }
+
+     function sliderimages()
+     {
+         $this->db->select('*');
+         $this->db->from('slider');
+         $query= $this->db->get();
+         return $query->result();
+     }
+
+     function deleteimage($id)
+     {
+         return $this->db->where('id',$id)->DELETE('slider');
+     }
+
+     function countslider()
+     {
+        return $this->db->from("slider")->count_all_results();
+     }
  }
 ?>

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?= base_url('assets/')?>vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" />
 <div class="row">
 <div class="col-lg-4">
         <div class="hpanel hblue">
@@ -27,7 +28,7 @@
             </form>
             </div>
             <div class="panel-footer">
-               Please Choose image dimentation 350*220
+               Please Choose image Dimension 350*220
             </div>
         </div>
     </div>
@@ -47,7 +48,7 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>imgage</th>
+                    <th>Image</th>
                     <th>Title</th>
                     <th>Action</th>
                     

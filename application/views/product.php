@@ -125,7 +125,19 @@
                     <div class="item-dtl">
                       <div class="item-title">
                         <h6 class="txt-h-up tooltrip" data-toggle="tooltip" title="<?= $plist->product?>"> 
-                          <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>"  target="_blank"><?= $stringCut = substr($plist->product, 0, 29); ?>..</a>
+                          <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>"  target="_blank">
+                          
+                          <?php
+                                                        if(strlen($plist->product)>8)
+                                                        {
+                                                           echo  $stringCut = substr($plist->product, 0, 8).' ...';
+                                                       }
+                                                       else{
+                                                         echo  $stringCut = substr($plist->product, 0, 8);
+                                                     }
+                                                     ?>
+                          
+                          </a>
                         </h6>
                       </div>
                       <div class="price-block">

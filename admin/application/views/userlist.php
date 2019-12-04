@@ -7,7 +7,7 @@
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                    
                 </div>
-                Recent Registerd User List
+                Recent Registered  User
             </div>
             <div class="panel-body" style="display: block;">
                 <div class="table-responsive">
@@ -21,20 +21,33 @@
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Date of Registration</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php $i=0; if($userlist): foreach($userlist as $user): $i++;?>
+                    <?php $i=0; date_default_timezone_set('Asia/Kolkata'); if($userlist): foreach($userlist as $user): $i++;?>
                     <tr>
                     <td><?= $i;?></td>
                         <td><?= $user->name?></td>
                         <td><?= $user->mobile?></td>
                         <td><?= $user->email?></td>
-                        <td><?= date("d M, Y h:i", strtotime($user->created))?></td>
-                        <td></td>
-                       
+                        <td><?= date("d M, Y, h:i A", strtotime($user->created))?></td>
+                        <td>
+                              <?php if($user->status=='1'):?>
+                                 <a  href="#" class="btn btn-xs btn-success active"  aria-pressed="true" >Active</a>
+                              <?php else:?>
+                                  <a href="#" class="btn btn-xs btn-danger active"  aria-pressed="true">In Active</a>
+                               <?php endif;?>
+                         </td>         
+                        <td>
+                          <a href="<?= base_url('user/timeline/'.$user->id)?>" class="btn btn-xs btn-primary">View</a>
+                        
                     </tr>
+
+                    
+                </div>
+
                     <?php endforeach; endif?>
                     </tbody>
                     <tfoot>

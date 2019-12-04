@@ -9,6 +9,19 @@ class HomeModel extends CI_Model{
         return $query->result();
     }
 
+
+      function insertmail($email)
+      {
+          return $this->db->insert('subscribed',['email'=>$email]);
+      }
+
+      function sliderimages()
+      {
+        $this->db->select('*');
+        $this->db->from('slider');
+        $query= $this->db->get();
+        return $query->result();
+      }
    
 }
 
