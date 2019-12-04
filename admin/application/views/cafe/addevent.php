@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<?= base_url('assets/')?>vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" />
 <div class="row">
-<div class="col-lg-4">
+<div class="col-lg-12">
         <div class="hpanel hblue">
             <div class="panel-heading hbuilt">
                 <div class="panel-tools">
@@ -11,30 +11,42 @@
             </div>
             <div class="panel-body">
             <?php echo form_open_multipart('event/save');?>
-            <div class="form-group">
-                    <label class="control-label" for="username">Event Name</label>
-                    <input type="text" placeholder="Event name/title"  required=""  name="name" class="form-control" required>
+            <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                        <label class="control-label" for="username">Event Name</label>
+                        <input type="text" placeholder="Event name/title"  required=""  name="name" class="form-control" required>
+                </div>
             </div>
+            <div class="col-md-4">
             <div class="form-group">
                     <label class="control-label" for="username">Event Place</label>
                     <input type="text" placeholder="Event Place"  required=""  name="place" class="form-control" required>
             </div>
-
+            </div>
+            <div class="col-md-4">
             <div class="form-group">
                     <label class="control-label" for="username">Event date</label>
                     <input type="datetime-local"  required=""  name="eventdate" class="form-control" required>
             </div>
+            </div>
+            <div class="col-md-4">
             <div class="form-group">
                     <spall style="color:red"> Please Choose image Dimension 350*220</spall>
                     <input type="file" name="userfile" required="" class="form-control" accept="image/*" required>
             </div>
+            </div>
+            <div class="col-md-12">
             <div class="form-group">
                     <label class="control-label" for="username">Event Description</label>
-                    <textarea class="form-control" rows="5" id="comment" name="description"  charswidth="23" required></textarea>
+                    <textarea class="summernote"  rows="5" id="comment" name="description"  charswidth="23" required></textarea>
             </div>
-
+            </div>
+            <div class="col-md-12">
             <div class="form-group">
             <button type="submit" class="btn btn-primary btn-sm" style="float:right">Save Event</button>
+            </div>
+            </div>
             </div>
             </form>
             </div>
@@ -43,7 +55,7 @@
     </div>
 
 
-    <div class="col-lg-8">
+    <div class="col-lg-12">
         <div class="hpanel hblue">
             <div class="panel-heading hbuilt">
                 <div class="panel-tools">

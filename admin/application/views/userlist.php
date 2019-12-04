@@ -35,9 +35,9 @@
                         <td><?= date("d M, Y, h:i A", strtotime($user->created))?></td>
                         <td>
                               <?php if($user->status=='1'):?>
-                                 <a  href="#" class="btn btn-xs btn-success active"  aria-pressed="true" >Active</a>
+                                 <a  href="#" class="btn btn-xs btn-success active"  aria-pressed="true" >Verified</a>
                               <?php else:?>
-                                  <a href="#" class="btn btn-xs btn-danger active"  aria-pressed="true">In Active</a>
+                                  <a href="#" class="btn btn-xs btn-danger active"  aria-pressed="true">Not verified</a>
                                <?php endif;?>
                          </td>         
                         <td>

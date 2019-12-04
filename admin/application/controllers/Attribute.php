@@ -124,14 +124,13 @@ class Attribute extends MY_Controller
      function configpost()
      {
          $attributeid= $this->input->post('attribute_id');
-      
-        $id= $this->session->userdata('motoadsid');
-        if (!$this->form_validation->run('attribute_value'))
-        {
+         $id= $this->session->userdata('motoadsid');
+         if (!$this->form_validation->run('attribute_value'))
+         {
             $msg =  validation_errors();
             $this->session->set_flashdata('item', array('message' => $msg,'class' => 'danger'));
             return redirect('attribute/config/'.$attributeid);
-        }
+         }
         else
         {
             $now = date("Y-m-d H:i:s");
