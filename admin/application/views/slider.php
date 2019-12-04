@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?= base_url('assets/')?>vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" />
 <div class="row">
 <div class="col-lg-4">
         <div class="hpanel hblue">

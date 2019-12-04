@@ -84,7 +84,7 @@
                     </a>
                     <ul class="dropdown-menu animated flipInX m-t-xs">
                        
-                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="<?= base_url('profile')?>">Profile</a></li>
                         
                         <li class="divider"></li>
                         <li><a href="<?= base_url('login/logout')?>">Logout</a></li>

@@ -30,7 +30,7 @@
                                <div class="row">
                                 <div class="col-md-5">
 
-                                    <div class="hpanel hblue">
+                                    <div class="hpanel hyellow">
                                         <div class="panel-heading hbuilt">
                                             <div class="panel-tools">
 
@@ -63,7 +63,7 @@
 
                                 <div class="col-md-7">
 
-                                    <div class="hpanel hblue">
+                                    <div class="hpanel hyellow">
                                         <div class="panel-heading hbuilt">
                                             <div class="panel-tools">
 

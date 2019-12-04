@@ -54,7 +54,7 @@
                </div>
 
                <div class="col-md-12"><br>
-                    <textarea class="summernote "  name="Itinerary" placeholder="Description Here" ></textarea>
+                    <textarea class="summernote"  name="Itinerary" placeholder="Description Here" ></textarea>
                </div>
 
             </div>
