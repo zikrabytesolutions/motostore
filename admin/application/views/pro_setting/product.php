@@ -150,12 +150,12 @@
 <div id="tab-4" class="tab-pane active">
     <div class="panel-body">
     <div class="row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-5">
                 <label>Product Quantity</label>
                 <input type="number"  id="productquantity" class="form-control" name="productquantity" >
             </div>
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-5">
                 <label>Status</label>
                 <select name="stockstatus" id="stockstatus" class="form-control">
                     <option value="1">In Stock</option>
@@ -163,13 +163,13 @@
                 </select>
             </div>
 
-            <div class="form-group col-md-4">
+            <!-- <div class="form-group col-md-4">
             <label>Quantity Visible</label>
             <select name="visible" id="visible" class="form-control">
                     <option value="1">Yes</option>
                     <option value="1">NO</option>
                 </select>
-            </div>
+            </div> -->
 
             </div>
 
@@ -182,15 +182,15 @@
 
             <div class="col-md-4">
             <label>Offer Price</label>
-                <input type="number"  id="periceoffer" class="form-control change" name="periceoffer" >
+                <input type="number"  onkeyup="scorecompare(this.value);" class="form-control change" name="periceoffer" >
             </div>
 
 
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
             <label>Offer %</label>
                 <input type="text"  id="offerper" class="form-control" name="offerper" >
-                <!-- <u data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color:blue"> <u>Schedule </u></a> -->
-            </div>
+                <u data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color:blue"> <u>Schedule </u></a>
+            </div> -->
 
             <!-- ----shedule----- -->
             <div class="col-md-12">
@@ -347,19 +347,18 @@
 
 
 <script>
-$(document).ready(function(){
-  $(".change").change(function(){
+// $(document).ready(function(){
+//   $(".change").change(function(){
      
-      var proprice = $("#price").val();
-      var Saleprice = $("#periceoffer").val();
-      var discount= (proprice-Saleprice)
-      var c = ((discount/proprice) *100 );
-      var persantage= c + '%';
-      $("#offerper").val(persantage);
+//       var proprice = $("#price").val();
+//       var Saleprice = $("#periceoffer").val();
+//       var discount= (proprice-Saleprice)
+//       var c = ((discount/proprice) *100 );
+//       var persantage= c + '%';
+//       $("#offerper").val(persantage);
   
-  });
-});
-
+//   });
+// });
 
 $(".js-source-states-2").select2();
 $(".js-source-states").select2();
