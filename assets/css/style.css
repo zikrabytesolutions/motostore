@@ -2404,7 +2404,7 @@ ul#autoSuggestionsList {
     background: red;
     color: white;
     padding: 8px;
-    right: -126px;
+    right: -110px;
     border-radius: 10px 0px 0px 10px;
     top: 60%;
     z-index: 99999;
@@ -2439,7 +2439,23 @@ ul#autoSuggestionsList {
 
 }
 
+.carousel-item img {
+    height: 400px !important;
+
+}
 body 
 {
     font-family: 'Roboto';font-size: 14px;
+
+}
+.f-block p{
+    text-align: justify;
+}
+.cnt-text{
+        clear: both;
+        padding-top: 20px;
+}
+.cnt-text a{
+    font-size: 20px;
+  color: red;
 }
