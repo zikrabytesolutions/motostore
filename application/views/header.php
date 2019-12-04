@@ -3,7 +3,7 @@
       <i class="fa fa-home"></i> <a href="<?= base_url();?>" >Go to main page</a>
       </div>
  <header>
- <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
 			<nav class="navbar navbar-expand-md">
                 <div class="container-fluid">
                     <!-- Brand -->
