@@ -28,12 +28,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <main class="col-md-9">
                    <section class="frmsec">
                    		<div class="account-form">
-                           <h5>Shipping Address</h5>
+                       
                            <div class="panel panel-default">
                             <div class="panel-heading">
 							 
                             	<div class="row">
                             		<div class="col-md-8">
+                                    <h5>Shipping Address</h5> 
                             			<?php if($address): foreach($address as $add):?>
                             <span> <b>Name : </b><?= $add->name;?><br> <b>Mobile :</b> <?= $add->mobile?></span><br>
                             <span> <b>Address : </b> <?= $add->streetaddress;?>, <?= $add->streetaddress1;?>, <?= $add->city;?>- <?= $add->postcode;?></span>
@@ -43,9 +44,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             	
                             		<div class="col-md-4">
-
+                                    
 							<span >
 							    <?php if($summery): foreach($summery as $sumr):?>
+                                    <?php $orderid= $sumr->orderid?>
+                                     <?php if($sumr->status=='0'):?>
+                                       
+                                        <button class="btn btn-danger" data-toggle="modal" data-target="#cancel">Cancel order</button>
+                                         <br>
+                                     <?php endif;?>
+                                     <?php if($sumr->status=='9'):?>
+                                       
+                                      <p style="color:red"><b>Order Cancelled</b></p>
+                                        <br>
+                                    <?php endif;?>
+
 									 <b>Order date : </b><?= date("d M, Y", strtotime($sumr->created))?><br>
 								 <b>Total  Item :</b> <?= $sumr->iteam?><br>  <b> Grand Total :</b> Rs.<?= $sumr->grand?>
 									<?php endforeach; endif;?>
@@ -128,12 +141,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php include 'footer.php'; ?>
 
 <!-- footer end -->
-
-
-
-
-
 	</div>
+
+    <div class="modal fade" id="cancel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h4 class="modal-title" id="myModalLabel">Alert!</h4>
+      </div>
+      <div class="modal-body">
+         <p class="alt-txt"> Are you sure you want to Cancel?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="" class="btn btn-danger" data-dismiss="modal">No</a>
+        <a href="<?= base_url('order/cancel/'. $orderid)?>" class="btn btn-success" >Yes</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <?php include 'js.php'; ?>
 	<script type="text/javascript">

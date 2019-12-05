@@ -23,7 +23,7 @@ class LoginModel extends CI_Model
 
    function passwordchange($newpassword,$id)
    {
-       return $this->db->where('id',$id)->UPDATE('admin',['password',$newpassword]);
+       return $this->db->where('id',$id)->update('admin',['password'=>$newpassword]);
    }
 
    function userdetails()

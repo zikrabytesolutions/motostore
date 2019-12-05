@@ -52,7 +52,7 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="npwd" class="col-sm-4 col-form-label">Current password</label>
+                  <label for="npwd" class="col-sm-4 col-form-label">New password</label>
                   <div class="col-sm-8">  
                         <div class="input-group">
                          <input type="password" class="form-control" id="npwd" name="npwd">

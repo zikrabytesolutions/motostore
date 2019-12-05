@@ -188,6 +188,11 @@ class CartModel extends CI_Model{
     {
         return $this->db->from("product_order_iteam")->count_all_results();
     }
+
+    function orderdcancel($data)
+    {
+        return $this->db->where('orderid',$data)->UPDATE('product_order',['status'=>'9']);
+    }
     
 }
 

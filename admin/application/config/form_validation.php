@@ -184,6 +184,40 @@ $config = [
                                         ],
                                 ]
                                 ],
+                                'changepassword' => [
+              
+                                        [
+                                            'field' => 'password',
+                                            'label' => 'Password',
+                                            'rules' => 'trim|required',
+                                            "errors" => 
+                                            [
+                                                'required' => ' %s cannot be Blank.', 
+                                               
+                                            ],
+                                         ],
+    
+                                        [
+                                            'field' => 'npwd',
+                                            'label' => 'New Password',
+                                            'rules' => 'trim|required|min_length[6]',
+                                            "errors" => 
+                                            [
+                                                'required' => ' %s cannot be Blank.', 
+                                            ],
+                                        ] ,
+    
+                                        [
+                                            'field' => 'cpwd',
+                                            'label' => 'Confirm New Password',
+                                            'rules' => 'required',
+                                            "errors" => 
+                                            [
+                                                'required' => ' %s cannot be blank.', 
+                                            ],
+                                        ]  
+                                        ],
+
 
                                 'productadd' => [
               

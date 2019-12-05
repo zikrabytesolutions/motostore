@@ -10,6 +10,7 @@ class ProductModel extends CI_Model
         $this->db->from('product');
         $this->db->where('cat_id', $catid);
         $this->db->order_by('id','ASC');
+        $this->db->where('status','1');
         $query= $this->db->get();
         return $result= $query->result();
     }
@@ -231,6 +232,15 @@ class ProductModel extends CI_Model
         $query= $this->db->get();
         return $result= $query->result();
 
+    }
+
+    function findsize($catid)
+    {
+        $this->db->select('*');
+        $this->db->from('product');
+        $this->db->where('cat_id', $catid);
+        $query= $this->db->get();
+        return $result= $query->result();
     }
 
     

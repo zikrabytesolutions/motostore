@@ -176,9 +176,6 @@ $config = [
 
                                         'changepassword' => [
               
-    
-                                             
-                                            
                                             [
                                                 'field' => 'password',
                                                 'label' => 'Password',

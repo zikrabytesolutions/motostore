@@ -29,7 +29,8 @@
                        <?php
                        $this->db->select('*');
                        $this->db->from('category');
-                       $this->db->limit('6');
+                       $this->db->where('status','1');
+                       $this->db->limit('5');
                        $query= $this->db->get();
                        $menucat= $query->result();
                        if( $menucat): foreach($menucat as $menue):
@@ -41,6 +42,7 @@
                         $this->db->select('*');
                         $this->db->from('sub_category');
                         $this->db->where('cat_id',$menue->id);
+                        $this->db->where('status','1');
                         $query= $this->db->get();
                         $submenue= $query->result();
 

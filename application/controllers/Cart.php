@@ -37,6 +37,19 @@ class Cart extends CI_Controller
         $proid = base64_decode( strtr( $proid, '-_', '+/' ) );
         $prodetailsid = base64_decode( strtr( $prodetailsid, '-_', '+/' ) );
         $data = $this->cartModel->findproductdetails( $proid, $prodetailsid );
+        if($data['offer_price']==$data['regular_price'])
+        {
+        $datas = array(
+            'id'      =>  $data['id'],
+            'proid'      =>  $data['proid'],
+            'qty'     => 1,
+            'price'   =>$data['regular_price'],
+            'name'    => 'Moto Store',
+
+        );
+    }
+    else
+    {
         $datas = array(
             'id'      =>  $data['id'],
             'proid'      =>  $data['proid'],
@@ -45,6 +58,7 @@ class Cart extends CI_Controller
             'name'    => 'Moto Store',
 
         );
+    }
         $this->cart->insert( $datas );
         if($this->session->userdata('motoubid'))
         {
@@ -240,14 +254,28 @@ class Cart extends CI_Controller
         $proid = base64_decode( strtr( $proid, '-_', '+/' ) );
         $prodetailsid = base64_decode( strtr( $prodetailsid, '-_', '+/' ) );
         $data = $this->cartModel->findproductdetails( $proid, $prodetailsid );
-        $datas = array(
-            'id'      =>  $data['id'],
-            'proid'      =>  $data['proid'],
-            'qty'     => 1,
-            'price'   =>$data['offer_price'],
-            'name'    => 'Moto Store',
-
-        );
+        if($data['offer_price']==$data['regular_price'])
+        {
+            $datas = array(
+                'id'      =>  $data['id'],
+                'proid'      =>  $data['proid'],
+                'qty'     => 1,
+                'price'   =>$data['regular_price'],
+                'name'    => 'Moto Store',
+    
+            );
+        }
+        else{
+            $datas = array(
+                'id'      =>  $data['id'],
+                'proid'      =>  $data['proid'],
+                'qty'     => 1,
+                'price'   =>$data['offer_price'],
+                'name'    => 'Moto Store',
+    
+            );
+        }
+       
         $this->cart->insert( $datas );
         if($this->session->userdata('motoubid'))
         {

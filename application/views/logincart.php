@@ -68,8 +68,12 @@
                                                 </p>
 
                                                 <div class="cart_item__details">
+                                                <?php if($rs->regular_price==$rs->offer_price):?>
+                                                    <p class="c_item_price"><b>Rs. </b><span class="p-prc mr-2"><?= $rs->regular_price?></span></p>
+                                                <?php else :?>  
                                                     <p class="c_item_price"><b>Rs. </b><del class="p-prc mr-2"><?= $rs->regular_price?></del><span class="p-prc mr-2"><?= $rs->offer_price?></span></p>
-                                                   
+                                                 
+                                                <?php endif?>
                                                     <?php  $attribute= $Ci->findattributecart($rs->second);?>
                                                        <?php if($attribute): foreach($attribute as $att):?>
                                                         <?php if(strtolower( $att->attribute)!='color'):?>

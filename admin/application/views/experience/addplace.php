@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<?= base_url('assets/')?>vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" />
+
 <div class="row">
 <div class="col-lg-4">
         <div class="hpanel hblue">
@@ -60,7 +62,7 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Tyep</th>
+                    <th>Type</th>
                     <th>Title</th>
                     <th>Action</th>
                     

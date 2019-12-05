@@ -6,7 +6,7 @@
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                    
                 </div>
-                Add Category
+                Category Name
             </div>
             <?php echo form_open('category/add')?>
             <div class="panel-body">
@@ -86,13 +86,7 @@
                                     <input type="text"  class="form-control" value="<?= $cat->cat_name?>" name="cat_name" placeholder="Brand Name">
                                 </div>
 
-                                <div class="form-group">
-                                <label>Brand Status</label>
-                                 <select name="status" id="" class="form-control">
-                                    <option value="1">Active</option>
-                                    <option value="0">In Active</option>
-                                 </select>
-                                </div>
+                                
                             </div>
                             <div class="modal-footer">
                               <input type="hidden" value="<?= $cat->id?>" name="cat_id">

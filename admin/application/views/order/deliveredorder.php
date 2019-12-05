@@ -7,7 +7,7 @@
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                     <a class="closebox"><i class="fa fa-times"></i></a>
                 </div>
-               Recent Order
+                Order List
             </div>
             <div class="panel-body">
             <div class="table-responsive">
@@ -16,6 +16,7 @@
                     <tr>
                     <th>#</th>
                         <th>Order Id</th>
+                        <th>Date</th>
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Item</th>
@@ -29,6 +30,7 @@
                     <tr>
                     <td><?= $i;?></td>
                         <td><?= $rst->orderdid?></td>
+                        <td><?= date("d M, Y", strtotime($rst->created))?></td>
                         <td><?= $rst->name?></td>
                         <td><?= $rst->mobile?></td>
                         <td><?= $rst->iteam?></td>
@@ -47,7 +49,7 @@
                 </div>
             </div>
             <div class="panel-footer">
-            Total Recent Order :   <?= $i ?>
+            Total Order :   <?= $i ?>
             </div>
         </div>
     </div>

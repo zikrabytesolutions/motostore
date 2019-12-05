@@ -69,7 +69,7 @@
 <aside id="menu" style="overflow: scroll;">
     <div id="navigation">
         <div class="profile-picture">
-            <a href="index.html">
+            <a href="<?= base_url('profile')?>">
                 <img src="<?= base_url('assets/images/profile.jpg')?>" class="img-circle m-b" alt="logo">
             </a>
 
@@ -130,11 +130,12 @@
             <li>
                 <a href="#"><span class="nav-label">Order</span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
+                    <li class="active"><a href="<?= base_url('order/search')?>">  Search</a></li>
                     <li class="active"><a href="<?= base_url('order/pending')?>">  Pending</a></li>
                     <li class="active"><a href="<?= base_url('order/accepted')?>">  Accepted</a></li>
                     <li class="active"><a href="<?= base_url('order/shipped')?>">  Shipped</a></li>
                     <li class="active"><a href="<?= base_url('order/delivered')?>">  Delivered</a></li>
-                    <li class="active"><a href="<?= base_url('#')?>">  Cancel</a></li>
+                    
                 </ul>
             </li>
 

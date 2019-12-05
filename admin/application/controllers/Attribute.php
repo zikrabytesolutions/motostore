@@ -33,6 +33,7 @@ class Attribute extends MY_Controller
             $data['created']= $now;
             $data['updated']=$now;
             $data['created_by']=  $id;
+            $data['status']=  '1';
             unset($data['submit']);
            $success=$this->productSetting->addattribute($data);
            if($success>0)
@@ -136,6 +137,7 @@ class Attribute extends MY_Controller
             $now = date("Y-m-d H:i:s");
             $data= $this->input->post();
             $data['created']= $now;
+            $data['status']= '1';
            
             unset($data['submit']);
            $success=$this->productSetting->addattributevalue($data);

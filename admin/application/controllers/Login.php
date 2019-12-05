@@ -61,7 +61,6 @@ class Login extends CI_Controller {
 	 function logout()
 	 {
 		$this->session->unset_userdata('motoadsid');
-		$this->session->sess_destroy();
         redirect('login');
 	 }
 

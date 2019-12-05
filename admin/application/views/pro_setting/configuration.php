@@ -24,11 +24,7 @@
                  <input type="color" id="head" name="codes" value="#e66465" required>
             </div>
            <?php endif?>
-            <div class="form-group">
-                 <label>Slug</label>
-                 <input type="text"  class="form-control" name="slug" placeholder="Enter Slug">
-            </div>
-
+           
             <div class="form-group">
                  <label>Enter Description</label>
                   <textarea rows="4" class="form-control" name="description"> </textarea>
@@ -59,9 +55,9 @@
                     <tr>
                         <th>#</th>
                         <th>Value</th>
-                        <th>Slug</th>
+                       
                         <th>Description</th>
-                        <th>Status</th>
+                        <!-- <th>Status</th> -->
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -70,15 +66,14 @@
                         <tr>
                             <td><?= $i?></td>
                             <td> <?= $at->value_name?>  </td>
-                            <td> <?= $at->slug?>  </td>
                             <td> <?= $at->description?>  </td>
-                            <td>
+                            <!-- <td>
                               <?php if($at->status=='1'):?>
                                  <a  href="<?= base_url('attribute/inactivevalue/'.$at->id.'/'.$this->uri->segment(3))?>" class="btn btn-xs btn-success active"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For In active">Active</a>
                               <?php else:?>
                                   <a href="<?= base_url('attribute/activevalue/'.$at->id.'/'.$this->uri->segment(3))?>" class="btn btn-xs btn-danger active"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For Active">In Active</a>
                                <?php endif;?>
-                              </td>
+                              </td> -->
                                
                             <td>
                                  <button class="btn btn-warning btn-xs" type="button" data-toggle="modal" data-target="#myModal<?=$at->id?>"><i class="fa fa-pencil"></i></button>

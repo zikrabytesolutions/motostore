@@ -58,7 +58,7 @@
                    
                 </div>
             </div>
-            <div class="col-lg-3">
+            <!-- <div class="col-lg-3">
                 <div class="hpanel">
                     <div class="panel-body text-center">
                     <h1 class="m-xs"><b><?= $stock?></b></h1>
@@ -90,7 +90,7 @@
                     </div>
                    
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="row">
@@ -110,6 +110,7 @@
                     <tr>
                     <th>#</th>
                         <th>Order Id</th>
+                        <th>Date</th>
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Item</th>
@@ -123,6 +124,7 @@
                     <tr>
                     <td><?= $i;?></td>
                         <td><?= $rst->orderdid?></td>
+                        <td><?= date("d-m-Y", strtotime($rst->created))?></td>
                         <td><?= $rst->name?></td>
                         <td><?= $rst->mobile?></td>
                         <td><?= $rst->iteam?></td>
