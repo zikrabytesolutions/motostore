@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/vendor/bootstrap/dist/css/bootstrap.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/vendor/summernote/dist/summernote.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/vendor/summernote/dist/summernote-bs3.css')?>" />
-    <link rel="stylesheet" href="<?= base_url('assetsvendor/sweetalert/lib/sweet-alert.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/sweetalert/lib/sweet-alert.css')?>" />
     <!-- App styles -->
     <link rel="stylesheet" href="<?= base_url('assets/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/fonts/pe-icon-7-stroke/css/helper.css')?>" />
@@ -66,7 +66,8 @@
 </div>
 
 <!-- Navigation -->
-<aside id="menu" style="overflow: scroll;">
+<aside id="menu">
+<!-- <aside id="menu" style="overflow: scroll;"> -->
     <div id="navigation">
         <div class="profile-picture">
             <a href="<?= base_url('profile')?>">
@@ -89,11 +90,7 @@
                         <li class="divider"></li>
                         <li><a href="<?= base_url('login/logout')?>">Logout</a></li>
                     </ul>
-                </div>
-
-
-               
-              
+                </div> 
             </div>
         </div>
 
@@ -102,8 +99,8 @@
                 <a href="<?= base_url('dashboard')?>"> <span class="nav-label">Dashboard</span> </a>
             </li>
             <li><a href="<?= base_url('brand')?>">Brand</a></li>
-                    <li><a href="<?= base_url('category')?>">Category</a></li>
-                    <li><a href="<?= base_url('subcategory')?>">Sub Category</a></li>
+            <li><a href="<?= base_url('category')?>">Category</a></li>
+            <li><a href="<?= base_url('subcategory')?>">Sub Category</a></li>
             <!-- <li>
                 <a href="<?= base_url('stock')?>"> <span class="nav-label">Stock </span> </a>
             </li> -->

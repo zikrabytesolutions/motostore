@@ -2440,11 +2440,10 @@ ul#autoSuggestionsList {
     margin-bottom: 20px;
 
 }
-
-.carousel-item img {
+/*.carousel-item img {
     height: 400px !important;
 
-}
+}*/
 body 
 {
     font-family: 'Roboto';font-size: 14px;
@@ -2452,6 +2451,7 @@ body
 }
 .f-block p{
     text-align: justify;
+    font-weight: 500;
 }
 .cnt-text{
         clear: both;

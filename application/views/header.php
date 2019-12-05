@@ -48,7 +48,7 @@
 
                         ?>
                           <li class="nav-item dropdown">
-                            <a class="nav-link" href="<?= base_url('product/lists/'.$cid.'/'.$ctid)?>" id="navbarDropdownMenuLink"   aria-haspopup="true" aria-expanded="false"><?= $menue->cat_name?><i class="fa fa-angle-down"></i></a>
+                            <a class="nav-link" href="<?= base_url('product/lists/'.$cid.'/'.$ctid)?>" id="navbarDropdownMenuLink"   aria-haspopup="true" aria-expanded="false"><?= $menue->cat_name?><i class="fa fa-caret-down"></i></a>
                             <div class="dropdown-menu customMenuDrpdwn" aria-labelledby="navbarDropdownMenuLink">
                                 <div class="submenu-item">
 
