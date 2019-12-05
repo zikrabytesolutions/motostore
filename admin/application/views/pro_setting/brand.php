@@ -66,8 +66,8 @@
                               </td>
 
                             <td>
-                                 <button class="btn btn-warning btn-xs" type="button" data-toggle="modal" data-target="#myModal<?=$bnd->id?>"><i class="fa fa-pencil"></i></button>
-                                 <button class="btn btn-danger btn-xs" type="button" data-toggle="modal" data-target="#myModal2<?=$bnd->id?>"><i class="fa fa-trash"></i></button>
+                                 <button class="btn btn-warning btn-xs" type="button" data-toggle="modal" data-target="#myModal<?=$bnd->id?>" rel="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil"></i></button>
+                                 <button class="btn btn-danger btn-xs" type="button" data-toggle="modal" data-target="#myModal2<?=$bnd->id?>" rel="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
                   <div class="modal fade hmodal-warning" id="myModal<?=$bnd->id?>" tabindex="-1" role="dialog"  aria-hidden="true">

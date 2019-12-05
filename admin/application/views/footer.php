@@ -48,7 +48,11 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
 });
 </script>
-
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('[rel=tooltip]').tooltip({ trigger: "hover" });
+});
+</script>
 <script>
 
     $(function () {

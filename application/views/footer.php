@@ -2,7 +2,7 @@
 <section class="footer-sec">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-5 col-md-5 col-sm-6 col-xs-6">
+			<div class="col-lg-5 col-md-5 col-sm-8 col-xs-8">
 				<div class="f-block">
 					<!-- <img class="f-logo" src="<?= base_url('assets/images/storelogo.png')?>"> -->
 					<h6 class="txt-h-up">About Us</h6>
@@ -12,7 +12,7 @@
 				</div>
 
 			</div>
-			<div class="col-lg-3 col-md-3 offset-md-1 col-sm-12 col-xs-12">
+			<div class="col-lg-3 col-md-3 offset-md-1 col-sm-4 col-xs-4">
 				<div class="f-block">
 					<h6 class="txt-h-up">Services</h6>
 					<ul class="privacy-block">
@@ -34,7 +34,7 @@
 				</div>
 
 			</div> -->
-			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
 				<div class="f-block">
 					<h6 class="txt-h-up">motostore social</h6>
 					<ul class="social-block">

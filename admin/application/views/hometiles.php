@@ -65,9 +65,9 @@
                                     <td><?= $ts->url;?></td>
                                     <td>
                                         <button class="btn btn-warning btn-xs" type="button" data-toggle="modal"
-                                            data-target="#myModal<?=$ts->id?>"><i class="fa fa-pencil"></i></button>
+                                            data-target="#myModal<?=$ts->id?>" rel="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil"></i></button>
                                         <button class="btn btn-danger btn-xs" type="button" data-toggle="modal"
-                                            data-target="#myModal2<?=$ts->id?>"><i class="fa fa-trash"></i></button>
+                                            data-target="#myModal2<?=$ts->id?>" rel="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
 
