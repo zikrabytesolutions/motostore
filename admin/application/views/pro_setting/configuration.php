@@ -12,7 +12,7 @@
             <div class="panel-body">
             <div class="form-group">
                  <label>Enter <?= $attribute;?></label>
-                  <input type="text"  class="form-control" name="value_name" placeholder="Enter <?= $attribute;?>">
+                  <input type="text"  class="form-control" name="value_name" placeholder="Enter <?= $attribute;?>" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                   <?php if($this->session->flashdata('item')):?>
                      <?php $info= $this->session->flashdata('item');?>
                           <span class="text-<?= $info['class']?>"><b><?= $info['message']?> </b></span>
@@ -122,10 +122,10 @@
                                     <?php endif;?>
                                </div>
 
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label>Slug</label>
                                         <input type="text" value="<?= $at->slug?>" class="form-control" name="slug" placeholder="Enter Slug">
-                                    </div>
+                                    </div> -->
 
                                     <div class="form-group">
                                         <label>Enter Description</label>

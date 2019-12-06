@@ -15,19 +15,19 @@
             <div class="col-md-4">
                 <div class="form-group">
                         <label class="control-label" for="username">Event Name</label>
-                        <input type="text" placeholder="Event name/title"  required=""  name="name" class="form-control" required>
+                        <input type="text" placeholder="Event name/title" name="name" class="form-control" required onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                 </div>
             </div>
             <div class="col-md-4">
             <div class="form-group">
                     <label class="control-label" for="username">Event Place</label>
-                    <input type="text" placeholder="Event Place"  required=""  name="place" class="form-control" required>
+                    <input type="text" placeholder="Event Place" name="place" class="form-control" required onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
             </div>
             </div>
             <div class="col-md-4">
             <div class="form-group">
                     <label class="control-label" for="username">Event date</label>
-                    <input type="datetime-local"  required=""  name="eventdate" class="form-control" required>
+                    <input type="datetime-local" name="eventdate" class="form-control" required>
             </div>
             </div>
             <div class="col-md-4">

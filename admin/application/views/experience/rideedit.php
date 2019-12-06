@@ -50,7 +50,7 @@
                           
                <div class="col-md-12">
                <label for="inter"> Title </label>
-                     <input type="text" name="title" class="form-control" value="<?= $ride->title?>" required>
+                     <input type="text" name="title" class="form-control" value="<?= $ride->title?>" required onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                     </select>
                </div>
 

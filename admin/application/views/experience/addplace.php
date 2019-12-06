@@ -30,7 +30,7 @@
              <div class="col-md-12"><br>
                 <div class="form-group">
                     <label class="control-label" for="username">Place Name</label>
-                    <input type="text" name="placename" required="" class="form-control">
+                    <input type="text" name="placename" required="" class="form-control" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                     <small style="color:red"> <b><?php echo form_error('placename'); ?></b></small>
                  </div>
             </div>

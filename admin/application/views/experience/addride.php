@@ -45,7 +45,7 @@
                           
                <div class="col-md-8">
                <label for="inter"> Title </label>
-                     <input type="text" name="title" class="form-control" required>
+                     <input type="text" name="title" class="form-control" required onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                     </select>
                </div>
 
