@@ -36,19 +36,26 @@ class Tiles extends My_Controller
                 );
      
                  $this->load->library('upload', $config);
-                 $this->upload->do_upload();
-                
-                 if($this->upload->data())
-                 {
-                    $filedata=$this->upload->data();
-                   $data['image']=$filePath=$uid.$filedata['file_ext'];
-                     $success= $this->DashboardModel->inserttiles($data);
-                     if($success)
-                     {
-                      return redirect('tiles');
-                     }
-                 }
-               
+                 if (!$this->upload->do_upload())
+                {
+                   
+                    $this->session->set_flashdata('msg_error',  $this->upload->display_errors());
+                    return redirect('tiles');
+
+                }
+                else
+                {
+                    if($this->upload->data())
+                    {
+                        $filedata=$this->upload->data();
+                        $data['image']=$filePath=$uid.$filedata['file_ext'];
+                        $success= $this->DashboardModel->inserttiles($data);
+                        if($success)
+                        {
+                        return redirect('tiles');
+                        }
+                    }
+                } 
         }
                          
                        

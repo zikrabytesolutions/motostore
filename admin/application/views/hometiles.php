@@ -12,6 +12,7 @@
             <div class="panel-body">
                 <?php echo form_open_multipart('tiles/save');?>
                 <div class="row">
+
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class=" control-label">Tiles Name</label>
@@ -27,11 +28,19 @@
 
                     <div class="col-md-5">
                         <label class=" control-label">Tiles Image</label>
-                        <input type="file" class="form-control" name="userfile" required>
+                        <input type="file" class="form-control" name="userfile" accept="image/*" required >
+                        <?php if($this->session->flashdata('msg_error')):?>
+                   
+                   <div class="alert alert-danger">
+                        <i class="fa fa-bolt"></i>    <b><?= $this->session->flashdata('msg_error') ?> </b>
+                  </div>
+                       
+                    <?php endif;?>
                     </div>
                     <div class="col-md-3">
                         <label class=" control-label">Starting price(Rs)</label>
-                        <input type="text" class="form-control" name="price"  accept="image/png, image/jpeg" required>
+                        <input type="text" class="form-control" name="price" />
+                        
                     </div>
 
                     <div class="col-md-2"><br>
@@ -50,7 +59,6 @@
                                     <th>Image</th>
                                     <th>Starting price(Rs)</th>
                                     <th>link</th>
-
                                     <th>Action</th>
                                 </tr>
                             </thead>

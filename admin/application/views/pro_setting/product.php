@@ -170,14 +170,12 @@
                     <option value="1">NO</option>
                 </select>
             </div> -->
-
             </div>
 
             <div class="row">
-
             <div class="col-md-4">
             <label>Regular Price</label>
-                <input type="number"  id="price" class="form-control" name="price" >
+                <input type="number"  id="price" class="form-control" name="price" step="1" min="0" max="900000">
             </div>
 
             <div class="col-md-4">
@@ -367,7 +365,7 @@ function scorecompare(idval)
     var totalmarkstoall = document.getElementById("price").value;
     if (parseInt(marksscored) > parseInt(totalmarkstoall))
     {
-        alert("Offer Price Can not be greater than price ");
+        alert("Offer Price Can not be greater than Regular price ");
         $('#periceoffer').val("");
     } else {
 

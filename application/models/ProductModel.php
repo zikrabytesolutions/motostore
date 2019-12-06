@@ -234,14 +234,20 @@ class ProductModel extends CI_Model
 
     }
 
-    function findsize($catid)
-    {
-        $this->db->select('*');
-        $this->db->from('product');
-        $this->db->where('cat_id', $catid);
-        $query= $this->db->get();
-        return $result= $query->result();
-    }
+    // function findsize($catid)
+    // {
+    //     $catid= base64_decode(strtr($catid, '-_', '+/'));
+    //     $catid= base64_decode(strtr($catid, '-_', '+/'));
+    //     $this->db->select('attribute.attribute,attribute_value.id,attribute_value.value_name');
+    //     $this->db->from('product');
+    //     $this->db->join('product_details','product_details.pro_id=product.id');
+    //     $this->db->join('attribute_value','attribute_value.attribute_id=product_details.second OR attribute_value.attribute_id=product_details.first');
+    //     $this->db->join('attribute','attribute.id=attribute_value.attribute_id');
+    //     $this->db->group_by('attribute_value.attribute_id');
+    //     $this->db->where('product.cat_id', $catid);
+    //     $query= $this->db->get();
+    //     return $result= $query->result();
+    // }
 
     
 
