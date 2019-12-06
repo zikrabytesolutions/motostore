@@ -22,7 +22,9 @@ class Profile extends MY_Controller
     {
         if (!$this->form_validation->run('changepassword') == TRUE )
         {
-            $this->load->view('changepassword');
+            $msg=validation_errors();
+            $this->session->set_flashdata('msg_error', $msg);
+            return redirect('profile');
         }
         else
         { 
@@ -37,7 +39,7 @@ class Profile extends MY_Controller
 
 			      if(($npwd!=$cpwd))
 			       {
-				      $this->session->set_flashdata('msg_error', 'Password and confirm password doesnot match' );
+				      $this->session->set_flashdata('msg_error', 'Password and confirm password does not match' );
                       return redirect('profile');
 				   }
 				   else
@@ -50,7 +52,8 @@ class Profile extends MY_Controller
                         }
                         else
                         {
-                            $success= $this->loginModel->passwordchange($newpassword,$id);
+                           
+                            $success= $this->loginModel->passwordchange($npwd,$id);
                             if($success)
                             {
                                 $this->session->set_flashdata('msg_error', 'Password Changed' );
@@ -64,7 +67,7 @@ class Profile extends MY_Controller
             }
             else
             {    $this->session->set_flashdata('msg_error', 'Your current password is Wrong' );
-                return redirect('users/changepassword'); 
+                return redirect('profile');
             }
 
         }

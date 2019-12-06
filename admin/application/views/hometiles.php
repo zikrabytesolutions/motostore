@@ -48,7 +48,7 @@
                                     <th>#</th>
                                     <th>Tiles Name</th>
                                     <th>Image</th>
-                                    <th>Starting price</th>
+                                    <th>Starting price(Rs)</th>
                                     <th>link</th>
 
                                     <th>Action</th>

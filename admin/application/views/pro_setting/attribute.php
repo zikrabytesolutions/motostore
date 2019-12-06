@@ -43,9 +43,9 @@
                     <tr>
                         <th>#</th>
                         <th>Attribute</th>
-                        <th>Status</th>
+                        <!-- <th>Status</th> -->
                         
-                        <th>Configuration</th>
+                        <!-- <th>Configuration</th> -->
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -58,16 +58,16 @@
                              <u> <?= $at->attribute?> </u>
                             </td>
                             </a>
-                            <td>
+                            <!-- <td>
                               <?php if($at->status=='1'):?>
                                  <a  href="<?= base_url('attribute/inactive/'.$at->id)?>" class="btn btn-xs btn-success active"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For In active">Active</a>
                               <?php else:?>
                                   <a href="<?= base_url('attribute/active/'.$at->id)?>" class="btn btn-xs btn-danger active"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For Active">In Active</a>
                                <?php endif;?>
-                              </td>
-                               <td>
+                              </td> -->
+                               <!-- <td>
                                      
-                               </td>
+                               </td> -->
                             <td>
                                  <button class="btn btn-warning btn-xs" type="button" data-toggle="modal" data-target="#myModal<?=$at->id?>" rel="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil"></i></button>
                                  <button class="btn btn-danger btn-xs" type="button" data-toggle="modal" data-target="#myModal2<?=$at->id?>" rel="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>

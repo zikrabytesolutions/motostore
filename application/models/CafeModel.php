@@ -48,6 +48,17 @@ class CafeModel extends CI_MOdel
         $query=$this->db->get();
         return $query->result();
     }
+
+    function cafedetails($id)
+    {
+        $this->db->select('*');
+        $this->db->from('cafe_event');
+        $this->db->where('status','1');
+        $this->db->where('id',$id);
+        $this->db->group_by('place');
+        $query=$this->db->get();
+        return $query->result();
+    }
 }
 
 ?>

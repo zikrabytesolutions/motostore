@@ -80,6 +80,43 @@ class Order extends MY_Controller
         $this->load->view('order/deliveredorder',$data);
         $this->load->view('footer');
      }
+
+     function search($start='',$to='', $status='')
+     {
+       if($status=='all')
+       {
+         $data['acceptedorder']=$this->orderModel->allbystatus($status,$start,$to);
+         $data['selectstatus']= $status;
+         $this->load->view('header');
+         $this->load->view('order/searchorder',$data);
+         $this->load->view('footer');
+       }
+        elseif($status!='')
+        {
+         $data['acceptedorder']=$this->orderModel->filterorder($status,$start,$to);
+         $data['selectstatus']= $status;
+         $this->load->view('header');
+         $this->load->view('order/searchorder',$data);
+         $this->load->view('footer');
+        }
+        else
+        {
+         $data['selectstatus']= '';
+         $data['acceptedorder']=$this->orderModel->allorderlist();
+         $this->load->view('header');
+         $this->load->view('order/searchorder',$data);
+         $this->load->view('footer');
+        }
+     
+     }
+
+     function filter()
+     {
+         $status= $this->input->post('status');
+         $start= $this->input->post('start');
+         $to= $this->input->post('end');
+          return redirect('order/search/'.$start.'/'. $to.'/'. $status);
+     }
 }
 
 ?>

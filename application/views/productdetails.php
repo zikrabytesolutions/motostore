@@ -69,8 +69,12 @@
                             <h3><?= $pd->product; ?></h3>
                             <p>Product Code : <?= $pd->productcode; ?></p>
                             <div class="product-price">
-                            <b>Rs.</b> <span > <del id="regularprice">
-                                        <?= $pd->regular_price?></del> </span><span class="slash" style="font-size:20px" id="offerprice"> <?= $pd->offer_price?></span> 
+                            <b>Rs.</b> 
+                             <?php if($pd->regular_price==$pd->offer_price):?>
+                                <span id="regularprice"> <?= $pd->regular_price?> </span> 
+                             <?php else :?>
+                            <span > <del id="regularprice"> <?= $pd->regular_price?></del> </span><span class="slash" style="font-size:20px" id="offerprice"> <?= $pd->offer_price?></span> 
+                             <?php endif; ?>
                             </div>
                             <div class="product-overview">
                                 <p>Availability: <b><span id="stock"><?php if($pd->stockstatus=='0'){echo ' <span style="color:red"> Out Of Stock';}
@@ -279,13 +283,30 @@
                                                     <div class="item-title">
                                                     <h6 class="txt-h-up tooltrip" data-toggle="tooltip" title="<?= $pro->product?>">
                                                       
-                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$pro->product.'/'.$pid)?>" ><?= $stringCut = substr($pro->product, 0, 29); ?>..</a>
+                                                    <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$pro->product.'/'.$pid)?>" >
+                                                    <?php
+                                                        if(strlen($pro->product)>8)
+                                                        {
+                                                            echo  $stringCut = substr($pro->product, 0, 8).' ...';
+                                                        }
+                                                        else
+                                                        {
+                                                            echo  $stringCut = substr($pro->product, 0, 8);
+                                                            }
+                                                            ?>
+                                                    </a>
                                                     </h6>
                                                 </div>
                                     
                                                     <div class="related-price">
                                                         <?php $price= $this->db->select('regular_price,offer_price')->from('product_details')->where('pro_id',$pro->id)->order_by('id','ASC')->limit('1')->get()->row_array();?>
-                                                        <p class=""> Rs. <span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span></p> 
+                                                        <?php if($price['regular_price']==$price['offer_price']):?>
+                                                        <p class="">Rs. <span class="p-prc"><?= $price['regular_price']?></b></span>
+                                                        </p>
+                                                        <?php else:?>
+                                                        <p class="">Rs. <span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span>
+                                                        </p>
+                                                        <?php endif?>
                                                         <h4 class="p-prc"></h4>
                                                     </div>
                                                 </div>

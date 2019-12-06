@@ -457,6 +457,7 @@ class ProductSetting extends CI_Model
         $this->db->join('category','category.id=product.cat_id');
         $this->db->join('sub_category','sub_category.id=product.subcat_id');
         $this->db->where(['product.cat_id'=>$category,'product.subcat_id'=>$subcategory,'product.brand_id'=>$brand]);
+       
         $query= $this->db->get();
         return $query->result();
     }
@@ -595,6 +596,7 @@ class ProductSetting extends CI_Model
         $this->db->join('brand','brand.id=product.brand_id');
         $this->db->join('category','category.id=product.cat_id');
         $this->db->join('sub_category','sub_category.id=product.subcat_id');
+        
         $query= $this->db->get();
         return $query->result();
     }

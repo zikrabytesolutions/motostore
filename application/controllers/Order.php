@@ -17,6 +17,7 @@ class Order extends MY_Controller
 
     function orderdetails($orderdid)
     {
+       
         $orderdid= base64_decode(strtr($orderdid, '-_', '+/'));
         $data['address']= $this->userModel->getdeliveryaddress($orderdid);
         $data['orderlist']= $this->userModel->getorderlist($orderdid);
@@ -49,6 +50,17 @@ class Order extends MY_Controller
     function findattributecart( $data )
      {
         return $this->cartModel->attributefind( $data );
+     }
+
+     function cancel($ordid)
+     {
+        
+        $success= $this->cartModel->orderdcancel($ordid);
+        if($success)
+        {
+            $ordid=  strtr(base64_encode($ordid), '+/', '-_');
+            return redirect('order/orderdetails/'.$ordid);
+        }
      }
 
     

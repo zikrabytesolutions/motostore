@@ -66,9 +66,9 @@
                         <div id="collapseOne<?= $i?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
                             <div class="panel-body">
                               <div class="row">
-                                   <div class="col-md-3"><p>Brand Name : <?= $pro->brand?></p></div>
-                                   <div class="col-md-3"><p>Category : <?= $pro->cat_name?></p></div>
-                                   <div class="col-md-3"><p>Sub Category : <?= $pro->sub_category_name?></p></div>
+                                   <div class="col-md-3"><p><b>Brand Name :</b> <?= $pro->brand?></p></div>
+                                   <div class="col-md-3"><p><b>Category : </b><?= $pro->cat_name?></p></div>
+                                   <div class="col-md-3"><p><b>Sub Category :</b> <?= $pro->sub_category_name?></p></div>
                                    
                               </div><br>
                                <div class="row">
@@ -90,10 +90,12 @@
                                                <?php endforeach; endif; ?>
                                               <?php endif?>
                                           
-                                     <?php endforeach; endif;?>
+                                     <?php endforeach; else:?>
+                                        <p><b>Attribute :</b> NA</p>
+                                     <?php endif?>
                                      </div>
                                      <div class="col-md-3">
-                                         Total Variation : <?php  if(($f*$s)=='0'){echo "1";} else { echo $f*$s;}?>
+                                       <b>  Total Variation :</b> <?php  if(($f*$s)=='0'){echo "1";} else { echo $f*$s;}?>
                                      </div>
                                      
                                      <div class="col-md-3">

@@ -34,7 +34,7 @@
             </form>
             </div>
             <div class="panel-footer">
-               Please Choose image dimentation 350*220
+              
             </div>
         </div>
     </div>

@@ -24,6 +24,7 @@ class Product extends CI_Controller
             $brands= base64_decode(strtr($brands, '-_', '+/'));
             $atributes= base64_decode(strtr($atributes, '-_', '+/'));
             $data['subcategory']= $this->productModel->subcategory($catid);
+            $data['sizeattribute']= $this->productModel->findsize($catid); // caregorywise
             $brands= json_decode($brands);
             $atributes= json_decode($atributes);
             $data['productlist']= $this->productModel->filtersearch($catid,$min,$max,$brands,$atributes); 

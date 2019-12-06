@@ -142,8 +142,7 @@ class Login extends CI_Controller
 
        function logout()
        {
-        $this->session->unset_userdata(motoubid);
-        $this->session->sess_destroy();
+        $this->session->unset_userdata('motoubid');
         return redirect('home');
        }
 

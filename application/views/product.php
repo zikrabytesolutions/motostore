@@ -128,22 +128,28 @@
                           <a href="<?= base_url('product/details/'.$pid.'/'.$catidgo.'/'.$plist->product.'/'.$pid)?>"  target="_blank">
                           
                           <?php
-                                                        if(strlen($plist->product)>8)
-                                                        {
-                                                           echo  $stringCut = substr($plist->product, 0, 8).' ...';
-                                                       }
-                                                       else{
-                                                         echo  $stringCut = substr($plist->product, 0, 8);
-                                                     }
-                                                     ?>
+                                if(strlen($plist->product)>8)
+                                  {
+                                    echo  $stringCut = substr($plist->product, 0, 8).' ...';
+                                  }
+                                   else
+                                   {
+                                      echo  $stringCut = substr($plist->product, 0, 8);
+                                    }
+                                      ?>
                           
                           </a>
                         </h6>
                       </div>
                       <div class="price-block">
                       <?php $price= $this->db->select('regular_price,offer_price')->from('product_details')->where('pro_id',$plist->id)->order_by('id','ASC')->limit('1')->get()->row_array();?>
-                        <p class="">Rs. <span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span>
-                          </p> 
+                        <?php if($price['regular_price']==$price['offer_price']):?>
+                        <p class="">Rs. <span class="p-prc"><?= $price['regular_price']?></b></span>
+                          </p>
+                        <?php else:?>
+                          <p class="">Rs. <span class="p-prc"><del><?= $price['regular_price']?> </del><b><?= $price['offer_price']?></b></span>
+                          </p>
+                        <?php endif?> 
                       </div>
                     </div>
                   </div>

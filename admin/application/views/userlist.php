@@ -7,7 +7,7 @@
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                    
                 </div>
-                Recent Registered  User
+                 User list
             </div>
             <div class="panel-body" style="display: block;">
                 <div class="table-responsive">

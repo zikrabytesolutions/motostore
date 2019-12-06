@@ -38,6 +38,12 @@ class Motocafe extends CI_Controller
 		
 	}
 
+	function details($id)
+	{
+		$data['details']= $this->cafeModel->cafedetails($id);
+		$this->load->view('cafedetail',$data);
+	}
+
 	function post()
 	{
 		 $place= $this->input->post('place');

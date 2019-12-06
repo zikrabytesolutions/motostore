@@ -93,7 +93,8 @@
                                                     ?>
 
                       </h5>
-                      <p class="event-des-txt">
+                     <p class="event-des-txt">
+                     <a href="<?= base_url('motocafe/details/'.$ev->id)?>" style="text-decoration: none;">
                       <?php
                                                     if(strlen($ev->description)>180)
                                                     {
@@ -103,6 +104,7 @@
                                                    echo  $stringCut = substr($ev->description, 0, 180);
                                                     }
                                                     ?>
+                                                    </a>
                        </p>
                      <!-- <div class="text-right eventbtn">
                         <a href="">Read more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>

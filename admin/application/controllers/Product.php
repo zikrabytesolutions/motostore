@@ -385,12 +385,12 @@ class Product extends MY_Controller
             <input type="hidden" name="first[]" value="'.$first->pavid.'">
             <input type="hidden" name="second[]" value="'.$second->pavid.'">                         
         <div class="row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-5">
                 <label>Product Quantity</label>
                 <input type="number"  id="vproductquantity" class="form-control" name="vproductquantity[]" >
             </div>
 
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-5">
                 <label>Status</label>
                 <select name="vstockstatus[]" id="vstockstatus" class="form-control">
                     <option value="1">In Stock</option>
@@ -398,34 +398,24 @@ class Product extends MY_Controller
                 </select>
             </div>
 
-            <div class="form-group col-md-4">
-            <label>Quantity Visible</label>
-            <select name="vvisible[]" id="vvisible" class="form-control">
-                    <option value="1">Yes</option>
-                    <option value="1">NO</option>
-                </select>
-            </div>
+            
 
             </div>
 
             <div class="row">
 
-            <div class="col-md-4">
+            <div class="col-md-6">
             <label>Regular Price</label>
                 <input type="number"  id="vprice" class="form-control" name="vprice[]" >
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
             <label>Offer Price</label>
                 <input type="number"  id="vpericeoffer" class="form-control change" name="vpericeoffer[]" >
             </div>
 
 
-            <div class="col-md-4">
-            <label>Offer %</label>
-                <input type="text"  id="vofferper" class="form-control" name="vofferper[]" >
-               
-            </div>
+            
 
             
             <!-- ----shedule----- -->

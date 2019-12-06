@@ -182,7 +182,7 @@
 
             <div class="col-md-4">
             <label>Offer Price</label>
-                <input type="number"  onkeyup="scorecompare(this.value);" class="form-control change" name="periceoffer" >
+                <input type="number"  onkeyup="scorecompare(this.value);" class="form-control change" id="periceoffer" name="periceoffer" >
             </div>
 
 
@@ -359,6 +359,20 @@
   
 //   });
 // });
+
+function scorecompare(idval)
+ {
+    var marksscored = idval;
+
+    var totalmarkstoall = document.getElementById("price").value;
+    if (parseInt(marksscored) > parseInt(totalmarkstoall))
+    {
+        alert("Offer Price Can not be greater than price ");
+        $('#periceoffer').val("");
+    } else {
+
+    }
+}
 
 $(".js-source-states-2").select2();
 $(".js-source-states").select2();

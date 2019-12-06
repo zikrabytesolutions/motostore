@@ -20,7 +20,7 @@ class Home extends CI_Controller
         $data['slider']= $this->homeModel->sliderimages();
 		
 	// echo "<pre>";
-    //       print_r($data);
+    // print_r($data);
 	// echo "</pre>";
 		 $this->load->view('home',$data);
 	}

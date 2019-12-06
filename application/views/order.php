@@ -45,7 +45,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							        <tr>
 							            <td>#<?= $order->orderid?></td>
 							            <td><?= date("d/m/Y", strtotime($order->created))?></td>
-							            <td>Pending</td>
+							            <td>
+										 <?php if($order->status=='0'){echo "Pending";}?>
+										 <?php if($order->status=='1'){echo "Accepted";}?>
+										 <?php if($order->status=='2'){echo "Shipped";}?>
+										 <?php if($order->status=='3'){echo "Delivered";}?>
+										 <?php if($order->status=='9'){echo "Order Cancelled";}?>
+										</td>
 							            <td><?= $order->grand?></td>
                                         <td><?= $order->iteam?></td>
 							            <td>
