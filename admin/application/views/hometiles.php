@@ -136,12 +136,12 @@
                                         <div class="modal-content animated bounceIn">
                                             <div class="color-line"></div>
                                             <div class="modal-header">
-                                                <h5 class="modal-title">Delete</strong> </h5>
+                                                <h5 class="modal-title">Alert ! </strong> </h5>
                                                 <small class="font-bold"></small>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row">
-                                                    <h4 style="color:red"><b>Are you sure you want to delete?</b></h4>
+                                                    <h4>Are you sure you want to delete?</h4>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">

@@ -103,12 +103,12 @@
                         <div class="modal-content  animated bounceIn">
                             <div class="color-line"></div>
                             <div class="modal-header">
-                                <h5 class="modal-title">Delete Category </h5>
+                                <h5 class="modal-title">Alert ! </h5>
                                 <small class="font-bold"></small>
                             </div>
                             <?php echo form_open('category/update');?>
                             <div class="modal-body">
-                               <h4 style="Color:red"><b>Are you sure you want to delete? </b></h4>
+                               <h4>Are you sure you want to delete?</h4>
                             </div>
                             <div class="modal-footer">
                              
