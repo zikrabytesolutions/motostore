@@ -69,13 +69,13 @@
                                                      </td>
         
                     <td>
-                        <button class="btn btn-primary btn-xs" type="button" data-toggle="modal" data-target="#myModal<?= $i?>"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary btn-xs" type="button" data-toggle="modal" data-target="#myModal<?= $i?>" rel="tooltip" data-placement="top" title="View"><i class="fa fa-eye" aria-hidden="true"></i></button>
                          <?php if($ev->status==0):?>
-                                <a  href="<?= base_url('event/onimg/'.$ev->id)?>"  class="btn btn-warning btn-xs"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For active"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                                <a  href="<?= base_url('event/onimg/'.$ev->id)?>"  class="btn btn-warning btn-xs"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For active"><i class="fa fa-times" aria-hidden="true"></i></a>
                          <?php else:?>
-                                <a  href="<?= base_url('event/offimg/'.$ev->id)?>" class="btn btn-success btn-xs"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For In active"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                <a  href="<?= base_url('event/offimg/'.$ev->id)?>" class="btn btn-success btn-xs"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For In active"><i class="fa fa-check" aria-hidden="true"></i></a>
                          <?php endif?>
-                        <button class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#myModalsm<?= $i?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#myModalsm<?= $i?>" rel="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </td>
                 </tr>
 <!-- delete-->
@@ -84,11 +84,11 @@
                             <div class="modal-content">
                                 <div class="color-line"></div>
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Delete Event</h4>
+                                    <h4 class="modal-title">Alert ! </h4>
                                    
                                 </div>
                                 <div class="modal-body">
-                                    <h3 style="color:red"><b> Are you sure you want to Delete? </b></h3>
+                                    <h4>Are you sure you want to Delete?</h4>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">No</button>

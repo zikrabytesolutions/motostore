@@ -112,10 +112,10 @@
                     <td><?= $ride->price?></td>
         
                     <td>
-                    <button class="btn btn-info btn-xs" type="button" data-toggle="modal" data-target="#myModalview<?= $i?>"><i class="fa fa-search" aria-hidden="true"></i></button>
-                        <a href="<?= base_url('motoexperience/editride/'.$ride->id)?>" class="btn btn-primary btn-xs" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <button class="btn btn-info btn-xs" type="button" data-toggle="modal" data-target="#myModalview<?= $i?>" rel="tooltip" data-placement="top" title="View"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                        <a href="<?= base_url('motoexperience/editride/'.$ride->id)?>" class="btn btn-primary btn-xs" rel="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                          
-                        <button class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#myModalsm<?= $i?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#myModalsm<?= $i?>" rel="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </td>
                 </tr>
 <!-- delete-->
@@ -124,11 +124,11 @@
                             <div class="modal-content">
                                 <div class="color-line"></div>
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Delete Ride</h4>
+                                    <h4 class="modal-title">Alert ! </h4>
                                    
                                 </div>
                                 <div class="modal-body">
-                                    <h3 style="color:red"><b> Are you sure you want to Delete? </b></h3>
+                                    <h4>Are you sure you want to Delete?</h4>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">No</button>

@@ -3831,7 +3831,8 @@ body.modal-open {
 
 #logo {
     float: left;
-    width: 180px;
+    /*width: 180px;*/
+    width: 245px;
     background-color: #34495e;
     padding: 18px 10px 18px 18px;
     height: 56px;

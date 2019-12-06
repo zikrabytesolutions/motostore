@@ -39,14 +39,13 @@
     <div class="color-line">
     </div>
     <div id="logo" class="light-version">
-        <span>
-        Moto Store
-        </span>
+        <a href="<?= base_url('dashboard')?>"> Motor Chronicles</a>
+        
     </div>
     <nav role="navigation">
-        <div class="header-link hide-menu"><i class="fa fa-bars"></i></div>
+        <!-- <div class="header-link hide-menu"><i class="fa fa-bars"></i></div> -->
         <div class="small-logo">
-            <span class="text-primary">Moto Store</span>
+            <a href="<?= base_url('dashboard')?>" class="text-primary"> Motor Chronicles</a>
         </div>
         
         <div class="mobile-menu">
