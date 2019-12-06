@@ -52,7 +52,8 @@ class Tiles extends My_Controller
                         $success= $this->DashboardModel->inserttiles($data);
                         if($success)
                         {
-                        return redirect('tiles');
+                            $this->session->set_flashdata('created', 'Tiles Created');
+                            return redirect('tiles');
                         }
                     }
                 } 
@@ -68,6 +69,7 @@ function update()
         $success= $this->DashboardModel->updatetiles($data,$id);
         if($success)
          {
+            $this->session->set_flashdata('updated', 'Tiles Updated');
             return redirect('tiles');
          }
 }

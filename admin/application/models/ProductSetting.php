@@ -620,6 +620,21 @@ class ProductSetting extends CI_Model
     {
         return $this->db->where('id',$id)->DELETE('attribute_value');
     }
+
+    function insertproductattributesimple($product,$commonid)
+    {
+      $this->db->insert('product_attribute',['product_id'=>$product,'commonid'=>$commonid]);
+    }
+
+    function insertproductattributevaluesimple($productid,$commonid)
+    {
+        $this->db->insert('product_attribute_value',['productid'=>$productid,'commonid'=>$commonid]);
+    }
+
+    function prodelete($id)
+    {
+        return $this->db->where('id',$id)->DELETE('product');
+    }
     
 }
 

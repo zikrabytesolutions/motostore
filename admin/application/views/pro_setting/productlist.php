@@ -59,7 +59,18 @@
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne<?= $i?>" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
-                                   <b> <?= $pro->product?> </b>   <b style="float:right"><?= $pro->brand?> > <?= $pro->cat_name?> > <?= $pro->sub_category_name?></b>
+                                   <b> 
+                                   <?php
+                                                    if(strlen($pro->product)>30)
+                                                    {
+                                                     echo  $stringCut = substr($pro->product, 0, 30).' ...';
+                                                    }
+                                                    else{
+                                                   echo  $stringCut = substr($pro->product, 0, 30);
+                                                    }
+                                                    ?>
+
+                                    </b>   <b style="float:right"><?= $pro->brand?> > <?= $pro->cat_name?> > <?= $pro->sub_category_name?></b>
                                 </a>
                             </h4>
                         </div>
@@ -97,15 +108,38 @@
                                      <div class="col-md-3">
                                        <b>  Total Variation :</b> <?php  if(($f*$s)=='0'){echo "1";} else { echo $f*$s;}?>
                                      </div>
-                                     
+                                    
                                      <div class="col-md-3">
                                          <a href="<?= base_url('product/productedit/'.$pro->id)?>" class="btn btn-primary"> View & Edit</a>
+                                         <a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#myModal2<?=$pro->id?>"> Delete</a>
                                      </div>
 
                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="modal fade hmodal-warning" id="myModal2<?=$pro->id?>" tabindex="-1" role="dialog"  aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content animated bounceIn">
+                            <div class="color-line"></div>
+                            <div class="modal-header">
+                                <h5 class="modal-title">Delete</strong> </h5>
+                                <small class="font-bold"></small>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                     <h4 style="color:red"><b>Are you sure you want to delete?</b></h4>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                <a href="<?= base_url('product/prodelete/'.$pro->id)?>" class="btn btn-primary" >Yes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
                  <?php endforeach; else:?>
                    <h4>No result found.</h4>
                  <?php endif?>

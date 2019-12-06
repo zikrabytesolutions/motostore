@@ -12,7 +12,13 @@
             <div class="panel-body">
                 <?php echo form_open_multipart('tiles/save');?>
                 <div class="row">
-
+                <?php if($this->session->flashdata('created')):?>
+                   
+                   <div class="alert alert-success">
+                        <i class="fa fa-bolt"></i>    <b><?= $this->session->flashdata('created') ?> </b>
+                  </div>
+                       
+                    <?php endif;?>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label class=" control-label">Tiles Name</label>
@@ -51,6 +57,13 @@
 
                 <div class="row"><br><br><br>
                     <tr class="table-responsive">
+                    <?php if($this->session->flashdata('updated')):?>
+                   
+                   <div class="alert alert-success">
+                        <i class="fa fa-bolt"></i>    <b><?= $this->session->flashdata('updated') ?> </b>
+                  </div>
+                       
+                    <?php endif;?>
                         <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -70,7 +83,7 @@
                                     <td><img src="<?= base_url('assets/productimage/'.$ts->image)?>" width="100px">
                                     </td>
                                     <td><?= $ts->price;?></td>
-                                    <td><?= $ts->url;?></td>
+                                    <td style="word-wrap: break-word"><?= $ts->url;?></td>
                                     <td>
                                         <button class="btn btn-warning btn-xs" type="button" data-toggle="modal"
                                             data-target="#myModal<?=$ts->id?>" rel="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil"></i></button>

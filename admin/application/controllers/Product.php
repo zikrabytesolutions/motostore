@@ -224,8 +224,11 @@ class Product extends MY_Controller
       
             $commonid= $this->input->post('commonid');
             $productid= $this->productSetting->insertproduct($product,$commonid);
+             
             if($productid)
             {
+                $this->productSetting->insertproductattributesimple($productid,$commonid);
+                $this->productSetting->insertproductattributevaluesimple($productid,$commonid);
               
                 if(isset($_FILES['userfile']['tmp_name']))
                 {
@@ -294,8 +297,6 @@ class Product extends MY_Controller
                 'second' => $this->input->post('second'), 
                
             );
-
-           
              $var=0;
              if($vproduct_details['regular_price'][$var]>0)
              {
@@ -667,6 +668,15 @@ function imageproductwise($proid,$vrtid)
 function countrow()
 {
     return $this->productSetting->countparoct();
+}
+
+function prodelete($id)
+{
+    $success=$this->productSetting->prodelete($id);
+    if( $success)
+    {
+        return redirect('product/lists');
+    }
 }
     
 }

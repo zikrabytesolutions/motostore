@@ -122,22 +122,13 @@
                                     <?php endif;?>
                                </div>
 
-                                    <div class="form-group">
-                                        <label>Slug</label>
-                                        <input type="text" value="<?= $at->slug?>" class="form-control" name="slug" placeholder="Enter Slug">
-                                    </div>
+                                   
 
                                     <div class="form-group">
                                         <label>Enter Description</label>
                                         <textarea rows="4" class="form-control" name="description"> <?= $at->description?> </textarea>
                                     </div>
-                                <div class="form-group">
-                                <label>Brand Status</label>
-                                 <select name="status" id="" class="form-control">
-                                    <option value="1">Active</option>
-                                    <option value="0">In Active</option>
-                                 </select>
-                                </div>
+                               
                             </div>
                             <div class="modal-footer">
                               <input type="hidden" value="<?= $this->uri->segment(3) ?>" name="atid">

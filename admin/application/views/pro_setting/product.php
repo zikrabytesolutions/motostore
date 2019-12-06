@@ -152,7 +152,7 @@
     <div class="row">
             <div class="form-group col-md-5">
                 <label>Product Quantity</label>
-                <input type="number"  id="productquantity" class="form-control" name="productquantity" >
+                <input type="number"  id="productquantity" class="form-control" name="productquantity" step="1" min="0" max="900000">
             </div>
 
             <div class="form-group col-md-5">
@@ -180,7 +180,7 @@
 
             <div class="col-md-4">
             <label>Offer Price</label>
-                <input type="number"  onkeyup="scorecompare(this.value);" class="form-control change" id="periceoffer" name="periceoffer" >
+                <input type="number"  onkeyup="scorecompare(this.value);" class="form-control change" id="periceoffer" name="periceoffer" step="1" min="0" max="900000">
             </div>
 
 
