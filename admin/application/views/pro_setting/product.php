@@ -60,7 +60,7 @@
                       
                           <div class="form-group">
                            <label>Product Name</label>
-                             <input type="text" id="product" class="form-control" name="product" placeholder="Full Product Name">
+                             <input type="text" id="product" class="form-control" name="product" placeholder="Full Product Name" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                            </div>
 
                            <div class="row">

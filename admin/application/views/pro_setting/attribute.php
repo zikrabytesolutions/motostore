@@ -12,7 +12,7 @@
             <div class="panel-body">
             <div class="form-group">
                  <label>Attribute Name</label>
-                  <input type="text"  class="form-control" name="attribute" placeholder="Attribute Name">
+                  <input type="text"  class="form-control" name="attribute" placeholder="Attribute Name" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                   <?php if($this->session->flashdata('item')):?>
                      <?php $info= $this->session->flashdata('item');?>
                           <span class="text-<?= $info['class']?>"><b><?= $info['message']?> </b></span>
@@ -108,7 +108,7 @@
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Brand Name</label>
-                                    <input type="text"  class="form-control" value="<?= $at->attribute?>" name="attribute" placeholder="Brand Name">
+                                    <input type="text"  class="form-control" value="<?= $at->attribute?>" name="attribute" placeholder="Brand Name" >
                                 </div>
                             </div>
                             <div class="modal-footer">

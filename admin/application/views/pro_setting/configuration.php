@@ -4,7 +4,7 @@
             <div class="panel-heading hbuilt">
                 <div class="panel-tools">
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
-                   
+
                 </div>
                 Add Value For " <b><?= $attribute;?></b> "
             </div>
@@ -12,7 +12,7 @@
             <div class="panel-body">
             <div class="form-group">
                  <label>Enter <?= $attribute;?></label>
-                  <input type="text"  class="form-control" name="value_name" placeholder="Enter <?= $attribute;?>">
+                  <input type="text"  class="form-control" name="value_name" placeholder="Enter <?= $attribute;?>" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                   <?php if($this->session->flashdata('item')):?>
                      <?php $info= $this->session->flashdata('item');?>
                           <span class="text-<?= $info['class']?>"><b><?= $info['message']?> </b></span>
@@ -24,7 +24,7 @@
                  <input type="color" id="head" name="codes" value="#e66465" required>
             </div>
            <?php endif?>
-           
+
             <div class="form-group">
                  <label>Enter Description</label>
                   <textarea rows="4" class="form-control" name="description"> </textarea>
@@ -44,7 +44,7 @@
             <div class="panel-heading hbuilt">
                 <div class="panel-tools">
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
-                   
+
                 </div>
                 Add List
             </div>
@@ -55,7 +55,7 @@
                     <tr>
                         <th>#</th>
                         <th>Value</th>
-                       
+
                         <th>Description</th>
                         <!-- <th>Status</th> -->
                         <th>Action</th>
@@ -74,13 +74,13 @@
                                   <a href="<?= base_url('attribute/activevalue/'.$at->id.'/'.$this->uri->segment(3))?>" class="btn btn-xs btn-danger active"  aria-pressed="true" data-toggle="tooltip" data-placement="top" title="Click For Active">In Active</a>
                                <?php endif;?>
                               </td> -->
-                               
+
                             <td>
                                  <button class="btn btn-warning btn-xs" type="button" data-toggle="modal" data-target="#myModal<?=$at->id?>"><i class="fa fa-pencil"></i></button>
                                  <button class="btn btn-danger btn-xs" type="button" data-toggle="modal" data-target="#myModal2<?=$at->id?>"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
-                       
+
                         <div class="modal fade hmodal-warning" id="myModal2<?=$at->id?>" tabindex="-1" role="dialog"  aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content animated bounceIn">
@@ -100,9 +100,9 @@
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
 
-                  
+
                   <div class="modal fade hmodal-warning" id="myModal<?=$at->id?>" tabindex="-1" role="dialog"  aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -122,13 +122,13 @@
                                     <?php endif;?>
                                </div>
 
-                                   
+
 
                                     <div class="form-group">
                                         <label>Enter Description</label>
                                         <textarea rows="4" class="form-control" name="description"> <?= $at->description?> </textarea>
                                     </div>
-                               
+
                             </div>
                             <div class="modal-footer">
                               <input type="hidden" value="<?= $this->uri->segment(3) ?>" name="atid">

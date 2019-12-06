@@ -12,7 +12,7 @@
             <div class="panel-body">
             <div class="form-group">
                  <label>Category Name</label>
-                  <input type="text"  class="form-control" name="cat_name" placeholder="Category Name">
+                  <input type="text"  class="form-control" name="cat_name" placeholder="Category Name" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
                   <?php if($this->session->flashdata('item')):?>
                      <?php $info= $this->session->flashdata('item');?>
                           <span class="text-<?= $info['class']?>"><b><?= $info['message']?> </b></span>

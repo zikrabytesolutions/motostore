@@ -13,7 +13,7 @@
             <?php echo form_open_multipart('event/gallerysave');?>
             <div class="form-group">
                     <label class="control-label" for="username">Caption</label>
-                    <input type="text" placeholder="Caption"  required=""  name="title" class="form-control">
+                    <input type="text" placeholder="Caption"  required name="title" class="form-control" onkeypress="return ((event.charCode >=97 && event.charCode <=122) || (event.charCode >=65 && event.charCode <=90) || (event.charCode >=0 && event.charCode <=32) )">
             </div>
             
             <div class="form-group">
