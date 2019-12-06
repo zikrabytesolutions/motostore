@@ -21,7 +21,7 @@
     <div class="row">
       <div class="col-md-6 offset-md-3 text-center">
         <div class="banner-title">
-          <h1>Showcase & Discover Moto Rides Moments</h1>
+          <h1>Showcase & Discover Event Moments</h1>
         </div>
       </div>
     </div>
@@ -63,6 +63,7 @@
           <div class="ride-des">
             <?= $del->description?>
           </div>
+          <a href="<?= $del->linkurl?>" class="btn btn-success" target="_blank">Register</a>
         </div>
       </div>
     </div>

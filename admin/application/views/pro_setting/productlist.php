@@ -15,7 +15,7 @@
 
             <div class="row">
             <?php echo form_open('product/filterproduct')?>
-            <div class="col-md-2">
+            <div class="col-md-3">
                              <select name="brand"  id="brand" class="js-source-states form-control" required>
                                 <option value="">Select Brand</option>
                                 <?php if($brandlist): foreach($brandlist as $brand):?>
@@ -24,7 +24,7 @@
                              </select>
                          </div>
 
-                       <div class="col-md-2">
+                       <div class="col-md-3">
                             <select name="category" id="category" class="js-source-states form-control" required onChange="getsubcategory(this.value);">>
                                 <option value="">Select Product Category</option>
                                 <?php if($category): foreach($category as $cate):?>
@@ -33,7 +33,7 @@
                             </select>
                        </div>
 
-                         <div class="col-md-2">
+                         <div class="col-md-3">
                           <?php if($subcategory): ?>
                           <select name="subcategory"  id="subcate" class="form-control" required>
                           <?php  foreach($subcategory as $sucat):?> 
@@ -46,7 +46,7 @@
                           <?php endif?>
                              
                          </div>
-                         <div class="col-md-2">
+                         <div class="col-md-3">
                             <button class="btn btn-success" > Search</button>
                          </div>
                          <?php echo form_close();?>
@@ -58,7 +58,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne<?= $i?>" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne<?= $i?>" aria-expanded="false" aria-controls="collapseOne" class="collapsed" aria-pressed="true"  data-placement="top" title="<?= $pro->product?>">
                                    <b> 
                                    <?php
                                                     if(strlen($pro->product)>30)
@@ -124,12 +124,12 @@
                         <div class="modal-content animated bounceIn">
                             <div class="color-line"></div>
                             <div class="modal-header">
-                                <h5 class="modal-title">Delete</strong> </h5>
+                                <h5 class="modal-title">Alert ! </strong> </h5>
                                 <small class="font-bold"></small>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
-                                     <h4 style="color:red"><b>Are you sure you want to delete?</b></h4>
+                                     <h4 >Are you sure you want to delete?</h4>
                                 </div>
                             </div>
                             <div class="modal-footer">

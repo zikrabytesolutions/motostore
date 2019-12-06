@@ -102,7 +102,7 @@
                                                 </h5>
                                                 <small class="font-bold"></small>
                                             </div>
-                                            <?php echo form_open('tiles/update');?>
+                                            <?php echo form_open_multipart('tiles/update');?>
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="col-md-6">
@@ -128,6 +128,13 @@
                                                             <label>Url</label>
                                                             <input type="text" class="form-control"
                                                                 value="<?= $ts->url?>" name="url" placeholder="url" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Url</label>
+                                                            <input type="file" class="form-control" name="userfile" required>
                                                         </div>
                                                     </div>
                                                 </div>

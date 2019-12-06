@@ -183,7 +183,7 @@
                 <input type="number"  onkeyup="scorecompare(this.value);" class="form-control change" id="periceoffer" name="periceoffer" step="1" min="0" max="900000">
             </div>
 
-
+             
             <!-- <div class="col-md-4">
             <label>Offer %</label>
                 <input type="text"  id="offerper" class="form-control" name="offerper" >
@@ -192,6 +192,7 @@
 
             <!-- ----shedule----- -->
             <div class="col-md-12">
+            <p style="color:green"> <b>If there is no offer price then enter same as regular price.</b></p>
                 <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                     <div class="row">
                         <!-- <div class="col-md-4 col-md-offset-4"> -->

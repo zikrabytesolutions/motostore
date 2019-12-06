@@ -53,9 +53,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <button class="btn btn-danger" data-toggle="modal" data-target="#cancel">Cancel order</button>
                                          <br>
                                      <?php endif;?>
-                                     <?php if($sumr->status=='9'):?>
-                                       
-                                      <p style="color:red"><b>Order Cancelled</b></p>
+                                     <?php if($sumr->status=='9'):?><p style="color:red"><b>Order Cancelled</b></p><?php endif;?>
+                                        <?php if($sumr->status=='1'):?><p style="color:green"><b>Order Accepted</b></p><?php endif;?>
+                                        <?php if($sumr->status=='2'):?><p style="color:green"><b>Order Shipped</b></p><?php endif;?>
+                                        <?php if($sumr->status=='3'):?><p style="color:green"><b>Order Delivered</b></p>
                                         <br>
                                     <?php endif;?>
 

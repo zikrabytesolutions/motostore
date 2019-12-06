@@ -44,6 +44,32 @@ class User extends MY_Controller
         exit;
     }
 
+    function emaildata()
+    {$i=0;
+        $email= $this->userModel->emaillist();
+          if($email)
+         { 
+            foreach($email as $em)
+            {
+                $i++;
+                $data[] = array('Sr No.'=> $i, 'pin'=>$em->email, 'place'=> $em->created);
+            } 
+         } 
+
+         header("Content-type: application/csv");
+        header("Content-Disposition: attachment; filename=\"userlist".".csv\"");
+        header("Pragma: no-cache");
+        header("Expires: 0");
+
+        $handle = fopen('php://output', 'w');
+
+        foreach ($data as $data) {
+            fputcsv($handle, $data);
+        }
+            fclose($handle);
+        exit;
+    }
+
     function timeline($id)
     {
         $data['userorder']=$this->orderModel->userorder($id);

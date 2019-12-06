@@ -18,7 +18,7 @@
                     <tr>
                     <th>#</th>
                         <th>Email</th>
-                        <th>Date of Create</th>
+                        <th>Date</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -39,7 +39,7 @@
                     <tfoot>
                         <tr>
                             <td colspan="6">
-                            <a href="<?= base_url('user/exports_data')?>"> <u>Export All Data </u> </a>
+                            <a href="<?= base_url('user/emaildata')?>"> <u>Export All Data </u> </a>
                             </td>
                         </tr>
                     </tfoot>

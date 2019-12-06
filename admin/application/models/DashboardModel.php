@@ -18,14 +18,11 @@ class DashboardModel extends CI_Model
 
     function recentorder()
     {
-        $this->db->select('product_order_iteam.*,users.name,users.mobile,product_order.iteam,product_order.grand');
-        $this->db->from('product_order_iteam');
-        $this->db->join('users','users.id=product_order_iteam.userid');
-        $this->db->join('product_order','product_order.orderid=product_order_iteam.orderdid');
-        $this->db->order_by('product_order_iteam.id','DESC');
-        $this->db->group_by('product_order_iteam.orderdid');
-        $this->db->where('product_order.status','0');
-        $this->db->limit('10');
+        $this->db->select('product_order.*,users.name,users.mobile,product_order.iteam,product_order.grand');
+        $this->db->from('product_order');
+        $this->db->join('users','users.id=product_order.userid');
+        $this->db->order_by('product_order.id','DESC');
+        $this->db->limit('5');
         $query=$this->db->get();
         return $query->result();
     }

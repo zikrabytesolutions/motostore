@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?= base_url('assets/')?>vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" />
 <div class="row">
 <div class="col-lg-5">
         <div class="hpanel hblue">
@@ -42,7 +43,7 @@
             </div>
             <div class="panel-body">
             <div class="table-responsive">
-                <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+            <table id="example2" class="table table-striped table-bordered table-hover">
                     <thead>
                     <tr>
                         <th>#</th>

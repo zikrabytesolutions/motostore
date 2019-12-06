@@ -36,6 +36,14 @@
                     <input type="file" name="userfile" required="" class="form-control" accept="image/*" required>
             </div>
             </div>
+
+            <div class="col-md-8">
+            <div class="form-group">
+            <label class="control-label" for="username">Google Forms Link</label>
+                    <input type="text" name="linkurl" required="" class="form-control" required>
+            </div>
+            </div>
+
             <div class="col-md-12">
             <div class="form-group">
                     <label class="control-label" for="username">Event Description</label>

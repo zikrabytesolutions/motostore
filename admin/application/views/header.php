@@ -112,7 +112,8 @@
                 <a href="<?= base_url('tiles')?>"> <span class="nav-label">Home Page Tiles </span> </a>
             </li>
             
-            <li>
+            <?php $urlproduct=$this->uri->segment(1);?>
+            <li class="<?php if($urlproduct=='product'){echo "active";}?>">
                 <a href="#"><span class="nav-label"> Setting</span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
                     <li class="active"><a href="<?= base_url('product')?>"> Product</a></li>
@@ -122,21 +123,22 @@
                   
                 </ul>
             </li>
-
-            <li>
+               <?php $urlorder=$this->uri->segment(1);?>
+            <li class="<?php if($urlorder=='order'){echo "active";}?>">
                 <a href="#"><span class="nav-label">Order</span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
-                    <li class="active"><a href="<?= base_url('order/search')?>">  Search</a></li>
+                    <li class="active"><a href="<?= base_url('order/search')?>">  All Orders</a></li>
                     <li class="active"><a href="<?= base_url('order/pending')?>">  Pending</a></li>
                     <li class="active"><a href="<?= base_url('order/accepted')?>">  Accepted</a></li>
                     <li class="active"><a href="<?= base_url('order/shipped')?>">  Shipped</a></li>
-                    <li class="active"><a href="<?= base_url('order/delivered')?>">  Delivered</a></li>
+                    <!-- <li class="active"><a href="<?= base_url('order/delivered')?>">  Delivered</a></li> -->
                     
                 </ul>
             </li>
 
 
-            <li>
+            <?php $urlevent=$this->uri->segment(1);?>
+            <li class="<?php if($urlevent=='event'){echo "active";}?>">
                 <a href="#"><span class="nav-label">Moto Cafe </span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
                     <li class="active"><a href="<?= base_url('event/add')?>"> Event</a></li>
@@ -144,7 +146,8 @@
                 </ul>
             </li>
 
-            <li>
+            <?php $urlMotoexperience=$this->uri->segment(1);?>
+            <li class="<?php if($urlMotoexperience=='Motoexperience'){echo "active";}?>">
                 <a href="#"><span class="nav-label">Moto experience </span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
                     <li class="active"><a href="<?= base_url('Motoexperience/place')?>"> Place</a></li>

@@ -123,7 +123,7 @@
                     <?php $i=0; if($recentorder): foreach($recentorder as $rst): $i++?>
                     <tr>
                     <td><?= $i;?></td>
-                        <td><?= $rst->orderdid?></td>
+                        <td><?= $rst->orderid?></td>
                         <td><?= date("d-m-Y", strtotime($rst->created))?></td>
                         <td><?= $rst->name?></td>
                         <td><?= $rst->mobile?></td>
@@ -131,9 +131,13 @@
                         <td><?= $rst->grand?></td>
                         <td>
                           
-                            <span class="label label-warning" >Pending</span>
+                        <?php if($rst->status=='0'){ echo ' <span class="label label-warning" >Pending</span>';}?>
+                        <?php if($rst->status=='1'){ echo ' <span class="label label-primary" >Accepted</span>';}?>
+                        <?php if($rst->status=='2'){ echo ' <span class="label label-info" >Delivered</span>';}?>
+                        <?php if($rst->status=='3'){ echo ' <span class="label label-success" >Shipped</span>';}?>
+                        <?php if($rst->status=='9'){ echo ' <span class="label label-danger" >Cancelled</span>';}?>
                         </td>
-                        <td><a href="<?= base_url('order/details/'.$rst->orderdid)?>" class="btn btn-primary btn-xs" >  View</a></td>
+                        <td><a href="<?= base_url('order/details/'.$rst->orderid)?>" class="btn btn-primary btn-xs" >  View</a></td>
                     </tr>
                 </div>
 
