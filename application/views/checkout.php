@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <?php include 'css.php';?>
+    <?php include 'css.php';?>
 
     <!--fontello-->
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/slick/slick.css')?>"/>
@@ -245,19 +245,19 @@
                              <small style="color:red"><?php echo form_error('payType'); ?></small>
                              <label class="mt-2">
                                 <input type="checkbox" name="tnc" value="1" class="mr-2" <?php if(set_value('tnc')){echo "checked";}else{echo "";} ?>>
-                                <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
+                                <div><i class="fa fa-check"></i></div> I have read and agree to the <a class="tcbtn" data-toggle="modal" data-target="#returnpolicy">terms and conditions </a>*
                                 <small style="color:red"><?php echo form_error('tnc'); ?></small>
-                                </label>
+                            </label>
 
-                                <button class="add-to-cart btn-default bg-red my-4 btnsub" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
-                                <p>View Our <a href="">Privacy Policy</a></p>
-                            </div>
-                        </section>
-                    </div>
+                            <button class="add-to-cart btn-default bg-red my-4 btnsub" type="submit"><i class="icon-cart"></i>Proceed to pay</button>
+                            <p>View Our <a class="tcbtn" data-toggle="modal" data-target="#securitypolicy">Privacy Policy</a></p>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 </section>
 </div>
 
@@ -267,50 +267,46 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-
         <h4 class="modal-title" id="myModalLabel">Account Login</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="login-form">
-        <?php echo form_open('checkoutlogin/checkauth',['id'=>'motostoreRegisterForm']);?>
-        <div class="form-group row">
-            <label for="phone" class="col-sm-4 col-form-label">Email/Phone number</label>
-            <div class="col-sm-8">
-                <?php if($this->session->flashdata('msg_error')):?>
-                    <span class="text-danger"><?= $this->session->flashdata('msg_error')?></span>
-                <?php endif;?>
-                <input type="tel" class="form-control" id="phone" name="userid" >
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="password" class="col-sm-4 col-form-label">Password</label>
-            <div class="col-sm-8">
-                <div class="input-group">
-                    <input type="password" class="form-control" id="password2" name="password" >
-                    <div class="input-group-append">
-                        <span class="input-group-text" id="showPw2"><i class="fa fa-eye" aria-hidden="true"></i></span>
-                        <span class="input-group-text" id="hidePw2"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+      </div>
+        <div class="modal-body">
+          <div class="login-form">
+            <?php echo form_open('checkoutlogin/checkauth',['id'=>'motostoreRegisterForm']);?>
+                <div class="form-group row">
+                    <label for="phone" class="col-sm-4 col-form-label">Email/Phone number</label>
+                    <div class="col-sm-8">
+                        <?php if($this->session->flashdata('msg_error')):?>
+                            <span class="text-danger"><?= $this->session->flashdata('msg_error')?></span>
+                        <?php endif;?>
+                        <input type="tel" class="form-control" id="phone" name="userid" >
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="password" class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="password2" name="password" >
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="showPw2"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                                <span class="input-group-text" id="hidePw2"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-default d-block mx-auto">Login</button>
+            </form>
+            <hr/>
+            <div class="text-center">
+             New to Motostore?<a href="<?= base_url('signup')?>"> Create an account</a>
             </div>
+          </div>
         </div>
-        <button type="submit" class="btn btn-default d-block mx-auto">Login</button>
-    </form>
-    <hr/>
-    <div class="text-center">
-     New to Motostore?<a href="<?= base_url('signup')?>"> Create an account</a>
- </div>
-</div>
-</div>
-<div class="modal-footer">
-
-</div>
-</div>
+    </div>
+  </div>
 </div>
 
-
-
+<?php include('modals.php');?>
 <?php include('footer.php');?>
 </div>
 <?php include('js.php');?>

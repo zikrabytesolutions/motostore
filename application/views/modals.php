@@ -103,4 +103,9 @@
   #returnpolicy p{
     letter-spacing: normal;
   }
+  .tcbtn{
+    cursor: pointer;
+    color: blue !important;
+    text-decoration: underline !important;
+  }
 </style>

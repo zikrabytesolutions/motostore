@@ -278,13 +278,13 @@ padding: 37px 31px 44px;
     .related-products-carousel .owl-nav .owl-prev {
     position: absolute;
     left: -30px;
-    top: 30%;
+    top: 38%;
 }
 
 .related-products-carousel .owl-nav .owl-next {
     position: absolute;
     right: -30px;
-    top: 30%;
+    top: 38%;
 }
 
 }

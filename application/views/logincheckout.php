@@ -217,7 +217,7 @@
                                 <small style="color:red"><?php echo form_error('payType'); ?></small>
                                 <label class="mt-2">
                                     <input type="checkbox" name="tnc" value="1" class="mr-2"  <?php if(set_value('tnc')){echo "checked";}else{echo "";} ?>>
-                                    <div><i class="fa fa-check"></i></div> I have read and agree to the terms and conditions *
+                                    <div><i class="fa fa-check"></i></div> I have read and agree to the <a class="tcbtn" data-toggle="modal" href="#returnpolicy">terms and conditions</a> *
                                 </label>
                                 <input type="checkbox" name="tnc" value="1" class="mr-2" <?php if(set_value('tnc')){echo "checked";}else{echo "";} ?> >
                                 <small style="color:red"><?php echo form_error('tnc'); ?></small>
@@ -226,7 +226,7 @@
                                 <?php else: ?>
                                     <a class="add-to-cart btn-default bg-red my-4" data-toggle="modal" data-target="#myModalblank" style="color:white"><i class="icon-cart"></i> Proceed to pay</a>
                                 <?php endif?>
-                                <p>View Our <a href="">Privacy Policy</a></p>
+                                <p>View Our <a class="tcbtn" data-toggle="modal" href="#securitypolicy" >Privacy Policy</a></p>
 	                        </div>
                         </section>
                     </div>
@@ -327,12 +327,10 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-
         <h4 class="modal-title" id="myModalLabel">Shipping Address</h4>
       </div>
       <?php echo form_open('checkout/addshippingaddress');?>
       <div class="modal-body">
-
         <div class="form-row">
           <div class="form-group col-sm-12">
             <label for="firstname">Full name *</label>
@@ -342,43 +340,43 @@
         <p>Country *</p>
         <p>India</p>
         <div class="form-row align-items-end">
-         <div class="col-md-6">
-          <div class="form-group">
-            <label for="city">Town / City *</label>
-            <input type="text" class="form-control" id="city" placeholder="1234 Main St" name="city">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="city">Town / City *</label>
+              <input type="text" class="form-control" id="city" placeholder="1234 Main St" name="city">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="city">Mobile *</label>
+              <input type="text" class="form-control" id="dmobile" placeholder="Mobile" name="mobile" maxlength="10" pattern="[6789][0-9]{9}" oninvalid="setCustomValidity('Number should start from 9/8/7/6')" onchange="try{setCustomValidity('')}catch(e){}" onkeypress="return ((event.charCode >=48 &amp;&amp; event.charCode <=57) || (event.charCode >=0 &amp;&amp; event.charCode <=31) )" required="">
+            </div>
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="streetaddress">Street address *</label>
+            <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder="House number and street name" required>
+          </div>
+          <div class="form-group col-sm-6">
+            <input type="text" class="form-control" id="streetaddress" name="streetaddress1" placeholder="Apartment, suite, unit etc. (optional)" required>
           </div>
         </div>
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="city">Mobile *</label>
-            <input type="text" class="form-control" id="dmobile" placeholder="Mobile" name="mobile" maxlength="10" pattern="[6789][0-9]{9}" oninvalid="setCustomValidity('Number should start from 9/8/7/6')" onchange="try{setCustomValidity('')}catch(e){}" onkeypress="return ((event.charCode >=48 &amp;&amp; event.charCode <=57) || (event.charCode >=0 &amp;&amp; event.charCode <=31) )" required="">
-          </div>
-        </div>
-
-        <div class="form-group col-sm-6">
-          <label for="streetaddress">Street address *</label>
-          <input type="text" class="form-control" id="streetaddress" name="streetaddress" placeholder="House number and street name" required>
-        </div>
-        <div class="form-group col-sm-6">
-          <input type="text" class="form-control" id="streetaddress" name="streetaddress1" placeholder="Apartment, suite, unit etc. (optional)" required>
+        <div class="form-group">
+          <label for="postcode">Postcode / ZIP *</label>
+          <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode" maxlength="6" onchange="try{setCustomValidity('')}catch(e){}" onkeypress="return ((event.charCode >=48 &amp;&amp; event.charCode <=57) || (event.charCode >=0 &amp;&amp; event.charCode <=31) )" required="">
         </div>
       </div>
-      <div class="form-group">
-        <label for="postcode">Postcode / ZIP *</label>
-        <input type="text" class="form-control" id="postcode" placeholder="1234 Main St" name="postcode" maxlength="6" onchange="try{setCustomValidity('')}catch(e){}" onkeypress="return ((event.charCode >=48 &amp;&amp; event.charCode <=57) || (event.charCode >=0 &amp;&amp; event.charCode <=31) )" required="">
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Save changes</button>
       </div>
-
+      </form>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-success">Save changes</button>
-    </div>
-  </form>
-</div>
+  </div>
 </div>
 
+<?php include('modals.php');?>
 <?php include('footer.php');?>
+
 </div>
 
 <?php include('js.php');?>
