@@ -6,6 +6,16 @@
 	.nav.mb-hide{
 display: none;
 	}
+    .btn-default {
+    
+    padding: 10px 35px;
+}
+.rel-prod-header h3{
+    font-size: 13px;
+}
+.rel-prod-header h3:before, .rel-prod-header h3:after{
+      width: 30%;
+}
 	
 }
 @media(min-width:768px){
@@ -20,6 +30,12 @@ display: none;
 		margin: 0px 0px;
 		font-size: 12px;
 	}
+    .rel-prod-header h3:before {
+    width: 30%;
+    }
+    .rel-prod-header h3:after{
+        width: 30%;
+    }
 }
 
 /*rahul*/
@@ -142,10 +158,6 @@ padding: 37px 31px 44px;
 }*/
 
 }
-
-
-
-
 
 /*changed*/
 
