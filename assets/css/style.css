@@ -985,22 +985,22 @@ header {
 }
 
 .related-products-carousel {
-    margin: 0 20px;
+    /*margin: 0 20px;*/
 }
 
 .related-products-carousel .owl-nav {
-    position: absolute;
+    /*position: absolute;
     top: 30%;
     left: 0;
-    right: 0;
+    right: 0;*/
 }
 .related-products-carousel .owl-nav .owl-prev, .related-products-carousel .owl-nav .owl-next {
-    position: absolute;
+   /* position: absolute;
     height: 100px;
     color: inherit;
     background: none;
     border: none;
-    z-index: 100;
+    z-index: 100;*/
 }
 .related-products-carousel .owl-nav .owl-prev i, .related-products-carousel .owl-nav .owl-next i {
     font-size: 2.5rem;
@@ -1015,13 +1015,7 @@ header {
     outline: none;
 }
 
-.related-products-carousel .owl-nav .owl-prev {
-    left: -65px;
-}
 
-.related-products-carousel .owl-nav .owl-next {
-    right: -65px;
-}
 
 .related-products-carousel .product-cta.flex-container {
     justify-content: space-between;
