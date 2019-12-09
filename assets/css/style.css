@@ -2407,7 +2407,7 @@ ul#autoSuggestionsList {
 }
 .static-btn:hover {
     right: 0;
-    transition: all 1s linear;
+    transition: all 0.5s linear;
 }
 .static-btn i{
     margin: 0px 5px 0px 5px;
